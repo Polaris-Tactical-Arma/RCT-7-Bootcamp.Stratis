@@ -18,8 +18,7 @@
 
 	if (_recruitName isEqualTo  false) then {
 		// New player joined
-		_time = "getTimeStamp" call _db;
-		["write", [_UID, "created_at", _time]] call _db;
+		["write", [_UID, "created_at", systemTimeUTC]] call _db;
 	};
 
 	["write", [_UID, "name", _playerName]] call _db;
