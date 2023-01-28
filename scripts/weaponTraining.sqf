@@ -40,7 +40,6 @@ private _index = 0;
 
 while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	
-	systemChat str (count(_targetClusterList));
 	[] call _handleMags;
 	_targetCluster = _targetClusterList select _index;
 
@@ -59,7 +58,9 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 
-	hint (["Shoot all the targets at the range:\n", _distance, "meters"] joinString " "),
+	_dir = round(([player, (_targetList # 0)] call BIS_fnc_dirTo));
+
+	hint (["Shoot all", _targetCount ,"targets at:\n\n", "direction:", _dir, "\n",  _distance, "meters"] joinString " "),
 
 	{
 		_x addEventHandler ["Hit", {
