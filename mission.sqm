@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=5289;
+		nextID=5293;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6440.4331,33.289074,5429.1528};
-		dir[]={-0.61872834,-0.52427089,0.58513153};
-		up[]={-0.38092926,0.85152888,0.36024803};
-		aside[]={0.68712807,-3.4538971e-007,0.72658038};
+		pos[]={6433.5996,19.412689,5419.6743};
+		dir[]={-0.76498008,-0.25521925,0.59132797};
+		up[]={-0.20192474,0.96688324,0.1560874};
+		aside[]={0.61158162,0,0.7911815};
 	};
 };
 binarizationWanted=0;
@@ -57,14 +57,13 @@ addons[]=
 	"A3_Structures_F_Mark_Training",
 	"A3_Modules_F",
 	"ace_fastroping",
-	"A3_Missions_F_Oldman",
-	"CUP_Misc3_Config"
+	"A3_Structures_F_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=20;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -199,15 +198,10 @@ class AddonsMetaData
 		};
 		class Item19
 		{
-			className="A3_Missions_F_Oldman";
-			name="Arma 3 Old Man - Playable Content";
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
-		};
-		class Item20
-		{
-			className="CUP_Misc3_Config";
-			name="CUP_Misc3_Config";
 		};
 	};
 };
@@ -251,7 +245,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category1
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -439,7 +433,7 @@ class CustomAttributes
 		};
 		nAttributes=5;
 	};
-	class Category2
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
@@ -15719,7 +15713,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=46;
 		class Item0
 		{
 			dataType="Group";
@@ -15732,8 +15726,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6404.0308,9.0526352,5453.5972};
-						angles[]={0,5.1449618,0};
+						position[]={6417.8516,7.4080124,5429.4204};
+						angles[]={0,5.4129338,-0};
 					};
 					side="West";
 					flags=7;
@@ -15794,6 +15788,7 @@ class Mission
 					};
 					id=5189;
 					type="B_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15833,6 +15828,7 @@ class Mission
 				formation="LINE";
 			};
 			id=5188;
+			atlOffset=4.7683716e-007;
 		};
 		class Item1
 		{
@@ -15858,8 +15854,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6416.2393,11.381821,5429.9937};
-				angles[]={0,0.73988283,0};
+				position[]={6411.3584,11.351114,5435.0879};
+				angles[]={0,3.8142672,-0};
 			};
 			side="Empty";
 			flags=5;
@@ -15868,6 +15864,7 @@ class Mission
 			};
 			id=5204;
 			type="Flag_US_F";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15891,8 +15888,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6417.1104,11.379089,5430.9878};
-				angles[]={0,0.72750843,0};
+				position[]={6410.5562,11.3556,5434.0376};
+				angles[]={0,3.8018928,-0};
 			};
 			side="Empty";
 			flags=5;
@@ -15901,7 +15898,7 @@ class Mission
 			};
 			id=5205;
 			type="Flag_NATO_F";
-			atlOffset=-4.7683716e-007;
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15925,8 +15922,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6415.2021,11.386416,5428.9531};
-				angles[]={0,0.76258945,0};
+				position[]={6412.3228,11.344193,5436.1953};
+				angles[]={0,3.8369739,-0};
 			};
 			side="Empty";
 			flags=5;
@@ -15958,8 +15955,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6415.1982,7.3997626,5430.4707};
-				angles[]={0.0024897563,5.5055289,6.2806959};
+				position[]={6412.4824,7.37392,5434.5449};
+				angles[]={0.010000871,2.2967005,6.2806959};
 			};
 			side="Empty";
 			flags=4;
@@ -15969,7 +15966,7 @@ class Mission
 			};
 			id=5207;
 			type="Land_BriefingRoomScreen_01_F";
-			atlOffset=0.0028400421;
+			atlOffset=-0.00052022934;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16228,6 +16225,7 @@ class Mission
 			};
 			id=5254;
 			type="TargetP_Inf8_F";
+			atlOffset=4.7683716e-007;
 		};
 		class Item21
 		{
@@ -16604,13 +16602,15 @@ class Mission
 			};
 			id=5285;
 			type="ACE_fastropingSupplyCrate";
+			atlOffset=-0.0022192001;
 		};
 		class Item45
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6405.4351,10.067636,5455.9531};
+				position[]={6415.3975,7.8535576,5439.355};
+				angles[]={0.037489671,5.4892349,6.2656798};
 			};
 			side="Empty";
 			flags=4;
@@ -16618,24 +16618,8 @@ class Mission
 			{
 				init="this addAction [""Start Range Test"", ""scripts\weaponTraining.sqf""];";
 			};
-			id=5286;
-			type="Item_Laptop_Unfolded";
-			atlOffset=7.6293945e-006;
-		};
-		class Item46
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6405.4927,9.3997593,5456.0396};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=5288;
-			type="FoldTable";
+			id=5292;
+			type="Land_InfoStand_V2_F";
 		};
 	};
 	class Connections
