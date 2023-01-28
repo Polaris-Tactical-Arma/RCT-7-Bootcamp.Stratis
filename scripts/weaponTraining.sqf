@@ -3,13 +3,26 @@ _getFireMode = {
 	weaponState player # 2
 };
 
+private _handleMags = {
+
+	_ammo = getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0;
+	player removePrimaryWeaponItem _ammo;
+	player addMagazine [_ammo, 30];
+	player reload [];
+};
+
+{
+
+_x animate["terc", 0];
+} forEach synchronizedObjects TargetController;
+
 
 firedCount = 0;
 
 _firedIndex = player addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-	firedCount = firedCound + 1;
+	firedCount = firedCount + 1;
 
 }];
 
@@ -25,9 +38,10 @@ _targetClusterList = [];
 
 private _index = 0;
 
-while { count(_targetClusterList) > 1 } do {
+while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	
-
+	systemChat str (count(_targetClusterList));
+	[] call _handleMags;
 	_targetCluster = _targetClusterList select _index;
 
 	_targetList = synchronizedObjects _targetCluster;
@@ -36,25 +50,26 @@ while { count(_targetClusterList) > 1 } do {
 	_invalidTargetCluster =  + _targetClusterList; // copy array
 	_invalidTargetCluster deleteAt _index;
 
-	systemChat (str _invalidTargetCluster);
+	_dist = player distance (_targetList # 0);
+	_distance = round(_dist * 0.01) * 100;
+	rangeSection = ["ShootingRange", _distance, "meters"] joinString "";
 
-	_distance = player distance _targetCluster;
+	shotsValid = 0;
+	shotsInvalid = 0;
+	_shotsMissed = 0;
+	firedCount = 0;
 
-	rangeSection = (round(_distance * 0.01) / 100);
-	validHit = 0;
-	invalidHit = 0;
-
-
-	systemchat (["distance:", rangeSection] joinString " ");
+	hint (["Shoot all the targets at the range:\n", _distance, "meters"] joinString " "),
 
 	{
 		_x addEventHandler ["Hit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
 				// valid
-				if (cursorObject animationPhase "terc" isEqualTo 1) then {
+				if (cursorObject animationPhase "terc" isEqualTo 0) then {
+					systemChat "Valid Target Hit";
 
-					validHit = validHit + 1;
-					[player, rangeSection, "validHit", validHit] remoteExec ["RCT7_writeToDb", 2];
+					shotsValid = shotsValid + 1;
+					[player, rangeSection, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
 				};
 			}];
 		
@@ -67,10 +82,10 @@ while { count(_targetClusterList) > 1 } do {
 			_invalidTarget addEventHandler ["Hit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
 				// invalid
-				if (cursorObject animationPhase "terc" isEqualTo 1) then {
-
-					invalidHit = invalidHit + 1;
-					[player, rangeSection, "invalidHit", invalidHit] remoteExec ["RCT7_writeToDb", 2];
+				if (cursorObject animationPhase "terc" isEqualTo 0) then {
+					systemChat "Invalid Target Hit"; 
+					shotsInvalid = shotsInvalid + 1;
+					[player, rangeSection, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
 				};
 
 			}];
@@ -79,14 +94,23 @@ while { count(_targetClusterList) > 1 } do {
 		
 	} forEach _invalidTargetCluster;
 
-	_missedShots = firedCount - (invalidHit + validHit);
+	waitUntil { _targetCount isEqualTo shotsValid };
 
-	systemChat (["missedShots:", _missedShots] joinString " ");
 
-	waitUntil { _targetCount isEqualTo validHit };
+	_index = _index + 1;
 
-	(synchronizedObjects TargetController) apply { _x removeAllEventHandlers "Hit"; };
-	 
+	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
+
+	[player, rangeSection, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
+
+	systemChat (["missedShots:", _shotsMissed] joinString " ");
+
+	sleep 1;
+	(synchronizedObjects TargetController) apply { _x removeAllEventHandlers "Hit"; _x animate["terc", 0];};
+
 };
 
 player removeEventHandler ["Fired", _firedIndex];
+(synchronizedObjects TargetController) apply { _x animate["terc", 1];};
+
+hint "Traning completed!";
