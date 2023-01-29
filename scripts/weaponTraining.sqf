@@ -13,7 +13,7 @@ private _handleMags = {
 
 {
 
-_x animate["terc", 0];
+	_x animate["terc", 0];
 } forEach synchronizedObjects TargetController;
 
 
@@ -63,15 +63,14 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 
 	_dir = round(([player, (_targetList # 0)] call BIS_fnc_dirTo));
 
-	hint (["Shoot all", _targetCount ,"targets at:\n\n", "direction:", _dir, "\n",  _distance, "meters"] joinString " "),
+	hint (["Shoot all", _targetCount ,"targets at:\n\n", "direction:", _dir, "\n",  _distance, "meters"] joinString " ");
 
 	{
-		_x addEventHandler ["Hit", {
+		_x addMPEventHandler ["MPHit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
 				// valid
-				if (cursorObject animationPhase "terc" isEqualTo 0) then {
+				if (_unit animationPhase "terc" isEqualTo 0) then {
 					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\timer.wss", player];
-
 					shotsValid = shotsValid + 1;
 					[player, rangeSection, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
 				};
@@ -83,10 +82,10 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	{
 		{
 			_invalidTarget = _x;
-			_invalidTarget addEventHandler ["Hit", {
+			_invalidTarget addMPEventHandler ["MPHit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
 				// invalid
-				if (cursorObject animationPhase "terc" isEqualTo 0) then {
+				if (_unit animationPhase "terc" isEqualTo 0) then {
 					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_start.wss", player];
 					shotsInvalid = shotsInvalid + 1;
 					[player, rangeSection, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
@@ -98,11 +97,14 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 		
 	} forEach _invalidTargetCluster;
 
+	
+	// TODO: Check if mag is empty as well
+
 	waitUntil { _targetCount isEqualTo shotsValid };
 
 	
 		
-					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\checkpoint_clear.wss", player];
+	playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\checkpoint_clear.wss", player];
 	_index = _index + 1;
 
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
@@ -112,12 +114,13 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	systemChat (["missedShots:", _shotsMissed] joinString " ");
 
 	sleep 1;
-	(synchronizedObjects TargetController) apply { _x removeAllEventHandlers "Hit"; _x animate["terc", 0];};
+
+	(synchronizedObjects TargetController) apply { _x removeAllMPEventHandlers "MPHit"; _x animate["terc", 0]; };
 
 };
 
 player removeEventHandler ["Fired", _firedIndex];
-(synchronizedObjects TargetController) apply { _x animate["terc", 1];};
+(synchronizedObjects TargetController) apply { _x animate["terc", 1]; };
 
 playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_finish.wss", player];
 hint "Traning completed!";
