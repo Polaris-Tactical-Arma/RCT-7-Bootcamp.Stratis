@@ -14,6 +14,7 @@ private _handleMags = {
 {
 
 	_x animate["terc", 0];
+	_x setVariable ["nopop", true];
 } forEach synchronizedObjects TargetController;
 
 
@@ -68,12 +69,10 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	{
 		_x addMPEventHandler ["MPHit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
-				// valid
-				if (_unit animationPhase "terc" isEqualTo 0) then {
 					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\timer.wss", player];
 					shotsValid = shotsValid + 1;
 					[player, rangeSection, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
-				};
+					_unit removeAllMPEventHandlers "MPHit";
 			}];
 		
 	} forEach _targetList;
@@ -89,6 +88,7 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_start.wss", player];
 					shotsInvalid = shotsInvalid + 1;
 					[player, rangeSection, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
+					_unit removeAllMPEventHandlers "MPHit";
 				};
 
 			}];
@@ -115,7 +115,7 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 
 	sleep 1;
 
-	(synchronizedObjects TargetController) apply { _x removeAllMPEventHandlers "MPHit"; _x animate["terc", 0]; };
+	(synchronizedObjects TargetController) apply { _x animate["terc", 0]; _x removeAllMPEventHandlers "MPHit"; };
 
 };
 
