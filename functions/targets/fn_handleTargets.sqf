@@ -16,7 +16,7 @@ Returns:
 _nopop = param [2,false,[false]];
 
 {
-	if (_item isKindOf "TargetBase") then {
+	if (_x isKindOf "TargetBase") then {
 		_x animate["terc", _this # 1];
 		if (_nopop) then { _x setVariable ["nopop", true]; };
 	};

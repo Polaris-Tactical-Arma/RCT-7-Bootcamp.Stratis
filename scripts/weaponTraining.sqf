@@ -6,6 +6,8 @@
 
 _controller = TargetController;
 
+[_controller, 0, true] call RCT7Bootcamp_fnc_handleTargets;
+
 firedCount = 0;
 
 _firedIndex = player addEventHandler ["Fired", {
@@ -99,7 +101,7 @@ while {  _count isNotEqualTo _index  } do {
 
 player removeEventHandler ["Fired", _firedIndex];
 
-[_controller, 1] call RCT7Bootcamp_fnc_handleMags;
+[_controller, 1] call RCT7Bootcamp_fnc_handleTargets;
 
 player call RCT7Bootcamp_fnc_sectionFinished;
 hint "Traning completed!";
