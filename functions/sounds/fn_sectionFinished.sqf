@@ -1,0 +1,1 @@
+playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\checkpoint_clear.wss", _this];
