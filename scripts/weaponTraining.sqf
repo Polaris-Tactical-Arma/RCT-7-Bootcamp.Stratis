@@ -6,7 +6,6 @@
 
 _controller = TargetController;
 
-[_controller, 0] call RCT7Bootcamp_fnc_handleMags;
 firedCount = 0;
 
 _firedIndex = player addEventHandler ["Fired", {
@@ -26,8 +25,9 @@ _index = 0;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
+_count = count(_targetClusterList);
 
-while { count(_targetClusterList) isNotEqualTo (_index)  } do {
+while {  _count isNotEqualTo _index  } do {
 	
 	call RCT7Bootcamp_fnc_handleMags;
 	_targetCluster = _targetClusterList select _index;
@@ -92,12 +92,14 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 
 	(synchronizedObjects _controller) apply { _x animate["terc", 0]; _x removeAllMPEventHandlers "MPHit"; };
 	
-	["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
+	if ( _count > _index ) then {
+		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
+	};
 };
 
 player removeEventHandler ["Fired", _firedIndex];
 
 [_controller, 1] call RCT7Bootcamp_fnc_handleMags;
 
-player call RCT7Bootcamp_fnc_sectionStart;
+player call RCT7Bootcamp_fnc_sectionFinished;
 hint "Traning completed!";
