@@ -1,10 +1,3 @@
-private _handleMags = {
-
-	_ammo = getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0;
-	player removePrimaryWeaponItem _ammo;
-	player addMagazine [_ammo, 30];
-	player reload [];
-};
 
 _controller = GridTargetController;
 
