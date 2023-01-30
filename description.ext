@@ -3,3 +3,34 @@ respawnDelay=20;
 respawnDialog=0;
 respawnOnStart=-1;
 respawnTemplates[] = { "MenuPosition","Tickets" };
+
+
+class CfgFunctions
+{
+	class RCT7Bootcamp
+	{
+		class Targets
+		{
+			file = "functions\targets";
+			class handleTargets{};
+		};
+		class Sounds
+		{
+			file = "functions\sounds";
+			class sectionFinished{};
+			class sectionStart{};
+			class targetHitInvalid{};
+			class targetHitValid{};
+		};
+		class Inventory
+		{
+			file = "functions\inventory";
+			class handleMags{};
+		};
+		class UI
+		{
+			file = "functions\ui";
+			class cooldownHint{};
+		};
+	};
+};
