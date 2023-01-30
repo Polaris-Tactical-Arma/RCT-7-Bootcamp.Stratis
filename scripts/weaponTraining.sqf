@@ -1,32 +1,17 @@
 
-_getFireMode = {
-	weaponState player # 2
-};
-
-private _handleMags = {
-
-	_ammo = getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0;
-	player removePrimaryWeaponItem _ammo;
-	player addMagazine [_ammo, 30];
-	player reload [];
-};
-
-{
-
-	_x animate["terc", 0];
-	_x setVariable ["nopop", true];
-} forEach synchronizedObjects TargetController;
+// _getFireMode = {
+// 	weaponState player # 2
+// };
 
 
+_controller = TargetController;
+
+[_controller, 0] call RCT7Bootcamp_fnc_handleMags;
 firedCount = 0;
 
 _firedIndex = player addEventHandler ["Fired", {
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-
 	firedCount = firedCount + 1;
-
 }];
-
 
 _logicList = allMissionObjects "Logic";
 _targetClusterList = [];
@@ -37,14 +22,14 @@ _targetClusterList = [];
 } forEach _logicList;
 
 
-private _index = 0;
+_index = 0;
+player call RCT7Bootcamp_fnc_sectionStart;
 
-// start sound
-playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\course_active.wss", player];
+_magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 
 while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	
-	[] call _handleMags;
+	call RCT7Bootcamp_fnc_handleMags;
 	_targetCluster = _targetClusterList select _index;
 
 	_targetList = synchronizedObjects _targetCluster;
@@ -69,7 +54,7 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 	{
 		_x addMPEventHandler ["MPHit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
-					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\timer.wss", player];
+					player call RCT7Bootcamp_fnc_targetHitValid;
 					shotsValid = shotsValid + 1;
 					[player, rangeSection, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
 					_unit removeAllMPEventHandlers "MPHit";
@@ -85,7 +70,7 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 				params ["_unit", "_source", "_damage", "_instigator"];
 				// invalid
 				if (_unit animationPhase "terc" isEqualTo 0) then {
-					playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_start.wss", player];
+					player call RCT7Bootcamp_fnc_targetHitInvalid;
 					shotsInvalid = shotsInvalid + 1;
 					[player, rangeSection, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
 					_unit removeAllMPEventHandlers "MPHit";
@@ -97,30 +82,22 @@ while { count(_targetClusterList) isNotEqualTo (_index)  } do {
 		
 	} forEach _invalidTargetCluster;
 
-	
-	// TODO: Check if mag is empty as well
-
-	waitUntil { _targetCount isEqualTo shotsValid };
-
-	
+	waitUntil { _targetCount isEqualTo shotsValid || _magSize isEqualTo firedCount };
 		
-	playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\checkpoint_clear.wss", player];
+	player call RCT7Bootcamp_fnc_targetHitValid;
 	_index = _index + 1;
-
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-
 	[player, rangeSection, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-
-	systemChat (["missedShots:", _shotsMissed] joinString " ");
-
 	sleep 1;
 
-	(synchronizedObjects TargetController) apply { _x animate["terc", 0]; _x removeAllMPEventHandlers "MPHit"; };
-
+	(synchronizedObjects _controller) apply { _x animate["terc", 0]; _x removeAllMPEventHandlers "MPHit"; };
+	
+	["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
 };
 
 player removeEventHandler ["Fired", _firedIndex];
-(synchronizedObjects TargetController) apply { _x animate["terc", 1]; };
 
-playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_finish.wss", player];
+[_controller, 1] call RCT7Bootcamp_fnc_handleMags;
+
+player call RCT7Bootcamp_fnc_sectionStart;
 hint "Traning completed!";
