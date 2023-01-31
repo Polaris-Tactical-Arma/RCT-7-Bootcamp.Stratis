@@ -8,7 +8,6 @@ _module = param [0,objNull,[objNull]];
 _actionLabel = param [1,"Start Shooting Test",[""]];
 _trainingType = param [2,1,[1]];
 
-
 _synchedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
