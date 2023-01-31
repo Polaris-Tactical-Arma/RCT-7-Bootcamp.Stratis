@@ -21,7 +21,7 @@ if (_extraKeys # 1) then {
 }; 
  
  
-if (_extraKeys # 0) then { 
+if (_extraKeys # 2) then { 
  _output pushBack "ALT"; 
 }; 
  
