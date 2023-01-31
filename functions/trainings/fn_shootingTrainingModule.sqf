@@ -19,10 +19,18 @@ _firedIndex = player addEventHandler ["Fired", {
 }];
 
 _index = 0;
-player call RCT7Bootcamp_fnc_sectionStart;
-
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
+
+if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
+	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+	_earplugs = ["Open ACE Self-Interaction with [", _keybind, "] and under Equipment, put your earplugs in"] joinString "";
+	hint _earplugs;
+};
+
+waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
+
+player call RCT7Bootcamp_fnc_sectionStart;
 
 while {  _count isNotEqualTo _index  } do {
 	
