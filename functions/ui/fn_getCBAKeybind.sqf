@@ -1,6 +1,5 @@
-
-_mod = _this # 0
-_actionName = _this # 1;
+_mod = param[0, "", [""]];
+_actionName = param[1, "", [""]];
 
 _entry = [_mod, _actionName] call CBA_fnc_getKeybind; 
  
@@ -12,7 +11,7 @@ _output = [_key];
 _extraKeys = _firstKeybind # 1; 
  
 if (_extraKeys # 0) then { 
- _output pushBack "Shift"; 
+ _output pushBack "SHIFT"; 
 }; 
  
 if (_extraKeys # 1) then { 
@@ -21,7 +20,7 @@ if (_extraKeys # 1) then {
  
  
 if (_extraKeys # 0) then { 
- _output pushBack "Alt"; 
+ _output pushBack "ALT"; 
 }; 
  
 _output joinString " + ";
