@@ -9,6 +9,12 @@ class CfgFunctions
 {
 	class RCT7Bootcamp
 	{
+		class Trainings
+		{
+			file = "functions\trainings";
+			class initShootingTraining{};
+			class shootingTrainingModule{};
+		};
 		class Targets
 		{
 			file = "functions\targets";
