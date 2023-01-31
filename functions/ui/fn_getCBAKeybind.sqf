@@ -2,6 +2,8 @@ _mod = param[0, "", [""]];
 _actionName = param[1, "", [""]];
 
 _entry = [_mod, _actionName] call CBA_fnc_getKeybind; 
+
+if (isNil "_entry") exitWith { false; };
  
 _firstKeybind = _entry # 5; 
  
