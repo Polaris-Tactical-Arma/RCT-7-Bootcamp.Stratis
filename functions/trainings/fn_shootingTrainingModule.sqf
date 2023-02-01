@@ -94,7 +94,6 @@ while {  _count isNotEqualTo _index  } do {
 
 	waitUntil { _targetCount isEqualTo shotsValid || _magSize isEqualTo firedCount };
 
-	player call RCT7Bootcamp_fnc_targetHitValid;
 	_index = _index + 1;
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
