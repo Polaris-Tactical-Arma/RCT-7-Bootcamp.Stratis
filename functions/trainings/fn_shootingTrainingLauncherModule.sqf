@@ -49,6 +49,10 @@ _checkDamage = {
 	true;
 };
 
+_getLauncherName = {
+	gettext (configfile >> "CfgWeapons" >> secondaryWeapon player >> "displayName");
+};
+
 _index = 0;
 _count = count(_targetList);
 
@@ -95,29 +99,49 @@ while {  _count isNotEqualTo _index  } do {
 	firedCount = 0;
 
 	_firesteps = "";
-	if ((player ammo secondaryWeapon player) isEqualTo 0) then {
-		_firesteps = [
-			"Steps to fire: \n",
-			"1. Equip your launcher",
-			"2. Prepare your launcher with: ", call compile (actionKeysNames "ReloadMagazine"),
-			"3. Be sure to check your backblast before firing!",
-			"4. Call out 'Rocket, Rocket, Rocket!' and Fire",
-			"\n\n-------\n\n"
-		] joinString "\n";
 
-		hint _firesteps;
+	if ( currentWeapon player isNotEqualTo secondaryWeapon player ) then {
 
-		waitUntil {player ammo secondaryWeapon player isEqualTo 1};
+		hint (["Equip your", call _getLauncherName, "launcher"] joinString " ");
+		waitUntil { currentWeapon player isEqualTo secondaryWeapon player; };
+		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
 
-	_name = gettext (configfile >> "CfgVehicles" >> typeOf _target >> "displayName");
+
+	if ((player ammo secondaryWeapon player) isEqualTo 0 ) then {
+
+		hint (["Prepare your launcher with:\n", call compile (actionKeysNames "ReloadMagazine")] joinString "");
+		waitUntil { (player ammo secondaryWeapon player) isEqualTo 1; };
+		player call RCT7Bootcamp_fnc_targetHitValid;
+	};
+
+
 	_dist = player distance (_target);
-	_distance = round(_dist * 0.1) * 10;
+	_distance = round(_dist / 50) * 50;
+	
+	if (currentZeroing player isNotEqualTo _distance) then {
+		hint (["Zero your gun on: \n", _distance] joinString "");
+		waitUntil { currentZeroing player isEqualTo _distance };
+		player call RCT7Bootcamp_fnc_targetHitValid;
+	};
+
+	hint "Check your backblast!";
+
+	_actionId = player addAction ["<t color='#ffe0b5'>Backblast clear!</t>", {
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		player removeAction _actionId;
+		player call RCT7Bootcamp_fnc_targetHitValid;
+	}];
+
+	waitUntil { !(_actionId in (actionIDs player)); };
+
+	_typeOfTarget = typeOf _target;
+	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 
-	hint ([_firesteps, "Shoot at the ", _name, "\n\n", "direction: ", _dir, "\n",  _distance, " meters"] joinString "");
+	hint (["Shoot at the ", _name, "\n\n", "direction: ", _dir, "\n",  _distance, " meters"] joinString "");
 
-	dbSectionName = [_sectionName,_name] joinString "-";
+	dbSectionName = [_sectionName,_typeOfTarget] joinString "-";
 
 	{
 		_x addMPEventHandler ["MPHit", {
