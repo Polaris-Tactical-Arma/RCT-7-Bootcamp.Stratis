@@ -44,7 +44,17 @@ switch (_trainingType) do
 	case 2: { 
 		_sectionNameCode = "_grid = mapGridPosition (_targetList # 0); [""Grid"", _grid] joinString ""-"";";
 
-		_hintCode = "_grid = mapGridPosition (_targetList # 0);[""Shoot all"", _targetCount ,""targets at grid:\n\n"", _grid] joinString "" """;
+		_hintCode = "_grid = mapGridPosition (_targetList # 0);[""Shoot all"", _targetCount ,""targets at grid:\n\n"", _grid select [0, 3], _grid select [3, 5]] joinString "" """;
+	};
+	case 3: {
+		_sectionNameCode = "_dist = player distance (_targetList # 0);
+							_distance = round(_dist * 0.01) * 100;
+							[""ShootingRange"", _distance, ""meters""] joinString """";";
+
+		_hintCode = "	_dist = player distance (_targetList # 0);
+						_distance = round(_dist * 0.01) * 100;
+						_dir = round(([player, (_targetList # 0)] call BIS_fnc_dirTo));
+						[""Shoot all"", _targetCount ,""targets at:\n\n"", ""direction:"", _dir, ""\n"",  _distance, ""meters""] joinString "" """;
 	};
 	default { 
 		// Range and direction Shooting
@@ -61,8 +71,9 @@ switch (_trainingType) do
 
 
 _triggerObj addAction [_actionLabel, RCT7Bootcamp_fnc_shootingTrainingModule, [
-	_targetController,
-	_targetClusterList,
-	_sectionNameCode,
-	_hintCode
-] ];
+		_targetController,
+		_targetClusterList,
+		_sectionNameCode,
+		_hintCode
+	]
+];
