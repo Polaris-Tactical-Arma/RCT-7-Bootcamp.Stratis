@@ -11,7 +11,7 @@ Returns:
 	true
 */
 
-_ammo = getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0;
+_ammo = getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines") # 0;
 player removePrimaryWeaponItem _ammo;
 player addMagazine [_ammo, 30];
 player reload [];
