@@ -67,9 +67,8 @@ waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
 /*
 	TODO:
-		Get distance to target on hit
 		Time to finish the section
-		Explain Ranging
+
 
 
 */
@@ -127,7 +126,13 @@ while {  _count isNotEqualTo _index  } do {
 	_distance = round(_dist / 50) * 50;
 	
 	if (currentZeroing player isNotEqualTo _distance) then {
-		hint (["Zero your gun on: \n", _distance] joinString "");
+		hint ([
+			"Zero your gun on:\n",
+			_distance,
+			"\n\n",
+			"Zeroing Up:\n", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "\n\n",
+			"Zeroing Down:\n", ((actionKeysNames "zeroingDown") splitString """" joinString "")
+			] joinString "");
 		waitUntil { currentZeroing player isEqualTo _distance || firedCount > 0; };
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
@@ -206,7 +211,7 @@ while {  _count isNotEqualTo _index  } do {
 	(synchronizedObjects _module) apply { _x removeAllMPEventHandlers "MPHit"; };
 
 	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then { 
-		hint "This Launcher is disposabel, drop it.";
+		hint "This Launcher is disposabel. Equip your primary Weapon to drop it.";
 
 		waitUntil {secondaryWeapon player isEqualTo ""};
 	};
