@@ -33,20 +33,20 @@ private _targetList = [];
 _checkDamage = {
 
 	_unit = _this;
+	private _hasDamage = false;
 	_damageList = _unit getVariable ["ace_medical_bodypartdamage", [0,0,0,0,0,0]];
 	{
+		
 		if (_x > 0) exitWith {
 			[player, dbSectionName, "backblast_cleared", false ] remoteExec ["RCT7_writeToDb", 2];
-			false;
+			_hasDamage = true;
 		};
 		 
 		[player, dbSectionName, "backblast_cleared", true ] remoteExec ["RCT7_writeToDb", 2];
-
-
 		
 	} forEach _damageList;
 	 
-	true;
+	_hasDamage;
 };
 
 _getLauncherName = {
@@ -69,13 +69,22 @@ waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 	TODO:
 		Make backblast clear a required step - add an AI
 		Get distance to target on hit
-		Change Section to actual classname
 		Time to finish the section
 		Explain Ranging
 
 
 */
 player call RCT7Bootcamp_fnc_sectionStart;
+
+_firedCheck = { 
+	if (firedCount > 0) then {
+		_actionId = _this # 0;
+		player removeAction _actionId;
+		["Follow the instructions on your screen!\n\n Try again in:", 5] call RCT7Bootcamp_fnc_cooldownHint;
+		continue; 
+	};
+	
+};
 
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0) >> "count");
 
@@ -102,7 +111,7 @@ while {  _count isNotEqualTo _index  } do {
 
 	if ( currentWeapon player isNotEqualTo secondaryWeapon player ) then {
 
-		hint (["Equip your", call _getLauncherName, "launcher"] joinString " ");
+		hint (["A",call _getLauncherName,"was added to your inventory!\nEquip it!"] joinString " ");
 		waitUntil { currentWeapon player isEqualTo secondaryWeapon player; };
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
@@ -115,15 +124,16 @@ while {  _count isNotEqualTo _index  } do {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
 
-
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 	
 	if (currentZeroing player isNotEqualTo _distance) then {
 		hint (["Zero your gun on: \n", _distance] joinString "");
-		waitUntil { currentZeroing player isEqualTo _distance };
+		waitUntil { currentZeroing player isEqualTo _distance || firedCount > 0; };
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
+	call _firedCheck;
+
 
 	hint "Check your backblast!";
 
@@ -133,7 +143,9 @@ while {  _count isNotEqualTo _index  } do {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	}];
 
-	waitUntil { !(_actionId in (actionIDs player)); };
+	waitUntil { !(_actionId in (actionIDs player)) || firedCount > 0; };
+	[_actionId] call _firedCheck;
+	
 
 	_typeOfTarget = typeOf _target;
 	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
@@ -172,7 +184,6 @@ while {  _count isNotEqualTo _index  } do {
 				};
 
 			}];
-			
 		
 	} forEach _invalidTargetList;
 
@@ -186,12 +197,10 @@ while {  _count isNotEqualTo _index  } do {
 		[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
 	};
 	
-	_damageCheck = player call _checkDamage;
-	if (_damageCheck) then {
-		player call RCT7Bootcamp_fnc_targetHitInvalid;
-		hint "Step away from the wall stupid!";
+	if (player call _checkDamage) then {
+		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
+		sleep 5;
 	};
-	sleep 2;
 
 	(synchronizedObjects _module) apply { _x removeAllMPEventHandlers "MPHit"; };
 
