@@ -67,7 +67,6 @@ waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
 /*
 	TODO:
-		Make backblast clear a required step - add an AI
 		Get distance to target on hit
 		Time to finish the section
 		Explain Ranging
@@ -163,6 +162,7 @@ while {  _count isNotEqualTo _index  } do {
 					_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 					[player, dbSectionName, "success", true] remoteExec ["RCT7_writeToDb", 2];
 					[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
+					[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
 					_unit removeAllMPEventHandlers "MPHit";
 			}];
 		
@@ -180,6 +180,7 @@ while {  _count isNotEqualTo _index  } do {
 					_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 					[player, dbSectionName, "success", false] remoteExec ["RCT7_writeToDb", 2];
 					[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
+					[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
 					_unit removeAllMPEventHandlers "MPHit";
 				};
 
