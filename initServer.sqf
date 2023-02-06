@@ -20,6 +20,34 @@ RCT7_writeToDb = {
 };
 
 
+RCT7_appendToKey = {
+	params["_player", "_section", "_key", "_value", "_delimeter"];
+
+
+	if (isServer) then {
+		_db = _player call RCT7_fnc_getINIDB;
+		_type = typeName _value;
+
+		_data = ["read", [_section, _key]] call _db;
+
+		switch (_type) do
+		{
+			case "SCALAR": { 
+				_data = _data + _value };
+			case "ARRAY": { 
+				_data append _value; };
+			case "STRING": {
+					_delimeter = param [4, "", [""]];
+					_data = [_data, _value] joinString _delimeter;
+			};
+		};
+		
+
+		["write", [_section, _key, _data]] call _db;
+	};
+};
+
+
 "initDb" addPublicVariableEventHandler
 {
 	private ["_player"];
