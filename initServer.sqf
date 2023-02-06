@@ -30,6 +30,10 @@ RCT7_appendToKey = {
 
 		_data = ["read", [_section, _key]] call _db;
 
+		if (_data isEqualTo false) exitWith {
+			[_player, _section, _key, _value] call RCT7_writeToDb;
+		};
+
 		switch (_type) do
 		{
 			case "SCALAR": { 
