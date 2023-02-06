@@ -12,9 +12,10 @@ class CfgFunctions
 		class Trainings
 		{
 			file = "functions\trainings";
-			class initShootingTraining{};
-			class shootingTrainingModule{};
-			class shootingTrainingLauncherModule{};
+			class 3DReportTrainingModule{};
+			class launcherTrainingModule{};
+			class mapTrainingModule{};
+			class gunTrainingModule{};
 		};
 		class Targets
 		{
