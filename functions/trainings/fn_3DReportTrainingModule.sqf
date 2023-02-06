@@ -90,6 +90,7 @@ while {  _count isNotEqualTo _index  } do {
 					_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
 					[player, dbSectionName, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
+					[player, dbSectionName, "wrongTargetList", [_name]] remoteExec ["RCT7_appendToKey", 2];
 					_unit removeAllMPEventHandlers "MPHit";
 				};
 
@@ -110,7 +111,6 @@ while {  _count isNotEqualTo _index  } do {
 				[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
 				[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
 
-				
 				_unit removeAllMPEventHandlers "MPHit";
 		}
 	];
