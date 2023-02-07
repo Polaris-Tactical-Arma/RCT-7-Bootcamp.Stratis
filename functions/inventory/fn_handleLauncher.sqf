@@ -13,17 +13,15 @@ Returns:
 
 _launcher = _this # 0;
 
-if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then {
+if (secondaryWeapon player isNotEqualTo _launcher) then {
+	player addWeapon _launcher;
+};
 
-	player addWeapon "rhs_weap_M136";
-
-} else {
+if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 0) then {
 
 	_ammo = getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0;
 	player removeSecondaryWeaponItem _ammo;
-	player addMagazine [_ammo, 1];
-	player reload [];
-
+	player addSecondaryWeaponItem _ammo;
 };
 
 true;
