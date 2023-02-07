@@ -106,6 +106,7 @@ _firedCheck = {
 };
 
 _handleVehicleRespawn = {
+	private ["_veh"];
 	_unit = _this;
 
 	_pos = getPosATL _unit;
@@ -114,11 +115,23 @@ _handleVehicleRespawn = {
 	_unit synchronizeObjectsRemove _targetList;
 	deleteVehicle _unit;
 
-	_veh = (typeOf _unit) createVehicle [0,0,0];
+	_vehicleType = typeOf _unit;
+
+	if (_unit isKindOf "Air") then {
+
+		deleteVehicleCrew _unit;
+		sleep 2;
+		_veh = createVehicle [_vehicleType, _pos, [], 0, "FLY" ];
+		createVehicleCrew _veh;
+	} else {
+
+		_veh = _vehicleType createVehicle _pos;
+		 
+	};
+
 	_veh setPosATL _pos;
 	_veh setDir _dir;
-	_veh setVectorUp surfaceNormal position _veh; 
-
+	_veh setVectorUp surfaceNormal position _veh;
 
 	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
