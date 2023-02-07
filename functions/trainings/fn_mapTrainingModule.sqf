@@ -1,4 +1,9 @@
 
+
+_module = GunGridTraining;
+_syncedObjects = synchronizedObjects _module;
+
+
 private _triggerObj = nil;
 private _targetController = nil;
 private _targetClusterList = [];
@@ -16,12 +21,7 @@ private _targetClusterList = [];
 	if (_syncedObj isKindOf "Logic" && ["TargetController", str _syncedObj] call BIS_fnc_inString) then {
 		_targetController = _syncedObj;
 		continue;
-	};
-
-	if (_syncedObj isKindOf "Thing") then {
-		_triggerObj = _syncedObj;
-	};
-	
+	};	
 
 } forEach _syncedObjects;
 
@@ -79,6 +79,30 @@ while {  _count isNotEqualTo _index  } do {
 	hint (["Shoot all", _targetCount ,"targets at grid:\n\n", _grid select [0, 3], _grid select [3, 5]] joinString " ");
 
 	{
+		{
+			_invalidTarget = _x;
+			_invalidTarget addMPEventHandler ["MPHit", {
+				params ["_unit", "_source", "_damage", "_instigator"];
+				// invalid
+				if (_unit animationPhase "terc" isEqualTo 0) then {
+					player call RCT7Bootcamp_fnc_targetHitInvalid;
+					shotsInvalid = shotsInvalid + 1;
+					_grid = mapGridPosition _unit;
+
+					[player, dbSectionName, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
+					[player, dbSectionName, "wrongTargetList", [_grid]] remoteExec ["RCT7_appendToKey", 2];
+
+
+					_unit removeAllMPEventHandlers "MPHit";
+				};
+
+			}];
+			
+		} forEach synchronizedObjects _x;
+		
+	} forEach _invalidTargetCluster;
+
+	{
 		_x addMPEventHandler ["MPHit", {
 				params ["_unit", "_source", "_damage", "_instigator"];
 					player call RCT7Bootcamp_fnc_targetHitValid;
@@ -90,27 +114,10 @@ while {  _count isNotEqualTo _index  } do {
 	} forEach _targetList;
 
 
-	{
-		{
-			_invalidTarget = _x;
-			_invalidTarget addMPEventHandler ["MPHit", {
-				params ["_unit", "_source", "_damage", "_instigator"];
-				// invalid
-				if (_unit animationPhase "terc" isEqualTo 0) then {
-					player call RCT7Bootcamp_fnc_targetHitInvalid;
-					shotsInvalid = shotsInvalid + 1;
-					[player, dbSectionName, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
-					_unit removeAllMPEventHandlers "MPHit";
-				};
-
-			}];
-			
-		} forEach synchronizedObjects _x;
-		
-	} forEach _invalidTargetCluster;
-
+	_time = time;
 	waitUntil { _targetCount isEqualTo shotsValid || _magSize isEqualTo firedCount };
 
+	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
 	_index = _index + 1;
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
