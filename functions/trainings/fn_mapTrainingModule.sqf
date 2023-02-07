@@ -116,8 +116,8 @@ while {  _count isNotEqualTo _index  } do {
 
 	_time = time;
 	waitUntil { _targetCount isEqualTo shotsValid || _magSize isEqualTo firedCount };
-
 	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
+	
 	_index = _index + 1;
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
