@@ -25,4 +25,5 @@ if (_extraKeys # 2) then {
  _output pushBack "ALT"; 
 }; 
  
+ reverse _output;
 _output joinString " + ";
