@@ -113,11 +113,11 @@ _handleVehicleRespawn = {
 	_dir = direction _unit;
 	_type = typeOf _unit;
 
+	sleep 3;
 	_unit synchronizeObjectsRemove _targetList;
 	deleteVehicleCrew _unit;
 	deleteVehicle _unit;
 
-	sleep 3;
 	_veh = createVehicle [_type, _pos, [], 0, "FLY" ];
 	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
@@ -263,6 +263,10 @@ while {  _count isNotEqualTo _index  } do {
 
 
 	_index = _index + 1;
+
+
+	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
+	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
 	
 	if (player call _checkDamage) then {
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
@@ -275,24 +279,19 @@ while {  _count isNotEqualTo _index  } do {
 		waitUntil {secondaryWeapon player isEqualTo ""};
 	};
 
+
+	_j = 0;
+	waitUntil {
+		sleep 1;
+		_j = _j + 1;
+		(damage _target) > 0 || _j > 3;
+	};
+
 	{
 		_x removeAllMPEventHandlers "MPHit";
 		_x call _handleVehicleRespawn; 
 	} forEach _targetList;
 	
-	[_target] spawn {
-		
-		_i = 0;
-		waitUntil { 
-		
-			sleep 1;
-			_i = _i + 1;
-			damage (_this # 0) > 0 || _i > 5;
-		};
-		
-		_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-		[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-	};
 	
 	if ( _count > _index ) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
