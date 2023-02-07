@@ -1,6 +1,7 @@
 
 _args = _this # 3;
 _launcher = _args # 0;
+_sectionName = _args # 1;
 
 firedCount = 0;
 
@@ -8,6 +9,7 @@ _firedIndex = player addEventHandler ["Fired", {
 	firedCount = firedCount + 1;
 }];
 
+_module = ATTraining;
 _syncedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
@@ -28,11 +30,6 @@ private _targetClusterList = [];
 		_targetController = _syncedObj;
 		continue;
 	};
-
-	if (_syncedObj isKindOf "Thing") then {
-		_triggerObj = _syncedObj;
-	};
-	
 
 } forEach _syncedObjects;
 
@@ -59,6 +56,31 @@ _getLauncherName = {
 	gettext (configfile >> "CfgWeapons" >> secondaryWeapon player >> "displayName");
 };
 
+_targetClusterLogic = _targetClusterList # 0;
+myTargetCluster = _targetClusterLogic;
+
+
+_getTargetList = {
+
+	_targetList = [];
+
+	{
+		private _syncedObj = _x;
+
+		if (_syncedObj isKindOf "Logic") then {
+			continue;
+		};
+		
+		_targetList pushBack _x;
+
+	} forEach (synchronizedObjects _targetClusterLogic);
+
+	_targetList;
+
+};
+
+_targetList = call _getTargetList;
+
 _index = 0;
 _count = count(_targetList);
 
@@ -70,12 +92,6 @@ if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 
 waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
-
-/*
-	TODO:
-		Time to finish the section
-
-*/
 player call RCT7Bootcamp_fnc_sectionStart;
 
 _firedCheck = { 
@@ -88,16 +104,40 @@ _firedCheck = {
 	
 };
 
+_handleVehicleRespawn = {
+	_unit = _this;
+
+	_pos = getPosATL _unit;
+	_dir = direction _unit;
+
+	_unit synchronizeObjectsRemove _targetList;
+	deleteVehicle _unit;
+
+	_veh = (typeOf _unit) createVehicle [0,0,0];
+	_veh setPosATL _pos;
+	_veh setDir _dir;
+	_veh setVectorUp surfaceNormal position _veh; 
+
+
+	_targetClusterLogic synchronizeObjectsAdd [_veh];
+
+	true;
+	
+};
+
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0) >> "count");
 
 while {  _count isNotEqualTo _index  } do {
 	
-	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
+	_targetList = call _getTargetList;
 	_target = _targetList select _index;
 
+	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	player setDamage 0;
 
+	_typeOfTarget = typeOf _target;
+	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
 
 
 	_invalidTargetList=  + _targetList; // copy array
@@ -109,7 +149,7 @@ while {  _count isNotEqualTo _index  } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 
-	_firesteps = "";
+	_time = time;
 
 	if ( currentWeapon player isNotEqualTo secondaryWeapon player ) then {
 
@@ -128,6 +168,15 @@ while {  _count isNotEqualTo _index  } do {
 
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
+
+	_zeroingList = getArray(configfile >> "CfgWeapons" >> secondaryWeapon player >> "OpticsModes" >> "ironsight" >> "discreteDistance");
+
+	_minZeroing = _zeroingList # 0;
+	_maxZeroing = _zeroingList # (count(_zeroingList) - 1);
+
+	if (_distance < _minZeroing) then { _distance = _minZeroing; };
+	if (_distance > _maxZeroing) then { _distance = _maxZeroing; };
+
 	
 	if (currentZeroing player isNotEqualTo _distance) then {
 		hint ([
@@ -163,20 +212,6 @@ while {  _count isNotEqualTo _index  } do {
 
 	dbSectionName = [_sectionName,_typeOfTarget] joinString "-";
 
-	{
-		_x addMPEventHandler ["MPHit", {
-				params ["_unit", "_source", "_damage", "_instigator"];
-					player call RCT7Bootcamp_fnc_targetHitValid;
-					shotsValid = shotsValid + 1;
-					_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-					[player, dbSectionName, "success", true] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
-					_unit removeAllMPEventHandlers "MPHit";
-			}];
-		
-	} forEach _targetList;
-
 
 	{
 			_invalidTarget = _x;
@@ -197,7 +232,21 @@ while {  _count isNotEqualTo _index  } do {
 		
 	} forEach _invalidTargetList;
 
+	
+	_target addMPEventHandler ["MPHit", {
+		params ["_unit", "_source", "_damage", "_instigator"];
+			player call RCT7Bootcamp_fnc_targetHitValid;
+			shotsValid = shotsValid + 1;
+			_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+			[player, dbSectionName, "success", true] remoteExec ["RCT7_writeToDb", 2];
+			[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
+			[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
+			_unit removeAllMPEventHandlers "MPHit";
+	}];
+		
+		
 	waitUntil { _count isEqualTo shotsValid || _magSize isEqualTo firedCount };
+	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
 
 
 	_index = _index + 1;
@@ -212,13 +261,16 @@ while {  _count isNotEqualTo _index  } do {
 		sleep 5;
 	};
 
-	(synchronizedObjects _module) apply { _x removeAllMPEventHandlers "MPHit"; };
-
 	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then { 
 		hint "This Launcher is disposabel. Equip your primary Weapon to drop it.";
 
 		waitUntil {secondaryWeapon player isEqualTo ""};
 	};
+
+	 {
+		_x removeAllMPEventHandlers "MPHit";
+		_x call _handleVehicleRespawn; 
+	} forEach _targetList;
 	
 	if ( _count > _index ) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
