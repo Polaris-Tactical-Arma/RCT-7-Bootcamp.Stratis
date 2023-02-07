@@ -2,6 +2,7 @@
 _args = _this # 3;
 _launcher = _args # 0;
 _sectionName = _args # 1;
+_module = _args # 2;
 
 firedCount = 0;
 
@@ -9,7 +10,7 @@ _firedIndex = player addEventHandler ["Fired", {
 	firedCount = firedCount + 1;
 }];
 
-_module = ATTraining;
+
 _syncedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
@@ -171,25 +172,27 @@ while {  _count isNotEqualTo _index  } do {
 
 	_zeroingList = getArray(configfile >> "CfgWeapons" >> secondaryWeapon player >> "OpticsModes" >> "ironsight" >> "discreteDistance");
 
-	_minZeroing = _zeroingList # 0;
-	_maxZeroing = _zeroingList # (count(_zeroingList) - 1);
+	if (count(_zeroingList) > 0 ) then {
+		_minZeroing = _zeroingList # 0;
+		_maxZeroing = _zeroingList # (count(_zeroingList) - 1);
 
-	if (_distance < _minZeroing) then { _distance = _minZeroing; };
-	if (_distance > _maxZeroing) then { _distance = _maxZeroing; };
+		if (_distance < _minZeroing) then { _distance = _minZeroing; };
+		if (_distance > _maxZeroing) then { _distance = _maxZeroing; };
 
-	
-	if (currentZeroing player isNotEqualTo _distance) then {
-		hint ([
-			"Zero your gun on:\n",
-			_distance,
-			"\n\n",
-			"Zeroing Up:\n", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "\n\n",
-			"Zeroing Down:\n", ((actionKeysNames "zeroingDown") splitString """" joinString "")
-			] joinString "");
-		waitUntil { currentZeroing player isEqualTo _distance || firedCount > 0; };
-		player call RCT7Bootcamp_fnc_targetHitValid;
+		
+		if (currentZeroing player isNotEqualTo _distance) then {
+			hint ([
+				"Zero your gun on:\n",
+				_distance,
+				"\n\n",
+				"Zeroing Up:\n", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "\n\n",
+				"Zeroing Down:\n", ((actionKeysNames "zeroingDown") splitString """" joinString "")
+				] joinString "");
+			waitUntil { currentZeroing player isEqualTo _distance || firedCount > 0; };
+			player call RCT7Bootcamp_fnc_targetHitValid;
+		};
+		call _firedCheck;
 	};
-	call _firedCheck;
 
 
 	hint "Check your backblast!";
@@ -277,6 +280,8 @@ while {  _count isNotEqualTo _index  } do {
 	};
 };
 
+[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
+player setDamage 0;
 player removeEventHandler ["Fired", _firedIndex];
 
 player call RCT7Bootcamp_fnc_sectionFinished;
