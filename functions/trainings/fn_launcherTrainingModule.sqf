@@ -135,7 +135,9 @@ _handleVehicleRespawn = {
 	
 };
 
-_magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0) >> "count");
+_mag = (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0);
+_magSize = getNumber (configfile >> "CfgMagazines" >> _mag >> "count");
+_launcherAmmo = getText(configfile >> "CfgMagazines" >> _mag >> "ammo");
 
 while {  _count isNotEqualTo _index  } do {
 	
@@ -216,6 +218,18 @@ while {  _count isNotEqualTo _index  } do {
 	
 	_target removemagazine "168Rnd_CMFlare_Chaff_Magazine";
 
+
+	_descShort = getText(configfile >> "CfgWeapons" >> "rhs_weap_fim92" >> "descriptionShort");
+
+	if (toLower "Surface-to-air" in toLower _descShort) then {
+		_minDistance = getNumber(configfile >> "CfgAmmo" >> _launcherAmmo >> "missileLockMinDistance");
+  		hint (["Shoulder the launcher and aim it at the helicopter. When the beeping intensifies click to fire.\n\n
+				Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
+		sleep 7;
+	};
+
+
+
 	_typeOfTarget = typeOf _target;
 	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
 
@@ -265,9 +279,6 @@ while {  _count isNotEqualTo _index  } do {
 	_index = _index + 1;
 
 
-	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-	
 	if (player call _checkDamage) then {
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
 		sleep 5;
@@ -284,8 +295,11 @@ while {  _count isNotEqualTo _index  } do {
 	waitUntil {
 		sleep 1;
 		_j = _j + 1;
-		(damage _target) > 0 || _j > 3;
+		(damage _target) > 0 || _j > 2;
 	};
+	
+	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
+	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
 
 	{
 		_x removeAllMPEventHandlers "MPHit";
@@ -301,6 +315,7 @@ while {  _count isNotEqualTo _index  } do {
 [ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 player setDamage 0;
 player removeEventHandler ["Fired", _firedIndex];
+player removeWeapon (secondaryWeapon player);
 
 player call RCT7Bootcamp_fnc_sectionFinished;
 hint "Traning completed!";
