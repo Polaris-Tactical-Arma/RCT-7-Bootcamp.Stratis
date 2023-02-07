@@ -5,6 +5,7 @@ _radioDisplayname = getText(configfile >> "CfgWeapons" >> _radio  >> "displayNam
 
 hint (["Grab a", _microDisplayname, "and a", _radioDisplayname, "out of the box."] joinString " ");
 
+
 waitUntil{ _micro in assignedItems player && _radio in assignedItems player };
 
 _openRadioKeybind = ["TFAR", "OpenSWRadioMenu"] call RCT7Bootcamp_fnc_getCBAKeybind;
@@ -25,6 +26,6 @@ waitUntil{[(call TFAR_fnc_activeSwRadio), 2] call TFAR_fnc_getChannelFrequency i
 _transmitKeybind = ["TFAR", "SWTransmit"] call RCT7Bootcamp_fnc_getCBAKeybind;
 hint (["You can now transmit with [", _transmitKeybind, "]\n You can switch Channels with your Numpad"] joinString "");
 
-sleep 10;
+waitUntil{ player call TFAR_fnc_isSpeaking };
 
 hint "Training complete";
