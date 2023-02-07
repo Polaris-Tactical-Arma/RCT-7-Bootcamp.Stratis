@@ -111,29 +111,25 @@ _handleVehicleRespawn = {
 
 	_pos = getPosATL _unit;
 	_dir = direction _unit;
+	_type = typeOf _unit;
 
 	_unit synchronizeObjectsRemove _targetList;
+	deleteVehicleCrew _unit;
 	deleteVehicle _unit;
 
-	_vehicleType = typeOf _unit;
+	sleep 3;
+	_veh = createVehicle [_type, _pos, [], 0, "FLY" ];
+	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
-	if (_unit isKindOf "Air") then {
-
-		deleteVehicleCrew _unit;
-		sleep 2;
-		_veh = createVehicle [_vehicleType, _pos, [], 0, "FLY" ];
-		createVehicleCrew _veh;
-	} else {
-
-		_veh = _vehicleType createVehicle _pos;
-		 
+	if (_veh isKindOf "Air") then {
+		_crew = createVehicleCrew _veh;
+		_crew setBehaviour "CARELESS";
+		_veh flyInHeight (_pos # 2);
 	};
 
 	_veh setPosATL _pos;
 	_veh setDir _dir;
 	_veh setVectorUp surfaceNormal position _veh;
-
-	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
 	true;
 	
@@ -150,8 +146,7 @@ while {  _count isNotEqualTo _index  } do {
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	player setDamage 0;
 
-	_typeOfTarget = typeOf _target;
-	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
+
 
 
 	_invalidTargetList=  + _targetList; // copy array
@@ -219,9 +214,11 @@ while {  _count isNotEqualTo _index  } do {
 	waitUntil { !(_actionId in (actionIDs player)) || firedCount > 0; };
 	[_actionId] call _firedCheck;
 	
+	_target removemagazine "168Rnd_CMFlare_Chaff_Magazine";
 
 	_typeOfTarget = typeOf _target;
 	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
+
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 
 	hint (["Shoot at the ", _name, "\n\n", "direction: ", _dir, "\n",  _distance, " meters"] joinString "");
@@ -266,11 +263,6 @@ while {  _count isNotEqualTo _index  } do {
 
 
 	_index = _index + 1;
-	[] spawn {
-		sleep 2;
-		_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-		[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-	};
 	
 	if (player call _checkDamage) then {
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
@@ -283,10 +275,24 @@ while {  _count isNotEqualTo _index  } do {
 		waitUntil {secondaryWeapon player isEqualTo ""};
 	};
 
-	 {
+	{
 		_x removeAllMPEventHandlers "MPHit";
 		_x call _handleVehicleRespawn; 
 	} forEach _targetList;
+	
+	[_target] spawn {
+		
+		_i = 0;
+		waitUntil { 
+		
+			sleep 1;
+			_i = _i + 1;
+			damage (_this # 0) > 0 || _i > 5;
+		};
+		
+		_shotsMissed = firedCount - (shotsInvalid + shotsValid);
+		[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
+	};
 	
 	if ( _count > _index ) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
