@@ -16,6 +16,7 @@ class CfgFunctions
 			class launcherTrainingModule{};
 			class mapTrainingModule{};
 			class gunTrainingModule{};
+			class radioModule{};
 		};
 		class Targets
 		{
