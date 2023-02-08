@@ -14,13 +14,15 @@ _this addAction ["Open Door",
         _target removeAction _actionId;
         
         _target setVariable ["RCT_isOpen", !_isOpen, true];  
-        while {90 > _i} do {   
-            _dir = (getDir _target) - 1; 
+        _factor = 1.5;
+
+        while {90  > _i} do {   
+            _dir = (getDir _target) - (1 * _factor); 
             _target setDir _dir;   
-            _pos = _target modelToWorld [0,0.01,0];   
+            _pos = _target modelToWorld [0,(0.01 * _factor),0];   
             _target setObjectScale _scale;
             _target setPosATL [_pos # 0, _pos # 1, (_p # 2)];   
-            _i = _i + 1;  
+            _i = _i + (1 * _factor);  
             sleep 0.001;  
         };  
   
