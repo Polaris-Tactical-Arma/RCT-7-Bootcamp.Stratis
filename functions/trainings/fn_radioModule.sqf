@@ -3,7 +3,7 @@ _radio = "TFAR_rf7800str_1";
 _microDisplayname = getText(configfile >> "CfgWeapons" >> _micro >> "displayName");
 _radioDisplayname = getText(configfile >> "CfgWeapons" >> _radio  >> "displayName");
 
-hint (["Grab a", _microDisplayname, "and a", _radioDisplayname, "out of the box."] joinString " ");
+hint (["Grab the following out of the box:\n", _microDisplayname, _radioDisplayname] joinString "\n");
 
 
 waitUntil{ _micro in assignedItems player && _radio in assignedItems player };
