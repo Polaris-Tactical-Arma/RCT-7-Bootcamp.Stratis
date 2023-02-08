@@ -51,7 +51,7 @@ _getTrench = {
     (position player nearObjects ["ACE_envelope_big", 5]) # 0;
 };
 
-// grab entranching tool
+// TODO: grab entranching tool
 
 hint "Go on a dirt underground!";
 waitUntil{ sleep 1; [player] call ace_common_fnc_canDig };
@@ -72,5 +72,6 @@ _trench = call _getTrench;
 hint "Camouflage the trench!";
 waitUntil { sleep 1; _trench getVariable["ace_trenches_camouflaged", false]; };
 
+// TODO: place gun on the trench
 
-
+hint "Training complete";
