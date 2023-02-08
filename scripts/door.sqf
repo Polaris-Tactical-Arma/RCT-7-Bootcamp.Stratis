@@ -1,3 +1,5 @@
+ _this setObjectTexture [2, "data\decal_door.paa"];
+
 _this addAction ["Open Door",  
     {  
         params ["_target", "_caller", "_actionId", "_arguments"];
@@ -24,4 +26,3 @@ _this addAction ["Open Door",
   
     }
 ]; 
- 
