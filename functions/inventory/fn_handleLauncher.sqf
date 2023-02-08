@@ -21,7 +21,8 @@ if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqu
 
 	_ammo = getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0;
 	player removeSecondaryWeaponItem _ammo;
-	player addSecondaryWeaponItem _ammo;
+	player addMagazine [_ammo, 1];
+	player reload [];
 };
 
 true;
