@@ -43,6 +43,7 @@ class CfgFunctions
 			file = "functions\ui";
 			class cooldownHint{};
 			class getCBAKeybind{};
+			class bounding{};
 		};
 	};
 };
