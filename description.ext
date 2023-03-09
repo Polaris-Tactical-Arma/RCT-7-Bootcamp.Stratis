@@ -43,13 +43,14 @@ class CfgFunctions
 			file = "functions\ui";
 			class cooldownHint{};
 			class getCBAKeybind{};
-			class bounding{};
 			class successiveBounding{};
 		};
 		class Misc
 		{
 			file = "functions\misc";
 			class unlimitedFuel{};
+			class bounding{};
+			class shoothouseDoor{};
 		};
 	};
 };
