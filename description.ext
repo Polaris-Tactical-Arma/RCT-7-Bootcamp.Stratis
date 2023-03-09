@@ -44,6 +44,7 @@ class CfgFunctions
 			class cooldownHint{};
 			class getCBAKeybind{};
 			class bounding{};
+			class successiveBounding{};
 		};
 	};
 };

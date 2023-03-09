@@ -18,9 +18,11 @@ _list = [_unit, _syncedUnits # 0];
 
 		_code = "
 			_unit = (synchronizedObjects this) # 0;
-			_unit call RCT7Bootcamp_fnc_bounding;";
+			_unit call RCT7Bootcamp_fnc_bounding;
+		";
+		// TODO: They will need to use a button or cta to call "set" when in position
 
-		_waypoint setWaypointStatements [_code, ""];
+		_waypoint setWaypointStatements [_code, ''];
 
 	} forEach (waypoints _unit);
 	
