@@ -33,12 +33,62 @@ _index = 0;
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
 
-if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
-	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-	_earplugs = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under Equipment, put your earplugs in"] joinString "";
-	hint _earplugs;
-};
 
+_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+private _baseHint = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under"] joinString "";
+
+_teamHint = [_baseHint, " Team Management, and join the red team"] joinString "";
+[player, "RCT7Bootcamp_joinTeam", [_teamHint, "Use ACE SelfInteract and join the red team", ""], objNull, "ASSIGNED", 1, true, "meet", true] call BIS_fnc_taskCreate;
+
+waitUntil { assignedTeam player isEqualTo "RED"; };
+
+["RCT7Bootcamp_joinTeam","SUCCEEDED"] call BIS_fnc_taskSetState;
+
+
+// Check Entranche Task
+["loadout", {
+	_hasEntrenchingTool = [player, "ACE_EntrenchingTool"] call BIS_fnc_hasItem;
+
+	if !(_hasEntrenchingTool) exitWith {};
+	["RCT7Bootcamp_getEntrenchingTool","SUCCEEDED"] call BIS_fnc_taskSetState;
+
+	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+	 _desc = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under Equipment, start digging a big trench"] joinString "";
+	[player, "RCT7Bootcamp_digEntrench", [_desc,"Use ACE SelfInteract to big dig a trench."], objNull, "ASSIGNED", 1, true, "interact", true] call BIS_fnc_taskCreate;
+
+}] call CBA_fnc_addPlayerEventHandler;
+
+
+["ace_trenches_placed", {
+
+	[] spawn {
+
+		["RCT7Bootcamp_digEntrench","SUCCEEDED"] call BIS_fnc_taskSetState;
+		sleep 0.1;
+
+		_taskId = "RCT7Bootcamp_entrenchWait";
+		[player, _taskId, ["", "Wait till it is finished", ""], objNull, "ASSIGNED", 1, true, "wait", true] call BIS_fnc_taskCreate;
+
+		_trench = (position player nearObjects ["ACE_envelope_big", 5]) # 0;
+		waitUntil {_trench getVariable ["ace_trenches_progress", 0] isEqualTo 1};
+
+		[_taskId,"SUCCEEDED"] call BIS_fnc_taskSetState;
+
+		[player, "RCT7Bootcamp_camouflageTrench", ["", "Camouflage the trench"], objNull, "ASSIGNED", 1, true, "interact", true] call BIS_fnc_taskCreate;
+		waitUntil { sleep 1; _trench getVariable["ace_trenches_camouflaged", false]; };
+		["RCT7Bootcamp_camouflageTrench", "SUCCEEDED"] call BIS_fnc_taskSetState;
+
+		[player, "RCT7Bootcamp_trenchPlaceGun", [["place your gun on the trench with:\n", call compile (actionKeysNames "deployWeaponAuto")] joinString "", "Place your gun on the trench"], objNull, "ASSIGNED", 1, true, "interact", true] call BIS_fnc_taskCreate;
+		waitUntil {sleep 1; isWeaponDeployed [player, false] };
+		["RCT7Bootcamp_trenchPlaceGun","SUCCEEDED"] call BIS_fnc_taskSetState;
+
+	};
+	
+}] call CBA_fnc_addEventHandler;
+
+[player, "RCT7Bootcamp_getEntrenchingTool", ["Grab one [Entrenching Tool] out of the box.", "Check the box near you", ""], objNull, "ASSIGNED", 1, true, "interact", true] call BIS_fnc_taskCreate;
+
+// TASK Icon: listen
 waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
 player call RCT7Bootcamp_fnc_sectionStart;
@@ -73,6 +123,7 @@ while {  _count isNotEqualTo _index  } do {
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 
+	// TASK Icon: kill
 	hint (["Shoot at the Target:\n\n", "description:", _descr, "\ndirection: ", _dir, "\ndistance: ", _distance , " meters"] joinString "");
 
 	
