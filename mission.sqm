@@ -20150,7 +20150,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6258;
 					type="Land_Shoot_House_Panels_F";
@@ -20350,7 +20350,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6186;
 					type="Land_Shoot_House_Panels_F";
@@ -20774,7 +20774,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6237;
 					type="Land_Shoot_House_Panels_F";
@@ -20842,7 +20842,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6249;
 					type="Land_Shoot_House_Panels_F";
@@ -20975,7 +20975,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6254;
 					type="Land_Shoot_House_Panels_F";
@@ -21009,7 +21009,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						init="this execVM ""scripts\door.sqf"";";
+						init="this call RCT7Bootcamp_fnc_shoothouseDoor;";
 					};
 					id=6255;
 					type="Land_Shoot_House_Panels_F";
