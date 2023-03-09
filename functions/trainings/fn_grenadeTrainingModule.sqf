@@ -43,6 +43,7 @@ if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 	hint _earplugs;
 };
 
+// TASK Icon: listen
 waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
 call RCT7Bootcamp_fnc_sectionStart;
@@ -73,8 +74,10 @@ while {  _count isNotEqualTo _index  } do {
 
 	hint (["Prepare your grenade with:\n[", _keybind, "]"] joinString "");
 
+	// TASK Icon: use
 	waitUntil { sleep 0.5;  player getVariable ["ace_advanced_throwing_inHand", false]; };
 
+	// TASK Icon: destroy
 	hint "Throw the grenade at the target";
 
 	_target addMPEventHandler ["MPHit", {
