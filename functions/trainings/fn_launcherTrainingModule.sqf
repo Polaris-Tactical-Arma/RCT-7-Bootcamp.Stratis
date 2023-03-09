@@ -91,6 +91,7 @@ if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 	hint _earplugs;
 };
 
+	// TASK Icon: listen
 waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
 
 player call RCT7Bootcamp_fnc_sectionStart;
@@ -166,6 +167,7 @@ while {  _count isNotEqualTo _index  } do {
 
 	if ( currentWeapon player isNotEqualTo secondaryWeapon player ) then {
 
+		// TASK Icon: use
 		hint (["A",call _getLauncherName,"was added to your inventory!\nEquip it!"] joinString " ");
 		waitUntil { currentWeapon player isEqualTo secondaryWeapon player; };
 		player call RCT7Bootcamp_fnc_targetHitValid;
@@ -174,6 +176,7 @@ while {  _count isNotEqualTo _index  } do {
 
 	if ((player ammo secondaryWeapon player) isEqualTo 0 ) then {
 
+		// TASK Icon: interact
 		hint (["Prepare your launcher with:\n", call compile (actionKeysNames "ReloadMagazine")] joinString "");
 		waitUntil { (player ammo secondaryWeapon player) isEqualTo 1; };
 		player call RCT7Bootcamp_fnc_targetHitValid;
@@ -193,6 +196,7 @@ while {  _count isNotEqualTo _index  } do {
 
 		
 		if (currentZeroing player isNotEqualTo _distance) then {
+			// TASK Icon: target
 			hint ([
 				"Zero your gun on:\n",
 				_distance,
@@ -206,7 +210,7 @@ while {  _count isNotEqualTo _index  } do {
 		call _firedCheck;
 	};
 
-
+	// TASK Icon: danger
 	hint "Check your backblast!";
 
 	_actionId = player addAction ["<t color='#ffe0b5'>Backblast clear!</t>", {
@@ -224,6 +228,7 @@ while {  _count isNotEqualTo _index  } do {
 	_descShort = getText(configfile >> "CfgWeapons" >> "rhs_weap_fim92" >> "descriptionShort");
 
 	if (toLower "Surface-to-air" in toLower _descShort) then {
+		// TASK Icon: destroy
 		_minDistance = getNumber(configfile >> "CfgAmmo" >> _launcherAmmo >> "missileLockMinDistance");
   		hint (["Shoulder the launcher and aim it at the helicopter. When the beeping intensifies click to fire.\n\n
 				Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
@@ -237,6 +242,7 @@ while {  _count isNotEqualTo _index  } do {
 
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 
+	// TASK Icon: destroy
 	hint (["Shoot at the ", _name, "\n\n", "direction: ", _dir, "\n",  _distance, " meters"] joinString "");
 
 	dbSectionName = [_sectionName,_typeOfTarget] joinString "-";
@@ -282,11 +288,13 @@ while {  _count isNotEqualTo _index  } do {
 
 
 	if (player call _checkDamage) then {
+		// TASK Icon: danger
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
 		sleep 5;
 	};
 
 	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then { 
+		// TASK Icon: rifle
 		hint "This Launcher is disposabel. Equip your primary Weapon to drop it.";
 
 		waitUntil {secondaryWeapon player isEqualTo ""};
