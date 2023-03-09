@@ -17,7 +17,7 @@ player addAction ["Start!", {
 			nil,1.5,true,true,"","player call RCT7Bootcamp_fnc_bounding"
 ];
 
-
+// TASK Icon: run
 // player group
 {
 		_waypoint = _x;
