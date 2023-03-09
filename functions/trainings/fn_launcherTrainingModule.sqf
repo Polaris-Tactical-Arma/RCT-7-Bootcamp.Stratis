@@ -131,6 +131,8 @@ _handleVehicleRespawn = {
 	_veh setDir _dir;
 	_veh setVectorUp surfaceNormal position _veh;
 
+	_veh call RCT7Bootcamp_fnc_unlimited;
+
 	true;
 	
 };

@@ -46,5 +46,10 @@ class CfgFunctions
 			class bounding{};
 			class successiveBounding{};
 		};
+		class Misc
+		{
+			file = "functions\misc";
+			class unlimitedFuel{};
+		};
 	};
 };
