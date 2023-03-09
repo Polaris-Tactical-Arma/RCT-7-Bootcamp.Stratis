@@ -41,6 +41,7 @@ _count = count(_targetClusterList);
 if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
 	_earplugs = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under Equipment, put your earplugs in"] joinString "";
+	// TASK Icon: listen
 	hint _earplugs;
 };
 
@@ -76,6 +77,7 @@ while {  _count isNotEqualTo _index  } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 	
+	// TASK Icon: search
 	hint (["Shoot all", _targetCount ,"targets at grid:\n\n", _grid select [0, 3], _grid select [3, 5]] joinString " ");
 
 	{
