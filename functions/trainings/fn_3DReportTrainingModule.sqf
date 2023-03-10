@@ -45,10 +45,15 @@ waitUntil { assignedTeam player isEqualTo "RED"; };
 
 [_teamTaskId] call RCT7Bootcamp_fnc_taskSetState;
 
-["loadout", {
+["trenches", "Dig a big trench", "Follow the instructions", "interact", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
+
+_loadoutEvent = ["loadout", {
 	_hasEntrenchingTool = [player, "ACE_EntrenchingTool"] call BIS_fnc_hasItem;
 
 	if !(_hasEntrenchingTool) exitWith {};
+
+	if (["trenchesStartDigging" call RCT7Bootcamp_fnc_taskAddPrefix ] call BIS_fnc_taskExists) exitWith{};
+
 	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
 	_desc = ["Open ACE Self-Interaction with [", _keybind, "] and under Equipment, start digging a big trench"] joinString "";
 	["trenchesGetTool"] call RCT7Bootcamp_fnc_taskSetState;
@@ -57,7 +62,9 @@ waitUntil { assignedTeam player isEqualTo "RED"; };
 }] call CBA_fnc_addPlayerEventHandler;
 
 
-["ace_trenches_placed", {
+[["trenchesGetTool", "trenches"], "Grab an Entreching Tool", "Grab one [Entrenching Tool] out of the box."] call RCT7Bootcamp_fnc_taskCreate;
+
+_trenchPlacedEvent = ["ace_trenches_placed", {
 
 	[] spawn {
 
@@ -88,9 +95,15 @@ waitUntil { assignedTeam player isEqualTo "RED"; };
 	
 }] call CBA_fnc_addEventHandler;
 
-["trenches", "Dig a big trench", "Follow the instructions", "interact", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
+// Remove events when tasks are done
+[_loadoutEvent, _trenchPlacedEvent] spawn {
+	_trenchTask = "trenches" call RCT7Bootcamp_fnc_taskAddPrefix;
 
-[["trenchesGetTool", "trenches"], "Grab an Entreching Tool", "Grab one [Entrenching Tool] out of the box."] call RCT7Bootcamp_fnc_taskCreate;
+	waitUntil { sleep 1; _trenchTask call BIS_fnc_taskCompleted };
+
+	["loadout", _this # 0] call CBA_fnc_removePlayerEventHandler;
+	["ace_trenches_placed", _this # 1] call CBA_fnc_removeEventHandler;
+};
 
 // TASK Icon: listen
 waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
