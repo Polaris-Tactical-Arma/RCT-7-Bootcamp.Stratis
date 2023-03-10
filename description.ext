@@ -44,6 +44,7 @@ class CfgFunctions
 			class cooldownHint{};
 			class getCBAKeybind{};
 			class successiveBounding{};
+			class getACESelfInfo{};
 			class taskAddPrefix{};
 			class taskCreate{};
 			class taskSetState{};

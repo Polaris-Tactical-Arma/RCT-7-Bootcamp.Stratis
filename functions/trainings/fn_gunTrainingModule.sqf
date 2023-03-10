@@ -24,7 +24,7 @@ _count = count(_targetClusterList);
 
 if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-	_earplugs = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under Equipment, put your earplugs in"] joinString "";
+	_earplugs = [call RCT7Bootcamp_fnc_getACESelfInfo, "and under Equipment, put your earplugs in"] joinString "";
 	hint _earplugs;
 };
 

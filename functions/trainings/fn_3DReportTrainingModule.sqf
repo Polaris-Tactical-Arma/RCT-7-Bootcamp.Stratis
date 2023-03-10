@@ -35,7 +35,7 @@ _count = count(_targetClusterList);
 
 
 _keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-private _baseHint = ["Open ACE Self-Interaction with\n[", _keybind, "]\nand under"] joinString "";
+private _baseHint = [call RCT7Bootcamp_fnc_getACESelfInfo, " and under"] joinString "";
 
 _teamHint = [_baseHint, " Team Management, and join the red team"] joinString "";
 _teamTaskId = "joinTeam";
@@ -55,7 +55,7 @@ _loadoutEvent = ["loadout", {
 	if (["trenchesStartDigging" call RCT7Bootcamp_fnc_taskAddPrefix ] call BIS_fnc_taskExists) exitWith{};
 
 	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-	_desc = ["Open ACE Self-Interaction with [", _keybind, "] and under Equipment, start digging a big trench"] joinString "";
+	_desc = [call RCT7Bootcamp_fnc_getACESelfInfo, " and under Equipment, start digging a big trench"] joinString "";
 	["trenchesGetTool"] call RCT7Bootcamp_fnc_taskSetState;
 	[["trenchesStartDigging", "trenches"], "Start digging", _desc] call RCT7Bootcamp_fnc_taskCreate;
 
