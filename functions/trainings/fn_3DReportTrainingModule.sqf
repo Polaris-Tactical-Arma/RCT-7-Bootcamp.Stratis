@@ -1,6 +1,6 @@
-// call RCT7Bootcamp_fnc_joinRedTeam;
-// call RCT7Bootcamp_fnc_digTrench;
-// call RCT7Bootcamp_fnc_earplugTask;
+call RCT7Bootcamp_fnc_joinRedTeam;
+call RCT7Bootcamp_fnc_digTrench;
+call RCT7Bootcamp_fnc_earplugTask;
 
 firedCount = 0;
 
@@ -35,7 +35,7 @@ _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "
 _count = count(_targetClusterList);
 
 _3DTaskId = "3DReport";
-[_3DTaskId, "Finish the 3D report Training", "Follow the instructions", "intel", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_3DTaskId, "Finish the 3D report Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {

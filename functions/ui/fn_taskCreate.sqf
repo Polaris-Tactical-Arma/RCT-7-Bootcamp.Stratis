@@ -8,10 +8,15 @@ _title = param [1, "New Task", [""]];
 _description = param [2, "", [""]];
 _icon = param [3, "interact", [""]];
 _state = param [4, "ASSIGNED", [""]];
-_showNotification = param [5, true, [true]];
-_priority = param[6, 1, [0]];
-_destination = param [7, objNull, [objNull, []], 3];
-_visibleIn3D = param [8, false, [false]];
+_showHint = param [5, true, [true]];
+_showNotification = param [6, true, [true]];
+_priority = param[7, 1, [0]];
+_destination = param [8, objNull, [objNull, []], 3];
+_visibleIn3D = param [9, false, [false]];
+
+if (_showHint) then {
+	hint parseText _description;
+};
 
 [
 	player,

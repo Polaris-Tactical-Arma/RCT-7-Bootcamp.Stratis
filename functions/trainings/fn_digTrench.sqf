@@ -1,5 +1,5 @@
 _trenchTask = "trenches";
-[_trenchTask, "Dig a big trench", "Follow the instructions", "interact", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_trenchTask, "Dig a big trench", "Follow the instructions", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 _loadoutEvent = ["loadout", {
 	_hasEntrenchingTool = [player, "ACE_EntrenchingTool"] call BIS_fnc_hasItem;
