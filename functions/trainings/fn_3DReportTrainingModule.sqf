@@ -1,3 +1,7 @@
+// call RCT7Bootcamp_fnc_joinRedTeam;
+// call RCT7Bootcamp_fnc_digTrench;
+// call RCT7Bootcamp_fnc_earplugTask;
+
 firedCount = 0;
 
 _firedIndex = player addEventHandler ["Fired", {
@@ -30,84 +34,8 @@ _index = 0;
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
 
-private _baseHint = [call RCT7Bootcamp_fnc_getACESelfInfo, " and under"] joinString "";
-
-_teamHint = [_baseHint, " Team Management, and join the red team"] joinString "";
-_teamTaskId = "joinTeam";
-[_teamTaskId, "Join the red team", _teamHint, "meet"] call RCT7Bootcamp_fnc_taskCreate;
-
-waitUntil {
-	assignedTeam player isEqualTo "RED";
-};
-
-[_teamTaskId] call RCT7Bootcamp_fnc_taskSetState;
-
-["trenches", "Dig a big trench", "Follow the instructions", "interact", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
-
-_loadoutEvent = ["loadout", {
-	_hasEntrenchingTool = [player, "ACE_EntrenchingTool"] call BIS_fnc_hasItem;
-
-	if !(_hasEntrenchingTool) exitWith {};
-
-	if (["trenchesStartDigging" call RCT7Bootcamp_fnc_taskAddPrefix ] call BIS_fnc_taskExists) exitWith {};
-
-	_desc = [call RCT7Bootcamp_fnc_getACESelfInfo, " and under Equipment, start digging a big trench"] joinString "";
-	["trenchesGetTool"] call RCT7Bootcamp_fnc_taskSetState;
-	[["trenchesStartDigging", "trenches"], "Start digging", _desc] call RCT7Bootcamp_fnc_taskCreate;
-}] call CBA_fnc_addPlayerEventHandler;
-
-[["trenchesGetTool", "trenches"], "Grab an Entreching Tool", "Grab one [Entrenching Tool] out of the box."] call RCT7Bootcamp_fnc_taskCreate;
-
-_trenchPlacedEvent = ["ace_trenches_placed", {
-	[] spawn {
-		sleep 0.1;
-
-		_trench = (position player nearObjects ["ACE_envelope_big", 5]) # 0;
-
-		["trenchesStartDigging", "SUCCEEDED", false] call RCT7Bootcamp_fnc_taskSetState;
-		[["trenchesWait", "trenches"], "Wait till it is finished", "", "wait"] call RCT7Bootcamp_fnc_taskCreate;
-		waitUntil {
-			_trench getVariable ["ace_trenches_progress", 0] isEqualTo 1
-		};
-		["trenchesWait"] call RCT7Bootcamp_fnc_taskSetState;
-
-		[["trenchesCamouflage", "trenches"], "Camouflage the trench"] call RCT7Bootcamp_fnc_taskCreate;
-		waitUntil {
-			sleep 1;
-			_trench getVariable["ace_trenches_camouflaged", false];
-		};
-		["trenchesCamouflage"] call RCT7Bootcamp_fnc_taskSetState;
-
-		[
-			["trenchesPlaceGun", "trenches"],
-			"Place your gun on the trench",
-			["place your gun on the trench with:\n", call compile (actionKeysNames "deployWeaponAuto")] joinString ""
-		] call RCT7Bootcamp_fnc_taskCreate;
-
-		waitUntil {
-			sleep 1;
-			isWeaponDeployed [player, false]
-		};
-		["trenchesPlaceGun", "SUCCEEDED", false] call RCT7Bootcamp_fnc_taskSetState;
-		["trenches"] call RCT7Bootcamp_fnc_taskSetState;
-	};
-}] call CBA_fnc_addEventHandler;
-
-// Remove events when tasks are done
-[_loadoutEvent, _trenchPlacedEvent] spawn {
-	_trenchTask = "trenches" call RCT7Bootcamp_fnc_taskAddPrefix;
-
-	waitUntil {
-		sleep 1;
-		_trenchTask call BIS_fnc_taskCompleted
-	};
-
-	["loadout", _this # 0] call CBA_fnc_removePlayerEventHandler;
-	["ace_trenches_placed", _this # 1] call CBA_fnc_removeEventHandler;
-};
-
-call RCT7Bootcamp_fnc_earplugTask;
-
+_3DTaskId = "3DReport";
+[_3DTaskId, "Finish the 3D report Training", "Follow the instructions", "intel", "CREATED", true, -1] call RCT7Bootcamp_fnc_taskCreate;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
@@ -130,15 +58,19 @@ while { _count isNotEqualTo _index } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 
-	_descr = _target getVariable ["RCT7_3DReportDescription", getText(configfile >> "CfgVehicles" >> typeOf _target >> "displayName") ];
+	_targetDescription = _target getVariable ["RCT7_3DReportDescription", getText(configfile >> "CfgVehicles" >> typeOf _target >> "displayName") ];
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 
 	// TASK Icon: kill
-	hint (["Shoot at the Target:\n\n", "description:", _descr, "\ndirection: ", _dir, "\ndistance: ", _distance, " meters"] joinString "");
+	_taskDescription = ["Shoot at the Target:<br/><br/>", "description: ", _targetDescription, "<br/>direction: ", _dir, "<br/>distance (ca.): ", _distance, " meters"] joinString "";
+	hint parseText (_taskDescription);
+	_subTaskId = ["TargetCluster", _index] joinString "_";
+	_subTaskTitle = [_index + 1, "Hit the correct Target"] joinString " - ";
+	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;
 
-	[player, dbSectionName, "description", _descr] remoteExec ["RCT7_writeToDb", 2];
+	[player, dbSectionName, "description", _targetDescription] remoteExec ["RCT7_writeToDb", 2];
 
 	{
 		{
@@ -175,16 +107,24 @@ while { _count isNotEqualTo _index } do {
 ];
 
 [_targetController, 0] call RCT7Bootcamp_fnc_handleTargets;
+
 _time = time;
 waitUntil {
 	1 isEqualTo shotsValid || _magSize isEqualTo firedCount
 };
 
+[_subTaskId] call RCT7Bootcamp_fnc_taskSetState;
+
 [player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
 
-_index = _index + 1;
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
 [player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
+
+_result = ["Result<br/><br/>", "Missed Shots: ", _shotsMissed, "<br/>Wrong Targets:", shotsInvalid] joinString "";
+_finishedTaskDescription = [_taskDescription, _result] joinString "<br/><br/>-----<br/><br/>";
+
+[_subTaskId, _finishedTaskDescription] call RCT7Bootcamp_fnc_taskUpdateDescription;
+
 sleep 1;
 
 (synchronizedObjects _targetController) apply {
@@ -192,6 +132,7 @@ sleep 1;
 	_x removeAllMPEventHandlers "MPHit";
 };
 
+_index = _index + 1;
 if (_count > _index) then {
 	["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
 };
@@ -202,4 +143,6 @@ player removeEventHandler ["Fired", _firedIndex];
 [_targetController, 1] call RCT7Bootcamp_fnc_handleTargets;
 
 player call RCT7Bootcamp_fnc_sectionFinished;
-hint "Traning completed!";
+[_3DTaskId] call RCT7Bootcamp_fnc_taskSetState;
+
+true;
