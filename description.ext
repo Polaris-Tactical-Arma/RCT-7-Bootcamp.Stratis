@@ -18,6 +18,8 @@ class CfgFunctions
 			class mapTrainingModule{};
 			class gunTrainingModule{};
 			class radioModule{};
+			class digTrench{};
+			class joinRedTeam{};
 		};
 		class Targets
 		{
@@ -45,9 +47,9 @@ class CfgFunctions
 			class getCBAKeybind{};
 			class successiveBounding{};
 			class getACESelfInfo{};
-			class taskAddPrefix{};
 			class taskCreate{};
 			class taskSetState{};
+			class taskUpdateDescription{};
 		};
 		class Misc
 		{
