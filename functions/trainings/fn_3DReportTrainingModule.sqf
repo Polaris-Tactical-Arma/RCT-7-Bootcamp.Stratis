@@ -63,9 +63,7 @@ while { _count isNotEqualTo _index } do {
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 
-	// TASK Icon: kill
 	_taskDescription = ["Shoot at the Target:<br/><br/>", "description: ", _targetDescription, "<br/>direction: ", _dir, "<br/>distance (ca.): ", _distance, " meters"] joinString "";
-	hint parseText (_taskDescription);
 	_subTaskId = ["TargetCluster", _index] joinString "_";
 	_subTaskTitle = [_index + 1, "Hit the correct Target"] joinString " - ";
 	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;
