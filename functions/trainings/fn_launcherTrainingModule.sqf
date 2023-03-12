@@ -1,4 +1,3 @@
-
 _args = _this # 3;
 _launcher = _args # 0;
 _sectionName = _args # 1;
@@ -10,13 +9,11 @@ _firedIndex = player addEventHandler ["Fired", {
 	firedCount = firedCount + 1;
 }];
 
-
 _syncedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
 private _targetController = nil;
 private _targetClusterList = [];
-
 
 {
 	private _syncedObj = _x;
@@ -26,30 +23,26 @@ private _targetClusterList = [];
 		_targetClusterList pushBack _syncedObj;
 		continue;
 	};
-	
+
 	if (_syncedObj isKindOf "Logic" && ["TargetController", str _syncedObj] call BIS_fnc_inString) then {
 		_targetController = _syncedObj;
 		continue;
 	};
-
 } forEach _syncedObjects;
 
 _checkDamage = {
-
 	_unit = _this;
 	private _hasDamage = false;
-	_damageList = _unit getVariable ["ace_medical_bodypartdamage", [0,0,0,0,0,0]];
+	_damageList = _unit getVariable ["ace_medical_bodypartdamage", [0, 0, 0, 0, 0, 0]];
 	{
-		
 		if (_x > 0) exitWith {
 			[player, dbSectionName, "backblast_cleared", false ] remoteExec ["RCT7_writeToDb", 2];
 			_hasDamage = true;
 		};
-		 
+
 		[player, dbSectionName, "backblast_cleared", true ] remoteExec ["RCT7_writeToDb", 2];
-		
 	} forEach _damageList;
-	 
+
 	_hasDamage;
 };
 
@@ -60,9 +53,7 @@ _getLauncherName = {
 _targetClusterLogic = _targetClusterList # 0;
 myTargetCluster = _targetClusterLogic;
 
-
 _getTargetList = {
-
 	_targetList = [];
 
 	{
@@ -71,13 +62,11 @@ _getTargetList = {
 		if (_syncedObj isKindOf "Logic") then {
 			continue;
 		};
-		
-		_targetList pushBack _x;
 
+		_targetList pushBack _x;
 	} forEach (synchronizedObjects _targetClusterLogic);
 
 	_targetList;
-
 };
 
 _targetList = call _getTargetList;
@@ -85,25 +74,13 @@ _targetList = call _getTargetList;
 _index = 0;
 _count = count(_targetList);
 
-if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
-	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-	_earplugs = [call RCT7Bootcamp_fnc_getACESelfInfo, "and under Equipment, put your earplugs in"] joinString "";
-	hint _earplugs;
-};
-
-	// TASK Icon: listen
-waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
-
-player call RCT7Bootcamp_fnc_sectionStart;
-
-_firedCheck = { 
+_firedCheck = {
 	if (firedCount > 0) then {
 		_actionId = _this # 0;
 		player removeAction _actionId;
-		["Follow the instructions on your screen!\n\n Try again in:", 5] call RCT7Bootcamp_fnc_cooldownHint;
-		continue; 
+		["Follow the instructions on your screen!<br/><br/> Try again in:", 5] call RCT7Bootcamp_fnc_cooldownHint;
+		continue;
 	};
-	
 };
 
 _handleVehicleRespawn = {
@@ -132,18 +109,22 @@ _handleVehicleRespawn = {
 	_veh setDir _dir;
 	_veh setVectorUp surfaceNormal position _veh;
 
-	_veh call RCT7Bootcamp_fnc_unlimited;
+	_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 
 	true;
-	
 };
 
 _mag = (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0);
 _magSize = getNumber (configfile >> "CfgMagazines" >> _mag >> "count");
 _launcherAmmo = getText(configfile >> "CfgMagazines" >> _mag >> "ammo");
 
-while {  _count isNotEqualTo _index  } do {
-	
+call RCT7Bootcamp_fnc_earplugTask;
+
+player call RCT7Bootcamp_fnc_sectionStart;
+_mainTaskId = "Launcher";
+[_mainTaskId, "Finish the Launcher Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+
+while { _count isNotEqualTo _index } do {
 	_targetList = call _getTargetList;
 	_target = _targetList select _index;
 
@@ -151,12 +132,8 @@ while {  _count isNotEqualTo _index  } do {
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	player setDamage 0;
 
-
-
-
 	_invalidTargetList=  + _targetList; // copy array
 	_invalidTargetList deleteAt _index;
-	
 
 	shotsValid = 0;
 	shotsInvalid = 0;
@@ -165,20 +142,25 @@ while {  _count isNotEqualTo _index  } do {
 
 	_time = time;
 
-	if ( currentWeapon player isNotEqualTo secondaryWeapon player ) then {
-
-		// TASK Icon: use
-		hint (["A",call _getLauncherName,"was added to your inventory!\nEquip it!"] joinString " ");
-		waitUntil { currentWeapon player isEqualTo secondaryWeapon player; };
+	if (currentWeapon player isNotEqualTo secondaryWeapon player) then {
+		_equipDescription = ["A", call _getLauncherName, "was added to your inventory!<br/>Equip it!"] joinString " ";
+		_taskEquipId = "LauncherEquip";
+		[[_taskEquipId, _mainTaskId], "Equip your launcher", _equipDescription, "use"] call RCT7Bootcamp_fnc_taskCreate;
+		waitUntil {
+			currentWeapon player isEqualTo secondaryWeapon player;
+		};
+		[_taskEquipId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
 
-
-	if ((player ammo secondaryWeapon player) isEqualTo 0 ) then {
-
-		// TASK Icon: interact
-		hint (["Prepare your launcher with:\n", call compile (actionKeysNames "ReloadMagazine")] joinString "");
-		waitUntil { (player ammo secondaryWeapon player) isEqualTo 1; };
+	if ((player ammo secondaryWeapon player) isEqualTo 0) then {
+		_prepareDescription = ["Prepare your launcher with:<br/>", call compile (actionKeysNames "ReloadMagazine")] joinString "";
+		_taskPrepareId = "LauncherPrepare";
+		[[_taskPrepareId, _mainTaskId], "Prepare your launcher", _prepareDescription] call RCT7Bootcamp_fnc_taskCreate;
+		waitUntil {
+			(player ammo secondaryWeapon player) isEqualTo 1;
+		};
+		[_taskPrepareId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	};
 
@@ -187,31 +169,41 @@ while {  _count isNotEqualTo _index  } do {
 
 	_zeroingList = getArray(configfile >> "CfgWeapons" >> secondaryWeapon player >> "OpticsModes" >> "ironsight" >> "discreteDistance");
 
-	if (count(_zeroingList) > 0 ) then {
+	if (count(_zeroingList) > 0) then {
 		_minZeroing = _zeroingList # 0;
 		_maxZeroing = _zeroingList # (count(_zeroingList) - 1);
 
-		if (_distance < _minZeroing) then { _distance = _minZeroing; };
-		if (_distance > _maxZeroing) then { _distance = _maxZeroing; };
+		if (_distance < _minZeroing) then {
+			_distance = _minZeroing;
+		};
+		if (_distance > _maxZeroing) then {
+			_distance = _maxZeroing;
+		};
 
-		
 		if (currentZeroing player isNotEqualTo _distance) then {
 			// TASK Icon: target
-			hint ([
-				"Zero your gun on:\n",
+			_zeroingDescription = [
+				"Zero your gun on:<br/>",
 				_distance,
-				"\n\n",
-				"Zeroing Up:\n", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "\n\n",
-				"Zeroing Down:\n", ((actionKeysNames "zeroingDown") splitString """" joinString "")
-				] joinString "");
-			waitUntil { currentZeroing player isEqualTo _distance || firedCount > 0; };
+				"<br/><br/>",
+				"Zeroing Up:<br/>", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "<br/><br/>",
+				"Zeroing Down:<br/>", ((actionKeysNames "zeroingDown") splitString """" joinString "")
+			] joinString "";
+			_taskZeroingId = "LauncherZeroing";
+			[[_taskZeroingId, _mainTaskId], "Set the right zeroing", _zeroingDescription] call RCT7Bootcamp_fnc_taskCreate;
+
+			waitUntil {
+				currentZeroing player isEqualTo _distance || firedCount > 0;
+			};
+
+			[_taskZeroingId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 			player call RCT7Bootcamp_fnc_targetHitValid;
 		};
 		call _firedCheck;
 	};
 
-	// TASK Icon: danger
-	hint "Check your backblast!";
+	_taskBackblastId = "LauncherBackblast";
+	[[_taskBackblastId, _mainTaskId], "Check your backblast!", "Use your scrollwheel to confirm, that you checked your backplast", "danger"] call RCT7Bootcamp_fnc_taskCreate;
 
 	_actionId = player addAction ["<t color='#ffe0b5'>Backblast clear!</t>", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
@@ -219,87 +211,86 @@ while {  _count isNotEqualTo _index  } do {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 	}];
 
-	waitUntil { !(_actionId in (actionIDs player)) || firedCount > 0; };
+	waitUntil {
+		!(_actionId in (actionIDs player)) || firedCount > 0;
+	};
+	[_taskBackblastId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
+
 	[_actionId] call _firedCheck;
-	
+
 	_target removemagazine "168Rnd_CMFlare_Chaff_Magazine";
 
-
-	_descShort = getText(configfile >> "CfgWeapons" >> "rhs_weap_fim92" >> "descriptionShort");
+	_descShort = getText(configfile >> "CfgWeapons" >> secondaryWeapon player >> "descriptionShort");
 
 	if (toLower "Surface-to-air" in toLower _descShort) then {
-		// TASK Icon: destroy
 		_minDistance = getNumber(configfile >> "CfgAmmo" >> _launcherAmmo >> "missileLockMinDistance");
-  		hint (["Shoulder the launcher and aim it at the helicopter. When the beeping intensifies click to fire.\n\n
-				Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
+		hint (["Shoulder the launcher and aim it at the helicopter. When the beeping intensifies click to fire.\n\n
+		Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
 		sleep 7;
 	};
-
-
 
 	_typeOfTarget = typeOf _target;
 	_name = gettext (configfile >> "CfgVehicles" >> _typeOfTarget >> "displayName");
 
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 
-	// TASK Icon: destroy
-	hint (["Shoot at the ", _name, "\n\n", "direction: ", _dir, "\n",  _distance, " meters"] joinString "");
+	_shootDescription = ["Shoot at the ", _name, "<br/><br/>", "direction: ", _dir, "<br/>", _distance, " meters"] joinString "";
+	_taskShootId = "LauncherShoot";
+	[[_taskShootId, _mainTaskId], "Shoot at the target", _shootDescription, "destroy"] call RCT7Bootcamp_fnc_taskCreate;
 
-	dbSectionName = [_sectionName,_typeOfTarget] joinString "-";
-
+	dbSectionName = [_sectionName, _typeOfTarget] joinString "-";
 
 	{
-			_invalidTarget = _x;
-			_invalidTarget addMPEventHandler ["MPHit", {
-				params ["_unit", "_source", "_damage", "_instigator"];
-				// invalid
-				if (_unit animationPhase "terc" isEqualTo 0) then {
-					player call RCT7Bootcamp_fnc_targetHitInvalid;
-					shotsInvalid = shotsInvalid + 1;
-					_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-					[player, dbSectionName, "success", false] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
-					_unit removeAllMPEventHandlers "MPHit";
-				};
-
-			}];
-		
+		_invalidTarget = _x;
+		_invalidTarget addMPEventHandler ["MPHit", {
+			params ["_unit", "_source", "_damage", "_instigator"];
+			// invalid
+			if (_unit animationPhase "terc" isEqualTo 0) then {
+				player call RCT7Bootcamp_fnc_targetHitInvalid;
+				shotsInvalid = shotsInvalid + 1;
+				_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+				[player, dbSectionName, "success", false] remoteExec ["RCT7_writeToDb", 2];
+				[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
+				[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
+				_unit removeAllMPEventHandlers "MPHit";
+			};
+		}];
 	} forEach _invalidTargetList;
 
-	
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
-			player call RCT7Bootcamp_fnc_targetHitValid;
-			shotsValid = shotsValid + 1;
-			_name =  gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-			[player, dbSectionName, "success", true] remoteExec ["RCT7_writeToDb", 2];
-			[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
-			[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
-			_unit removeAllMPEventHandlers "MPHit";
+		player call RCT7Bootcamp_fnc_targetHitValid;
+		shotsValid = shotsValid + 1;
+		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+		[player, dbSectionName, "success", true] remoteExec ["RCT7_writeToDb", 2];
+		[player, dbSectionName, "vehicle", _name] remoteExec ["RCT7_writeToDb", 2];
+		[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
+		_unit removeAllMPEventHandlers "MPHit";
 	}];
-		
-		
-	waitUntil { _count isEqualTo shotsValid || _magSize isEqualTo firedCount };
-	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
 
+	waitUntil {
+		_count isEqualTo shotsValid || _magSize isEqualTo firedCount
+	};
+
+	[_taskShootId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
+	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
 
 	_index = _index + 1;
 
-
 	if (player call _checkDamage) then {
-		// TASK Icon: danger
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
 		sleep 5;
 	};
 
-	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then { 
-		// TASK Icon: rifle
-		hint "This Launcher is disposabel. Equip your primary Weapon to drop it.";
+	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then {
+		_taskDropId = "LauncherDrop";
+		[[_taskDropId, _mainTaskId], "Drop your Launcher", "This Launcher is disposabel. Equip your primary Weapon to drop it.", "rifle"] call RCT7Bootcamp_fnc_taskCreate;
 
-		waitUntil {secondaryWeapon player isEqualTo ""};
+		waitUntil {
+			secondaryWeapon player isEqualTo ""
+		};
+		[_taskDropId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	};
-
 
 	_j = 0;
 	waitUntil {
@@ -307,17 +298,16 @@ while {  _count isNotEqualTo _index  } do {
 		_j = _j + 1;
 		(damage _target) > 0 || _j > 2;
 	};
-	
+
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
 
 	{
 		_x removeAllMPEventHandlers "MPHit";
-		_x call _handleVehicleRespawn; 
+		_x call _handleVehicleRespawn;
 	} forEach _targetList;
-	
-	
-	if ( _count > _index ) then {
+
+	if (_count > _index) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
 	};
 };
@@ -327,5 +317,4 @@ player setDamage 0;
 player removeEventHandler ["Fired", _firedIndex];
 player removeWeapon (secondaryWeapon player);
 
-player call RCT7Bootcamp_fnc_sectionFinished;
-hint "Traning completed!";
+[_mainTaskId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
