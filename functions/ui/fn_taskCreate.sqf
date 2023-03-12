@@ -15,7 +15,11 @@ _destination = param [8, objNull, [objNull, []], 3];
 _visibleIn3D = param [9, false, [false]];
 
 if (_showHint) then {
-	hint parseText _description;
+	_description spawn {
+		hint "";
+		sleep 2;
+		hint parseText _this;
+	}
 };
 
 [
