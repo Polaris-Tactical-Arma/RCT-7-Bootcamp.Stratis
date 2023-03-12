@@ -8,6 +8,7 @@ waitUntil {
 	sleep 1;
 	player getVariable ["ACE_hasEarPlugsIn", false];
 };
-[_taskId] call RCT7Bootcamp_fnc_taskSetState;
+
+[_taskId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
 
 true;
