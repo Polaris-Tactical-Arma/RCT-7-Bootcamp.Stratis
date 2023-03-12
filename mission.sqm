@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6470;
+		nextID=6474;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=75;
+		nextID=79;
 	};
 	class Camera
 	{
-		pos[]={1911.6532,115.82029,5407.3535};
-		dir[]={0.46145794,-0.3709223,0.80589902};
-		up[]={0.18431322,0.92866391,0.32188815};
-		aside[]={0.86780483,0,-0.49690521};
+		pos[]={2028.5193,85.024368,5374.9937};
+		dir[]={0.90489405,-0.4213233,0.060477678};
+		up[]={0.42038837,0.90690881,0.02809662};
+		aside[]={0.06668593,3.6203346e-007,-0.99777555};
 	};
 };
 binarizationWanted=0;
@@ -17069,7 +17069,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6402.312,9.8580713,5455.4868};
+				position[]={6402.4922,9.8580713,5455.5859};
 			};
 			side="Empty";
 			flags=4;
@@ -23821,6 +23821,39 @@ class Mission
 		};
 		class Item90
 		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6411.0386,7.6967664,5431.3188};
+				angles[]={0.0075049158,0,0.0024958209};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=6467;
+			type="Box_NATO_Support_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[""ACE_EntrenchingTool""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item91
+		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -23831,7 +23864,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6414.3696,7.4162216,5429.0425};
+						position[]={2168.3455,8.7252321,5369.3013};
 						angles[]={0,0.28094566,0};
 					};
 					side="West";
@@ -23889,9 +23922,9 @@ class Mission
 							headgear="rhs_8point_marpatd";
 						};
 					};
-					id=6465;
+					id=6473;
 					type="B_Soldier_F";
-					atlOffset=4.7683716e-007;
+					atlOffset=0.0031795502;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23942,41 +23975,8 @@ class Mission
 				name="Group1_3";
 				formation="LINE";
 			};
-			id=6464;
-			atlOffset=4.7683716e-007;
-		};
-		class Item91
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6411.0386,7.6967664,5431.3188};
-				angles[]={0.0075049158,0,0.0024958209};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=6467;
-			type="Box_NATO_Support_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[],[]],[[],[]],[[""ACE_EntrenchingTool""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
+			id=6472;
+			atlOffset=0.0031795502;
 		};
 	};
 	class Connections
