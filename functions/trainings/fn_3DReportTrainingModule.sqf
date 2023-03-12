@@ -118,11 +118,6 @@ waitUntil {
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
 [player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
 
-_result = ["Result<br/><br/>", "Missed Shots: ", _shotsMissed, "<br/>Wrong Targets:", shotsInvalid] joinString "";
-_finishedTaskDescription = [_taskDescription, _result] joinString "<br/><br/>-----<br/><br/>";
-
-[_subTaskId, _finishedTaskDescription] call RCT7Bootcamp_fnc_taskUpdateDescription;
-
 sleep 1;
 
 (synchronizedObjects _targetController) apply {
