@@ -1,3 +1,5 @@
+_patient = player;
+_bodyPart = "rightleg";
 // hint them: Combat over medical
 
 sleep 10;
@@ -11,11 +13,14 @@ hint "Base Medical Kit was added to your inventory";
 ["You will get hurt in", 5] call RCT7Bootcamp_fnc_cooldownHint;
 
 // Medical on self
-[player, 0.8, "rightleg", "bullet"] call ace_medical_fnc_addDamageToUnit;
+[player, 0.8, _bodyPart, "bullet"] call ace_medical_fnc_addDamageToUnit;
 
 sleep 1;
 
+["ace_medical_treatment_fnc_tourniquet", [_patient, _bodyPart], _patient] call CBA_fnc_targetEvent;
+
 // Bandage 
+
 _selfTournequit = "SelfTournequit";
 [[_selfTournequit, _selfMedicalTaskId], "Use a tournequit", "Apply a tournequit to your leg", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
