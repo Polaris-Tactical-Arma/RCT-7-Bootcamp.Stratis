@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1546;
+	toggles=1538;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=6474;
+		nextID=6479;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=79;
+		nextID=87;
 	};
 	class Camera
 	{
-		pos[]={2028.5193,85.024368,5374.9937};
-		dir[]={0.90489233,-0.42132246,0.060477186};
-		up[]={0.42038471,0.9069109,0.028095812};
-		aside[]={0.066684812,1.8626451e-009,-0.99777424};
+		pos[]={2206.342,19.795017,5751.7729};
+		dir[]={0.2643438,-0.39472371,-0.87995213};
+		up[]={0.11356418,0.91879976,-0.37803435};
+		aside[]={-0.95771897,0,-0.28770548};
 	};
 };
 binarizationWanted=0;
@@ -15599,7 +15599,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=92;
+		items=97;
 		class Item0
 		{
 			dataType="Object";
@@ -17356,7 +17356,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2231.2061,6.2840548,5740.8398};
+				position[]={2218.3086,6.2840548,5732.5894};
+				angles[]={0,2.0909731,0};
 			};
 			side="Empty";
 			flags=4;
@@ -23864,8 +23865,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2168.3455,8.7252321,5369.3013};
-						angles[]={0,0.28094566,0};
+						position[]={2218.0107,6.0014391,5735.7651};
+						angles[]={0,2.9388769,-0};
 					};
 					side="West";
 					flags=7;
@@ -23924,7 +23925,6 @@ class Mission
 					};
 					id=6473;
 					type="B_Soldier_F";
-					atlOffset=0.0031795502;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23976,7 +23976,173 @@ class Mission
 				formation="LINE";
 			};
 			id=6472;
-			atlOffset=0.0031795502;
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2219.7715,6.5876374,5732.4795};
+				angles[]={6.2827492,3.3511195,6.2756982};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addAction [""Start Radio Training"", RCT7Bootcamp_fnc_radioModule];";
+			};
+			id=6474;
+			type="Land_InfoStand_V2_F";
+			atlOffset=-0.00068712234;
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2219.8992,9.9744377,5729.6035};
+				angles[]={0,1.7019898,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6475;
+			type="Flag_US_F";
+			atlOffset=-0.0023670197;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2221.2124,9.9643679,5729.4575};
+				angles[]={0,1.6896154,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6476;
+			type="Flag_NATO_F";
+			atlOffset=-0.012436867;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item95
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2218.4531,9.9837532,5729.8589};
+				angles[]={0,1.7246968,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6477;
+			type="Flag_POWMIA_F";
+			atlOffset=0.0069484711;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item96
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2219.7642,5.9910955,5730.7192};
+				angles[]={6.2827516,0.18458018,6.2756968};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=6478;
+			type="Land_BriefingRoomScreen_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="\rct7_clientAddon\images\screen.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 	class Connections
