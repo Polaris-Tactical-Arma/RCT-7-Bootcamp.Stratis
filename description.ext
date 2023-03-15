@@ -20,6 +20,7 @@ class CfgFunctions
 			class radioModule{};
 			class digTrench{};
 			class joinRedTeam{};
+			class ACESelfMedical{};
 		};
 		class Targets
 		{
