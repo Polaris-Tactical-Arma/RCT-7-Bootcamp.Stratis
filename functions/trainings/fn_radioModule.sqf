@@ -1,5 +1,5 @@
 _micro = "TFAR_microdagr";
-_radio = "TFAR_rf7800str_1Q";
+_radio = "TFAR_rf7800str_1";
 _microDisplayname = getText(configfile >> "CfgWeapons" >> _micro >> "displayName");
 _radioDisplayname = getText(configfile >> "CfgWeapons" >> _radio >> "displayName");
 
@@ -48,11 +48,12 @@ _transmitKeybind = ["TFAR", "SWTransmit"] call RCT7Bootcamp_fnc_getCBAKeybind;
 
 _transmitTaskId = "transmit";
 _transmitDesciption = ["You can now transmit with [", _transmitKeybind, "]<br/> You can switch Channels with your Numpad"] joinString "";
-[[_transmitTaskId, _radioTaskId], ["Set to", _freq2] joinString " ", _transmitDesciption, "radio"] call RCT7Bootcamp_fnc_taskCreate;
+[[_transmitTaskId, _radioTaskId], "use your radio", _transmitDesciption, "radio"] call RCT7Bootcamp_fnc_taskCreate;
 
 waitUntil{
-	[call TFAR_fnc_activeSWRadio, true] call TFAR_fnc_radioOn;
+	TF_tangent_sw_pressed;
 };
+
 [_transmitTaskId, "SUCCEEDED", false] call RCT7Bootcamp_fnc_taskSetState;
 
 [_radioTaskId] call RCT7Bootcamp_fnc_taskSetState;
