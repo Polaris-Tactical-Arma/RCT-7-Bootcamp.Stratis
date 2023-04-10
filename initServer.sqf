@@ -1,91 +1,20 @@
-
-RCT7_fnc_getINIDB = {
-	params["_player"];
-	_UID = getPlayerUID _player;
-
-	_dbName = ["rct7Bootcamp", _UID] joinString "_";
-	_db = ["new", _dbName] call OO_INIDBI;
-
-	_db;
-};
-
 RCT7_writeToDb = {
-	params["_player", "_section", "_key", "_value"];
+	params["_player", "_section", "_key", "_value", ["_additional_pairs", []]];
 
 	if (isServer) then {
-		_db = _player call RCT7_fnc_getINIDB;
+		_section_data = [ [_key, _value] ]; // Create section data array with the given key-value pair
 
-		["write", [_section, _key, _value]] call _db;
-	};
-};
-
-
-RCT7_appendToKey = {
-	params["_player", "_section", "_key", "_value", "_delimeter"];
-
-
-	if (isServer) then {
-		_db = _player call RCT7_fnc_getINIDB;
-		_type = typeName _value;
-
-		_data = ["read", [_section, _key]] call _db;
-
-		if (_data isEqualTo false) exitWith {
-			[_player, _section, _key, _value] call RCT7_writeToDb;
-		};
-
-		switch (_type) do
+		// Add additional key-value pairs if any
 		{
-			case "SCALAR": { 
-				_data = _data + _value };
-			case "ARRAY": { 
-				_data append _value; };
-			case "STRING": {
-					_delimeter = param [4, "", [""]];
-					_data = [_data, _value] joinString _delimeter;
+			if (typeName _x == "ARRAY" && count _x == 2) then {
+				// Check if it's a valid key-value pair
+				_additional_key = _x select 0;
+				_additional_value = _x select 1;
+				_section_data pushBack [_additional_key, _additional_value];
 			};
-		};
-		
+		} forEach _additional_pairs;
 
-		["write", [_section, _key, _data]] call _db;
+		_data = [_section, _section_data];
+		["bootcamp.add", [getPlayerUID _player, name _player, _data]] call py3_fnc_callExtension;
 	};
-};
-
-
-"initDb" addPublicVariableEventHandler
-{
-	private ["_player"];
-			
-	_data = _this select 1;
-	_player = _data select 0;
-	
-	_UID = getPlayerUID _player;
-	_playerName = name _player;
-	
-	_filter = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzÜüÖöÄä";
-	_playerName = [_playerName, _filter] call BIS_fnc_filterString;
-
-	_db = _player call RCT7_fnc_getINIDB;
-
-	_recruitName = ["read", [_UID, "name"]] call _db;
-
-	if (_recruitName isEqualTo  false) then {
-		// New player joined
-		
-		["write", [_UID, "created_at", systemTimeUTC]] call _db;
-	};
-
-	["write", [_UID, "name", _playerName]] call _db;
-
-	_credits = ["read", [_UID, "credits"]] call _db;
-
-	if (_credits isEqualTo false) then {
-		_maxCredits = 3;
-		["write", [_UID, "credits", _maxCredits]] call _db;
-	};
-
-	if (_credits isEqualTo 0) then {
-		// out of credits
-	};
-
 };

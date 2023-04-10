@@ -1,5 +1,5 @@
-call RCT7Bootcamp_fnc_joinRedTeam;
-call RCT7Bootcamp_fnc_digTrench;
+// call RCT7Bootcamp_fnc_joinRedTeam;
+// call RCT7Bootcamp_fnc_digTrench;
 call RCT7Bootcamp_fnc_earplugTask;
 
 firedCount = 0;
@@ -81,8 +81,15 @@ while { _count isNotEqualTo _index } do {
 					shotsInvalid = shotsInvalid + 1;
 					_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
-					[player, dbSectionName, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "wrongTargetList", [_name]] remoteExec ["RCT7_appendToKey", 2];
+					[
+						player,
+						dbSectionName,
+						"shotsInvalid", shotsInvalid,
+						[
+							["wrongTargetList", [_name]]
+						]
+					] remoteExec ["RCT7_writeToDb", 2];
+
 					_unit removeAllMPEventHandlers "MPHit";
 				};
 			}];
@@ -97,9 +104,7 @@ while { _count isNotEqualTo _index } do {
 
 		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
-		[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
-		[player, dbSectionName, "distance", _unit distance _instigator] remoteExec ["RCT7_writeToDb", 2];
-
+		[player, dbSectionName, "shotsValid", shotsValid, [["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}
 ];
@@ -112,11 +117,8 @@ waitUntil {
 };
 
 [_subTaskId] call RCT7Bootcamp_fnc_taskSetState;
-
-[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
-
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
-[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
+[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
 
 sleep 1;
 

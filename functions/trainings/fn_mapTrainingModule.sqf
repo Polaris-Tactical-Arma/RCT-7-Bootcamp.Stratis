@@ -83,7 +83,7 @@ while { _count isNotEqualTo _index } do {
 					_grid = mapGridPosition _unit;
 
 					[player, dbSectionName, "shotsInvalid", shotsInvalid] remoteExec ["RCT7_writeToDb", 2];
-					[player, dbSectionName, "wrongTargetList", [_grid]] remoteExec ["RCT7_appendToKey", 2];
+					[player, dbSectionName, "wrongTargetList", [_grid]] remoteExec ["RCT7_writeToDb", 2];
 
 					_unit removeAllMPEventHandlers "MPHit";
 				};
