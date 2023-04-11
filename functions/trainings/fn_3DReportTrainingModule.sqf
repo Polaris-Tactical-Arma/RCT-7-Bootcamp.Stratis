@@ -1,5 +1,5 @@
-// call RCT7Bootcamp_fnc_joinRedTeam;
-// call RCT7Bootcamp_fnc_digTrench;
+call RCT7Bootcamp_fnc_joinRedTeam;
+call RCT7Bootcamp_fnc_digTrench;
 call RCT7Bootcamp_fnc_earplugTask;
 
 firedCount = 0;
