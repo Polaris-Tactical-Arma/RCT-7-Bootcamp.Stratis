@@ -1,12 +1,9 @@
-
 _args = _this # 3;
 _grenade = _args # 0;
 dbSectionName = _args # 1;
 _module = _args # 2;
 
-
 _syncedObjects = synchronizedObjects _module;
-
 
 private _targetCluster = nil;
 
@@ -17,21 +14,17 @@ private _targetCluster = nil;
 		// It is a Target Cluster
 		_targetCluster = _x;
 	};
-
 } forEach _syncedObjects;
-
-
 
 firedCount = 0;
 
 _firedIndex = ["ace_firedPlayer", {
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"]; 
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
 	_projectile addEventHandler ["Explode", {
 		params ["_projectile", "_pos", "_velocity"];
 
 		firedCount = firedCount + 1;
-
 	}];
 }] call CBA_fnc_addEventHandler;
 
@@ -44,7 +37,9 @@ if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
 };
 
 // TASK Icon: listen
-waitUntil { player getVariable ["ACE_hasEarPlugsIn", false]; };
+waitUntil {
+	player getVariable ["ACE_hasEarPlugsIn", false];
+};
 
 call RCT7Bootcamp_fnc_sectionStart;
 
@@ -55,48 +50,49 @@ _targetList = [];
 		_x animate["terc", 1];
 		_x setVariable ["nopop", true];
 	};
-	
 } forEach (synchronizedObjects _targetCluster);
 
 _count = count(_targetList);
 
-while {  _count isNotEqualTo _index  } do {
-	
+while { _count isNotEqualTo _index } do {
 	player addMagazine [_grenade, 1];
-	
+
 	_target = _targetList # _index;
 
 	shotsValid = 0;
 	_shotsMissed = 0;
 	firedCount = 0;
-	
+
 	_keybind = ["ACE3 Weapons", "ACE_Advanced_Throwing_Prepare"] call RCT7Bootcamp_fnc_getCBAKeybind;
 
 	hint (["Prepare your grenade with:\n[", _keybind, "]"] joinString "");
 
 	// TASK Icon: use
-	waitUntil { sleep 0.5;  player getVariable ["ace_advanced_throwing_inHand", false]; };
+	waitUntil {
+		sleep 0.5;
+		player getVariable ["ace_advanced_throwing_inHand", false];
+	};
 
 	// TASK Icon: destroy
 	hint "Throw the grenade at the target";
 
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
-			shotsValid = shotsValid + 1;
-			[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
-			_unit removeAllMPEventHandlers "MPHit";
+		shotsValid = shotsValid + 1;
+		[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
+		_unit removeAllMPEventHandlers "MPHit";
 	}];
-	
+
 	_target animate["terc", 0];
 
 	_time = time;
-	waitUntil { firedCount isEqualTo 1 };
-	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
-	
+	waitUntil {
+		firedCount isEqualTo 1
+	};
+
 	_index = _index + 1;
 	_shotsMissed = firedCount - shotsValid;
-	[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-
+	[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
 };
 
 ["ace_firedPlayer", _firedIndex] call CBA_fnc_removeEventHandler;
