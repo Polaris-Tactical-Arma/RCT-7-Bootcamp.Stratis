@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6499;
+		nextID=6502;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=111;
+		nextID=119;
 	};
 	class Camera
 	{
-		pos[]={5315.8672,227.69821,5651.7046};
-		dir[]={0.90606898,-0.3014228,-0.2969569};
-		up[]={0.28643161,0.95349056,-0.093875691};
-		aside[]={-0.31144187,-1.4901161e-008,-0.95026523};
+		pos[]={2214.8906,22.055353,5750.1626};
+		dir[]={0.34965354,-0.90284246,-0.25023565};
+		up[]={0.73419297,0.42997149,-0.52543801};
+		aside[]={-0.5819819,0,-0.81320161};
 	};
 };
 binarizationWanted=0;
@@ -15607,7 +15607,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=98;
+		items=99;
 		class Item0
 		{
 			dataType="Object";
@@ -24056,7 +24056,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6413.3555,7.4113851,5430.7158};
+						position[]={2223.4749,6.0014391,5739.4424};
 						angles[]={0,0.61827028,0};
 					};
 					side="West";
@@ -24114,7 +24114,7 @@ class Mission
 							headgear="rhs_8point_marpatd";
 						};
 					};
-					id=6498;
+					id=6500;
 					type="B_Soldier_F";
 					class CustomAttributes
 					{
@@ -24166,7 +24166,22 @@ class Mission
 				name="Group1_3";
 				formation="LINE";
 			};
-			id=6497;
+			id=6499;
+		};
+		class Item98
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2227.3354,6,5746.6445};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=6501;
+			type="ACE_medicalSupplyCrate_advanced";
 		};
 	};
 	class Connections
