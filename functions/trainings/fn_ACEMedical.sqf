@@ -1,7 +1,16 @@
 private _patient = param[0, objNull, [objNull]];
 private _bodyPart = param[1, "rightleg", [""]];
 
+/* 
+	TODO: 
+	- add check if player
+	- make other unit uncon
+	- 
+*/  
+
 if (_patient isEqualTo objNull) exitWith {};
+
+private _isAI = _patient isNotEqualTo player;
 
 _patientMedicalTaskId = "PatientMedical";
 [_patientMedicalTaskId, "Finish the medical training", "Follow the instructions", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
@@ -27,9 +36,12 @@ private _isBandaged = {
 private _applyDamage = {
 	params["_unit", "_bodyPart"];
 
-	_message = ["Applying message to ", name _patient, "in"] joinString "";
+	_message = ["Applying damage to ", name _patient, "in"] joinString "";
 	[_message, 5] call RCT7Bootcamp_fnc_cooldownHint;
 	[_patient, 0.8, _bodyPart, "bullet"] call ace_medical_fnc_addDamageToUnit;
+	if (_isAI) then {
+		[_patient, true, 10e10] call ace_medical_fnc_setUnconscious;
+	};
 };
 
 private _isRunning = true;
@@ -87,13 +99,25 @@ while { _isRunning } do {
 
 	waitUntil{
 		sleep 1;
-		[_patient, _bodyPart] call ace_medical_treatment_fnc_hasTourniquetAppliedTo isEqualTo false;
+		([_patient, _bodyPart] call ace_medical_treatment_fnc_hasTourniquetAppliedTo) isEqualTo false;
 	};
 	[_patientTournequitRemove] call RCT7Bootcamp_fnc_taskSetState;
 
+	// Epi-pen
+
+	if (_isAI) then {
+		_patientEpi = "PatientEpi";
+		[[_patientEpi, _patientMedicalTaskId], "Use Epinephrine", "Apply a Epinephrine to one of the limbs", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+		waitUntil{
+			sleep 1;
+			!(_patient getVariable ["ACE_isUnconscious", false]);
+		};
+		[_patientEpi, "SUCCEEDED", false] call RCT7Bootcamp_fnc_taskSetState;
+	};
+
 	// morphine
 	_patientMorphine = "PatientMorphine";
-	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "Apply a morphine to one of your limbs", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "Apply a morphine to one limbs", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 	waitUntil{
 		sleep 1;
 		_patient getVariable ["ace_medical_painSuppress", 0] > 0;
@@ -108,3 +132,11 @@ while { _isRunning } do {
 	hint "";
 	_isRunning = false;
 };
+
+private _db_key = "self";
+
+if (_isAI) then {
+	_db_key = "patient";
+};
+
+[player, ["ace_medical", _db_key] joinString "_", "finished", true] remoteExec ["RCT7_writeToDb", 2];

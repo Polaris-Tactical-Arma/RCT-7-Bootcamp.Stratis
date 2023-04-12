@@ -1,10 +1,10 @@
 
-. Radio
-. 3D Report
+. Radio (DONE)
+. 3D Report (DONE)
 . Shoothouse (targets, timer, delay for diagram)
-. Grenade
-. Map Training
-. Launcher
+. Grenade (DONE)
+. Map Training (DONE)
+. Launcher (DONE)
 . Formation
-. Bounding
-. Medical
+. Bounding 
+. Medical (DONE)
