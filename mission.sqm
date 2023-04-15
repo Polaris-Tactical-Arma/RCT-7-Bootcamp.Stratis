@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6502;
+		nextID=6512;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=131;
+		nextID=139;
 	};
 	class Camera
 	{
-		pos[]={2214.8906,22.055353,5750.1626};
-		dir[]={0.4106887,-0.82668114,-0.38462642};
-		up[]={0.60338479,0.56266963,-0.5650934};
-		aside[]={-0.68357021,9.2200935e-008,-0.72988886};
+		pos[]={1299.9302,215.9464,5290.1484};
+		dir[]={0.70809382,-0.29840752,0.63996816};
+		up[]={0.22138718,0.95443827,0.20008761};
+		aside[]={0.67051756,-4.7963113e-008,-0.74189508};
 	};
 };
 binarizationWanted=0;
@@ -52,7 +52,6 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Characters_F_Exp_Civil",
 	"CUP_CABuildings_Misc",
-	"A3_Structures_F_Bootcamp_VR_Blocks",
 	"rhsusf_c_weapons",
 	"A3_Weapons_F_Acc",
 	"ace_scopes",
@@ -61,10 +60,11 @@ addons[]=
 	"ace_optics",
 	"rhsusf_c_troops",
 	"ace_compat_rhs_usf3",
+	"ace_hearing",
+	"A3_Structures_F_Bootcamp_VR_Blocks",
 	"A3_Weapons_F_Items",
 	"ace_medical_engine",
 	"ace_medical_treatment",
-	"ace_hearing",
 	"ace_flashlights",
 	"ace_trenches",
 	"A3_Structures_F_Enoch_Infrastructure_Roads",
@@ -180,64 +180,64 @@ class AddonsMetaData
 		};
 		class Item15
 		{
-			className="A3_Structures_F_Bootcamp";
-			name="Arma 3 Bootcamp Update - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
-		{
 			className="rhsusf_c_weapons";
 			name="RHSUSF Weapons & Accessories";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item17
+		class Item16
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item17
 		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item18
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item20
+		class Item19
 		{
 			className="ace_compat_rhs_usf3";
 			name="ACE3 - RHS USF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item20
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 		class Item21
+		{
+			className="A3_Structures_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item22
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item23
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item23
-		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
@@ -15607,7 +15607,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=99;
+		items=98;
 		class Item0
 		{
 			dataType="Object";
@@ -18260,7 +18260,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -18324,6 +18324,115 @@ class Mission
 				};
 				class Item1
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1548.1693,5.5014391,5031.4331};
+						angles[]={0,0.61827028,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="[this, ""Infantry""] spawn rct7_fnc_initPatches;";
+						name="dude";
+						description="Recruit";
+						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_m27iar_grip";
+								optics="optic_MRCO";
+								firemode="rhs_weap_m27iar_grip:Single";
+							};
+							class binocular
+							{
+								name="Binocular";
+							};
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_d";
+								isBackpack=0;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="ACE_EarPlugs";
+										count=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_AssaultPack_cbr";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_mag_m67";
+										count=4;
+										ammoLeft=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							goggles="rhs_googles_clear";
+							headgear="rhs_8point_marpatd";
+						};
+					};
+					id=6503;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male04ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.05;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ENH_allowSprint";
+							expression="_this allowSprint _value";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item2
+				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={1545.2166,5.5,5043.2749};
@@ -18336,7 +18445,7 @@ class Mission
 					id=5640;
 					type="Move";
 				};
-				class Item2
+				class Item3
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -18350,7 +18459,7 @@ class Mission
 					id=5641;
 					type="Move";
 				};
-				class Item3
+				class Item4
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
@@ -24045,130 +24154,6 @@ class Mission
 			atlOffset=11.158235;
 		};
 		class Item97
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2223.4749,6.0014391,5739.4424};
-						angles[]={0,0.61827028,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						init="[this, ""Infantry""] spawn rct7_fnc_initPatches;";
-						name="dude";
-						description="Recruit";
-						isPlayer=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_weap_m27iar_grip";
-								optics="optic_MRCO";
-								firemode="rhs_weap_m27iar_grip:Single";
-							};
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="rhs_uniform_FROG01_d";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="ACE_EarPlugs";
-										count=1;
-									};
-								};
-							};
-							class backpack
-							{
-								typeName="B_AssaultPack_cbr";
-								isBackpack=1;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="rhs_mag_m67";
-										count=4;
-										ammoLeft=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							goggles="rhs_googles_clear";
-							headgear="rhs_8point_marpatd";
-						};
-					};
-					id=6500;
-					type="B_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male04ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.05;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-			};
-			class Attributes
-			{
-				name="Group1_3";
-				formation="LINE";
-			};
-			id=6499;
-		};
-		class Item98
 		{
 			dataType="Object";
 			class PositionInfo
