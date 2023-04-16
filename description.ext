@@ -21,6 +21,8 @@ class CfgFunctions
 			class digTrench{};
 			class joinRedTeam{};
 			class ACEMedical{};
+			class shoothouse{};
+			class formation{};
 		};
 		class Targets
 		{
@@ -51,6 +53,7 @@ class CfgFunctions
 			class taskCreate{};
 			class taskSetState{};
 			class taskUpdateDescription{};
+			class setFormation{};
 		};
 		class Misc
 		{
