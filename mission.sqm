@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={1671.8984,110.98238,5075.1211};
-		dir[]={-0.68893361,-0.71902305,0.091560438};
-		up[]={-0.7127586,0.69498676,0.094726995};
-		aside[]={0.13174318,-2.025663e-007,0.99128819};
+		dir[]={-0.68893123,-0.71902055,0.091560178};
+		up[]={-0.71275342,0.69498879,0.094726197};
+		aside[]={0.13174337,-7.4505806e-009,0.99128389};
 	};
 };
 binarizationWanted=0;
@@ -17836,17 +17836,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1528.1021,5.501441,5041.4727};
+						position[]={1528.1021,5.5014391,5041.4727};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						name="Leader2";
 					};
 					id=5617;
 					type="B_Soldier_A_F";
-					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -17985,7 +17983,6 @@ class Mission
 				name="Group2";
 			};
 			id=5616;
-			atlOffset=1.9073486e-006;
 		};
 		class Item77
 		{
@@ -18006,7 +18003,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						name="Leader1";
+						name="UnitBoundingAlternate";
 					};
 					id=5621;
 					type="B_Soldier_A_F";
@@ -23766,17 +23763,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1561.0079,5.501441,5158.4956};
+						position[]={1561.0081,5.5014391,5158.4956};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						name="Leader2_1";
 					};
 					id=6562;
 					type="B_Soldier_A_F";
-					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23927,7 +23922,6 @@ class Mission
 				name="Group2_1";
 			};
 			id=6561;
-			atlOffset=1.9073486e-006;
 		};
 		class Item100
 		{
@@ -23948,7 +23942,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						name="Leader1_1";
+						name="UnitBoundingSuccessive";
 					};
 					id=6569;
 					type="B_Soldier_A_F";
