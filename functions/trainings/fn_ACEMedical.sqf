@@ -3,9 +3,8 @@ private _bodyPart = param[1, "rightleg", [""]];
 
 /* 
 	TODO: 
-	- add check if player
-	- make other unit uncon
-	- 
+	- Check response
+	- TASK Icon: search 
 */  
 
 if (_patient isEqualTo objNull) exitWith {};
