@@ -23,7 +23,7 @@ class CfgFunctions
 			class ACEMedical{};
 			class shoothouse{};
 			class formation{};
-			class boundingModule{};
+			class bounding{};
 		};
 		class Targets
 		{
@@ -62,6 +62,7 @@ class CfgFunctions
 			class unlimitedFuel{};
 			class boundingCheck{};
 			class boundingLogic{};
+			class boundingInFormationCheck{};
 			class shoothouseDoor{};
 			class earplugTask{};
 		};
