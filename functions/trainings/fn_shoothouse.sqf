@@ -24,7 +24,15 @@ private _validTargetList = [];
 	};
 } forEach _synchedObjects;
 
-shinyTargets = _validTargetList;
+_stopwatch = {
+	_i = 0;
+	while { RCT7ShoothouseInProcess } do {
+		hintSilent (["Your Time:\n", _i * 0.1] joinString "");
+
+		_i = (_i + 1);
+		sleep 0.1;
+	};
+};
 
 // handle invalid targets
 {
@@ -67,14 +75,19 @@ _ShoothouseTaskId = "Shoothouse";
 [_ShoothouseTaskId, "Finish the shoothouse", "Go in and shoot the targets. Watch for civilians", "kill", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 player call RCT7Bootcamp_fnc_sectionStart;
+_time = time;
+RCT7ShoothouseInProcess = true;
+[] spawn _stopwatch;
+
 2 call RCT7Bootcamp_fnc_handleMags;
 
 [_targetController, 0] call RCT7Bootcamp_fnc_handleTargets;
 
-_time = time;
 waitUntil {
 	(count _validTargetList) isEqualTo shotsValid
 };
+
+RCT7ShoothouseInProcess = false;
 
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
 [player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
