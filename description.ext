@@ -23,6 +23,7 @@ class CfgFunctions
 			class ACEMedical{};
 			class shoothouse{};
 			class formation{};
+			class boundingModule{};
 		};
 		class Targets
 		{
@@ -59,7 +60,8 @@ class CfgFunctions
 		{
 			file = "functions\misc";
 			class unlimitedFuel{};
-			class bounding{};
+			class boundingCheck{};
+			class boundingLogic{};
 			class shoothouseDoor{};
 			class earplugTask{};
 		};
