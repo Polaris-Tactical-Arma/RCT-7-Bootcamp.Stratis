@@ -3,6 +3,10 @@
 https// community.bistudio.com/wiki/BIS_fnc_taskCreate
 */
 
+if (isNil "RCT7BootcampTaskPrefix") then {
+	RCT7BootcampTaskPrefix = "RCT7BootcampTask";
+};
+
 private _taskId = param [0, RCT7BootcampTaskPrefix, ["", []], 2];
 _title = param [1, "New Task", [""]];
 _description = param [2, "", [""]];
