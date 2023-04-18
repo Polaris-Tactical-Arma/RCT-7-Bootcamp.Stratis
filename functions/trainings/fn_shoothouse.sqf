@@ -1,5 +1,10 @@
 call RCT7Bootcamp_fnc_earplugTask;
 
+/* 
+	Todo:
+	- add comment to use zoomed-out sight
+*/
+
 dbSectionName = "Shoothouse";
 shotsValid = 0;
 shotsInvalid = 0;
