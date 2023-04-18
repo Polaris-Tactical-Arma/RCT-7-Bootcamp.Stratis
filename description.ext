@@ -59,7 +59,6 @@ class CfgFunctions
 		class Misc
 		{
 			file = "functions\misc";
-			class markSectionComplete{};
 			class unlimitedFuel{};
 			class boundingCheck{};
 			class boundingLogic{};
