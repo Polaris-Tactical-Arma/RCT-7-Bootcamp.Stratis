@@ -1,4 +1,4 @@
-_module = GunGridTraining;
+_module = _this;
 _syncedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
