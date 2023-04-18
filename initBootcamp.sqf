@@ -110,5 +110,7 @@ _isSectionCompleted = {
 		};
 	};
 
-	[_section] call RCT7Bootcamp_fnc_markSectionComplete;
+	[player, RCT7BootcampCompletedSection, _section, true] remoteExec ["RCT7_writeToDb", 2];
 } forEach _sectionList;
+
+systemChat "Mission Complete!";
