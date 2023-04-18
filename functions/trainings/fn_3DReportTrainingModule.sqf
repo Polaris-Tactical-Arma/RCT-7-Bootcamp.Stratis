@@ -1,3 +1,16 @@
+/*
+	Author: Eduard Schwarzkopf
+	
+	Description:
+	3D report training module
+	
+	Parameter(s):
+	0: Object - module that has all elements synched to it
+	
+	Returns:
+	true
+*/
+
 call RCT7Bootcamp_fnc_joinRedTeam;
 call RCT7Bootcamp_fnc_digTrench;
 call RCT7Bootcamp_fnc_earplugTask;
@@ -8,7 +21,7 @@ _firedIndex = player addEventHandler ["Fired", {
 	firedCount = firedCount + 1;
 }];
 
-_module = Gun3DReport;
+_module = _this;
 _syncedObjects = synchronizedObjects _module;
 
 private _triggerObj = nil;
@@ -34,8 +47,11 @@ _index = 0;
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
 
+_changeZoomButton = actionKeysNames "personView" regexReplace ["""", ""];
+_taskDesc = ["Follow the instructions", "\n\n", "You can change the sight with:\n", _changeZoomButton] joinString "";
+
 _3DTaskId = "3DReport";
-[_3DTaskId, "Finish the 3D report Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_3DTaskId, "Finish the 3D report Training", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
@@ -43,6 +59,7 @@ while { _count isNotEqualTo _index } do {
 	_targetCluster = _targetClusterList select _index;
 
 	_target = nil;
+
 	{
 		if (typeName (_x getVariable "RCT7_3DReportDescription") isEqualTo "STRING") exitWith {
 			_target = _x;
