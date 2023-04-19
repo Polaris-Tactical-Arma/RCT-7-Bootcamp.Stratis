@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6597;
+		nextID=6601;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=183;
+		nextID=237;
 	};
 	class Camera
 	{
-		pos[]={6228.3833,34.376186,5514.0923};
-		dir[]={-0.19949487,-0.783167,0.58899081};
-		up[]={-0.25124273,0.62180215,0.74177343};
-		aside[]={0.94717658,-6.686605e-008,0.32081267};
+		pos[]={2351.3252,266.04474,5745.29};
+		dir[]={-0.5027554,-0.863518,-0.040044215};
+		up[]={-0.86078495,0.50432551,-0.068561256};
+		aside[]={-0.079399228,-4.1211024e-008,0.99685657};
 	};
 };
 binarizationWanted=0;
@@ -15586,7 +15586,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=71;
+		items=70;
 		class Item0
 		{
 			dataType="Logic";
@@ -16654,130 +16654,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2231.5259,6.0014391,5735.416};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="tester";
-					};
-					id=5509;
-					type="C_man_p_beggar_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.99000001;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=5508;
-		};
-		class Item43
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={2225.7029,6.0014391,5746.8286};
 						angles[]={0,3.3355861,0};
 					};
@@ -16904,7 +16780,7 @@ class Mission
 			};
 			id=5540;
 		};
-		class Item44
+		class Item43
 		{
 			dataType="Layer";
 			name="GrenadeStuff";
@@ -17055,7 +16931,7 @@ class Mission
 			id=5580;
 			atlOffset=-0.72863722;
 		};
-		class Item45
+		class Item44
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17066,7 +16942,7 @@ class Mission
 			id=5590;
 			type="Logic";
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17077,7 +16953,7 @@ class Mission
 			id=5595;
 			type="Logic";
 		};
-		class Item47
+		class Item46
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17095,7 +16971,7 @@ class Mission
 			type="TargetP_Inf3_F";
 			atlOffset=6.6757202e-006;
 		};
-		class Item48
+		class Item47
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17112,7 +16988,7 @@ class Mission
 			id=5601;
 			type="TargetP_Inf3_F";
 		};
-		class Item49
+		class Item48
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17129,7 +17005,7 @@ class Mission
 			type="TargetP_Inf3_F";
 			atlOffset=1.8940039;
 		};
-		class Item50
+		class Item49
 		{
 			dataType="Group";
 			side="West";
@@ -17289,7 +17165,7 @@ class Mission
 			};
 			id=5616;
 		};
-		class Item51
+		class Item50
 		{
 			dataType="Group";
 			side="West";
@@ -17406,7 +17282,7 @@ class Mission
 			};
 			id=5624;
 		};
-		class Item52
+		class Item51
 		{
 			dataType="Layer";
 			name="Layer 35";
@@ -18272,7 +18148,7 @@ class Mission
 			id=5730;
 			atlOffset=-10.332825;
 		};
-		class Item53
+		class Item52
 		{
 			dataType="Layer";
 			name="Shoothouse";
@@ -22605,7 +22481,7 @@ class Mission
 			id=5996;
 			atlOffset=2.7259884;
 		};
-		class Item54
+		class Item53
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22638,7 +22514,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item55
+		class Item54
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22653,7 +22529,7 @@ class Mission
 			id=6501;
 			type="ACE_medicalSupplyCrate_advanced";
 		};
-		class Item56
+		class Item55
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22669,14 +22545,14 @@ class Mission
 			id=6514;
 			type="Land_Hlaska";
 		};
-		class Item57
+		class Item56
 		{
 			dataType="Layer";
 			name="Layer 58";
 			id=6324;
 			atlOffset=142.91;
 		};
-		class Item58
+		class Item57
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22688,7 +22564,7 @@ class Mission
 			id=6537;
 			type="Logic";
 		};
-		class Item59
+		class Item58
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22699,7 +22575,7 @@ class Mission
 			id=6539;
 			type="Logic";
 		};
-		class Item60
+		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22716,7 +22592,7 @@ class Mission
 			type="Land_Cargo_Patrol_V3_F";
 			atlOffset=1.5258789e-005;
 		};
-		class Item61
+		class Item60
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22727,7 +22603,7 @@ class Mission
 			id=6543;
 			type="Logic";
 		};
-		class Item62
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22742,7 +22618,7 @@ class Mission
 			type="Sign_Arrow_Large_F";
 			atlOffset=1.8248868;
 		};
-		class Item63
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22757,7 +22633,7 @@ class Mission
 			type="Sign_Arrow_Large_Blue_F";
 			atlOffset=1.7520375;
 		};
-		class Item64
+		class Item63
 		{
 			dataType="Group";
 			side="West";
@@ -23307,7 +23183,7 @@ class Mission
 			};
 			id=6549;
 		};
-		class Item65
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23322,7 +23198,7 @@ class Mission
 			type="Sign_Arrow_Large_F";
 			atlOffset=1.6279755;
 		};
-		class Item66
+		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23337,7 +23213,7 @@ class Mission
 			type="Sign_Arrow_Large_Blue_F";
 			atlOffset=1.7274404;
 		};
-		class Item67
+		class Item66
 		{
 			dataType="Group";
 			side="West";
@@ -23509,7 +23385,7 @@ class Mission
 			};
 			id=6561;
 		};
-		class Item68
+		class Item67
 		{
 			dataType="Group";
 			side="West";
@@ -23638,6 +23514,13 @@ class Mission
 			};
 			id=6568;
 		};
+		class Item68
+		{
+			dataType="Layer";
+			name="Layer 35_1";
+			id=6579;
+			atlOffset=142.91;
+		};
 		class Item69
 		{
 			dataType="Group";
@@ -23650,7 +23533,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6391.8306,9.0129995,5439.5874};
+						position[]={2222.5132,6.0014391,5736.1724};
 						angles[]={0,5.4194326,0};
 					};
 					side="West";
@@ -23708,7 +23591,7 @@ class Mission
 							headgear="rhs_8point_marpatd";
 						};
 					};
-					id=6578;
+					id=6600;
 					type="B_Soldier_F";
 					class CustomAttributes
 					{
@@ -23760,14 +23643,7 @@ class Mission
 				name="Group1_1";
 				formation="LINE";
 			};
-			id=6577;
-		};
-		class Item70
-		{
-			dataType="Layer";
-			name="Layer 35_1";
-			id=6579;
-			atlOffset=142.91;
+			id=6599;
 		};
 	};
 	class Connections
