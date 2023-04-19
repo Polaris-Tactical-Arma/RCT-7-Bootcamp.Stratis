@@ -70,7 +70,8 @@ _isSectionCompleted = {
 {
 	_section = _x;
 
-	if (_section call _isSectionCompleted) then {
+	if ([_section] call _isSectionCompleted) then {
+		systemChat (["Section: [", _section, "] is completed"] joinString "");
 		continue;
 	};
 
@@ -110,6 +111,7 @@ _isSectionCompleted = {
 		};
 	};
 
+	systemChat "section done, saving now...";
 	[player, RCT7BootcampCompletedSection, _section, true] remoteExec ["RCT7_writeToDb", 2];
 } forEach _sectionList;
 
