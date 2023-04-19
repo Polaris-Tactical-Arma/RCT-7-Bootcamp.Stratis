@@ -14,13 +14,13 @@
 	TODO:
 	- add teleporter
 	- add bounding box for shooting (teleport back if too far)
-	- check for process and place on correct task
+	- add check for backend connection
 	
 	FormationGroup call RCT7Bootcamp_fnc_formation
 	
 */
 
-RCT7BootcampCompletedSection = "CompletedSections";
+_completedSectionName = "CompletedSections";
 
 _sectionList = [
 	"Radio",
@@ -44,7 +44,7 @@ _isSectionCompleted = {
 	};
 
 	    private _dataArray = _data select 0 select 1; // Get the "data" array
-	private _completedSectionsKey = RCT7BootcampCompletedSection;
+	private _completedSectionsKey = _completedSectionName;
 	private _completedSections = [];
 
 	{
@@ -112,7 +112,7 @@ _isSectionCompleted = {
 	};
 
 	systemChat "section done, saving now...";
-	[player, RCT7BootcampCompletedSection, _section, true] remoteExec ["RCT7_writeToDb", 2];
+	[player, _completedSectionName, _section, true] remoteExec ["RCT7_writeToDb", 2];
 } forEach _sectionList;
 
 systemChat "Mission Complete!";
