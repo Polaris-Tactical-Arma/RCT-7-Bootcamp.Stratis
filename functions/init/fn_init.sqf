@@ -19,6 +19,13 @@
 	FormationGroup call RCT7Bootcamp_fnc_formation
 	
 */
+RCT7playerData = nil;
+
+[] remoteExec ["RCT7_getFromDb", 2];
+
+waitUntil { 
+	!(isNil "RCT7playerData");
+};
 
 _completedSectionName = "CompletedSections";
 
@@ -36,7 +43,8 @@ _sectionList = [
 ];
 
 _isSectionCompleted = {
-	private _sectionToCheck = _this select 0;
+	private _sectionToCheck = _this # 0;
+	private _completedSectionsKey = _this # 1;
 	private _data = RCT7playerData;
 
 	if (count _data isEqualTo 0) exitWith {
@@ -44,9 +52,8 @@ _isSectionCompleted = {
 	};
 
 	    private _dataArray = _data select 0 select 1; // Get the "data" array
-	private _completedSectionsKey = _completedSectionName;
 	private _completedSections = [];
-
+	
 	{
 		private _key = _x select 0;
 		if (_key == _completedSectionsKey) then {
@@ -70,7 +77,7 @@ _isSectionCompleted = {
 {
 	_section = _x;
 
-	if ([_section] call _isSectionCompleted) then {
+	if ([_section, _completedSectionName] call _isSectionCompleted) then {
 		systemChat (["Section: [", _section, "] is completed"] joinString "");
 		continue;
 	};
