@@ -18,7 +18,7 @@
 */
 RCT7playerData = nil;
 
-[] remoteExec ["RCT7_getFromDb", 2];
+[player] remoteExec ["RCT7_getFromDb", 2];
 
 waitUntil { 
 	!(isNil "RCT7playerData");
