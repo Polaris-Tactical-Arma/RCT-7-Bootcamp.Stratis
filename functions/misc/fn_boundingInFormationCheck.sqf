@@ -14,22 +14,28 @@ _isInLineFormation = {
 	_right;
 };
 
+
+private _triggerWarning = {
+
+ _message = param[0, "", [""]];
+	titleText [["<t color='#ff0000' size='1'>", _message, "</t>"] joinString "", "PLAIN DOWN", 0.1, true, true];
+};
+
 while { leader player isNotEqualTo player } do {
 	sleep 0.5;
 	private _unit = leader player;
 
 	if (speed (leader player) isEqualTo 0) then {
-		hintSilent "";
 		continue;
 	};
 
 	if (player distance _unit > 5) then {
-		hintSilent "Move up, you are too far away!";
+		"Move up, you are too far away!" spawn _triggerWarning;
 		continue;
 	};
 
 	if (!(_unit call _isInLineFormation)) then {
-		hintSilent "Stay in line with your buddy!";
+		"Stay in line with your buddy!" spawn _triggerWarning;
 		continue;
 	};
 
