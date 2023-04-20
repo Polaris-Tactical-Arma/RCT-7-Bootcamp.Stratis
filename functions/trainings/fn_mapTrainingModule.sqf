@@ -40,7 +40,7 @@ private _mainTask = "MapTraining";
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
-	call RCT7Bootcamp_fnc_handleMags;
+	1 call RCT7Bootcamp_fnc_handleMags;
 	_targetCluster = _targetClusterList select _index;
 
 	_targetList = [];
