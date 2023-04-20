@@ -1,7 +1,8 @@
-_args = _this # 3;
-_grenade = _args # 0;
-dbSectionName = _args # 1;
-_module = _args # 2;
+call RCT7Bootcamp_fnc_earplugTask;
+
+_grenade = param[0, "", [""]];
+dbSectionName = param[1, "", [""]];
+_module = param[2, objNull, [objNull]];
 
 _syncedObjects = synchronizedObjects _module;
 
@@ -30,16 +31,10 @@ _firedIndex = ["ace_firedPlayer", {
 
 _index = 0;
 
-if (!(player getVariable ["ACE_hasEarPlugsIn", false])) then {
-	_keybind = ["ACE3 Common", "ACE_Interact_Menu_SelfInteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-	_earplugs = [call RCT7Bootcamp_fnc_getACESelfInfo, "and under Equipment, put your earplugs in"] joinString "";
-	hint _earplugs;
-};
 
-// TASK Icon: listen
-waitUntil {
-	player getVariable ["ACE_hasEarPlugsIn", false];
-};
+private _mainTask = "GrenadeTraining";
+[_mainTask, "Finish the grenade training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+
 
 call RCT7Bootcamp_fnc_sectionStart;
 
@@ -64,17 +59,19 @@ while { _count isNotEqualTo _index } do {
 	firedCount = 0;
 
 	_keybind = ["ACE3 Weapons", "ACE_Advanced_Throwing_Prepare"] call RCT7Bootcamp_fnc_getCBAKeybind;
+	_prepareDescription = ["Prepare your grenade with:<br/>[", _keybind, "]"] joinString "";
 
-	hint (["Prepare your grenade with:\n[", _keybind, "]"] joinString "");
+	_prepareGrenadeTaskId = "PrepareGrenade";
+	[[_mainTask, _prepareGrenadeTaskId], "Prepare grenade", _prepareDescription, "use"] call RCT7Bootcamp_fnc_taskCreate;
 
-	// TASK Icon: use
 	waitUntil {
 		sleep 0.5;
 		player getVariable ["ace_advanced_throwing_inHand", false];
 	};
+	[_prepareGrenadeTaskId] call RCT7Bootcamp_fnc_taskSetState;
 
-	// TASK Icon: destroy
-	hint "Throw the grenade at the target";
+	_throwGrenadeTaskId = "ThrowGrenade";
+	[[_mainTask, _throwGrenadeTaskId], "Throw grenade", "Throw the grenade at the target", "destroy"] call RCT7Bootcamp_fnc_taskCreate;
 
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
@@ -89,13 +86,15 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		firedCount isEqualTo 1
 	};
+	[_throwGrenadeTaskId] call RCT7Bootcamp_fnc_taskSetState;
 
 	_index = _index + 1;
 	_shotsMissed = firedCount - shotsValid;
 	[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
+	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 };
 
 ["ace_firedPlayer", _firedIndex] call CBA_fnc_removeEventHandler;
 
 player call RCT7Bootcamp_fnc_sectionFinished;
-hint "Traning completed!";
+[_mainTask] call RCT7Bootcamp_fnc_taskSetState;
