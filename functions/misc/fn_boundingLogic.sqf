@@ -11,8 +11,6 @@ if (_count < 1) exitWith {
 // player group
 {
 	_waypoint = _x;
-	_pos = waypointPosition _waypoint;
-	"Sign_Sphere100cm_F" createVehicle _pos;
 
 	_condition = "
 	if !(player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) exitWith {
@@ -59,8 +57,6 @@ _waypoint setWaypointStatements [_condition, _onSuccess];
 // other group
 {
 	_waypoint = _x;
-	_pos = waypointPosition _waypoint;
-	"Sign_Sphere100cm_F" createVehicle _pos;
 
 	_condition = "
 	if !(this getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) exitWith {
