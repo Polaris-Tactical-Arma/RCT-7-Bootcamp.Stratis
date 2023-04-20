@@ -55,7 +55,7 @@ _3DTaskId = "3DReport";
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
-	call RCT7Bootcamp_fnc_handleMags;
+	1 call RCT7Bootcamp_fnc_handleMags;
 	_targetCluster = _targetClusterList select _index;
 
 	_target = nil;
@@ -66,7 +66,7 @@ while { _count isNotEqualTo _index } do {
 		};
 	} forEach (synchronizedObjects _targetCluster);
 
-	_invalidTargetCluster =  + _targetClusterList; // copy array
+	_invalidTargetCluster = + _targetClusterList; // copy array
 
 	dbSectionName = ["3DReport", _index] joinString "-";
 
