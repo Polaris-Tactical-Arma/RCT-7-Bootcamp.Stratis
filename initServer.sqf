@@ -1,5 +1,3 @@
-RCT7playerData = [];
-
 RCT7_writeToDb = {
 	params["_player", "_section", "_key", "_value", ["_additional_pairs", []]];
 
@@ -22,8 +20,6 @@ RCT7_writeToDb = {
 };
 
 RCT7_getFromDb = {
-	params["_player", "_section", "_key", "_value", ["_additional_pairs", []]];
-
 	if !(isServer) exitWith {};
 
 	RCT7playerData = ["bootcamp.get_data", [getPlayerUID player]] call py3_fnc_callExtension;
