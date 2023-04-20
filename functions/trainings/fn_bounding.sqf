@@ -16,6 +16,10 @@ _unit = param[0, objNull, [objNull]];
 RCT7BoundingType = param[1, "Alternate", [""]];
 
 [player] joinSilent (group _unit);
+
+private _taskDescription = "Move to your Partner and start the training with the scroll-wheel action.<br/>Follow your Partner and stay in line while moving";
+[RCT7BoundingType+"Bounding", RCT7BoundingType+" Bounding", _taskDescription, "run", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+
 _actionString = ["Start", RCT7BoundingType, "Bounding Training"] joinString " ";
 
 player addAction [_actionString, {
@@ -25,7 +29,6 @@ player addAction [_actionString, {
 	_varMyTurn = "RCT7Bootcamp_BoundingIsMyTurn";
 	player setVariable [_varMyTurn, false];
 	_unit setVariable [_varMyTurn, true];
-	[RCT7BoundingType+"Bounding", RCT7BoundingType+" Bounding", "Follow your Partner and stay in line while moving", "run", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 },
 nil, 5, true, true, "", "(player distance leader player) < 5"
 ];
