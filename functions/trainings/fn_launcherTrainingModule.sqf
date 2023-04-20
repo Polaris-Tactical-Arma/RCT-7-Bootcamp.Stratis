@@ -1,7 +1,6 @@
-_args = _this # 3;
-_launcher = _args # 0;
-_sectionName = _args # 1;
-_module = _args # 2;
+_launcher = param[0, "", [""]];
+_sectionName = param[1, "", [""]];
+_module = param[2, objNull, [objNull]];
 
 firedCount = 0;
 
@@ -292,7 +291,7 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		sleep 1;
 		_j = _j + 1;
-		(damage _target) > 0 || _j > 2;
+		(damage _target) > 0 || _j > 1;
 	};
 
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
