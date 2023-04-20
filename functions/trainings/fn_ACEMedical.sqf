@@ -1,22 +1,22 @@
 private _patient = param[0, objNull, [objNull]];
 private _bodyPart = param[1, "rightleg", [""]];
 
-/* 
-	TODO: 
-	- Check response
-	- TASK Icon: search 
-*/  
 
-if (_patient isEqualTo objNull) exitWith {};
+if (_patient isEqualTo objNull ) exitWith { systemChat "No Patient provided"};
+
+removeAllItems player;
+_medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_epinephrine", "ACE_morphine"];
+
+{ player addItem _x; } foreach _medicalItems;
 
 private _isAI = _patient isNotEqualTo player;
+
+hint "Medical Items added to inventory\n\nalways make sure to prioritize combat over medical!";
+sleep 5;
 
 _patientMedicalTaskId = "PatientMedical";
 [_patientMedicalTaskId, "Finish the medical training", "Follow the instructions", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
-hint "always make sure to prioritize combat over medical!";
-sleep 5;
-hint "Base Medical Kit was added to your inventory";
 
 private _isBandaged = {
 	_wounds = _patient getVariable ["ace_medical_openWounds", []];
@@ -43,6 +43,23 @@ private _applyDamage = {
 	};
 };
 
+private _responseChecked = { 
+	_unit = param[0, objNull, [objNull]]; 
+	_medicalLog = _unit getVariable ["ace_medical_log_quick_view", []]; 
+
+	private _searchString = "STR_ace_medical_treatment_Check_Response"; 
+	private _found = false; 
+
+	{ 
+	if ([_searchString, _x select 0] call BIS_fnc_inString) exitWith { 
+	_found = true; 
+	}; 
+	} forEach _medicalLog; 
+
+	_found; 
+};
+
+
 private _isRunning = true;
 
 while { _isRunning } do {
@@ -50,6 +67,20 @@ while { _isRunning } do {
 	[ _patient ] call ACE_medical_treatment_fnc_fullHealLocal;
 
 	[_patient, _bodyPart] call _applyDamage;
+
+	if (_isAI) then {
+
+		_patientResponse = "PatientResponse";
+		_reponseDescription = "Open the medical menu, click on the head and check the response.";
+		[[_patientResponse, _patientMedicalTaskId], "Check Response", _reponseDescription, "heal"] call RCT7Bootcamp_fnc_taskCreate;
+
+		waitUntil {
+			sleep 1;
+			_patient call _responseChecked;
+		};
+		[_patientResponse] call RCT7Bootcamp_fnc_taskSetState;
+	};
+
 
 	_patientTournequit = "PatientTournequit";
 	[[_patientTournequit, _patientMedicalTaskId], "Use a tournequit", "Apply a tournequit", "heal"] call RCT7Bootcamp_fnc_taskCreate;
