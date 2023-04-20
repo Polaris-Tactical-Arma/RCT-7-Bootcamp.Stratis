@@ -45,7 +45,7 @@ private _formationList = [
 } forEach _formationList;
 
 private _quizz = {
-	_formationList = param [0, [], [[]]];
+	_formationAddActionList = param [0, [], [[]]];
 
 	{
 		_displayname = _x # 1;
@@ -81,13 +81,14 @@ private _quizz = {
 			[player, _dbSection, "correct", _result, [["answer", _formation]]] remoteExec ["RCT7_writeToDb", 2];
 			RCT7Bootcamp_FormationHasAnswered = true;
 		}, _x # 0];
-	} forEach _formationList;
+	} forEach _formationAddActionList;
 };
 
 _FormationTaskId = "Formation";
 [_FormationTaskId, "Formation", "Make the quizz", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 RCT7Bootcamp_FormationHasAnswered = false;
+_formationAddActionList = + _formationList;
 
 while { count _formationList > 0 } do {
 	_formationData = selectRandom _formationList;
@@ -95,7 +96,7 @@ while { count _formationList > 0 } do {
 	RCT7Bootcamp_CurrentFormation = _formation;
 
 	[[_unit1, _unit2, _unit3, _unit4], _formation] call RCT7Bootcamp_fnc_setFormation;
-	[_formationList] call _quizz;
+	[_formationAddActionList] call _quizz;
 
 	waitUntil {
 		RCT7Bootcamp_FormationHasAnswered;
