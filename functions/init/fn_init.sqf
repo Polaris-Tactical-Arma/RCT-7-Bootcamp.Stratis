@@ -12,11 +12,8 @@
 	
 	
 	TODO:
-	- add teleporter
-	- add bounding box for shooting (teleport back if too far)
 	- add check for backend connection
 	
-	FormationGroup call RCT7Bootcamp_fnc_formation
 	
 */
 RCT7playerData = nil;
@@ -35,9 +32,11 @@ _sectionList = [
 	"Shoothouse",
 	"Grenade",
 	"Map",
-	"Launcher",
+	"LauncherAT",
+	"LauncherAA",
 	"Formation",
-	"Bounding",
+	"BoundingAlternate",
+	"BoundingSuccessive",
 	"Medical",
 	"MedicalSelf"
 ];
@@ -74,6 +73,18 @@ _isSectionCompleted = {
 	_isCompleted
 };
 
+_teleportPlayer = {
+	_name = param[0, "", [""]];
+	_objName = ["StartPosition",_name] joinString "_";
+
+	if (_name isEqualTo "" || isNil _objName) exitWith {};
+
+	_obj = call compile (_objName);
+
+	_pos = getPosATL _obj; 
+	player setPosATL _pos;
+};
+
 {
 	_section = _x;
 
@@ -81,6 +92,10 @@ _isSectionCompleted = {
 		systemChat (["Section: [", _section, "] is completed"] joinString "");
 		continue;
 	};
+
+	_section call _teleportPlayer;
+	sleep 2;
+	
 
 	switch (_section) do {
 		case "Radio": {
@@ -98,11 +113,14 @@ _isSectionCompleted = {
 		case "Map": {
 			GunGridTraining call RCT7Bootcamp_fnc_mapTrainingModule;
 		};
-		case "Launcher": {
+		case "LauncherAT": {
 			["rhs_weap_M136", "AT", ATTraining] call RCT7Bootcamp_fnc_launcherTrainingModule;
 		};
-		case "Formation": {
+		case "LauncherAA": {
 			["rhs_weap_fim92", "AA", AATraining] call RCT7Bootcamp_fnc_launcherTrainingModule;
+		};
+		case "Formation": {
+			[FormationGroup] call RCT7Bootcamp_fnc_formation;
 		};
 		case "BoundingAlternate": {
 			[UnitBoundingAlternate, "Alternate"] call RCT7Bootcamp_fnc_bounding;
@@ -110,16 +128,18 @@ _isSectionCompleted = {
 		case "BoundingSuccessive": {
 			[UnitBoundingSuccessive, "Successive"] call RCT7Bootcamp_fnc_bounding;
 		};
-		case "MedicalSelf": {
-			[player] call RCT7Bootcamp_fnc_ACEMedical;
-		};
 		case "Medical": {
 			[UnitMedical] call RCT7Bootcamp_fnc_ACEMedical;
 		};
+		case "MedicalSelf": {
+			[player] call RCT7Bootcamp_fnc_ACEMedical;
+		};
+		
 	};
 
-	systemChat "section done, saving now...";
+	systemChat (["Section [", _section, "] complete. Saving process..."] joinString "");
 	[player, _completedSectionName, _section, true] remoteExec ["RCT7_writeToDb", 2];
+	["Training Complete!\nNext Training in", 3] call RCT7Bootcamp_fnc_cooldownHint;
 } forEach _sectionList;
 
-systemChat "Mission Complete!";
+["Bootcamp finished", true, 3] remoteExec ["BIS_fnc_endMission", 0, true];
