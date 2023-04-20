@@ -50,7 +50,6 @@ _getLauncherName = {
 };
 
 _targetClusterLogic = _targetClusterList # 0;
-myTargetCluster = _targetClusterLogic;
 
 _getTargetList = {
 	_targetList = [];
