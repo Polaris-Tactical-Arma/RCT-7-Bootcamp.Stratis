@@ -20,7 +20,16 @@ RCT7_writeToDb = {
 };
 
 RCT7_getFromDb = {
+	_player = param[0, objNull, [objNull]];
 	if !(isServer) exitWith {};
 
-	RCT7playerData = ["bootcamp.get_data", [getPlayerUID player]] call py3_fnc_callExtension;
+	_data = ["bootcamp.get_data", [getPlayerUID _player]] call py3_fnc_callExtension;
+
+	if (_data # 0 # 0 isEqualTo "error") exitWith {
+		RCT7playerData = [];
+	};
+
+	RCT7playerData = _data;
+
+	publicVariable "RCT7playerData";
 };
