@@ -62,12 +62,12 @@ _getTargetList = {
 		};
 
 		_targetList pushBack _x;
-	} forEach (synchronizedObjects _targetClusterLogic);
+	} forEach (synchronizedObjects _this);
 
 	_targetList;
 };
 
-_targetList = call _getTargetList;
+_targetList = _targetClusterLogic call _getTargetList;
 
 _index = 0;
 _count = count(_targetList);
@@ -82,32 +82,39 @@ _firedCheck = {
 };
 
 _handleVehicleRespawn = {
-	private ["_veh"];
-	_unit = _this;
+	private _unit = param[0, objNull, [objNull]];
+	private _targetList = param[1, [], [[]]];
+	private _targetClusterLogic = param[2, objNull, [objNull]];
 
 	_pos = getPosATL _unit;
 	_dir = direction _unit;
 	_type = typeOf _unit;
+	_isAir = _type isKindOf "Air";
 
-	sleep 3;
+	private _special = "NONE";
+
+	if (_isAir) then {
+		_special = "FLY";
+	};
+
+ 	sleep 3;
 	_unit synchronizeObjectsRemove _targetList;
 	deleteVehicleCrew _unit;
 	deleteVehicle _unit;
 
-	_veh = createVehicle [_type, _pos, [], 0, "FLY" ];
+	private _veh = createVehicle [_type, _pos, [], 0, _special];
 	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
 	if (_veh isKindOf "Air") then {
 		_crew = createVehicleCrew _veh;
 		_crew setBehaviour "CARELESS";
 		_veh flyInHeight (_pos # 2);
+		_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 	};
 
 	_veh setPosATL _pos;
 	_veh setDir _dir;
 	_veh setVectorUp surfaceNormal position _veh;
-
-	_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 
 	true;
 };
@@ -123,7 +130,7 @@ _mainTaskId = "Launcher";
 [_mainTaskId, "Finish the Launcher Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 while { _count isNotEqualTo _index } do {
-	_targetList = call _getTargetList;
+	_targetList = _targetClusterLogic call _getTargetList;
 	_target = _targetList select _index;
 
 	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
@@ -303,7 +310,10 @@ while { _count isNotEqualTo _index } do {
 
 	{
 		_x removeAllMPEventHandlers "MPHit";
-		_x call _handleVehicleRespawn;
+		if (damage _x isEqualTo 0 ) then {
+			continue;
+		};
+		[_x, _targetList, _targetClusterLogic] spawn _handleVehicleRespawn;
 	} forEach _targetList;
 
 	if (_count > _index) then {
