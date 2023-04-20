@@ -21,7 +21,6 @@ class CfgFunctions
 			class launcherTrainingModule{};
 			class grenadeTrainingModule{};
 			class mapTrainingModule{};
-			class gunTrainingModule{};
 			class radioModule{};
 			class digTrench{};
 			class joinRedTeam{};
