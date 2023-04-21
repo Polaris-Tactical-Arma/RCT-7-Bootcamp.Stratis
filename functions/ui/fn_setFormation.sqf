@@ -37,8 +37,7 @@ switch (_formation) do {
 		_unit3 setPos (_unit1 modelToWorld [_distance * 2, _d * 2, 0]);
 		_unit4 setPos (_unit1 modelToWorld [_distance * 3, _d*3, 0]);
 	};
-	case "LINE";
-	default {
+	case "LINE": {
 		_unit2 setPos (_unit1 modelToWorld [_d, 0, 0]);
 		_unit3 setPos (_unit1 modelToWorld [(_d * 2), 0, 0]);
 		_unit4 setPos (_unit1 modelToWorld [(_d * 3), 0, 0]);
