@@ -16,6 +16,7 @@ _unit = param[0, objNull, [objNull]];
 RCT7BoundingType = param[1, "Alternate", [""]];
 
 [player] joinSilent (group _unit);
+sleep 1;
 
 private _taskDescription = "Move to your Partner and start the training with the scroll-wheel action.<br/>Follow your Partner and stay in line while moving";
 [RCT7BoundingType+"Bounding", RCT7BoundingType+" Bounding", _taskDescription, "run", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
@@ -27,8 +28,8 @@ player addAction [_actionString, {
 	player removeAction _actionId;
 	_unit = (synchronizedObjects leader player) # 0;
 	_varMyTurn = "RCT7Bootcamp_BoundingIsMyTurn";
-	player setVariable [_varMyTurn, false];
-	_unit setVariable [_varMyTurn, true];
+	player setVariable [_varMyTurn, false, true];
+	_unit setVariable [_varMyTurn, true, true];
 },
 nil, 5, true, true, "", "(player distance leader player) < 5"
 ];
@@ -40,7 +41,7 @@ private _taskId = RCT7BoundingType+"Bounding";
 
 waitUntil {
 	_group = group player;
-	(currentWaypoint _group) isEqualTo (count( waypoints _group))
+	(currentWaypoint _group) isEqualTo (count( waypoints _group));
 };
 
 [_taskId] call RCT7Bootcamp_fnc_taskSetState;
@@ -48,8 +49,8 @@ waitUntil {
 // reset
 _otherLeader = (synchronizedObjects leader player) # 0;
 _varMyTurn = "RCT7Bootcamp_BoundingIsMyTurn";
-player setVariable [_varMyTurn, nil];
-_otherLeader setVariable [_varMyTurn, nil];
+player setVariable [_varMyTurn, nil, true];
+_otherLeader setVariable [_varMyTurn, nil, true];
 [player] joinSilent grpNull;
 RCT7BoundingType = nil;
 
