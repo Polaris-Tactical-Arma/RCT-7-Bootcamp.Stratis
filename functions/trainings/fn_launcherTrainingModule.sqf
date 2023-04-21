@@ -35,11 +35,8 @@ _checkDamage = {
 	_damageList = _unit getVariable ["ace_medical_bodypartdamage", [0, 0, 0, 0, 0, 0]];
 	{
 		if (_x > 0) exitWith {
-			[player, dbSectionName, "backblast_cleared", false ] remoteExec ["RCT7_writeToDb", 2];
 			_hasDamage = true;
 		};
-
-		[player, dbSectionName, "backblast_cleared", true ] remoteExec ["RCT7_writeToDb", 2];
 	} forEach _damageList;
 
 	_hasDamage;
@@ -69,6 +66,9 @@ _getTargetList = {
 
 _targetList = _targetClusterLogic call _getTargetList;
 
+RCTLauncherTargetList = _targetList;
+RCTLauncherClusterLogic = _targetClusterLogic;
+
 _index = 0;
 _count = count(_targetList);
 
@@ -81,10 +81,22 @@ _firedCheck = {
 	};
 };
 
+_vehicleIsHit = {
+	_vehicle = param[0, objNull, [objNull]];
+	private _isDamaged = false;
+
+	{
+		if (_x isNotEqualTo 0) exitWith {
+			_isDamaged = true;
+		};
+	} forEach (getAllHitPointsDamage _vehicle) # 2;
+
+	_isDamaged;
+};
+
 _handleVehicleRespawn = {
 	private _unit = param[0, objNull, [objNull]];
-	private _targetList = param[1, [], [[]]];
-	private _targetClusterLogic = param[2, objNull, [objNull]];
+	private _targetClusterLogic = param[1, objNull, [objNull]];
 
 	_pos = getPosATL _unit;
 	_dir = direction _unit;
@@ -97,12 +109,11 @@ _handleVehicleRespawn = {
 		_special = "FLY";
 	};
 
- 	sleep 3;
-	_unit synchronizeObjectsRemove _targetList;
+	_targetClusterLogic synchronizeObjectsRemove [_unit];
 	deleteVehicleCrew _unit;
 	deleteVehicle _unit;
 
-	private _veh = createVehicle [_type, _pos, [], 0, _special];
+	private _veh = createVehicle [_type, [0, 0, 10], [], 0, _special];
 	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
 	if (_veh isKindOf "Air") then {
@@ -116,7 +127,7 @@ _handleVehicleRespawn = {
 	_veh setDir _dir;
 	_veh setVectorUp surfaceNormal position _veh;
 
-	true;
+	_veh;
 };
 
 _mag = (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0);
@@ -131,14 +142,14 @@ _mainTaskId = "Launcher";
 
 while { _count isNotEqualTo _index } do {
 	_targetList = _targetClusterLogic call _getTargetList;
-	_target = _targetList select _index;
+	_target = _targetList select 0;
 
 	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	player setDamage 0;
 
 	_invalidTargetList=  + _targetList; // copy array
-	_invalidTargetList deleteAt _index;
+	_invalidTargetList deleteAt (_invalidTargetList find _target);
 
 	shotsValid = 0;
 	shotsInvalid = 0;
@@ -186,7 +197,6 @@ while { _count isNotEqualTo _index } do {
 		};
 
 		if (currentZeroing player isNotEqualTo _distance) then {
-			// TASK Icon: target
 			_zeroingDescription = [
 				"Zero your gun on:<br/>",
 				_distance,
@@ -195,7 +205,7 @@ while { _count isNotEqualTo _index } do {
 				"Zeroing Down:<br/>", ((actionKeysNames "zeroingDown") splitString """" joinString "")
 			] joinString "";
 			_taskZeroingId = "LauncherZeroing";
-			[[_taskZeroingId, _mainTaskId], "Set the right zeroing", _zeroingDescription] call RCT7Bootcamp_fnc_taskCreate;
+			[[_taskZeroingId, _mainTaskId], "Set the right zeroing", _zeroingDescription, "target"] call RCT7Bootcamp_fnc_taskCreate;
 
 			waitUntil {
 				currentZeroing player isEqualTo _distance || firedCount > 0;
@@ -254,7 +264,7 @@ while { _count isNotEqualTo _index } do {
 				player call RCT7Bootcamp_fnc_targetHitInvalid;
 				shotsInvalid = shotsInvalid + 1;
 				_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-				[player, dbSectionName, "success", false, [["vehicle", _name], "distance", _unit distance _instigator]] remoteExec ["RCT7_writeToDb", 2];
+				[player, dbSectionName, "success", false, [["vehicle", _name], ["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
 				_unit removeAllMPEventHandlers "MPHit";
 			};
 		}];
@@ -265,7 +275,7 @@ while { _count isNotEqualTo _index } do {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 		shotsValid = shotsValid + 1;
 		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-		[player, dbSectionName, "success", true, [["vehicle", _name], ["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
+		[player, dbSectionName, "vehicle", _name, [["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}];
 
@@ -273,12 +283,13 @@ while { _count isNotEqualTo _index } do {
 		_count isEqualTo shotsValid || _magSize isEqualTo firedCount
 	};
 
+	_hasDamage = player call _checkDamage;
 	[_taskShootId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
-	[player, dbSectionName, "time", time - _time - 2] remoteExec ["RCT7_writeToDb", 2];
+	[player, dbSectionName, "time", time - _time - 2, [["backblast_cleared", !_hasDamage]]] remoteExec ["RCT7_writeToDb", 2];
 
 	_index = _index + 1;
 
-	if (player call _checkDamage) then {
+	if (_hasDamage) then {
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
 		sleep 5;
 	};
@@ -301,20 +312,30 @@ while { _count isNotEqualTo _index } do {
 	};
 
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
+	_isSuccess = _shotsMissed isEqualTo 0;
 
-	if (_shotsMissed > 0) then {
-		[player, dbSectionName, "shotsMissed", _shotsMissed] remoteExec ["RCT7_writeToDb", 2];
-	} else {
-		[player, dbSectionName, "shotsMissed", _shotsMissed, [["success", true]]] remoteExec ["RCT7_writeToDb", 2];
-	};
+	[player, dbSectionName, "shotsMissed", _shotsMissed, [["success", _isSuccess]]] remoteExec ["RCT7_writeToDb", 2];
 
+	sleep 3;
+
+	_tmpTargetList = +_targetList;
 	{
 		_x removeAllMPEventHandlers "MPHit";
-		if (damage _x isEqualTo 0 ) then {
+
+		_isHit = _x call _vehicleIsHit;
+
+		if !(_isHit) then {
+			player setPos (getPos _x);
+			systemChat (["No Damage on vehicle [", typeOf _x, "] skipping"] joinString "");
 			continue;
 		};
-		[_x, _targetList, _targetClusterLogic] spawn _handleVehicleRespawn;
-	} forEach _targetList;
+
+		_targetList deleteAt (_targetList find _x);
+		_veh = [_x, _targetClusterLogic] call _handleVehicleRespawn;
+		_targetList pushBack _veh;
+	} forEach _tmpTargetList;
+
+	RCTLauncherTargetList = _targetList;
 
 	if (_count > _index) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
