@@ -14,6 +14,7 @@ if (_count < 1) exitWith {
 
 	_condition = "
 	if !(player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) exitWith {
+		hint 'not my turn, exit';
 		false;
 	};
 
@@ -21,6 +22,7 @@ if (_count < 1) exitWith {
 
 	_dist = RCT7_BootcampWaypointPos distance _unit;
 	_atWaypoint = _dist < 2;
+	systemChat (['_atWaypoint ', _atWaypoint] joinString '');
 
 	_atWaypoint;
 
@@ -28,7 +30,7 @@ if (_count < 1) exitWith {
 
 	_onSuccess = '
 	_unit = (synchronizedObjects this) # 0;
-	_unit setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true];
+	_unit setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
 
 	RCT7_BootcampWaypointPos = [0, 0, 0];
 
@@ -42,7 +44,7 @@ if (_count < 1) exitWith {
 		player addAction ["Set!", {
 			params ["_target", "_caller", "_actionId", "_parameter"];
 			player removeAction _actionId;
-			player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false];
+			player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false, true];
 			_wpi = (currentWaypoint group player) - 1;
 			_taskId = ["BoundingSet", str(_wpi)] joinString "";
 			[_taskId] call RCT7Bootcamp_fnc_taskSetState;
@@ -69,8 +71,10 @@ _waypoint setWaypointStatements [_condition, _onSuccess];
 	";
 
 	_onSuccess = '
-	player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true];
-	this setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false];
+	player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
+	this setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false, true];
+
+	systemChat "Done, players turn";
 
 	_g = group this;
 	_wp = currentWaypoint _g;
