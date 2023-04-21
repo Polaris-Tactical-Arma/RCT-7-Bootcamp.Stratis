@@ -9,7 +9,6 @@ private _unit4 = nil;
 	_unit = _x;
 
 	_pos = _unit getVariable "RCT7Bootcamp_Formation";
-	systemChat str _pos;
 
 	switch (_pos) do {
 		case 1: {
