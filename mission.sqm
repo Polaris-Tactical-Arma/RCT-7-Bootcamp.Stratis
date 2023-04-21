@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6670;
+		nextID=6671;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=311;
+		nextID=332;
 	};
 	class Camera
 	{
-		pos[]={1998.6769,70.909096,5520.9165};
-		dir[]={-0.22392099,-0.33574829,0.91496092};
-		up[]={-0.07981386,0.94195074,0.3261269};
-		aside[]={0.9713459,1.3911631e-007,0.23772149};
+		pos[]={1713.6858,72.997559,5262.8081};
+		dir[]={0.38455862,-0.390203,0.83663487};
+		up[]={0.1629779,0.92071706,0.35457084};
+		aside[]={0.9086619,1.9274012e-007,-0.41766709};
 	};
 };
 binarizationWanted=0;
@@ -53,7 +53,6 @@ addons[]=
 	"A3_Structures_F_EPA_Walls",
 	"A3_Weapons_F_Ammoboxes",
 	"CUP_Buildings_Config",
-	"A3_Misc_F_Helpers",
 	"rhsusf_c_troops",
 	"rhsusf_c_weapons",
 	"ace_compat_rhs_usf3",
@@ -67,7 +66,8 @@ addons[]=
 	"ace_scopes",
 	"ace_fcs",
 	"ace_optics",
-	"ace_hearing"
+	"ace_hearing",
+	"A3_Misc_F_Helpers"
 };
 class AddonsMetaData
 {
@@ -196,73 +196,73 @@ class AddonsMetaData
 		};
 		class Item18
 		{
-			className="A3_Misc_F";
-			name="Arma 3 - 3D Aids and Helpers";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item19
-		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item20
+		class Item19
 		{
 			className="rhsusf_c_weapons";
 			name="RHSUSF Weapons & Accessories";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item21
+		class Item20
 		{
 			className="ace_compat_rhs_usf3";
 			name="ACE3 - RHS USF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item21
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
+		class Item22
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item24
+		class Item23
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item24
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item25
 		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item27
+		class Item26
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
+		};
+		class Item27
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -15588,7 +15588,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=96;
+		items=78;
 		class Item0
 		{
 			dataType="Logic";
@@ -17086,6 +17086,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Layer 35";
+			state=1;
 			class Entities
 			{
 				items=14;
@@ -22365,36 +22366,6 @@ class Mission
 		};
 		class Item56
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1655.1704,8.075119,5488.8623};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=6546;
-			type="Sign_Arrow_Large_F";
-			atlOffset=1.8248868;
-		};
-		class Item57
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1654.554,8.0022697,5485.3154};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=6547;
-			type="Sign_Arrow_Large_Blue_F";
-			atlOffset=1.7520375;
-		};
-		class Item58
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -22406,7 +22377,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1661.7439,5.5014391,5491.4067};
-						angles[]={0,4.8586998,0};
+						angles[]={0,4.8586993,0};
 					};
 					side="West";
 					flags=7;
@@ -22943,37 +22914,7 @@ class Mission
 			};
 			id=6549;
 		};
-		class Item59
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1661.9489,7.8782077,5491.4116};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=6559;
-			type="Sign_Arrow_Large_F";
-			atlOffset=1.6279755;
-		};
-		class Item60
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1658.7758,7.9776726,5482.6182};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=6560;
-			type="Sign_Arrow_Large_Blue_F";
-			atlOffset=1.7274404;
-		};
-		class Item61
+		class Item57
 		{
 			dataType="Group";
 			side="West";
@@ -23145,7 +23086,7 @@ class Mission
 			};
 			id=6561;
 		};
-		class Item62
+		class Item58
 		{
 			dataType="Group";
 			side="West";
@@ -23274,7 +23215,7 @@ class Mission
 			};
 			id=6568;
 		};
-		class Item63
+		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23338,143 +23279,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item64
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1902.209,5.5,5823.0381};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6631;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item65
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1925.4919,5.5,5817.4692};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6632;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item66
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1934.421,5.5,5860.9102};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6633;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item67
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1912.788,5.5,5866.7222};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6634;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item68
+		class Item60
 		{
 			dataType="Group";
 			side="Civilian";
@@ -23612,211 +23417,7 @@ class Mission
 			};
 			id=6635;
 		};
-		class Item69
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1695.577,5.5,5052.1162};
-				angles[]={0,1.8325957,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 30] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 30];";
-			};
-			id=6640;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=30;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item70
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1602.808,5.5,5073.9458};
-				angles[]={0,1.8325957,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 50] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 50];";
-			};
-			id=6641;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=50;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item71
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1632.1639,5.5,5005.061};
-				angles[]={0,0.31415927,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 30] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 30];";
-			};
-			id=6642;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=30;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item72
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1529.662,5.5,5014.022};
-				angles[]={0,0.20943952,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 30] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 30];";
-			};
-			id=6643;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=30;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item73
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1496.142,5.4181776,5096.3638};
-				angles[]={0,1.8325957,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="[this, 50] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 50];";
-			};
-			id=6644;
-			type="Land_InvisibleBarrier_F";
-			atlOffset=1.2139997;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=50;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item74
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1635.2,5.5,5156.6768};
-				angles[]={0,3.4208455,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 50] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 50];";
-			};
-			id=6645;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=50;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item75
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23834,7 +23435,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=-0.022994995;
 		};
-		class Item76
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23851,7 +23452,7 @@ class Mission
 			type="Land_Cargo_Patrol_V3_F";
 			atlOffset=1.5258789e-005;
 		};
-		class Item77
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23867,7 +23468,7 @@ class Mission
 			id=6647;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item78
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23884,7 +23485,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00033569336;
 		};
-		class Item79
+		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23901,7 +23502,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=9.5367432e-007;
 		};
-		class Item80
+		class Item66
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23917,7 +23518,7 @@ class Mission
 			id=6651;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item81
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23933,7 +23534,7 @@ class Mission
 			id=6652;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item82
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23949,7 +23550,7 @@ class Mission
 			id=6653;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item83
+		class Item69
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23966,7 +23567,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00016021729;
 		};
-		class Item84
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23982,7 +23583,7 @@ class Mission
 			id=6656;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item85
+		class Item71
 		{
 			dataType="Object";
 			class PositionInfo
@@ -23998,143 +23599,7 @@ class Mission
 			id=6657;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item86
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2085.917,6.73,5599.418};
-				angles[]={0,3.4208455,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 15] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 15];";
-			};
-			id=6658;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=15;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item87
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2096.343,6.6589928,5649.6738};
-				angles[]={0,3.4208455,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 15] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 15];";
-			};
-			id=6659;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=15;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item88
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2065.1011,6.7072473,5630.4238};
-				angles[]={0,1.8151424,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 15] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 15];";
-			};
-			id=6660;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=15;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item89
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2115.4819,6.6814899,5615.5601};
-				angles[]={0,1.8151424,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 15] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 15];";
-			};
-			id=6661;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=15;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item90
+		class Item72
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24150,143 +23615,7 @@ class Mission
 			id=6664;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item91
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2186.3428,5.9888864,5756.2227};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6665;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item92
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2168.2229,5.9440761,5759.4565};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6666;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item93
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2175.9607,5.9899015,5749.7393};
-				angles[]={0,0.19198608,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6667;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item94
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2180.2212,5.9040647,5767.7041};
-				angles[]={0,3.3684864,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, 7] call RCT7Bootcamp_fnc_setScale; this setVariable ['RCT7Scale', 7];";
-			};
-			id=6668;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item95
+		class Item73
 		{
 			dataType="Group";
 			side="West";
@@ -24411,6 +23740,134 @@ class Mission
 			};
 			id=6662;
 			atlOffset=-4.7683716e-007;
+		};
+		class Item74
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1658.7758,7.9776726,5482.6182};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=6560;
+			type="Sign_Arrow_Large_Blue_F";
+			atlOffset=1.7274404;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item75
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1654.554,8.0022697,5485.3154};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=6547;
+			type="Sign_Arrow_Large_Blue_F";
+			atlOffset=1.7520375;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1662.8345,7.8782077,5492.4053};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=6559;
+			type="Sign_Arrow_Large_F";
+			atlOffset=1.6279755;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item77
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1655.1704,8.075119,5488.8623};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=6546;
+			type="Sign_Arrow_Large_F";
+			atlOffset=1.8248868;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
