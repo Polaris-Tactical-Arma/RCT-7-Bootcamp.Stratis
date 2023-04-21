@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1058;
+	toggles=1065;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=283;
+		nextID=304;
 	};
 	class Camera
 	{
-		pos[]={1936.181,12.270239,5866.2168};
-		dir[]={-0.87952906,-0.37891281,-0.28784367};
-		up[]={-0.36011794,0.92543238,-0.11785588};
-		aside[]={-0.31103697,7.4505806e-009,0.95039797};
+		pos[]={2102.5596,70.909096,5374.3271};
+		dir[]={0.95228118,-0.30247,-0.040898483};
+		up[]={0.30219147,0.95315886,-0.01297849};
+		aside[]={-0.042908356,9.3132257e-010,-0.99907911};
 	};
 };
 binarizationWanted=0;
-sourceName="rct-7-bootcamp";
+sourceName="RCT-7-Bootcamp";
 addons[]=
 {
 	"A3_Modules_F",
@@ -15722,8 +15722,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2334.1138,29.683855,5396.3843};
-				angles[]={5.7726941,5.873033,0.41030946};
+				position[]={2392.3384,19.130798,5348.1914};
+				angles[]={6.1196594,0.17706485,0.27068865};
 			};
 			side="Empty";
 			flags=4;
@@ -15735,7 +15735,7 @@ class Mission
 			};
 			id=5363;
 			type="CUP_O_BRDM2_HQ_CSAT";
-			atlOffset=-0.45599937;
+			atlOffset=-0.23120689;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15759,8 +15759,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2332.7341,29.829247,5554.4619};
-				angles[]={5.7632346,5.8663659,0.36967817};
+				position[]={2278.6389,16.073225,5429.9009};
+				angles[]={0.062418513,5.7622108,0.14399634};
 			};
 			side="Empty";
 			flags=4;
@@ -15770,7 +15770,7 @@ class Mission
 			};
 			id=5364;
 			type="RHS_Ural_Open_Civ_02";
-			atlOffset=-0.0060005188;
+			atlOffset=2.4795532e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15859,8 +15859,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2325.8374,31.098839,5213.0596};
-				angles[]={0.48735863,0,0};
+				position[]={2210.8196,42.672127,5169.9546};
+				angles[]={0.24733086,1.9602779,0.36314702};
 			};
 			side="Empty";
 			flags=4;
@@ -15870,7 +15870,7 @@ class Mission
 			};
 			id=5378;
 			type="rhs_t72ba_tv";
-			atlOffset=-0.27290916;
+			atlOffset=-0.17967224;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -22319,7 +22319,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1689.5922,8.6363554,5480.6245};
-				angles[]={0,4.9397068,-0};
+				angles[]={0,4.9397068,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22827,7 +22827,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1655.2197,5.5014391,5488.8281};
-						angles[]={0,4.9459667,-0};
+						angles[]={0,4.9459667,0};
 					};
 					side="West";
 					flags=5;
@@ -23280,7 +23280,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1910.9089,5.7840548,5823.1113};
-				angles[]={0,4.045742,-0};
+				angles[]={0,4.045742,0};
 			};
 			side="Empty";
 			flags=4;
@@ -23487,7 +23487,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1922.0243,5.5014391,5856.772};
-						angles[]={0,0.28126022,-0};
+						angles[]={0,0.28126022,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -23788,7 +23788,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1635.2,5.5,5156.6768};
-				angles[]={0,3.4208455,-0};
+				angles[]={0,3.4208455,0};
 			};
 			side="Empty";
 			flags=4;
@@ -24004,7 +24004,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2085.917,6.73,5599.418};
-				angles[]={0,3.4208455,-0};
+				angles[]={0,3.4208455,0};
 			};
 			side="Empty";
 			flags=4;
@@ -24038,7 +24038,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2096.343,6.6589928,5649.6738};
-				angles[]={0,3.4208455,-0};
+				angles[]={0,3.4208455,0};
 			};
 			side="Empty";
 			flags=4;
@@ -24135,6 +24135,158 @@ class Mission
 			};
 		};
 		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1912.952,5.5,5818.396};
+				angles[]={6.2681928,0,0.014992379};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="StartPosition_Radio";
+			};
+			id=6664;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item91
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2186.3428,5.9888864,5756.2227};
+				angles[]={0,1.7802358,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectScale 7;";
+			};
+			id=6665;
+			type="Land_InvisibleBarrier_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_objectScaling";
+					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2168.2229,5.9440761,5759.4565};
+				angles[]={0,1.7802358,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectScale 7;";
+			};
+			id=6666;
+			type="Land_InvisibleBarrier_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_objectScaling";
+					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2175.9607,5.9899015,5749.7393};
+				angles[]={0,0.19198608,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectScale 7;";
+			};
+			id=6667;
+			type="Land_InvisibleBarrier_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_objectScaling";
+					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2180.2212,5.9040647,5767.7041};
+				angles[]={0,3.3684864,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectScale 7;";
+			};
+			id=6668;
+			type="Land_InvisibleBarrier_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_objectScaling";
+					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item95
 		{
 			dataType="Group";
 			side="West";
@@ -24259,158 +24411,6 @@ class Mission
 			};
 			id=6662;
 			atlOffset=-4.7683716e-007;
-		};
-		class Item91
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1912.952,5.5,5818.396};
-				angles[]={6.2681928,0,0.014992379};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="StartPosition_Radio";
-			};
-			id=6664;
-			type="Land_HelipadEmpty_F";
-		};
-		class Item92
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2186.3428,5.9888864,5756.2227};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setObjectScale 7;";
-			};
-			id=6665;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item93
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2168.2229,5.9440761,5759.4565};
-				angles[]={0,1.7802358,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setObjectScale 7;";
-			};
-			id=6666;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item94
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2175.9607,5.9899015,5749.7393};
-				angles[]={0,0.19198608,-0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setObjectScale 7;";
-			};
-			id=6667;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item95
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2180.2212,5.9040647,5767.7041};
-				angles[]={0,3.3684864,-0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this setObjectScale 7;";
-			};
-			id=6668;
-			type="Land_InvisibleBarrier_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_objectScaling";
-					expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=7;
-						};
-					};
-				};
-				nAttributes=1;
-			};
 		};
 	};
 	class Connections
