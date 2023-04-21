@@ -20,7 +20,7 @@ RCT7playerData = nil;
 
 [player] remoteExec ["RCT7_getFromDb", 2];
 
-waitUntil { 
+waitUntil {
 	!(isNil "RCT7playerData");
 };
 
@@ -52,7 +52,7 @@ _isSectionCompleted = {
 
 	    private _dataArray = _data select 0 select 1; // Get the "data" array
 	private _completedSections = [];
-	
+
 	{
 		private _key = _x select 0;
 		if (_key == _completedSectionsKey) then {
@@ -75,13 +75,13 @@ _isSectionCompleted = {
 
 _teleportPlayer = {
 	_name = param[0, "", [""]];
-	_objName = ["StartPosition",_name] joinString "_";
+	_objName = ["StartPosition", _name] joinString "_";
 
 	if (_name isEqualTo "" || isNil _objName) exitWith {};
 
 	_obj = call compile (_objName);
 
-	_pos = getPosATL _obj; 
+	_pos = getPosATL _obj;
 	player setPosATL _pos;
 };
 
@@ -95,7 +95,6 @@ _teleportPlayer = {
 
 	_section call _teleportPlayer;
 	sleep 2;
-	
 
 	switch (_section) do {
 		case "Radio": {
@@ -134,7 +133,6 @@ _teleportPlayer = {
 		case "MedicalSelf": {
 			[player] call RCT7Bootcamp_fnc_ACEMedical;
 		};
-		
 	};
 
 	systemChat (["Section [", _section, "] complete. Saving process..."] joinString "");
