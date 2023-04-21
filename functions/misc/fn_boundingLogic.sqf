@@ -13,8 +13,8 @@ if (_count < 1) exitWith {
 	_waypoint = _x;
 
 	_condition = "
-	if !(player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) exitWith {
-		hint 'not my turn, exit';
+	_player = allPlayers # 0;
+	if !(_player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) exitWith {
 		false;
 	};
 
@@ -22,33 +22,33 @@ if (_count < 1) exitWith {
 
 	_dist = RCT7_BootcampWaypointPos distance _unit;
 	_atWaypoint = _dist < 2;
-	systemChat (['_atWaypoint ', _atWaypoint] joinString '');
 
 	_atWaypoint;
 
 	";
 
 	_onSuccess = '
+	_player = allPlayers # 0;
+
 	_unit = (synchronizedObjects this) # 0;
 	_unit setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
 
 	RCT7_BootcampWaypointPos = [0, 0, 0];
 
-	_group = group player;
+	_group = group _player;
 	_wpi = currentWaypoint _group;
 	if (_wpi < (count( waypoints _group) - 1)) then {
-		systemChat str _wpi;
 		_taskId = ["BoundingSet", str(_wpi)] joinString "";
 		[[_taskId, RCT7BoundingParentTaskId], "Move to next waypoint", "Move to the next waypoint and call out when you are set (use scroll wheel)"] call RCT7Bootcamp_fnc_taskCreate;
 
-		player addAction ["Set!", {
+		_player addAction ["Set!", {
 			params ["_target", "_caller", "_actionId", "_parameter"];
-			player removeAction _actionId;
-			player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false, true];
-			_wpi = (currentWaypoint group player) - 1;
+			_caller removeAction _actionId;
+			_caller setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false, true];
+			_wpi = (currentWaypoint group _caller) - 1;
 			_taskId = ["BoundingSet", str(_wpi)] joinString "";
 			[_taskId] call RCT7Bootcamp_fnc_taskSetState;
-		}, nil, 5, true, true, "", "(player distance leader player) < 5 && speed (leader player) isEqualTo 0"
+		}, nil, 5, true, true, "", "(_this distance leader _this) < 5 && speed (leader _this) isEqualTo 0"
 	];
 };
 ';
@@ -65,16 +65,16 @@ _waypoint setWaypointStatements [_condition, _onSuccess];
 		false;
 	};
 
-	_check = (player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) isEqualTo false;
+	_player = allPlayers # 0;
+	_check = (_player getVariable ['RCT7Bootcamp_BoundingIsMyTurn', false]) isEqualTo false;
 
 	_check;
 	";
 
 	_onSuccess = '
-	player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
+	_player = allPlayers # 0;
+	_player setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
 	this setVariable ["RCT7Bootcamp_BoundingIsMyTurn", false, true];
-
-	systemChat "Done, players turn";
 
 	_g = group this;
 	_wp = currentWaypoint _g;
