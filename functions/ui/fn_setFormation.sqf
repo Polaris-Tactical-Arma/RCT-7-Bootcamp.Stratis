@@ -44,9 +44,13 @@ switch (_formation) do {
 	};
 };
 
+// We need to sleep a bit, because of network sync
+sleep 0.1;
+
 {
 	_arrow = synchronizedObjects _x # 0;
-	_arrow setPos (_x modelToWorld [0, 0, 2]);
+	sleep 0.01;
+	_arrow attachTo [_x, [0, 0, 2.5]];
 } forEach _unitList;
 
 true;
