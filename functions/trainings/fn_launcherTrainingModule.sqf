@@ -325,8 +325,6 @@ while { _count isNotEqualTo _index } do {
 		_isHit = _x call _vehicleIsHit;
 
 		if !(_isHit) then {
-			player setPos (getPos _x);
-			systemChat (["No Damage on vehicle [", typeOf _x, "] skipping"] joinString "");
 			continue;
 		};
 
