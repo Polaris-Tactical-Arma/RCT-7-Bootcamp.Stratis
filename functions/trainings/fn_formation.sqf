@@ -5,23 +5,35 @@ private _unit2 = nil;
 private _unit3 = nil;
 private _unit4 = nil;
 
+_createArrow = {
+	private _unit = param[0, objNull, [objNull]];
+	private _arrowType = param[1, "Sign_Arrow_Large_F", [""]];
+
+	_arrow = _arrowType createVehicle (getPos _unit);
+	_arrow attachTo [_unit, [0, 0, 2.5]];
+};
+
 {
-	_unit = _x;
+	private _unit = _x;
 
 	_pos = _unit getVariable "RCT7Bootcamp_Formation";
 
 	switch (_pos) do {
 		case 1: {
 			_unit1 = _unit;
+			[_unit] call _createArrow;
 		};
 		case 2: {
 			_unit2 = _unit;
+			[_unit] call _createArrow;
 		};
 		case 3: {
 			_unit3 = _unit;
+			[_unit, "Sign_Arrow_Large_Blue_F"] call _createArrow;
 		};
 		case 4: {
 			_unit4 = _unit;
+			[_unit, "Sign_Arrow_Large_Blue_F"] call _createArrow;
 		};
 	};
 } forEach units _group;
@@ -37,7 +49,7 @@ private _formationList = [
 	["ECH RIGHT", "Echolon Right"]
 ];
 
-sleep 3;
+sleep 2;
 
 {
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
