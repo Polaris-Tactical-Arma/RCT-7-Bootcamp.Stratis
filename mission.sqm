@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6676;
+		nextID=6678;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=353;
+		nextID=360;
 	};
 	class Camera
 	{
-		pos[]={1675.8792,16.913265,5483.7217};
-		dir[]={-0.82732874,-0.52961338,0.18727247};
-		up[]={-0.51655054,0.8482371,0.11692537};
-		aside[]={0.22077708,4.176909e-007,0.97534257};
+		pos[]={6438.9526,28.045683,5425.6792};
+		dir[]={-0.74290901,-0.6390751,0.19941474};
+		up[]={-0.61722589,0.76913619,0.16567862};
+		aside[]={0.25925964,1.3253884e-006,0.96585554};
 	};
 };
 binarizationWanted=0;
@@ -300,7 +300,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category1
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -368,7 +368,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category2
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
@@ -23660,16 +23660,6 @@ class Mission
 							{
 								typeName="B_AssaultPack_cbr";
 								isBackpack=1;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="rhs_mag_m67";
-										count=4;
-										ammoLeft=1;
-									};
-								};
 							};
 							map="ItemMap";
 							compass="ItemCompass";
