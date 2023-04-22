@@ -125,7 +125,7 @@ while { _isRunning } do {
 	[_patientBandage] call RCT7Bootcamp_fnc_taskSetState;
 
 	_patientTournequitRemove = "PatientTournequitRemove";
-	[[_patientTournequitRemove, _patientMedicalTaskId], "Remove a tournequit", "Remove the tournequit from your leg", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientTournequitRemove, _patientMedicalTaskId], "Remove a tournequit", "Remove the tournequit", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 	waitUntil{
 		sleep 1;
@@ -169,4 +169,4 @@ if (_isAI) then {
 	_db_key = "patient";
 };
 
-[[player, ["ace_medical", _db_key] joinString "_", "finished", true]] remoteExec ["RCT7_addToDBQueue", 2];
+true;
