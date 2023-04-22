@@ -110,5 +110,6 @@ player removeEventHandler ["Fired", _firedIndex];
 
 player call RCT7Bootcamp_fnc_sectionFinished;
 [_ShoothouseTaskId] call RCT7Bootcamp_fnc_taskSetState;
+0 call RCT7Bootcamp_fnc_handleMags;
 
 true;
