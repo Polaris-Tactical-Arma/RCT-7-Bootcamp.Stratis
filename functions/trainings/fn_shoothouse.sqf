@@ -50,14 +50,14 @@ _stopwatch = {
 			shotsInvalid = shotsInvalid + 1;
 			_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
-			[
+			[[
 				player,
 				dbSectionName,
 				"shotsInvalid", shotsInvalid,
 				[
 					["wrongTargetList", [_name]]
 				]
-			] remoteExec ["RCT7_writeToDb", 2];
+			]] remoteExec ["RCT7_addToDBQueue", 2];
 
 			_unit removeAllMPEventHandlers "MPHit";
 		};
@@ -71,7 +71,7 @@ _stopwatch = {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 		shotsValid = shotsValid + 1;
 		systemChat str shotsValid;
-		[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
+		[[player, dbSectionName, "shotsValid", shotsValid]] remoteExec ["RCT7_addToDBQueue", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}];
 } forEach _validTargetList;
@@ -95,7 +95,7 @@ waitUntil {
 RCT7ShoothouseInProcess = false;
 
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
-[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
+[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 sleep 1;
 

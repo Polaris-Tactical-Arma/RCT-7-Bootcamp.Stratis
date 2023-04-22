@@ -261,7 +261,7 @@ while { _count isNotEqualTo _index } do {
 				player call RCT7Bootcamp_fnc_targetHitInvalid;
 				shotsInvalid = shotsInvalid + 1;
 				_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-				[player, dbSectionName, "success", false, [["vehicle", _name], ["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
+				[[player, dbSectionName, "success", false, [["vehicle", _name], ["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
 				_unit removeAllMPEventHandlers "MPHit";
 			};
 		}];
@@ -272,7 +272,7 @@ while { _count isNotEqualTo _index } do {
 		player call RCT7Bootcamp_fnc_targetHitValid;
 		shotsValid = shotsValid + 1;
 		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-		[player, dbSectionName, "vehicle", _name, [["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
+		[[player, dbSectionName, "vehicle", _name, [["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}];
 
@@ -282,7 +282,7 @@ while { _count isNotEqualTo _index } do {
 
 	_hasDamage = player call _checkDamage;
 	[_taskShootId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
-	[player, dbSectionName, "time", time - _time - 2, [["backblast_cleared", !_hasDamage]]] remoteExec ["RCT7_writeToDb", 2];
+	[[player, dbSectionName, "time", time - _time - 2, [["backblast_cleared", !_hasDamage]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	_index = _index + 1;
 
@@ -311,7 +311,7 @@ while { _count isNotEqualTo _index } do {
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 	_isSuccess = _shotsMissed isEqualTo 0;
 
-	[player, dbSectionName, "shotsMissed", _shotsMissed, [["success", _isSuccess]]] remoteExec ["RCT7_writeToDb", 2];
+	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["success", _isSuccess]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	sleep 3;
 

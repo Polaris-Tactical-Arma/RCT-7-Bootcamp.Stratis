@@ -85,7 +85,7 @@ while { _count isNotEqualTo _index } do {
 	_subTaskTitle = [_index + 1, "Hit the correct Target"] joinString " - ";
 	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;
 
-	[player, dbSectionName, "description", _targetDescription] remoteExec ["RCT7_writeToDb", 2];
+	[[player, dbSectionName, "description", _targetDescription]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	{
 		{
@@ -98,14 +98,14 @@ while { _count isNotEqualTo _index } do {
 					shotsInvalid = shotsInvalid + 1;
 					_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
-					[
+					[[
 						player,
 						dbSectionName,
 						"shotsInvalid", shotsInvalid,
 						[
 							["wrongTargetList", [_name]]
 						]
-					] remoteExec ["RCT7_writeToDb", 2];
+					]] remoteExec ["RCT7_addToDBQueue", 2];
 
 					_unit removeAllMPEventHandlers "MPHit";
 				};
@@ -121,7 +121,7 @@ while { _count isNotEqualTo _index } do {
 
 		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
 
-		[player, dbSectionName, "shotsValid", shotsValid, [["distance", _unit distance _instigator]]] remoteExec ["RCT7_writeToDb", 2];
+		[[player, dbSectionName, "shotsValid", shotsValid, [["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}
 ];
@@ -135,7 +135,7 @@ waitUntil {
 
 [_subTaskId] call RCT7Bootcamp_fnc_taskSetState;
 _shotsMissed = firedCount - (shotsInvalid + shotsValid);
-[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
+[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 sleep 1;
 

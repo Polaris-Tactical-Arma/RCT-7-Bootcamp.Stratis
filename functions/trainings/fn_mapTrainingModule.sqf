@@ -82,7 +82,7 @@ while { _count isNotEqualTo _index } do {
 					shotsInvalid = shotsInvalid + 1;
 					_grid = mapGridPosition _unit;
 
-					[player, dbSectionName, "shotsInvalid", shotsInvalid, ["wrongTargetList", [_grid]]] remoteExec ["RCT7_writeToDb", 2];
+					[[player, dbSectionName, "shotsInvalid", shotsInvalid, ["wrongTargetList", [_grid]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 					_unit removeAllMPEventHandlers "MPHit";
 				};
@@ -95,7 +95,7 @@ while { _count isNotEqualTo _index } do {
 			params ["_unit", "_source", "_damage", "_instigator"];
 			player call RCT7Bootcamp_fnc_targetHitValid;
 			shotsValid = shotsValid + 1;
-			[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
+			[[player, dbSectionName, "shotsValid", shotsValid]] remoteExec ["RCT7_addToDBQueue", 2];
 			_unit removeAllMPEventHandlers "MPHit";
 		}];
 	} forEach _targetList;
@@ -109,7 +109,7 @@ while { _count isNotEqualTo _index } do {
 
 	_index = _index + 1;
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-	[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
+	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 	sleep 1;
 
 	(synchronizedObjects _targetController) apply {

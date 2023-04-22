@@ -21,6 +21,10 @@ RCT7playerData = nil;
 [player] remoteExec ["RCT7_getFromDb", 2];
 
 waitUntil {
+	sleep 3;
+	{
+		publicVariable "RCT7playerData"
+	} remoteExec ["call", 2];
 	!(isNil "RCT7playerData");
 };
 
@@ -40,6 +44,8 @@ _sectionList = [
 	"Medical",
 	"MedicalSelf"
 ];
+
+private _lastItem = _sectionList # (count _sectionList - 1);
 
 _isSectionCompleted = {
 	private _sectionToCheck = _this # 0;
@@ -147,8 +153,12 @@ _teleportPlayer = {
 	};
 
 	systemChat (["Section [", _section, "] complete. Saving process..."] joinString "");
-	[player, _completedSectionName, _section, true] remoteExec ["RCT7_writeToDb", 2];
+	[[player, _completedSectionName, _section, true]] remoteExec ["RCT7_addToDBQueue", 2];
+
+	if (_lastItem isEqualTo _section) exitWith {};
 	["Training Complete!\nNext Training in", 3] call RCT7Bootcamp_fnc_cooldownHint;
 } forEach _sectionList;
 
+hint "Bootcamp complete!";
+sleep 3;
 ["Bootcamp finished", true, 3] remoteExec ["BIS_fnc_endMission", 0, true];

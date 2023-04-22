@@ -79,7 +79,7 @@ private _quizz = {
 				hintSilent "";
 			};
 
-			[player, _dbSection, "correct", _result, [["answer", _formation]]] remoteExec ["RCT7_writeToDb", 2];
+			[[player, _dbSection, "correct", _result, [["answer", _formation]]]] remoteExec ["RCT7_addToDBQueue", 2];
 			RCT7Bootcamp_FormationHasAnswered = true;
 		}, _x # 0];
 	} forEach _formationAddActionList;

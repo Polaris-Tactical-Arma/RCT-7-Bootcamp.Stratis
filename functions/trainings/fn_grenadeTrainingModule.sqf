@@ -31,10 +31,8 @@ _firedIndex = ["ace_firedPlayer", {
 
 _index = 0;
 
-
 private _mainTask = "GrenadeTraining";
 [_mainTask, "Finish the grenade training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
-
 
 call RCT7Bootcamp_fnc_sectionStart;
 
@@ -76,7 +74,7 @@ while { _count isNotEqualTo _index } do {
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
 		shotsValid = shotsValid + 1;
-		[player, dbSectionName, "shotsValid", shotsValid] remoteExec ["RCT7_writeToDb", 2];
+		[[player, dbSectionName, "shotsValid", shotsValid]] remoteExec ["RCT7_addToDBQueue", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}];
 
@@ -90,7 +88,7 @@ while { _count isNotEqualTo _index } do {
 
 	_index = _index + 1;
 	_shotsMissed = firedCount - shotsValid;
-	[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]] remoteExec ["RCT7_writeToDb", 2];
+	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 };
 

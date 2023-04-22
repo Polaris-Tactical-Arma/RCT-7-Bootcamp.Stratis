@@ -1,3 +1,5 @@
+RCT7_dbQueue = [];
+
 RCT7_writeToDb = {
 	params["_player", "_section", "_key", "_value", ["_additional_pairs", []]];
 
@@ -24,12 +26,34 @@ RCT7_getFromDb = {
 	if !(isServer) exitWith {};
 
 	_data = ["bootcamp.get_data", [getPlayerUID _player]] call py3_fnc_callExtension;
+	RCT7playerData = _data;
 
 	if (_data # 0 # 0 isEqualTo "error") exitWith {
 		RCT7playerData = [];
 	};
 
-	RCT7playerData = _data;
-
 	publicVariable "RCT7playerData";
 };
+
+RCT7_addToDBQueue = {
+	_item = param[0, [], [[]]];
+
+	RCT7_dbQueue pushBack _item;
+};
+
+_runQueue = {
+	[] spawn {
+		while { true } do {
+			sleep 1;
+			if (count RCT7_dbQueue isEqualTo 0) then {
+				continue;
+			};
+
+			_currentItem = RCT7_dbQueue # 0;
+			_currentItem call RCT7_writeToDb;
+			RCT7_dbQueue deleteAt 0;
+		};
+	};
+};
+
+call _runQueue;

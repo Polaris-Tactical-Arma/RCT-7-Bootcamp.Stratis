@@ -169,4 +169,4 @@ if (_isAI) then {
 	_db_key = "patient";
 };
 
-[player, ["ace_medical", _db_key] joinString "_", "finished", true] remoteExec ["RCT7_writeToDb", 2];
+[[player, ["ace_medical", _db_key] joinString "_", "finished", true]] remoteExec ["RCT7_addToDBQueue", 2];
