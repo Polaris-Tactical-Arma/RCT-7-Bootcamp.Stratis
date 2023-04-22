@@ -29,7 +29,7 @@ _completedSectionName = "CompletedSections";
 _sectionList = [
 	"Radio",
 	"3DReport",
-	"Shoothouse",
+	// "Shoothouse", 
 	"Grenade",
 	"Map",
 	"LauncherAT",
@@ -119,16 +119,27 @@ _teleportPlayer = {
 			["rhs_weap_fim92", "AA", AATraining] call RCT7Bootcamp_fnc_launcherTrainingModule;
 		};
 		case "Formation": {
-			[FormationGroup] call RCT7Bootcamp_fnc_formation;
+			private _group = FormationGroup;
+			[position ((units _group) # 0)] call RCT7Bootcamp_fnc_playerLookAtPos;
+
+			[_group] call RCT7Bootcamp_fnc_formation;
 		};
 		case "BoundingAlternate": {
-			[UnitBoundingAlternate, "Alternate"] call RCT7Bootcamp_fnc_bounding;
+			private _unit = UnitBoundingAlternate;
+			[position _unit] call RCT7Bootcamp_fnc_playerLookAtPos;
+
+			[_unit, "Alternate"] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "BoundingSuccessive": {
-			[UnitBoundingSuccessive, "Successive"] call RCT7Bootcamp_fnc_bounding;
+			private _unit = UnitBoundingSuccessive;
+			[position _unit] call RCT7Bootcamp_fnc_playerLookAtPos;
+
+			[_unit, "Successive"] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "Medical": {
-			[UnitMedical] call RCT7Bootcamp_fnc_ACEMedical;
+			private _unit = UnitMedical;
+			[position _unit] call RCT7Bootcamp_fnc_playerLookAtPos;
+			[_unit] call RCT7Bootcamp_fnc_ACEMedical;
 		};
 		case "MedicalSelf": {
 			[player] call RCT7Bootcamp_fnc_ACEMedical;
