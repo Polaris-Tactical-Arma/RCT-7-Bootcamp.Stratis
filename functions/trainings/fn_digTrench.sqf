@@ -38,7 +38,7 @@ _trenchPlacedEvent = ["ace_trenches_placed", {
 		[
 			["trenchesPlaceGun", "trenches"],
 			"Place your gun on the trench",
-			["place your gun on the trench with:<br/>", call compile (actionKeysNames "deployWeaponAuto")] joinString ""
+			["place your gun on the trench with:<br/>", actionKeysNames "deployWeaponAuto" regexReplace ["""", ""]] joinString ""
 		] call RCT7Bootcamp_fnc_taskCreate;
 
 		waitUntil {
