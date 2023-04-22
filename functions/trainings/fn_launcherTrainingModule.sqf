@@ -95,12 +95,12 @@ _vehicleIsHit = {
 };
 
 _handleVehicleRespawn = {
-	private _unit = param[0, objNull, [objNull]];
+	private _vehicle = param[0, objNull, [objNull]];
 	private _targetClusterLogic = param[1, objNull, [objNull]];
 
-	_pos = getPosATL _unit;
-	_dir = direction _unit;
-	_type = typeOf _unit;
+	_pos = getPos _vehicle;
+	_dir = direction _vehicle;
+	_type = typeOf _vehicle;
 	_isAir = _type isKindOf "Air";
 
 	private _special = "NONE";
@@ -109,12 +109,14 @@ _handleVehicleRespawn = {
 		_special = "FLY";
 	};
 
-	_targetClusterLogic synchronizeObjectsRemove [_unit];
-	deleteVehicleCrew _unit;
-	deleteVehicle _unit;
+	_targetClusterLogic synchronizeObjectsRemove [_vehicle];
+	deleteVehicleCrew _vehicle;
+	deleteVehicle _vehicle;
 
-	private _veh = createVehicle [_type, [0, 0, 10], [], 0, _special];
-	_targetClusterLogic synchronizeObjectsAdd [_veh];
+	sleep 0.5;
+
+	private _veh = createVehicle [_type, _pos, [], 0, _special];
+	_veh setDir _dir;
 
 	if (_veh isKindOf "Air") then {
 		_crew = createVehicleCrew _veh;
@@ -123,9 +125,7 @@ _handleVehicleRespawn = {
 		_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 	};
 
-	_veh setPosATL _pos;
-	_veh setDir _dir;
-	_veh setVectorUp surfaceNormal position _veh;
+	_targetClusterLogic synchronizeObjectsAdd [_veh];
 
 	_veh;
 };
@@ -158,27 +158,24 @@ while { _count isNotEqualTo _index } do {
 
 	_time = time;
 
-	if (currentWeapon player isNotEqualTo secondaryWeapon player) then {
-		_equipDescription = ["A", call _getLauncherName, "was added to your inventory!<br/>Equip it!"] joinString " ";
-		_taskEquipId = "LauncherEquip";
-		[[_taskEquipId, _mainTaskId], "Equip your launcher", _equipDescription, "use"] call RCT7Bootcamp_fnc_taskCreate;
-		waitUntil {
-			currentWeapon player isEqualTo secondaryWeapon player;
-		};
-		[_taskEquipId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
-		player call RCT7Bootcamp_fnc_targetHitValid;
+	_equipDescription = ["A", call _getLauncherName, "was added to your inventory!<br/>Equip it!"] joinString " ";
+	_taskEquipId = "LauncherEquip";
+	[[_taskEquipId, _mainTaskId], "Equip your launcher", _equipDescription, "use"] call RCT7Bootcamp_fnc_taskCreate;
+	waitUntil {
+		currentWeapon player isEqualTo secondaryWeapon player;
 	};
+	[_taskEquipId] call RCT7Bootcamp_fnc_taskSetState;
+	player call RCT7Bootcamp_fnc_targetHitValid;
 
-	if ((player ammo secondaryWeapon player) isEqualTo 0) then {
-		_prepareDescription = ["Prepare your launcher with:<br/>", call compile (actionKeysNames "ReloadMagazine")] joinString "";
-		_taskPrepareId = "LauncherPrepare";
-		[[_taskPrepareId, _mainTaskId], "Prepare your launcher", _prepareDescription] call RCT7Bootcamp_fnc_taskCreate;
-		waitUntil {
-			(player ammo secondaryWeapon player) isEqualTo 1;
-		};
-		[_taskPrepareId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
-		player call RCT7Bootcamp_fnc_targetHitValid;
+	_reloadButton = actionKeysNames "ReloadMagazine" regexReplace ["""", ""];
+	_prepareDescription = ["Prepare your launcher with:<br/>", _reloadButton] joinString "";
+	_taskPrepareId = "LauncherPrepare";
+	[[_taskPrepareId, _mainTaskId], "Prepare your launcher", _prepareDescription] call RCT7Bootcamp_fnc_taskCreate;
+	waitUntil {
+		(player ammo secondaryWeapon player) isEqualTo 1;
 	};
+	[_taskPrepareId] call RCT7Bootcamp_fnc_taskSetState;
+	player call RCT7Bootcamp_fnc_targetHitValid;
 
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
@@ -211,7 +208,7 @@ while { _count isNotEqualTo _index } do {
 				currentZeroing player isEqualTo _distance || firedCount > 0;
 			};
 
-			[_taskZeroingId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
+			[_taskZeroingId] call RCT7Bootcamp_fnc_taskSetState;
 			player call RCT7Bootcamp_fnc_targetHitValid;
 		};
 		call _firedCheck;
@@ -229,7 +226,7 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		!(_actionId in (actionIDs player)) || firedCount > 0;
 	};
-	[_taskBackblastId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
+	[_taskBackblastId] call RCT7Bootcamp_fnc_taskSetState;
 
 	[_actionId] call _firedCheck;
 
@@ -291,7 +288,7 @@ while { _count isNotEqualTo _index } do {
 
 	if (_hasDamage) then {
 		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
-		sleep 5;
+		sleep 10;
 	};
 
 	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then {
@@ -301,7 +298,7 @@ while { _count isNotEqualTo _index } do {
 		waitUntil {
 			secondaryWeapon player isEqualTo ""
 		};
-		[_taskDropId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
+		[_taskDropId] call RCT7Bootcamp_fnc_taskSetState;
 	};
 
 	_j = 0;
@@ -319,6 +316,7 @@ while { _count isNotEqualTo _index } do {
 	sleep 3;
 
 	_tmpTargetList = +_targetList;
+
 	{
 		_x removeAllMPEventHandlers "MPHit";
 
