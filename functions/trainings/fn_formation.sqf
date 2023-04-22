@@ -65,13 +65,13 @@ private _quizz = {
 
 		player addAction [["<t color='#ffe0b5'>", _displayname, "</t>"] joinString "", {
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			player removeAction _actionId;
 
-			_formation = _arguments;
-			_formationFormatted = _formation regexReplace [" ", "_"];
+			private _formation = _arguments # 0;
+			private _formationDisplayname = _arguments # 1;
 
-			_dbSection = ["Formation", _formationFormatted] joinString "-";
-			systemChat (["Formation", _formationFormatted] joinString ": ");
+			private _formationFormatted = _formation regexReplace [" ", "_"];
+
+			private _dbSection = ["Formation", RCT7Bootcamp_CurrentFormation] joinString "-";
 
 			private _result = false;
 			if (_formation isEqualTo RCT7Bootcamp_CurrentFormation) then {
@@ -91,9 +91,10 @@ private _quizz = {
 				hintSilent "";
 			};
 
-			[[player, _dbSection, "correct", _result, [["answer", _formation]]]] remoteExec ["RCT7_addToDBQueue", 2];
+			systemChat _dbSection;
+			[[player, _dbSection, "correct", _result, [["answer", _formationDisplayname]]]] remoteExec ["RCT7_addToDBQueue", 2];
 			RCT7Bootcamp_FormationHasAnswered = true;
-		}, _x # 0];
+		}, [_x # 0, _displayname]];
 	} forEach _formationAddActionList;
 };
 
