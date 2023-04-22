@@ -1,13 +1,17 @@
 private _patient = param[0, objNull, [objNull]];
 private _bodyPart = param[1, "rightleg", [""]];
 
-
-if (_patient isEqualTo objNull ) exitWith { systemChat "No Patient provided"};
+if (_patient isEqualTo objNull) exitWith {
+	systemChat "No Patient provided"
+};
 
 removeAllItems player;
 _medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_epinephrine", "ACE_morphine"];
+player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
-{ player addItem _x; } foreach _medicalItems;
+{
+	player addItem _x;
+} forEach _medicalItems;
 
 private _isAI = _patient isNotEqualTo player;
 
@@ -16,7 +20,6 @@ sleep 5;
 
 _patientMedicalTaskId = "PatientMedical";
 [_patientMedicalTaskId, "Finish the medical training", "Follow the instructions", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
-
 
 private _isBandaged = {
 	_wounds = _patient getVariable ["ace_medical_openWounds", []];
@@ -37,28 +40,27 @@ private _applyDamage = {
 
 	_message = ["Applying damage to ", name _patient, "in"] joinString "";
 	[_message, 5] call RCT7Bootcamp_fnc_cooldownHint;
-	[_patient, 0.8, _bodyPart, "bullet"] call ace_medical_fnc_addDamageToUnit;
+	[_patient, 0.8, _bodyPart, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit", 0];
 	if (_isAI) then {
 		[_patient, true, 10e10] call ace_medical_fnc_setUnconscious;
 	};
 };
 
-private _responseChecked = { 
-	_unit = param[0, objNull, [objNull]]; 
-	_medicalLog = _unit getVariable ["ace_medical_log_quick_view", []]; 
+private _responseChecked = {
+	_unit = param[0, objNull, [objNull]];
+	_medicalLog = _unit getVariable ["ace_medical_log_quick_view", []];
 
-	private _searchString = "STR_ace_medical_treatment_Check_Response"; 
-	private _found = false; 
+	private _searchString = "STR_ace_medical_treatment_Check_Response";
+	private _found = false;
 
-	{ 
-	if ([_searchString, _x select 0] call BIS_fnc_inString) exitWith { 
-	_found = true; 
-	}; 
-	} forEach _medicalLog; 
+	{
+		if ([_searchString, _x select 0] call BIS_fnc_inString) exitWith {
+			_found = true;
+		};
+	} forEach _medicalLog;
 
-	_found; 
+	_found;
 };
-
 
 private _isRunning = true;
 
@@ -69,7 +71,6 @@ while { _isRunning } do {
 	[_patient, _bodyPart] call _applyDamage;
 
 	if (_isAI) then {
-
 		_patientResponse = "PatientResponse";
 		_reponseDescription = "Open the medical menu, click on the head and check the response.";
 		[[_patientResponse, _patientMedicalTaskId], "Check Response", _reponseDescription, "heal"] call RCT7Bootcamp_fnc_taskCreate;
@@ -80,7 +81,6 @@ while { _isRunning } do {
 		};
 		[_patientResponse] call RCT7Bootcamp_fnc_taskSetState;
 	};
-
 
 	_patientTournequit = "PatientTournequit";
 	[[_patientTournequit, _patientMedicalTaskId], "Use a tournequit", "Apply a tournequit", "heal"] call RCT7Bootcamp_fnc_taskCreate;
