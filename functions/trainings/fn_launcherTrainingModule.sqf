@@ -75,7 +75,9 @@ _count = count(_targetList);
 _firedCheck = {
 	if (firedCount > 0) then {
 		_actionId = _this # 0;
-		player removeAction _actionId;
+		if (typeName _actionId isEqualTo typeName 0) then {
+			player removeAction _actionId;
+		};
 		["Follow the instructions on your screen!<br/><br/> Try again in:", 5] call RCT7Bootcamp_fnc_cooldownHint;
 		continue;
 	};
@@ -164,7 +166,7 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		currentWeapon player isEqualTo secondaryWeapon player;
 	};
-	[_taskEquipId] call RCT7Bootcamp_fnc_taskSetState;
+	[_taskEquipId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	player call RCT7Bootcamp_fnc_targetHitValid;
 
 	_reloadButton = actionKeysNames "ReloadMagazine" regexReplace ["""", ""];
@@ -174,7 +176,8 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		(player ammo secondaryWeapon player) isEqualTo 1;
 	};
-	[_taskPrepareId] call RCT7Bootcamp_fnc_taskSetState;
+
+	[_taskPrepareId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	player call RCT7Bootcamp_fnc_targetHitValid;
 
 	_dist = player distance (_target);
@@ -208,7 +211,7 @@ while { _count isNotEqualTo _index } do {
 				currentZeroing player isEqualTo _distance || firedCount > 0;
 			};
 
-			[_taskZeroingId] call RCT7Bootcamp_fnc_taskSetState;
+			[_taskZeroingId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 			player call RCT7Bootcamp_fnc_targetHitValid;
 		};
 		call _firedCheck;
@@ -226,7 +229,7 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		!(_actionId in (actionIDs player)) || firedCount > 0;
 	};
-	[_taskBackblastId] call RCT7Bootcamp_fnc_taskSetState;
+	[_taskBackblastId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 
 	[_actionId] call _firedCheck;
 
@@ -281,7 +284,7 @@ while { _count isNotEqualTo _index } do {
 	};
 
 	_hasDamage = player call _checkDamage;
-	[_taskShootId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;
+	[_taskShootId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	[[player, dbSectionName, "time", time - _time - 2, [["backblast_cleared", !_hasDamage]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	_index = _index + 1;
@@ -298,7 +301,7 @@ while { _count isNotEqualTo _index } do {
 		waitUntil {
 			secondaryWeapon player isEqualTo ""
 		};
-		[_taskDropId] call RCT7Bootcamp_fnc_taskSetState;
+		[_taskDropId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	};
 
 	_j = 0;
