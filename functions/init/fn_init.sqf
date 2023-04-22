@@ -100,7 +100,6 @@ _teleportPlayer = {
 	};
 
 	_section call _teleportPlayer;
-	sleep 2;
 
 	switch (_section) do {
 		case "Radio": {
@@ -131,16 +130,10 @@ _teleportPlayer = {
 			[_group] call RCT7Bootcamp_fnc_formation;
 		};
 		case "BoundingAlternate": {
-			private _unit = UnitBoundingAlternate;
-			[position _unit] call RCT7Bootcamp_fnc_playerLookAtPos;
-
-			[_unit, "Alternate"] call RCT7Bootcamp_fnc_bounding;
+			[UnitBoundingAlternate, "Alternate"] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "BoundingSuccessive": {
-			private _unit = UnitBoundingSuccessive;
-			[position _unit] call RCT7Bootcamp_fnc_playerLookAtPos;
-
-			[_unit, "Successive"] call RCT7Bootcamp_fnc_bounding;
+			[UnitBoundingSuccessive, "Successive"] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "Medical": {
 			private _unit = UnitMedical;
