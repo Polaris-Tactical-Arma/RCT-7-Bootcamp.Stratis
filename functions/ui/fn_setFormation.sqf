@@ -48,9 +48,14 @@ switch (_formation) do {
 sleep 0.1;
 
 {
-	_arrow = synchronizedObjects _x # 0;
-	sleep 0.01;
-	_arrow attachTo [_x, [0, 0, 2.5]];
+	[_x, {
+		_unit = param[0, objNull, [objNull]];
+		systemChat str _unit;
+
+		_arrow = synchronizedObjects _unit # 0;
+		sleep 0.1;
+		_arrow setPos (_unit modelToWorld [0, 0, 2]);
+	}] remoteExec ["spawn", 0];
 } forEach _unitList;
 
 true;
