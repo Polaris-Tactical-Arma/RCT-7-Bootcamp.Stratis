@@ -1,8 +1,8 @@
 call RCT7Bootcamp_fnc_earplugTask;
 
-_grenade = param[0, "", [""]];
-_sectionName = param[1, "", [""]];
-_module = param[2, objNull, [objNull]];
+private _grenade = param[0, "", [""]];
+private _sectionName = param[1, "", [""]];
+private _module = param[2, objNull, [objNull]];
 
 _syncedObjects = synchronizedObjects _module;
 
