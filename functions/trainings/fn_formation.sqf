@@ -37,6 +37,8 @@ private _formationList = [
 	["ECH RIGHT", "Echolon Right"]
 ];
 
+sleep 3;
+
 {
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
 	hint (["This formation is called", _x # 1] joinString ":\n");
