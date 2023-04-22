@@ -70,6 +70,7 @@ class CfgFunctions
 			class shoothouseDoor{};
 			class earplugTask{};
 			class setScale{};
+			class playerLookAtPos{};
 		};
 	};
 };
