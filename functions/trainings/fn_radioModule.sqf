@@ -35,7 +35,7 @@ waitUntil{
 [_frequency1TaskId] call RCT7Bootcamp_fnc_taskSetState;
 
 _freq2 = "31.1";
-_setFrequencyDescription = ["Set your first Channel to:<br/>", _freq2] joinString "";
+_setFrequencyDescription = ["Set your second Channel to:<br/>", _freq2] joinString "";
 _frequency2TaskId = ["Frequency", _freq2] joinString "";
 [[_frequency2TaskId, _radioTaskId], ["Set to", _freq2] joinString " ", _setFrequencyDescription, "radio"] call RCT7Bootcamp_fnc_taskCreate;
 
