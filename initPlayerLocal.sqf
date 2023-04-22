@@ -5,6 +5,8 @@ if !(isMultiplayer) then
 
 [] spawn
 {
-	waitUntil { !isNull findDisplay 46 };
+	waitUntil {
+		!isNull findDisplay 46
+	};
 	[] call RCT7Bootcamp_fnc_init;
 };
