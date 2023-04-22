@@ -1,7 +1,7 @@
 call RCT7Bootcamp_fnc_earplugTask;
 
 _grenade = param[0, "", [""]];
-dbSectionName = param[1, "", [""]];
+_sectionName = param[1, "", [""]];
 _module = param[2, objNull, [objNull]];
 
 _syncedObjects = synchronizedObjects _module;
@@ -56,6 +56,8 @@ while { _count isNotEqualTo _index } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 
+	dbSectionName = [_sectionName, _index] joinString "-";
+
 	_keybind = ["ACE3 Weapons", "ACE_Advanced_Throwing_Prepare"] call RCT7Bootcamp_fnc_getCBAKeybind;
 	_prepareDescription = ["Prepare your grenade with:<br/>[", _keybind, "]"] joinString "";
 
@@ -84,12 +86,13 @@ while { _count isNotEqualTo _index } do {
 	waitUntil {
 		firedCount isEqualTo 1
 	};
+	sleep 4;
 	[_throwGrenadeTaskId] call RCT7Bootcamp_fnc_taskSetState;
 
-	_index = _index + 1;
 	_shotsMissed = firedCount - shotsValid;
 	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
+	_index = _index + 1;
 };
 
 ["ace_firedPlayer", _firedIndex] call CBA_fnc_removeEventHandler;
