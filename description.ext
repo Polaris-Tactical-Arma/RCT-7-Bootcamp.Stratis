@@ -64,7 +64,7 @@ class CfgFunctions
 		{
 			file = "functions\misc";
 			class unlimitedFuel{};
-			class boundingCheck{};
+			class isAtCurrentWaypoint{};
 			class boundingLogic{};
 			class boundingInFormationCheck{};
 			class shoothouseDoor{};
