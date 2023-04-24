@@ -28,7 +28,7 @@ if (_count < 1) exitWith {
 	";
 
 	_onSuccess = '
-	_player = allPlayers # 0;
+	private _player = allPlayers # 0;
 
 	_unit = (synchronizedObjects this) # 0;
 	_unit setVariable ["RCT7Bootcamp_BoundingIsMyTurn", true, true];
