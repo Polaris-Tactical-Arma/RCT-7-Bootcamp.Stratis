@@ -1,6 +1,34 @@
 private _patient = param[0, objNull, [objNull]];
 private _bodyPart = param[1, "rightleg", [""]];
 
+_getBodyPartN = {
+	private _bodyPart = param[0, "", [""]];
+	private _bodyPartN = -1;
+
+	switch (_bodyPart) do {
+		case "head": {
+			_bodyPartN = 0
+		};
+		case "body": {
+			_bodyPartN = 1
+		};
+		case "leftarm": {
+			_bodyPartN = 2
+		};
+		case "rightarm": {
+			_bodyPartN = 3
+		};
+		case "leftleg": {
+			_bodyPartN = 4
+		};
+		case "rightleg": {
+			_bodyPartN = 5
+		};
+	};
+};
+
+RCT_MedicalInProcess = true;
+
 if (_patient isEqualTo objNull) exitWith {
 	systemChat "No Patient provided"
 };
@@ -10,6 +38,8 @@ _medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_epinephrine", "ACE_
 player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
 {
+	player addItem _x;
+	player addItem _x;
 	player addItem _x;
 } forEach _medicalItems;
 
@@ -41,6 +71,14 @@ private _applyDamage = {
 	_message = ["Applying damage to ", name _patient, "in"] joinString "";
 	[_message, 5] call RCT7Bootcamp_fnc_cooldownHint;
 	[_patient, 0.8, _bodyPart, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit", 0];
+
+	_patient spawn {
+		while { RCT_MedicalInProcess } do {
+			sleep 10;
+			_this setVariable ["ace_medical_bloodVolume", 5.8, true];
+		};
+	};
+
 	if (_isAI) then {
 		[_patient, true, 10e10] call ace_medical_fnc_setUnconscious;
 	};
@@ -168,5 +206,7 @@ private _db_key = "self";
 if (_isAI) then {
 	_db_key = "patient";
 };
+
+RCT_MedicalInProcess = false;
 
 true;
