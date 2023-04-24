@@ -77,7 +77,7 @@ _firedCheck = {
 		if (typeName _actionId isEqualTo typeName 0) then {
 			player removeAction _actionId;
 		};
-		["Follow the instructions on your screen!<br/><br/> Try again in:", 5] call RCT7Bootcamp_fnc_cooldownHint;
+		["Follow the instructions on your screen!<br/><br/> Try again in:", 10] call RCT7Bootcamp_fnc_cooldownHint;
 		continue;
 	};
 };
@@ -109,7 +109,7 @@ _handleVehicleRespawn = {
 		[_unit] spawn {
 			_unit = param[0, objNull, [objNull]];
 
-			_pos = getPos _unit;
+			_pos = getPosATL _unit;
 			_dir = direction _unit;
 			_type = typeOf _unit;
 			_isAir = _type isKindOf "Air";
@@ -125,8 +125,11 @@ _handleVehicleRespawn = {
 			RCTLauncherClusterLogic synchronizeObjectsRemove [_unit];
 			deleteVehicleCrew _unit;
 			deleteVehicle _unit;
+			sleep 1;
 
 			private _veh = createVehicle [_type, _pos, [], 0, _special];
+			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
+			_veh setPosATL _pos;
 			_veh setDir _dir;
 
 			if (_veh isKindOf "Air") then {
@@ -135,8 +138,6 @@ _handleVehicleRespawn = {
 				_veh flyInHeight (_pos # 2);
 				_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 			};
-
-			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
 		};
 	}];
 };
@@ -154,6 +155,8 @@ _mainTaskId = "Launcher";
 while { _count isNotEqualTo _index } do {
 	_targetList = _targetClusterLogic call _getTargetList;
 	_target = _targetList select 0;
+
+	RCTLauncherTargetList = _targetList;
 
 	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
@@ -325,11 +328,7 @@ while { _count isNotEqualTo _index } do {
 
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
 
-	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["target", _targetName]]]] remoteExec ["RCT7_addToDBQueue", 2];
-
-	sleep 3;
-
-	RCTLauncherTargetList = _targetList;
+	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["target", _targetName], ["success", shotsValid > 0]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	if (_count > _index) then {
 		["Next in", 3] call RCT7Bootcamp_fnc_cooldownHint;
