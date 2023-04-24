@@ -18,6 +18,17 @@
 */
 RCT7playerData = nil;
 
+private _fadeIn = {
+	[0, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
+};
+
+private _fadeOut = {
+	[1, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
+};
+
+call _fadeIn;
+titleText ["Initializing Bootcamp...", "PLAIN", 10];
+
 [player] remoteExec ["RCT7_getFromDb", 2];
 
 waitUntil {
@@ -27,6 +38,8 @@ waitUntil {
 	} remoteExec ["call", 2];
 	!(isNil "RCT7playerData");
 };
+
+titleText ["", "PLAIN", 1];
 
 _completedSectionName = "CompletedSections";
 
@@ -85,10 +98,16 @@ _teleportPlayer = {
 
 	if (_name isEqualTo "" || isNil _objName) exitWith {};
 
+	call _fadeIn;
+
+	sleep 3;
+
 	_obj = call compile (_objName);
 
 	_pos = getPosATL _obj;
 	player setPosATL _pos;
+
+	call _fadeOut;
 };
 
 {
@@ -149,7 +168,7 @@ _teleportPlayer = {
 	[[player, _completedSectionName, _section, true]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	if (_lastItem isEqualTo _section) exitWith {};
-	["Training Complete!\nNext Training in", 3] call RCT7Bootcamp_fnc_cooldownHint;
+	titleText ["Training Complete!<br/>Starting next Training", "PLAIN", 0.4, false, true];
 } forEach _sectionList;
 
 hint "Bootcamp complete!";
