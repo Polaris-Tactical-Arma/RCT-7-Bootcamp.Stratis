@@ -23,7 +23,7 @@ while { leader player isNotEqualTo player } do {
 	sleep 0.5;
 	private _unit = leader player;
 
-	if (player distance _unit > 15) then {
+	if (player distance _unit > 5) then {
 		"Move up, you are too far away!" spawn _triggerWarning;
 		continue;
 	};
