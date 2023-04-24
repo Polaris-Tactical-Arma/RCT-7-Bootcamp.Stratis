@@ -99,12 +99,10 @@ _handleVehicleRespawn = {
 	_vehicle = param[0, objNull, [objNull]];
 	_vehicle addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
+		if (isServer) exitWith {};
+
 		_unit removeMPEventHandler [_thisEvent, _thisEventHandler];
-		_isTriggeredName = "RCT7_respawnTriggered";
-
-		if (_unit getVariable [_isTriggeredName, false]) exitWith {};
-
-		_unit setVariable [_isTriggeredName, true];
+		RCTLauncherClusterLogic synchronizeObjectsRemove [_unit];
 
 		[_unit] spawn {
 			_unit = param[0, objNull, [objNull]];
@@ -120,15 +118,13 @@ _handleVehicleRespawn = {
 				_special = "FLY";
 			};
 
-			sleep 3;
+			sleep 5;
 
-			RCTLauncherClusterLogic synchronizeObjectsRemove [_unit];
 			deleteVehicleCrew _unit;
 			deleteVehicle _unit;
-			sleep 1;
+			sleep 3;
 
 			private _veh = createVehicle [_type, _pos, [], 0, _special];
-			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
 			_veh setPosATL _pos;
 			_veh setDir _dir;
 
@@ -138,6 +134,8 @@ _handleVehicleRespawn = {
 				_veh flyInHeight (_pos # 2);
 				_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 			};
+
+			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
 		};
 	}];
 };
