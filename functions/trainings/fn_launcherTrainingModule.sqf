@@ -66,7 +66,6 @@ _getTargetList = {
 
 _targetList = _targetClusterLogic call _getTargetList;
 
-RCTLauncherTargetList = _targetList;
 RCTLauncherClusterLogic = _targetClusterLogic;
 
 _index = 0;
@@ -97,39 +96,49 @@ _vehicleIsHit = {
 };
 
 _handleVehicleRespawn = {
-	private _vehicle = param[0, objNull, [objNull]];
-	private _targetClusterLogic = param[1, objNull, [objNull]];
+	_vehicle = param[0, objNull, [objNull]];
+	_vehicle addMPEventHandler ["MPHit", {
+		params ["_unit", "_source", "_damage", "_instigator"];
+		_unit removeMPEventHandler [_thisEvent, _thisEventHandler];
+		_isTriggeredName = "RCT7_respawnTriggered";
 
-	_pos = getPos _vehicle;
-	_dir = direction _vehicle;
-	_type = typeOf _vehicle;
-	_isAir = _type isKindOf "Air";
+		if (_unit getVariable [_isTriggeredName, false]) exitWith {};
 
-	private _special = "NONE";
+		_unit setVariable [_isTriggeredName, true];
 
-	if (_isAir) then {
-		_special = "FLY";
-	};
+		[_unit] spawn {
+			_unit = param[0, objNull, [objNull]];
 
-	_targetClusterLogic synchronizeObjectsRemove [_vehicle];
-	deleteVehicleCrew _vehicle;
-	deleteVehicle _vehicle;
+			_pos = getPos _unit;
+			_dir = direction _unit;
+			_type = typeOf _unit;
+			_isAir = _type isKindOf "Air";
 
-	sleep 0.5;
+			private _special = "NONE";
 
-	private _veh = createVehicle [_type, _pos, [], 0, _special];
-	_veh setDir _dir;
+			if (_isAir) then {
+				_special = "FLY";
+			};
 
-	if (_veh isKindOf "Air") then {
-		_crew = createVehicleCrew _veh;
-		_crew setBehaviour "CARELESS";
-		_veh flyInHeight (_pos # 2);
-		_veh call RCT7Bootcamp_fnc_unlimitedFuel;
-	};
+			sleep 3;
 
-	_targetClusterLogic synchronizeObjectsAdd [_veh];
+			RCTLauncherClusterLogic synchronizeObjectsRemove [_unit];
+			deleteVehicleCrew _unit;
+			deleteVehicle _unit;
 
-	_veh;
+			private _veh = createVehicle [_type, _pos, [], 0, _special];
+			_veh setDir _dir;
+
+			if (_veh isKindOf "Air") then {
+				_crew = createVehicleCrew _veh;
+				_crew setBehaviour "CARELESS";
+				_veh flyInHeight (_pos # 2);
+				_veh call RCT7Bootcamp_fnc_unlimitedFuel;
+			};
+
+			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
+		};
+	}];
 };
 
 _mag = (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0);
@@ -157,6 +166,12 @@ while { _count isNotEqualTo _index } do {
 	shotsInvalid = 0;
 	_shotsMissed = 0;
 	firedCount = 0;
+	_targetName = gettext (configfile >> "CfgVehicles" >> typeOf _target >> "displayName");
+
+	{
+		_x removeAllMPEventHandlers "MPHit";
+		_x call _handleVehicleRespawn;
+	} forEach _targetList;
 
 	_time = time;
 
@@ -253,30 +268,27 @@ while { _count isNotEqualTo _index } do {
 	_taskShootId = "LauncherShoot";
 	[[_taskShootId, _mainTaskId], "Shoot at the target", _shootDescription, "destroy"] call RCT7Bootcamp_fnc_taskCreate;
 
-	dbSectionName = [_sectionName, _typeOfTarget] joinString "-";
+	dbSectionName = [_sectionName, _index] joinString "-";
 
 	{
 		_invalidTarget = _x;
 		_invalidTarget addMPEventHandler ["MPHit", {
 			params ["_unit", "_source", "_damage", "_instigator"];
-			// invalid
-			if (_unit animationPhase "terc" isEqualTo 0) then {
-				player call RCT7Bootcamp_fnc_targetHitInvalid;
-				shotsInvalid = shotsInvalid + 1;
-				_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-				[[player, dbSectionName, "success", false, [["vehicle", _name], ["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
-				_unit removeAllMPEventHandlers "MPHit";
-			};
+			_unit removeMPEventHandler ["MPHit", _thisEventHandler];
+			player call RCT7Bootcamp_fnc_targetHitInvalid;
+			shotsInvalid = shotsInvalid + 1;
+			_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
+			[[player, dbSectionName, "target_hit", _name, [["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
 		}];
 	} forEach _invalidTargetList;
 
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];
+		_unit removeMPEventHandler ["MPHit", _thisEventHandler];
 		player call RCT7Bootcamp_fnc_targetHitValid;
 		shotsValid = shotsValid + 1;
 		_name = gettext (configfile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-		[[player, dbSectionName, "vehicle", _name, [["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
-		_unit removeAllMPEventHandlers "MPHit";
+		[[player, dbSectionName, "target_hit", _name, [["distance", _unit distance _instigator]]]] remoteExec ["RCT7_addToDBQueue", 2];
 	}];
 
 	waitUntil {
@@ -312,27 +324,10 @@ while { _count isNotEqualTo _index } do {
 	};
 
 	_shotsMissed = firedCount - (shotsInvalid + shotsValid);
-	_isSuccess = _shotsMissed isEqualTo 0;
 
-	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["success", _isSuccess]]]] remoteExec ["RCT7_addToDBQueue", 2];
+	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["target", _targetName]]]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	sleep 3;
-
-	_tmpTargetList = +_targetList;
-
-	{
-		_x removeAllMPEventHandlers "MPHit";
-
-		_isHit = _x call _vehicleIsHit;
-
-		if !(_isHit) then {
-			continue;
-		};
-
-		_targetList deleteAt (_targetList find _x);
-		_veh = [_x, _targetClusterLogic] call _handleVehicleRespawn;
-		_targetList pushBack _veh;
-	} forEach _tmpTargetList;
 
 	RCTLauncherTargetList = _targetList;
 
