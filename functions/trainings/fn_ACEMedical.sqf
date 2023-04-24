@@ -34,7 +34,7 @@ if (_patient isEqualTo objNull) exitWith {
 };
 
 removeAllItems player;
-_medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_epinephrine", "ACE_morphine"];
+_medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_morphine"];
 player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
 {
@@ -175,6 +175,7 @@ while { _isRunning } do {
 
 	if (_isAI) then {
 		_patientEpi = "PatientEpi";
+		player addItem "ACE_epinephrine";
 		[[_patientEpi, _patientMedicalTaskId], "Use Epinephrine", "Apply a Epinephrine to one of the limb", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 		waitUntil{
 			sleep 1;
