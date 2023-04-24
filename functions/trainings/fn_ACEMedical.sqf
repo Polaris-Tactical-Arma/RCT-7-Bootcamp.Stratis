@@ -137,7 +137,7 @@ while { _isRunning } do {
 
 	if (_isAI) then {
 		_patientEpi = "PatientEpi";
-		[[_patientEpi, _patientMedicalTaskId], "Use Epinephrine", "Apply a Epinephrine to one of the limbs", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+		[[_patientEpi, _patientMedicalTaskId], "Use Epinephrine", "Apply a Epinephrine to one of the limb", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 		waitUntil{
 			sleep 1;
 			!(_patient getVariable ["ACE_isUnconscious", false]);
@@ -147,7 +147,7 @@ while { _isRunning } do {
 
 	// morphine
 	_patientMorphine = "PatientMorphine";
-	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "Apply a morphine to one limbs", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "Apply a morphine to one limb", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 	waitUntil{
 		sleep 1;
 		_patient getVariable ["ace_medical_painSuppress", 0] > 0;
