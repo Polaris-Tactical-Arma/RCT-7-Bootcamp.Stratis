@@ -48,7 +48,7 @@ if (_count < 1) exitWith {
 			_wpi = (currentWaypoint group _caller) - 1;
 			_taskId = ["BoundingSet", str(_wpi)] joinString "";
 			[_taskId] call RCT7Bootcamp_fnc_taskSetState;
-		}, nil, 5, true, true, "", "[(leader _this)] call RCT7Bootcamp_fnc_isAtCurrentWaypoint"
+		}, nil, 5, true, true, "", "[(leader _this)] call RCT7Bootcamp_fnc_isAtCurrentWaypoint && ((leader _this) distance _this) < 5"
 	];
 };
 ';
