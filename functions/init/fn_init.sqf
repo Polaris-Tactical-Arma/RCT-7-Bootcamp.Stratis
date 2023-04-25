@@ -18,15 +18,7 @@
 */
 RCT7playerData = nil;
 
-private _fadeIn = {
-	[0, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
-};
-
-private _fadeOut = {
-	[1, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
-};
-
-call _fadeIn;
+[0, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
 titleText ["Initializing Bootcamp...", "PLAIN", 10];
 
 [player] remoteExec ["RCT7_getFromDb", 2];
@@ -92,24 +84,6 @@ _isSectionCompleted = {
 	_isCompleted
 };
 
-_teleportPlayer = {
-	_name = param[0, "", [""]];
-	_objName = ["StartPosition", _name] joinString "_";
-
-	if (_name isEqualTo "" || isNil _objName) exitWith {};
-
-	call _fadeIn;
-
-	sleep 3;
-
-	_obj = call compile (_objName);
-
-	_pos = getPosATL _obj;
-	player setPosATL _pos;
-
-	call _fadeOut;
-};
-
 {
 	_section = _x;
 
@@ -119,6 +93,7 @@ _teleportPlayer = {
 	};
 
 	_section call _teleportPlayer;
+	[player, _section] call RCT7Bootcamp_fnc_teleportPlayer;
 
 	switch (_section) do {
 		case "Radio": {

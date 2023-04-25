@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=6686;
+		nextID=6746;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=402;
+		nextID=419;
 	};
 	class Camera
 	{
-		pos[]={1628.9962,111.81953,5302.4082};
-		dir[]={0.82140106,-0.27898878,0.49745932};
-		up[]={0.23863691,0.96029443,0.14452399};
-		aside[]={0.51802796,7.4505806e-009,-0.85536391};
+		pos[]={2228.4507,12.312011,5390.8149};
+		dir[]={-0.075117856,-0.42316401,-0.90299934};
+		up[]={-0.035084594,0.90602589,-0.42176074};
+		aside[]={-0.99662226,4.5576598e-007,0.082904145};
 	};
 };
 binarizationWanted=0;
@@ -44,7 +44,6 @@ addons[]=
 	"A3_Air_F_Heli_Light_02",
 	"ace_realisticnames",
 	"A3_Structures_F_Training",
-	"ace_fastroping",
 	"A3_Structures_F_Mil_Cargo",
 	"CUP_CABuildings_Misc",
 	"A3_Weapons_F_Rifles_MX",
@@ -74,16 +73,16 @@ addons[]=
 	"ace_compat_rhs_usf3",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Structures_F_Mil_Helipads",
-	"ace_fcs",
-	"ace_hearing",
 	"A3_Structures_F_Exp_Walls_Concrete",
-	"A3_Structures_F_Enoch_Walls_Concrete"
+	"A3_Structures_F_Enoch_Walls_Concrete",
+	"ace_fcs",
+	"ace_hearing"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=36;
+		items=35;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -147,188 +146,181 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="ace_fastroping";
-			name="ACE3 - Fastroping";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item10
-		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item12
+		class Item11
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item13
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item14
 		{
 			className="ace_smallarms";
 			name="ACE3 - Small Arms";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item15
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item16
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item17
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item18
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item20
+		class Item19
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item21
+		class Item20
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item21
 		{
 			className="ace_chemlights";
 			name="ace_chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
+		class Item22
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item23
 		{
 			className="A3_Structures_F_Enoch_Infrastructure";
 			name="Arma 3 Contact Platform - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item24
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item25
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item26
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item28
+		class Item27
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item29
+		class Item28
 		{
 			className="rhsusf_c_weapons";
 			name="RHSUSF Weapons & Accessories";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item30
+		class Item29
 		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item31
+		class Item30
 		{
 			className="ace_compat_rhs_usf3";
 			name="ACE3 - RHS USF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item32
+		class Item31
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
-		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item34
+		class Item32
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item33
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item34
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -15655,7 +15647,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=79;
+		items=92;
 		class Item0
 		{
 			dataType="Logic";
@@ -16606,24 +16598,6 @@ class Mission
 		};
 		class Item38
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4384.5737,227.88551,3818.79};
-				angles[]={6.2656851,0,0.064910568};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, true] call ace_arsenal_fnc_initBox; " \n "";
-			};
-			id=5492;
-			type="ACE_fastropingSupplyCrate";
-			atlOffset=-0.0022125244;
-		};
-		class Item39
-		{
 			dataType="Logic";
 			class PositionInfo
 			{
@@ -16635,7 +16609,7 @@ class Mission
 			type="Logic";
 			atlOffset=-7.6293945e-006;
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16647,7 +16621,7 @@ class Mission
 			type="Logic";
 			atlOffset=11.130005;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Layer";
 			name="GrenadeStuff";
@@ -16798,7 +16772,7 @@ class Mission
 			id=5580;
 			atlOffset=-0.72863722;
 		};
-		class Item42
+		class Item41
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16809,7 +16783,7 @@ class Mission
 			id=5590;
 			type="Logic";
 		};
-		class Item43
+		class Item42
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16820,7 +16794,7 @@ class Mission
 			id=5595;
 			type="Logic";
 		};
-		class Item44
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16838,7 +16812,7 @@ class Mission
 			type="TargetP_Inf3_F";
 			atlOffset=6.6757202e-006;
 		};
-		class Item45
+		class Item44
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16855,7 +16829,7 @@ class Mission
 			id=5601;
 			type="TargetP_Inf3_F";
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16872,7 +16846,7 @@ class Mission
 			type="TargetP_Inf3_F";
 			atlOffset=1.8940039;
 		};
-		class Item47
+		class Item46
 		{
 			dataType="Group";
 			side="West";
@@ -17232,7 +17206,7 @@ class Mission
 			};
 			id=5616;
 		};
-		class Item48
+		class Item47
 		{
 			dataType="Group";
 			side="West";
@@ -17448,7 +17422,7 @@ class Mission
 			};
 			id=5624;
 		};
-		class Item49
+		class Item48
 		{
 			dataType="Layer";
 			name="Layer 35";
@@ -18314,7 +18288,7 @@ class Mission
 			id=5730;
 			atlOffset=-10.332825;
 		};
-		class Item50
+		class Item49
 		{
 			dataType="Layer";
 			name="Shoothouse";
@@ -22647,7 +22621,7 @@ class Mission
 			id=5996;
 			atlOffset=2.7259884;
 		};
-		class Item51
+		class Item50
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22680,7 +22654,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item52
+		class Item51
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22696,7 +22670,7 @@ class Mission
 			id=6514;
 			type="Land_Hlaska";
 		};
-		class Item53
+		class Item52
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22708,7 +22682,7 @@ class Mission
 			id=6537;
 			type="Logic";
 		};
-		class Item54
+		class Item53
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22719,7 +22693,7 @@ class Mission
 			id=6539;
 			type="Logic";
 		};
-		class Item55
+		class Item54
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22730,7 +22704,7 @@ class Mission
 			id=6543;
 			type="Logic";
 		};
-		class Item56
+		class Item55
 		{
 			dataType="Group";
 			side="West";
@@ -23558,7 +23532,7 @@ class Mission
 			};
 			id=6549;
 		};
-		class Item57
+		class Item56
 		{
 			dataType="Group";
 			side="West";
@@ -23889,7 +23863,7 @@ class Mission
 			};
 			id=6561;
 		};
-		class Item58
+		class Item57
 		{
 			dataType="Group";
 			side="West";
@@ -24117,7 +24091,7 @@ class Mission
 			};
 			id=6568;
 		};
-		class Item59
+		class Item58
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24181,7 +24155,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item60
+		class Item59
 		{
 			dataType="Group";
 			side="Civilian";
@@ -24319,7 +24293,7 @@ class Mission
 			};
 			id=6635;
 		};
-		class Item61
+		class Item60
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24337,7 +24311,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=-0.022994995;
 		};
-		class Item62
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24354,7 +24328,7 @@ class Mission
 			type="Land_Cargo_Patrol_V3_F";
 			atlOffset=1.5258789e-005;
 		};
-		class Item63
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24370,7 +24344,7 @@ class Mission
 			id=6647;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item64
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24387,7 +24361,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00033569336;
 		};
-		class Item65
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24404,7 +24378,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=9.5367432e-007;
 		};
-		class Item66
+		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24420,7 +24394,7 @@ class Mission
 			id=6651;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item67
+		class Item66
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24436,7 +24410,7 @@ class Mission
 			id=6652;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item68
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24452,7 +24426,7 @@ class Mission
 			id=6653;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item69
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24469,7 +24443,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00016021729;
 		};
-		class Item70
+		class Item69
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24485,7 +24459,7 @@ class Mission
 			id=6656;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item71
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24501,7 +24475,7 @@ class Mission
 			id=6657;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item72
+		class Item71
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24517,7 +24491,85 @@ class Mission
 			id=6664;
 			type="Land_HelipadEmpty_F";
 		};
+		class Item72
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2081.2136,7.1800003,5588.9165};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6680;
+			type="Land_ConcreteWall_01_m_4m_F";
+			atlOffset=4.7683716e-007;
+		};
 		class Item73
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2090.0369,7.5869665,5590.3394};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6681;
+			type="Land_ConcreteWall_03_m_2m_F";
+		};
+		class Item74
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2088.9976,14.681095,5617.2466};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6683;
+			type="Land_ConcreteWall_01_l_4m_F";
+		};
+		class Item75
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2093.969,12.083063,5616.251};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6684;
+			type="Land_ConcreteWall_01_l_4m_F";
+			atlOffset=0.0019664764;
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2078.9128,9.3966732,5619.7393};
+				angles[]={0,0.26179942,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=6685;
+			type="Land_ConcreteWall_01_l_4m_F";
+		};
+		class Item77
 		{
 			dataType="Group";
 			side="West";
@@ -24529,7 +24581,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2177.3699,5.9623675,5758.5493};
+						position[]={2175.7998,5.9592247,5758.3926};
 						angles[]={0,5.4194326,0};
 					};
 					side="West";
@@ -24579,7 +24631,7 @@ class Mission
 					};
 					id=6674;
 					type="B_Soldier_F";
-					atlOffset=1.4305115e-006;
+					atlOffset=9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -24631,85 +24683,877 @@ class Mission
 				formation="LINE";
 			};
 			id=6673;
-			atlOffset=1.4305115e-006;
-		};
-		class Item74
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2081.2136,7.1800003,5588.9165};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=6680;
-			type="Land_ConcreteWall_01_m_4m_F";
-			atlOffset=4.7683716e-007;
-		};
-		class Item75
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2090.0369,7.5869665,5590.3394};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=6681;
-			type="Land_ConcreteWall_03_m_2m_F";
-		};
-		class Item76
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2088.9976,14.681095,5617.2466};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=6683;
-			type="Land_ConcreteWall_01_l_4m_F";
-		};
-		class Item77
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2093.969,12.083063,5616.251};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=6684;
-			type="Land_ConcreteWall_01_l_4m_F";
-			atlOffset=0.0019664764;
+			atlOffset=9.5367432e-007;
 		};
 		class Item78
 		{
-			dataType="Object";
+			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2078.9128,9.3966732,5619.7393};
-				angles[]={0,0.26179942,0};
+				position[]={2177.4351,5.9627476,5758.168};
+				angles[]={0.0049916417,0,0.0024958209};
 			};
-			side="Empty";
-			flags=5;
+			name="StartPosition_Start";
+			id=6689;
+			type="Logic";
+		};
+		class Item79
+		{
+			dataType="Trigger";
+			position[]={1690.8198,5.5000005,5487.3813};
+			angle=0.22689272;
 			class Attributes
 			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""Formation""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=7.2680001;
+				sizeB=1.4534707;
+				sizeC=4.0310001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
 			};
-			id=6685;
-			type="Land_ConcreteWall_01_l_4m_F";
+			id=6697;
+			type="EmptyDetectorArea10x10";
+			atlOffset=4.7683716e-007;
+		};
+		class Item80
+		{
+			dataType="Trigger";
+			position[]={1584.826,4.3210001,5080.0142};
+			angle=-2.897892;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingAlternate""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=66.559998;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6698;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-1.1789999;
+		};
+		class Item81
+		{
+			dataType="Trigger";
+			position[]={1518.166,5.4862447,5094.4448};
+			angle=-2.8629858;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingAlternate""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=66.559998;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6699;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-4.7683716e-007;
+		};
+		class Item82
+		{
+			dataType="Trigger";
+			position[]={1568.6935,5.5,5150.2417};
+			angle=4.9386363;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingAlternate""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=33.956306;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6700;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item83
+		{
+			dataType="Trigger";
+			position[]={1534.0264,5.5,5021.2788};
+			angle=4.9386363;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingAlternate""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=37.158157;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6701;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item84
+		{
+			dataType="Trigger";
+			position[]={1665.3695,6.6789999,5107.5576};
+			angle=4.9386363;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingSuccessive""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=28.507008;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6702;
+			type="EmptyDetectorArea10x10";
+			atlOffset=1.1789999;
+		};
+		class Item85
+		{
+			dataType="Trigger";
+			position[]={1677.6171,5.5,5046.8481};
+			angle=3.385293;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingSuccessive""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=58.684624;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6703;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item86
+		{
+			dataType="Trigger";
+			position[]={1624.8634,6.6789994,5063.2241};
+			angle=3.4201992;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingSuccessive""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=56.063728;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6704;
+			type="EmptyDetectorArea10x10";
+			atlOffset=1.1789994;
+		};
+		class Item87
+		{
+			dataType="Trigger";
+			position[]={1638.5117,6.6789999,5002.1147};
+			angle=4.9386363;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingSuccessive""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=2.152;
+				sizeB=33.579563;
+				sizeC=3.8210001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6705;
+			type="EmptyDetectorArea10x10";
+			atlOffset=1.1789999;
+		};
+		class Item88
+		{
+			dataType="Layer";
+			name="BoundaryBoxes";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Layer";
+					name="BoxMedical";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={1927.1808,5.5,5877.2192};
+							angle=1.7976887;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Medical""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=10.719;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6717;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={1934.6884,5.5,5861.5127};
+							angle=0.22689272;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Medical""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=15.600524;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6696;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={1921.7783,5.5,5851.708};
+							angle=1.7976887;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Medical""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=10.719;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6716;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={1912.3413,5.5,5866.3721};
+							angle=0.22689272;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Medical""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=13.587341;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6695;
+							type="EmptyDetectorArea10x10";
+						};
+					};
+					id=6718;
+				};
+				class Item1
+				{
+					dataType="Layer";
+					name="BoxRadio";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={1901.3379,5.5,5822.498};
+							angle=0.22689274;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=11.114632;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6694;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={1909.6644,5.5100002,5807.9297};
+							angle=1.7802354;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=13.79841;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6712;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={1924.7612,5.5,5816.9463};
+							angle=0.22689275;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=11.660755;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6693;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={1916.0245,5.5,5832.2979};
+							angle=1.7802353;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=14.728761;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6713;
+							type="EmptyDetectorArea10x10";
+						};
+					};
+					id=6714;
+					atlOffset=0.001250267;
+				};
+				class Item2
+				{
+					dataType="Layer";
+					name="BoxStart";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={2179.6624,5.914886,5766.4272};
+							angle=1.7976885;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Start""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=8.0059996;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6692;
+							type="EmptyDetectorArea10x10";
+							atlOffset=2.3841858e-006;
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={2185.3281,5.9839797,5756.9653};
+							angle=0.19198619;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Start""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=8.0059996;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6686;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.0011935234;
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={2176.6331,5.9915824,5751.019};
+							angle=1.7976885;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Start""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=8.0059996;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6691;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={2169.7305,5.9338589,5760.8188};
+							angle=0.19198619;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Start""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=8.0059996;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6690;
+							type="EmptyDetectorArea10x10";
+						};
+					};
+					id=6711;
+					atlOffset=-0.0014953613;
+				};
+				class Item3
+				{
+					dataType="Layer";
+					name="BoxGrenade";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={2087.0347,6.6999998,5644.3779};
+							angle=1.7976884;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Grenade""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=20.968496;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6707;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={2061.9338,6.6214528,5635.9043};
+							angle=0.19198619;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Grenade""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=15.335092;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6708;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.13503599;
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={2080.7009,6.73,5614.6353};
+							angle=1.7976884;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Grenade""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=25.649952;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6709;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={2106.5732,6.6990004,5624.1445};
+							angle=0.19198619;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Grenade""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=17.581707;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6706;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.00099945068;
+						};
+					};
+					id=6710;
+					atlOffset=-0.0084018707;
+				};
+				class Item4
+				{
+					dataType="Layer";
+					name="Box3DReport";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={6413.8774,7.3966303,5432.8682};
+							angle=0.73303831;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""3DReport""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=24.865999;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6731;
+							type="EmptyDetectorArea10x10";
+							atlOffset=5.7220459e-006;
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={6417.3525,8.3832045,5461.4077};
+							angle=2.2689281;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""3DReport""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=24.865999;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6733;
+							type="EmptyDetectorArea10x10";
+							atlOffset=5.7220459e-006;
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={6389.873,7.2835965,5453.1318};
+							angle=0.73303831;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""3DReport""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=24.865999;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6730;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={6387.2622,8.3749542,5426.0132};
+							angle=2.2514744;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""3DReport""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=24.865999;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6732;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-9.5367432e-007;
+						};
+					};
+					id=6734;
+					atlOffset=-0.82656622;
+				};
+				class Item5
+				{
+					dataType="Layer";
+					name="BoxLauncherAA";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={4347.5215,226.52335,3816.1292};
+							angle=3.0543256;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=22.23;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6729;
+							type="EmptyDetectorArea10x10";
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={4368.9419,227.82329,3835.802};
+							angle=4.6600285;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=26.78702;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6728;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.079345703;
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={4395.707,226.42897,3817.751};
+							angle=3.0543258;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=22.23;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6726;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.0010223389;
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={4373.6899,226.42644,3795.4854};
+							angle=4.6251225;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=24.8661;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6727;
+							type="EmptyDetectorArea10x10";
+							atlOffset=0.020217896;
+						};
+					};
+					id=6735;
+					atlOffset=-0.093032837;
+				};
+				class Item6
+				{
+					dataType="Layer";
+					name="BoxLauncherAT";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={2202.415,9.5399036,5408.1704};
+							angle=1.6057026;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""LauncherAT""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=42.755272;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6722;
+							type="EmptyDetectorArea10x10";
+							atlOffset=2.2331581;
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={2241.0764,7.0247006,5367.2832};
+							angle=3.1939523;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""LauncherAT""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=45.249451;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6721;
+							type="EmptyDetectorArea10x10";
+							atlOffset=1.7642975e-005;
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={2195.9194,8.195384,5329.9058};
+							angle=1.6929691;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""LauncherAT""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=40.434486;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6723;
+							type="EmptyDetectorArea10x10";
+							atlOffset=0.22572136;
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={2158.7708,8.7079992,5371.521};
+							angle=3.1939523;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""LauncherAT""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=2.152;
+								sizeB=37.949669;
+								sizeC=5;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6719;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.022000313;
+						};
+					};
+					id=6736;
+					atlOffset=0.057703018;
+				};
+				class Item7
+				{
+					dataType="Layer";
+					name="BoxMap";
+					class Entities
+					{
+						items=1;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={5028.6309,207.61542,5850.5649};
+							angle=3.0543258;
+							class Attributes
+							{
+								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Map""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+								sizeA=10.487;
+								sizeB=7.1880002;
+								sizeC=2.944;
+								repeatable=1;
+								activationBy="ANYPLAYER";
+								isRectangle=1;
+							};
+							id=6739;
+							type="EmptyDetectorArea10x10";
+							atlOffset=-0.44299316;
+						};
+					};
+					id=6740;
+					atlOffset=-0.44299316;
+				};
+			};
+			id=6738;
+			atlOffset=98.182076;
+		};
+		class Item89
+		{
+			dataType="Trigger";
+			position[]={1686.9194,5.5,5474.0728};
+			angle=0.22689272;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""Formation""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=7.2680001;
+				sizeB=1.4534707;
+				sizeC=4.0310001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6741;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item90
+		{
+			dataType="Trigger";
+			position[]={1696.1235,5.5,5478.4502};
+			angle=4.9392819;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""Formation""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=7.2680001;
+				sizeB=1.4534707;
+				sizeC=4.0310001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6742;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item91
+		{
+			dataType="Trigger";
+			position[]={1681.5967,5.5000005,5482.3145};
+			angle=4.9392819;
+			class Attributes
+			{
+				onActivation="_unit = thiList  # 0;" \n "[player, ""Formation""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
+				sizeA=7.2680001;
+				sizeB=1.4534707;
+				sizeC=4.0310001;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=6743;
+			type="EmptyDetectorArea10x10";
+			atlOffset=4.7683716e-007;
 		};
 	};
 	class Connections
