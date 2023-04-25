@@ -16,20 +16,10 @@
 	
 	
 */
-RCT7playerData = nil;
 
-[0, "BLACK", 1, 1] spawn BIS_fnc_fadeEffect;
-titleText ["Initializing Bootcamp...", "PLAIN", 10];
+titleText ["Initializing Bootcamp...", "PLAIN DOWN", 10];
 
-[player] remoteExec ["RCT7_getFromDb", 2];
-
-waitUntil {
-	sleep 3;
-	{
-		publicVariable "RCT7playerData"
-	} remoteExec ["call", 2];
-	!(isNil "RCT7playerData");
-};
+sleep 3;
 
 titleText ["", "PLAIN", 1];
 
