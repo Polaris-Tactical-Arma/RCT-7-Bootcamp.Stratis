@@ -1,8 +1,4 @@
-respawn=3;
-respawnDelay=20;
-respawnDialog=0;
-respawnOnStart=-1;
-respawnTemplates[] = { "MenuPosition","Tickets" };
+respawn=0;
 
 #include "scarCODE\ServerInfoMenu\hpp\CfgServerInfoMenu.hpp"
 #include "scarCODE\ServerInfoMenu\hpp\RscDisplayServerInfoMenu.hpp"
