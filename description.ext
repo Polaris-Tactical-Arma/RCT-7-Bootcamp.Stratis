@@ -4,6 +4,9 @@ respawnDialog=0;
 respawnOnStart=-1;
 respawnTemplates[] = { "MenuPosition","Tickets" };
 
+#include "scarCODE\ServerInfoMenu\hpp\CfgServerInfoMenu.hpp"
+#include "scarCODE\ServerInfoMenu\hpp\RscDisplayServerInfoMenu.hpp"
+
 
 class CfgFunctions
 {

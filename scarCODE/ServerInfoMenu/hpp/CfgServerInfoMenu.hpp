@@ -3,7 +3,7 @@ class CfgServerInfoMenu
    addAction = 1;
    antiHACK = "BattlEye";
    hostedBy = "RCT-7";
-   ipPort = "66.55.156.226:2302";
+   ipPort = "arma.rct7.men";
    openKey = "User7";
    openAtLogin = no;
    serverName = "Regimental Combat Team 7 (RCT-7)";
@@ -103,24 +103,6 @@ class CfgServerInfoMenu
 			"<br />",
 			"<a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1499161380'><t size='1.25'>Get Our Mod's!</a>"
 		 };
-      };
-      class sixth
-      {
-         menuName = "ADMIN'S";
-         title = "ADMINISTRATORS";
-         content[] = {	
-		"<a href='https://discord.gg/QxTeJpa'><t size='1.25'>J. Kargi</a>",
-		 "<br />",
-		 "<a href='https://discord.gg/QxTeJpa'><t size='1.25'>Leander</a>",
-		 "<br />",
-		 "<a href='https://discord.gg/QxTeJpa'><t size='1.25'>BapKing</a>",
-		 "<br />",
-		 "<a href='https://discord.gg/QxTeJpa'><t size='1.25'>shiny</a>",
-		 "<br />",
-		 "<a href='https://discord.gg/QxTeJpa'><t size='1.25'>Cowbell</a>",
-		 "<br />",
-		 "<a href='https://discord.gg/QxTeJpa'><t size='1.25'>Maverik</a>"
-         };
       };
       class seventh
       {
