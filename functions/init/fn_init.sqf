@@ -92,7 +92,6 @@ _isSectionCompleted = {
 		continue;
 	};
 
-	_section call _teleportPlayer;
 	[player, _section] call RCT7Bootcamp_fnc_teleportPlayer;
 
 	switch (_section) do {
