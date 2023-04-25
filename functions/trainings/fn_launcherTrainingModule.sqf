@@ -118,15 +118,20 @@ _handleVehicleRespawn = {
 				_special = "FLY";
 			};
 
-			sleep 5;
+			private _veh = createVehicle [_type, [0, 0, 0], [], 0, _special];
+			_veh enableSimulation false;
 
+			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
+
+			sleep 5;
 			deleteVehicleCrew _unit;
 			deleteVehicle _unit;
 			sleep 3;
 
-			private _veh = createVehicle [_type, _pos, [], 0, _special];
 			_veh setPosATL _pos;
 			_veh setDir _dir;
+			_veh setVectorUp surfaceNormal position _veh;
+			_veh enableSimulation true;
 
 			if (_veh isKindOf "Air") then {
 				_crew = createVehicleCrew _veh;
@@ -134,8 +139,6 @@ _handleVehicleRespawn = {
 				_veh flyInHeight (_pos # 2);
 				_veh call RCT7Bootcamp_fnc_unlimitedFuel;
 			};
-
-			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
 		};
 	}];
 };
@@ -153,6 +156,10 @@ _mainTaskId = "Launcher";
 while { _count isNotEqualTo _index } do {
 	_targetList = _targetClusterLogic call _getTargetList;
 	_target = _targetList select 0;
+
+	if (_target isEqualTo objNull) then {
+		sleep 1;
+	};
 
 	RCTLauncherTargetList = _targetList;
 
