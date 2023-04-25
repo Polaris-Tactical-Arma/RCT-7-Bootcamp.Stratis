@@ -7,14 +7,29 @@ waitUntil {
 	!isNull findDisplay 46
 };
 
+RCT7playerData = nil;
+
 [] execVM "scarCODE\ServerInfoMenu\sqf\initLocal.sqf";
 [player] remoteExec ["RCT7_getFromDb", 2];
 
 [] spawn {
-	sleep 2;
+	waitUntil {
+		sleep 3;
+		{
+			publicVariable "RCT7playerData"
+		} remoteExec ["call", 2];
+		!(isNil "RCT7playerData");
+	};
 	createDialog 'RscDisplayServerInfoMenu';
 
-	player addAction ["Start Bootcamp",
+	private _prefix = "Start";
+	if (count RCT7playerData > 0) then {
+		_prefix = "Resume";
+	};
+	_actionTitle = [_prefix, "Bootcamp"] joinString " ";
+
+	player addAction [_actionTitle,
+
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
 
