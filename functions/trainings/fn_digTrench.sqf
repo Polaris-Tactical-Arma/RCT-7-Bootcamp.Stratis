@@ -28,17 +28,20 @@ _trenchPlacedEvent = ["ace_trenches_placed", {
 		};
 		["trenchesWait"] call RCT7Bootcamp_fnc_taskSetState;
 
-		[["trenchesCamouflage", "trenches"], "Camoflauge the trench", "SHINY FIX OR REPLACE TO HAVE ACE KEY FIRST , look at the trench and select Interactions -> Camoflauge Trench."] call RCT7Bootcamp_fnc_taskCreate;
+		_interActionKey = ["ACE3 Common", "ACE_Interact_Menu_InteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+		// @bapking replace text below so it fits
+		[["trenchesCamouflage", "trenches"], "Camoflauge the trench ", _interactKey ," , look at the trench and select Interactions -> Camoflauge Trench."] call RCT7Bootcamp_fnc_taskCreate;
 		waitUntil {
 			sleep 1;
 			_trench getVariable["ace_trenches_camouflaged", false];
 		};
 		["trenchesCamouflage"] call RCT7Bootcamp_fnc_taskSetState;
 
+		_deployWeaponKeybind = "deployWeaponAuto" call RCT7Bootcamp_fnc_getArmaKeybind;
 		[
 			["trenchesPlaceGun", "trenches"],
 			"Mount your rifle on the trench",
-			["Mount your rifle on the trench by pressing ", actionKeysNames "deployWeaponAuto" regexReplace ["""", ""]] joinString ""
+			["Mount your rifle on the trench by pressing ", _deployWeaponKeybind] joinString ""
 		] call RCT7Bootcamp_fnc_taskCreate;
 
 		waitUntil {
