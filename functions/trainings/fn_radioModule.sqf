@@ -4,7 +4,7 @@ _microDisplayname = getText(configfile >> "CfgWeapons" >> _micro >> "displayName
 _radioDisplayname = getText(configfile >> "CfgWeapons" >> _radio >> "displayName");
 
 _radioTaskId = "Radio";
-[_radioTaskId, "Radio Familiarization", "Follow the tasks provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_radioTaskId, "Radio Familiarization", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 _getRadio = "GetRadio";
 _getRadioDescription = ["Grab the following out of the box and equip them:<br/>", _microDisplayname, _radioDisplayname] joinString "<br/>";
