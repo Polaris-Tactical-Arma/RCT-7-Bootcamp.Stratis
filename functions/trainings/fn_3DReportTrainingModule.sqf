@@ -47,7 +47,7 @@ _index = 0;
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
 
-_changeZoomButton = actionKeysNames "personView" regexReplace ["""", ""];
+_changeZoomButton = "personView" call RCT7Bootcamp_fnc_getArmaKeybind;
 _taskDesc = ["Follow the instructions provided.", "\n\n", "You can toggle between your regular sight and battle sight with:\n", _changeZoomButton, "."] joinString "";
 
 _3DTaskId = "3DReport";

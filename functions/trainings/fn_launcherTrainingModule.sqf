@@ -192,7 +192,7 @@ while { _count isNotEqualTo _index } do {
 	[_taskEquipId, "SUCCEEDED", false, true] call RCT7Bootcamp_fnc_taskSetState;
 	player call RCT7Bootcamp_fnc_targetHitValid;
 
-	_reloadButton = actionKeysNames "ReloadMagazine" regexReplace ["""", ""];
+	_reloadButton = "ReloadMagazine" call RCT7Bootcamp_fnc_getArmaKeybind;
 	_prepareDescription = ["Prepare your launcher with:<br/>", _reloadButton] joinString "";
 	_taskPrepareId = "LauncherPrepare";
 	[[_taskPrepareId, _mainTaskId], "Prepare your launcher", _prepareDescription] call RCT7Bootcamp_fnc_taskCreate;
@@ -224,8 +224,8 @@ while { _count isNotEqualTo _index } do {
 				"Zero your gun on:<br/>",
 				_distance,
 				"<br/><br/>",
-				"Zeroing Up:<br/>", ((actionKeysNames "zeroingUp") splitString """" joinString ""), "<br/><br/>",
-				"Zeroing Down:<br/>", ((actionKeysNames "zeroingDown") splitString """" joinString "")
+				"Zeroing Up:<br/>", "zeroingUp" call RCT7Bootcamp_fnc_getArmaKeybind, "<br/><br/>",
+				"Zeroing Down:<br/>", "zeroingDown" call RCT7Bootcamp_fnc_getArmaKeybind
 			] joinString "";
 			_taskZeroingId = "LauncherZeroing";
 			[[_taskZeroingId, _mainTaskId], "Set the right zeroing", _zeroingDescription, "target"] call RCT7Bootcamp_fnc_taskCreate;
