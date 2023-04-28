@@ -48,10 +48,10 @@ _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "
 _count = count(_targetClusterList);
 
 _changeZoomButton = actionKeysNames "personView" regexReplace ["""", ""];
-_taskDesc = ["Follow the instructions", "\n\n", "You can change the sight with:\n", _changeZoomButton] joinString "";
+_taskDesc = ["Follow the instructions provided.", "\n\n", "You can toggle between your regular sight and battle sight with:\n", _changeZoomButton, "."] joinString "";
 
 _3DTaskId = "3DReport";
-[_3DTaskId, "Finish the 3D report Training", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_3DTaskId, "Understanding 3D Reports", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
@@ -80,7 +80,7 @@ while { _count isNotEqualTo _index } do {
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 
-	_taskDescription = ["Shoot at the Target:<br/><br/>", "description: ", _targetDescription, "<br/>direction: ", _dir, "<br/>distance (ca.): ", _distance, " meters"] joinString "";
+	_taskDescription = ["Shoot at the target:<br/><br/>", "Description: ", _targetDescription, "<br/>Direction: ", _dir, "<br/>Distance (ca.): ", _distance, " meters"] joinString "";
 	_subTaskId = ["TargetCluster", _index] joinString "_";
 	_subTaskTitle = [_index + 1, "Hit the correct Target"] joinString " - ";
 	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;
