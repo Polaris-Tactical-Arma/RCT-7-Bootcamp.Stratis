@@ -35,7 +35,8 @@ waitUntil{
 [_frequency1TaskId] call RCT7Bootcamp_fnc_taskSetState;
 
 _freq2 = "31.1";
-_setFrequencyDescription = ["Set your second channel to: ", _freq2, ".<br/>Right click the tuning dial in the top left corner once or press", "SHINY REPLACE", "."] joinString "";
+_channel2Keybind = ["TFAR", "SWChannel2"] call RCT7Bootcamp_fnc_getCBAKeybind; 
+_setFrequencyDescription = ["Set your second channel to: ", _freq2, ".<br/>Right click the tuning dial in the top left corner once or press [", _channel2Keybind, "]."] joinString "";
 _frequency2TaskId = ["Frequency", _freq2] joinString "";
 [[_frequency2TaskId, _radioTaskId], ["Set your second channel to: ", _freq2, "."] joinString "", _setFrequencyDescription, "radio"] call RCT7Bootcamp_fnc_taskCreate;
 
