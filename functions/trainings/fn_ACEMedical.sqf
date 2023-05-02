@@ -30,7 +30,7 @@ _getBodyPartN = {
 RCT_MedicalInProcess = true;
 
 if (_patient isEqualTo objNull) exitWith {
-	systemChat "No Patient provided"
+	systemChat "No patient provided"
 };
 
 removeAllItems player;
@@ -45,11 +45,11 @@ player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
 private _isAI = _patient isNotEqualTo player;
 
-hint "Medical Items added to inventory\n\nalways make sure to prioritize combat over medical!";
+hint "Medical Items added to inventory\n\nAlways make sure to prioritize combat over medical!";
 sleep 5;
 
 _patientMedicalTaskId = "PatientMedical";
-[_patientMedicalTaskId, "Finish the medical training", "Follow the instructions", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_patientMedicalTaskId, "ACE Medical", "Follow the instructions provided.", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 private _isBandaged = {
 	_wounds = _patient getVariable ["ace_medical_openWounds", []];
@@ -110,8 +110,8 @@ while { _isRunning } do {
 
 	if (_isAI) then {
 		_patientResponse = "PatientResponse";
-		_reponseDescription = "Open the medical menu, click on the head and check the response.";
-		[[_patientResponse, _patientMedicalTaskId], "Check Response", _reponseDescription, "heal"] call RCT7Bootcamp_fnc_taskCreate;
+		_reponseDescription = "Open the medical menu by pressing SHINY ADD ACE H KEY FOR MEDICAL MENU HERE, click on the diagram's head, then click the 'Examine Patient' button and select 'Check response'.";
+		[[_patientResponse, _patientMedicalTaskId], "Check response", _reponseDescription, "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 		waitUntil {
 			sleep 1;
@@ -121,7 +121,7 @@ while { _isRunning } do {
 	};
 
 	_patientTournequit = "PatientTournequit";
-	[[_patientTournequit, _patientMedicalTaskId], "Use a tournequit", "Apply a tournequit", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientTournequit, _patientMedicalTaskId], "Use a tourniquet", "In the medical menu, click on the patient's bleeding leg (yellow), click the 'Bandage/Fractures' button and select 'Apply Tourniquet'.", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 	waitUntil{
 		sleep 1;
@@ -142,7 +142,7 @@ while { _isRunning } do {
 	[_patientTournequit] call RCT7Bootcamp_fnc_taskSetState;
 
 	_patientBandage = "PatientBandage";
-	[[_patientBandage, _patientMedicalTaskId], "Use a bandage", "Apply a bandage", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientBandage, _patientMedicalTaskId], "Use a bandage", "From the 'Bandage/Fractures' screen, with the leg still selected, click 'Bandage'", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 	waitUntil{
 		sleep 1;
@@ -163,7 +163,7 @@ while { _isRunning } do {
 	[_patientBandage] call RCT7Bootcamp_fnc_taskSetState;
 
 	_patientTournequitRemove = "PatientTournequitRemove";
-	[[_patientTournequitRemove, _patientMedicalTaskId], "Remove a tournequit", "Remove the tournequit", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientTournequitRemove, _patientMedicalTaskId], "Remove a tourniquet", "Now that the bleeding has stopped, click 'Remove Tourniquet' on the 'Bandage/Fractures' screen.", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 	waitUntil{
 		sleep 1;
@@ -176,7 +176,7 @@ while { _isRunning } do {
 	if (_isAI) then {
 		_patientEpi = "PatientEpi";
 		player addItem "ACE_epinephrine";
-		[[_patientEpi, _patientMedicalTaskId], "Use Epinephrine", "Apply a Epinephrine to one of the limb", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+		[[_patientEpi, _patientMedicalTaskId], "Use epinephrine", "To awaken the patient click the 'Medication' button, select any limb and then click 'Inject Epinephrine'.", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 		waitUntil{
 			sleep 1;
 			!(_patient getVariable ["ACE_isUnconscious", false]);
@@ -186,7 +186,7 @@ while { _isRunning } do {
 
 	// morphine
 	_patientMorphine = "PatientMorphine";
-	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "Apply a morphine to one limb", "heal"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_patientMorphine, _patientMedicalTaskId], "Use morphine", "To remove the effects of pain click the 'Medication' button, select any limb and then click 'Inject Morphine'.", "heal"] call RCT7Bootcamp_fnc_taskCreate;
 	waitUntil{
 		sleep 1;
 		_patient getVariable ["ace_medical_painSuppress", 0] > 0;

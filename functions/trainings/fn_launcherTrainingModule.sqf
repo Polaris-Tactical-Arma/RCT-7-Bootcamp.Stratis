@@ -77,7 +77,7 @@ _firedCheck = {
 		if (typeName _actionId isEqualTo typeName 0) then {
 			player removeAction _actionId;
 		};
-		["Follow the instructions on your screen!<br/><br/> Try again in:", 10] call RCT7Bootcamp_fnc_cooldownHint;
+		["Make sure to follow the instructions on your screen!<br/><br/> Try again in:", 10] call RCT7Bootcamp_fnc_cooldownHint;
 		continue;
 	};
 };
@@ -151,7 +151,7 @@ call RCT7Bootcamp_fnc_earplugTask;
 
 player call RCT7Bootcamp_fnc_sectionStart;
 _mainTaskId = "Launcher";
-[_mainTaskId, "Finish the Launcher Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_mainTaskId, "Anti-Tank & Anti-Air Usage", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 while { _count isNotEqualTo _index } do {
 	_targetList = _targetClusterLogic call _getTargetList;
@@ -193,7 +193,7 @@ while { _count isNotEqualTo _index } do {
 	player call RCT7Bootcamp_fnc_targetHitValid;
 
 	_reloadButton = "ReloadMagazine" call RCT7Bootcamp_fnc_getArmaKeybind;
-	_prepareDescription = ["Prepare your launcher with:<br/>", _reloadButton] joinString "";
+	_prepareDescription = ["Prepare your launcher to fire by pressing:<br/>", _reloadButton] joinString "";
 	_taskPrepareId = "LauncherPrepare";
 	[[_taskPrepareId, _mainTaskId], "Prepare your launcher", _prepareDescription] call RCT7Bootcamp_fnc_taskCreate;
 	waitUntil {
@@ -221,14 +221,15 @@ while { _count isNotEqualTo _index } do {
 
 		if (currentZeroing player isNotEqualTo _distance) then {
 			_zeroingDescription = [
-				"Zero your gun on:<br/>",
+				"Zero your launcher to:<br/>",
 				_distance,
+				"using the following keys;",
 				"<br/><br/>",
 				"Zeroing Up:<br/>", "zeroingUp" call RCT7Bootcamp_fnc_getArmaKeybind, "<br/><br/>",
 				"Zeroing Down:<br/>", "zeroingDown" call RCT7Bootcamp_fnc_getArmaKeybind
 			] joinString "";
 			_taskZeroingId = "LauncherZeroing";
-			[[_taskZeroingId, _mainTaskId], "Set the right zeroing", _zeroingDescription, "target"] call RCT7Bootcamp_fnc_taskCreate;
+			[[_taskZeroingId, _mainTaskId], "Set the correct zeroing", _zeroingDescription, "target"] call RCT7Bootcamp_fnc_taskCreate;
 
 			waitUntil {
 				currentZeroing player isEqualTo _distance || firedCount > 0;
@@ -241,7 +242,7 @@ while { _count isNotEqualTo _index } do {
 	};
 
 	_taskBackblastId = "LauncherBackblast";
-	[[_taskBackblastId, _mainTaskId], "Check your backblast!", "Use your scrollwheel to confirm, that you checked your backplast", "danger"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_taskBackblastId, _mainTaskId], "Check your backblast!", "Ensure there is around 20m between you and any hard surface to avoid injurying yourself. Use your scrollwheel to confirm, that you checked your backblast.\n\nIn a live situation, outside of this bootcamp, you should call out 'backblast!' on local voice so that friendlies can make way - do not fire until someone has confirmed this by responding with 'backblast clear!'", "danger"] call RCT7Bootcamp_fnc_taskCreate;
 
 	_actionId = player addAction ["<t color='#ffe0b5'>Backblast clear!</t>", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
@@ -262,7 +263,7 @@ while { _count isNotEqualTo _index } do {
 
 	if (toLower "Surface-to-air" in toLower _descShort) then {
 		_minDistance = getNumber(configfile >> "CfgAmmo" >> _launcherAmmo >> "missileLockMinDistance");
-		hint (["Shoulder the launcher and aim it at the helicopter. When the beeping intensifies click to fire.\n\n
+		hint (["Shoulder the launcher and aim it at the helicopter. A beeping sound will play whilst locking on - when the beeping suddenly intensifies click to fire.\n\n
 		Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
 		sleep 7;
 	};
@@ -310,13 +311,13 @@ while { _count isNotEqualTo _index } do {
 	_index = _index + 1;
 
 	if (_hasDamage) then {
-		hint "You were to close to a structure, make sure to have at least 20 meters safe distance!";
+		hint "You were too close to a hard surface, make sure to have at least 20 meters of safe distance to avoid hurting yourself!";
 		sleep 10;
 	};
 
 	if (getNumber(configfile >> "CfgWeapons" >> _launcher >> "rhs_disposable") isEqualTo 1) then {
 		_taskDropId = "LauncherDrop";
-		[[_taskDropId, _mainTaskId], "Drop your Launcher", "This Launcher is disposabel. Equip your primary Weapon to drop it.", "rifle"] call RCT7Bootcamp_fnc_taskCreate;
+		[[_taskDropId, _mainTaskId], "Drop your launcher", "This launcher is disposable. To drop it, equip your primary weapon.", "rifle"] call RCT7Bootcamp_fnc_taskCreate;
 
 		waitUntil {
 			secondaryWeapon player isEqualTo ""
