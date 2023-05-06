@@ -41,19 +41,21 @@ _createArrow = {
 private _unitList = [_unit1, _unit2, _unit3, _unit4];
 
 private _formationList = [
-	["COLUMN", "Column"],
-	["LINE", "Line"],
-	["STAG COLUMN", "Staggered Column"],
-	["WEDGE", "Wedge"],
-	["ECH LEFT", "Echolon Left"],
-	["ECH RIGHT", "Echolon Right"]
+	["COLUMN", "Column", ""],
+	["LINE", "Line", ""],
+	["STAG COLUMN", "Staggered Column", ""],
+	["WEDGE", "Wedge", ""],
+	["ECH LEFT", "Echolon Left", ""],
+	["ECH RIGHT", "Echolon Right", ""]
 ];
 
 sleep 2;
 
 {
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
-	hint (["This formation is called", _x # 1] joinString ":\n");
+	private _formationDisplayname = _x # 1;
+	private _formationDescription = _x # 2;
+	hint (["This formation is called", _formationDisplayname] joinString ":\n");
 	sleep 10;
 } forEach _formationList;
 
