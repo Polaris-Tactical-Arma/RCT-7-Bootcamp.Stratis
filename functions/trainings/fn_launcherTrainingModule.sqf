@@ -151,7 +151,7 @@ call RCT7Bootcamp_fnc_earplugTask;
 
 player call RCT7Bootcamp_fnc_sectionStart;
 _mainTaskId = "Launcher";
-[_mainTaskId, "Anti-Tank & Anti-Air Usage", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_mainTaskId, "Anti-Tank and Anti-Air Usage", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 while { _count isNotEqualTo _index } do {
 	_targetList = _targetClusterLogic call _getTargetList;
@@ -183,7 +183,7 @@ while { _count isNotEqualTo _index } do {
 
 	_time = time;
 
-	_equipDescription = ["A", call _getLauncherName, "was added to your inventory!<br/>Equip it!"] joinString " ";
+	_equipDescription = ["An", call _getLauncherName, "was added to your inventory!<br/>Equip it!"] joinString " ";
 	_taskEquipId = "LauncherEquip";
 	[[_taskEquipId, _mainTaskId], "Equip your launcher", _equipDescription, "use"] call RCT7Bootcamp_fnc_taskCreate;
 	waitUntil {
@@ -223,7 +223,7 @@ while { _count isNotEqualTo _index } do {
 			_zeroingDescription = [
 				"Zero your launcher to:<br/>",
 				_distance,
-				"using the following keys;",
+				" using the following keys;",
 				"<br/><br/>",
 				"Zeroing Up:<br/>", "zeroingUp" call RCT7Bootcamp_fnc_getArmaKeybind, "<br/><br/>",
 				"Zeroing Down:<br/>", "zeroingDown" call RCT7Bootcamp_fnc_getArmaKeybind
@@ -242,7 +242,7 @@ while { _count isNotEqualTo _index } do {
 	};
 
 	_taskBackblastId = "LauncherBackblast";
-	[[_taskBackblastId, _mainTaskId], "Check your backblast!", "Ensure there is around 20m between you and any hard surface to avoid injurying yourself. Use your scrollwheel to confirm, that you checked your backblast.\n\nIn a live situation, outside of this bootcamp, you should call out 'backblast!' on local voice so that friendlies can make way - do not fire until someone has confirmed this by responding with 'backblast clear!'", "danger"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_taskBackblastId, _mainTaskId], "Check your backblast!", "Ensure there is around 20m between you and any hard surface to avoid injurying yourself. Use your scrollwheel to confirm, that you checked your backblast.<br/><br/>In a live situation, outside of this bootcamp, you should call out 'backblast!' on local voice so that friendlies can make way - do not fire until someone has confirmed this by responding with 'backblast clear!'", "danger"] call RCT7Bootcamp_fnc_taskCreate;
 
 	_actionId = player addAction ["<t color='#ffe0b5'>Backblast clear!</t>", {
 		params ["_target", "_caller", "_actionId", "_arguments"];

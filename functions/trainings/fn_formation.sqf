@@ -45,8 +45,8 @@ private _formationList = [
 	["LINE", "Line", ""],
 	["STAG COLUMN", "Staggered Column", ""],
 	["WEDGE", "Wedge", ""],
-	["ECH LEFT", "Echolon Left", ""],
-	["ECH RIGHT", "Echolon Right", ""]
+	["ECH LEFT", "Echelon Left", ""],
+	["ECH RIGHT", "Echelon Right", ""]
 ];
 
 sleep 2;
