@@ -72,10 +72,18 @@ private _applyDamage = {
 	[_message, 5] call RCT7Bootcamp_fnc_cooldownHint;
 	[_patient, 0.8, _bodyPart, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit", 0];
 
-	_patient spawn {
+	[_patient, _isAI] spawn {
+		_patient = _this # 0;
+		_isAI = _this # 1;
+
 		while { RCT_MedicalInProcess } do {
 			sleep 10;
-			_this setVariable ["ace_medical_bloodVolume", 5.8, true];
+			_patient setVariable ["ace_medical_bloodVolume", 5.8, true];
+			[_patient, false] call ace_medical_status_fnc_setCardiacArrestState;
+			_patient setVariable ["ace_medical_inCardiacArrest", false, true];
+			if !(_isAI) then {
+				[_patient, false] call ace_medical_fnc_setUnconscious;
+			}
 		};
 	};
 
