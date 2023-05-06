@@ -45,7 +45,7 @@ player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
 private _isAI = _patient isNotEqualTo player;
 
-hint "Medical Items added to inventory\n\nalways make sure to prioritize combat over medical!";
+hint "Medical items added to inventory\n\nalways Make sure to prioritize the combat situation over medical!";
 sleep 5;
 
 _patientMedicalTaskId = "PatientMedical";
