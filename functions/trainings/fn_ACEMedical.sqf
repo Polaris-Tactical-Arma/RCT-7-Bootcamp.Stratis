@@ -110,7 +110,8 @@ while { _isRunning } do {
 
 	if (_isAI) then {
 		_patientResponse = "PatientResponse";
-		_reponseDescription = "Open the medical menu by pressing SHINY ADD ACE H KEY FOR MEDICAL MENU HERE, click on the diagram's head, then click the 'Examine Patient' button and select 'Check response'.";
+		_medicalKeybind = ["ACE3 Common", "ACE_Medical_GUI_openMedicalMenuKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+		_reponseDescription = ["Open the medical menu by pressing [", _medicalKeybind, "], click on the diagram's head, then click the 'Examine Patient' button and select 'Check response'."] joinString "";
 		[[_patientResponse, _patientMedicalTaskId], "Check response", _reponseDescription, "heal"] call RCT7Bootcamp_fnc_taskCreate;
 
 		waitUntil {
