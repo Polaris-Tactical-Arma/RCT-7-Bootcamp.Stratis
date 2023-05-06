@@ -8,7 +8,7 @@ _loadoutEvent = ["loadout", {
 
 	if (["trenchesStartDigging"] call BIS_fnc_taskExists) exitWith {};
 
-	_desc = [call RCT7Bootcamp_fnc_getACESelfInfo, " hover over equipment, select dig a big trench.<br/>You must be looking at a natural surface e.g. dirt or grass."] joinString "";
+	_desc = [call RCT7Bootcamp_fnc_getACESelfInfo, " hover over equipment, select dig a big trench.<br/><br/>You must be looking at a natural surface e.g. dirt or grass."] joinString "";
 	["trenchesGetTool"] call RCT7Bootcamp_fnc_taskSetState;
 	[["trenchesStartDigging", "trenches"], "Dig a big trench", _desc] call RCT7Bootcamp_fnc_taskCreate;
 }] call CBA_fnc_addPlayerEventHandler;
