@@ -7,7 +7,7 @@ private _unit4 = nil;
 
 _createArrow = {
 	private _unit = param[0, objNull, [objNull]];
-	private _arrowType = param[1, "Sign_Arrow_Large_F", [""]];
+	private _arrowType = param[1, "Sign_Arrow_Large_F", ["Add your description here"]];
 
 	_arrow = _arrowType createVehicle (getPos _unit);
 	_arrow attachTo [_unit, [0, 0, 2.5]];
@@ -41,12 +41,12 @@ _createArrow = {
 private _unitList = [_unit1, _unit2, _unit3, _unit4];
 
 private _formationList = [
-	["COLUMN", "Column", ""],
-	["LINE", "Line", ""],
-	["STAG COLUMN", "Staggered Column", ""],
-	["WEDGE", "Wedge", ""],
-	["ECH LEFT", "Echelon Left", ""],
-	["ECH RIGHT", "Echelon Right", ""]
+	["COLUMN", "Column", "Add your description here"],
+	["LINE", "Line", "Add your description here"],
+	["STAG COLUMN", "Staggered Column", "Add your description here"],
+	["WEDGE", "Wedge", "Add your description here"],
+	["ECH LEFT", "Echelon Left", "Add your description here"],
+	["ECH RIGHT", "Echelon Right", "Add your description here"]
 ];
 
 sleep 2;
@@ -55,7 +55,8 @@ sleep 2;
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
 	private _formationDisplayname = _x # 1;
 	private _formationDescription = _x # 2;
-	hint (["This formation is called", _formationDisplayname] joinString ":\n");
+	private _hintText = ["This formation is called: ", _formationDisplayname, "\n\n", _formationDescription] joinString "";
+	hint _hintText;
 	sleep 10;
 } forEach _formationList;
 
