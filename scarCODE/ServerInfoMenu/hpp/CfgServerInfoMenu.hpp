@@ -26,7 +26,7 @@ class CfgServerInfoMenu
             "<br /><t size='.5'></t>3. Throwing Grenades",
             "<br /><t size='.5'></t>4. Map Reading",
             "<br /><t size='.5'></t>5. Close Quarters Combat",
-            "<br /><t size='.5'></t>6. Anti-Tank & Anti-Air Usage",
+            "<br /><t size='.5'></t>6. Anti-Tank and Anti-Air Usage",
             "<br /><t size='.5'></t>7. Formations",
             "<br /><t size='.5'></t>8. Bounding",
             "<br /><t size='.5'></t>9. ACE Medical",

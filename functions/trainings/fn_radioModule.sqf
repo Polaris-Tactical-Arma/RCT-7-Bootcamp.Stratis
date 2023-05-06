@@ -28,7 +28,7 @@ _freq1 = "31";
 _frequency1TaskId = ["Frequency", _freq1] joinString "";
 
 _setFrequencyDescription = ["Set your first channel to: ", _freq1, ".<br/>Click and delete the existing frequency, type 31 and click the ENT button."] joinString "";
-[[_frequency1TaskId, _radioTaskId], ["Set your first channel to", _freq1, "."] joinString "", _setFrequencyDescription, "radio"] call RCT7Bootcamp_fnc_taskCreate;
+[[_frequency1TaskId, _radioTaskId], ["Set your first channel to: ", _freq1, "."] joinString "", _setFrequencyDescription, "radio"] call RCT7Bootcamp_fnc_taskCreate;
 waitUntil{
 	([(call TFAR_fnc_activeSwRadio), 1] call TFAR_fnc_getChannelFrequency) isEqualTo _freq1
 };

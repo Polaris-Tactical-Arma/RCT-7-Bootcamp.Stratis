@@ -68,7 +68,7 @@ private _isBandaged = {
 private _applyDamage = {
 	params["_unit", "_bodyPart"];
 
-	_message = ["Applying damage to ", name _patient, "in"] joinString "";
+	_message = ["Applying damage to ", name _patient, " in"] joinString "";
 	[_message, 5] call RCT7Bootcamp_fnc_cooldownHint;
 	[_patient, 0.8, _bodyPart, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit", 0];
 
