@@ -28,8 +28,8 @@ _trenchPlacedEvent = ["ace_trenches_placed", {
 		};
 		["trenchesWait"] call RCT7Bootcamp_fnc_taskSetState;
 
-		_interActionKey = ["ACE3 Common", "ACE_Interact_Menu_InteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
-		_camouflageDescription = ["Camoflauge the trench [", _interactKey, "], look at the trench and select Interactions -> Camoflauge Trench."] joinString "";
+		_interactionKey = ["ACE3 Common", "ACE_Interact_Menu_InteractKey"] call RCT7Bootcamp_fnc_getCBAKeybind;
+		_camouflageDescription = ["Camoflauge the trench [", _interactionKey, "], look at the trench and select Interactions -> Camoflauge Trench."] joinString "";
 		[["trenchesCamouflage", "trenches"], "Camoflauge the trench ", _camouflageDescription] call RCT7Bootcamp_fnc_taskCreate;
 		waitUntil {
 			sleep 1;
