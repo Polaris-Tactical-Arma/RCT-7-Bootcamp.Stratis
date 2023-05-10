@@ -41,12 +41,12 @@ _createArrow = {
 private _unitList = [_unit1, _unit2, _unit3, _unit4];
 
 private _formationList = [
-	["COLUMN", "Column", "Add your description here"],
-	["LINE", "Line", "Add your description here"],
-	["STAG COLUMN", "Staggered Column", "Add your description here"],
-	["WEDGE", "Wedge", "Add your description here"],
-	["ECH LEFT", "Echelon Left", "Add your description here"],
-	["ECH RIGHT", "Echelon Right", "Add your description here"]
+	["COLUMN", "Column", "The most time efficient formation at our disposal - formed by a single file with the first buddy group at the front and the second at the rear."],
+	["LINE", "Line", "This is a simple formation that is formed by a single row of all fireteam members.<br/></br>Strong side left or right will dictate which side of the formation the AR buddy team should fall in."],
+	["STAG COLUMN", "This formation is typically used for walking along roads with a buddy team file on either side (dictated by strong side).<br/></br>This formation allows a fireteam to respond to contact on either side without crossing lines of fire and reduces casualties from IEDs & mines with its increased spacing."],
+	["DIAMOND", "Diamond", "The diamond has all around security - its shape allows each fireteam member to cover a quarter interval of the clock face.<br/><br/>The assistant autorifleman takes the rear position with the AR filling in on the left or right depending on the strong side."],
+	["ECH LEFT", "Echelon Left", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the left to increase the formation's strength."],
+	["ECH RIGHT", "Echelon Right", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the right to increase the formation's strength."]
 ];
 
 sleep 2;
@@ -101,8 +101,8 @@ private _quizz = {
 	} forEach _formationAddActionList;
 };
 
-_FormationTaskId = "Formation";
-[_FormationTaskId, "Formation", "Make the quizz", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+_FormationTaskId = "Formations";
+[_FormationTaskId, "Formations", "Complete the quiz", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 RCT7Bootcamp_FormationHasAnswered = false;
 _formationAddActionList = + _formationList;
