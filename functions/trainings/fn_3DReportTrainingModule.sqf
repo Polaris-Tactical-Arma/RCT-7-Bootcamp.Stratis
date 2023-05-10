@@ -48,10 +48,11 @@ _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "
 _count = count(_targetClusterList);
 
 _changeZoomButton = "personView" call RCT7Bootcamp_fnc_getArmaKeybind;
-_taskDesc = ["Follow the instructions provided.", "\n\n", "You can toggle between your regular sight and battle sight with:\n", _changeZoomButton, "."] joinString "";
+_taskDesc = ["Contact reports are fundamental for success in battle as knowledge of your opponent’s presence, their strengths and their weaknesses.<br/><br/>Contact reports are kept concise using the '3D' Rule.<br/>Description - Type of enemy and quantity<br/>Direction - The enemy's location using a compass bearing.<br/>Distance - An estimated distance of the enemy in meters, or 'danger close' when an enemy is less than 50m away", "\n\n", "You can toggle between your regular sight and battle sight with:\n", _changeZoomButton, "."] joinString "";
 
 _3DTaskId = "3DReport";
 [_3DTaskId, "Understanding 3D Reports", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+sleep 30;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
