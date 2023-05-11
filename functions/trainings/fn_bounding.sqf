@@ -14,11 +14,11 @@
 
 _unit = param[0, objNull, [objNull]];
 RCT7BoundingType = param[1, "Alternate", [""]];
+_taskDescription = param[2, "", [""]];
 
 [player] joinSilent (group _unit);
 sleep 1;
 
-private _taskDescription = "Move to your buddy and use the scroll-wheel action to start the module.<br/>Follow your buddy and stay on line while moving";
 [RCT7BoundingType+"Bounding", RCT7BoundingType+" Bounding", _taskDescription, "run", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 _actionString = ["Start", RCT7BoundingType, "Bounding Training"] joinString " ";

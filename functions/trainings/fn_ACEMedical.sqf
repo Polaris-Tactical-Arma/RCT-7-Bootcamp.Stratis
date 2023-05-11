@@ -45,11 +45,9 @@ player setVariable ["ace_medical_medicclass", 1, true]; // set as medic
 
 private _isAI = _patient isNotEqualTo player;
 
-hint "Medical Items added to inventory\n\nAlways make sure to prioritize combat over medical!";
-sleep 5;
-
 _patientMedicalTaskId = "PatientMedical";
-[_patientMedicalTaskId, "ACE Medical", "Follow the instructions provided.", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_patientMedicalTaskId, "ACE Medical", "Medical Items added to inventory<br/><br/>Always make sure to prioritize combat over medical!", "heal", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+sleep 5;
 
 private _isBandaged = {
 	_wounds = _patient getVariable ["ace_medical_openWounds", []];
