@@ -12,12 +12,6 @@ _createArrow = {
 	_arrow = _arrowType createVehicle (getPos _unit);
 	_arrow attachTo [_unit, [0, 0, 2.5]];
 };
-//SHINY
-"A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members. 
-
-In each formation each member is vital in carrying out its function effectively.
-
-The formations that follow are those typically used in RCT-7." 
 
 {
 	private _unit = _x;
@@ -57,7 +51,11 @@ private _formationList = [
 
 sleep 2;
 
-_introText = "@bapking - Text goes here";
+_introText = "A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members.\n\n
+
+In each formation each member is vital in carrying out its function effectively.\n\n
+
+The formations that follow are those typically used in RCT-7.";
 
 hint _introText;
 
