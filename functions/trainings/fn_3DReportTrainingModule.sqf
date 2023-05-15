@@ -83,7 +83,7 @@ while { _count isNotEqualTo _index } do {
 
 	_taskDescription = ["Shoot at the target:<br/><br/>", "Description: ", _targetDescription, "<br/>Direction: ", _dir, "<br/>Distance: ", _distance, " meters"] joinString "";
 	_subTaskId = ["TargetCluster", _index] joinString "_";
-	_subTaskTitle = [_index + 1, "Hit the correct Target"] joinString " - ";
+	_subTaskTitle = [_index + 1, "Hit the correct target"] joinString " - ";
 	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;
 
 	[[player, dbSectionName, "description", _targetDescription]] remoteExec ["RCT7_addToDBQueue", 2];

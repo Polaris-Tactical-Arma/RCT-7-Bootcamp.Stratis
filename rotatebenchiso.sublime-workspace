@@ -1,0 +1,272 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cup_cess",
+				"cup_cessna_armed"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"git:",
+				"Git: Init"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"git: in",
+				"Git: Init"
+			],
+			[
+				"package controll in",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/intel%20script.SefrouRamal/initPlayerLocal.sqf",
+		"/C/Users/Ross/Documents/WSIS/fn_init.sqf",
+		"/C/Users/Ross/Documents/WSIS/config.cpp",
+		"/G/SteamLibrary/steamapps/workshop/content/107410/450814997/mod.cpp",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/intel%20script.SefrouRamal/init.sqf",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/autogen.hpp",
+		"/C/Users/Ross/AppData/Roaming/Sublime Merge/Packages/User/gm mods",
+		"/C/Users/Ross/AppData/Roaming/Sublime Merge/Packages/User/Preferences.sublime-settings",
+		"/G/SteamLibrary/steamapps/workshop/content/107410/450814997/README.md",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/intel%20script.SefrouRamal/intel script",
+		"/C/Users/Ross/AppData/Local/Arma 3/Arma3_x64_2023-04-26_20-25-53.rpt",
+		"/G/Downloads/cfgs/community.cfg",
+		"/C/Users/Ross/Documents/cupmi24/mod files/backup3",
+		"/C/Users/Ross/Documents/cupmi24/mod files/backup",
+		"/C/Users/Ross/Documents/cupmi24/mod files/backup4",
+		"/C/Users/Ross/Documents/cupmi24/mod files/backup2",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/penis.zargabad/initPlayerLocal.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/penis.zargabad/description.ext",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/penis.zargabad/init.sqf",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/CfgPatches.hpp",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/penis.zargabad/mission.sqm",
+		"/G/Downloads/btr80atest/rhs_btr80.pbo/mdl.hpp",
+		"/G/Downloads/btr80atest/rhs_btr80.pbo/skl.hpp",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/backup3",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/backup4",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/config.old",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/config.cpp",
+		"/C/Users/Ross/Documents/cupmi24/test/b_ugarmy.pbo/CfgFactionClasses.hpp",
+		"/G/Downloads/Tutorial Files/Tutorial Files/custom_uniform/config.cpp",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/faction/autogen.hpp",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/faction/CfgPatches.hpp",
+		"/C/Users/Ross/Documents/cupmi24/mod files/dragonflycessna/faction/config.cpp",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/init.sqf",
+		"/C/Users/Ross/Documents/rsm/sync.ps1",
+		"/C/Users/Ross/.ssh/pckey.pub",
+		"/C/Users/Ross/.ssh/rsm.pub",
+		"/C/Users/Ross/Music/Plex/gfvgvhgj.txt",
+		"/G/Downloads/PSTagLib-master/PSTagLib-master/Set-Mp3Tags.ps1",
+		"/C/Users/Ross/Documents/rsm/Genre Setter/Set-Mp3Tags.ps1",
+		"/C/Users/Ross/Documents/rsm/Genre Setter/test1.ps1",
+		"/G/Downloads/PSTagLib-master/PSTagLib-master/README.md",
+		"/C/Users/Ross/Documents/cupmi24/test/alex109_flags.pbo/BIS_AddonInfo.hpp",
+		"/C/Users/Ross/Documents/cupmi24/test/alex109_flags.pbo/texHeaders.bin",
+		"/C/Users/Ross/Documents/cupmi24/test/b_ugarmy.pbo/CfgVehicles.hpp",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/initPlayerLocal.sqf",
+		"/C/Users/Ross/Documents/cupmi24/test/alex109_flags.pbo/Config.cpp",
+		"/C/Users/Ross/Documents/cupmi24/test/b_ugarmy.pbo/config.bin",
+		"/C/Users/Ross/Documents/cupmi24/test/b_ugarmy.pbo/CfgPatches.hpp",
+		"/G/Downloads/armaAddonTemplate2022/insignia_addon/Config.cpp",
+		"/C/Users/Ross/Documents/rsm/sync2.ps1",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/rct7killhousewip.Stratis/scripts/door.sqf",
+		"/G/Downloads/maps.html",
+		"/C/Users/Ross/Documents/openp3d.bat",
+		"/C/Users/Ross/Documents/cupmi24/mod files/cup_cessna_t41_armed/config.cpp",
+		"/G/Downloads/Tutorial Files/Tutorial Files/Tutorial Files 4/Tutorial Files/custom_uniform/config.cpp",
+		"/C/Users/Ross/Documents/cupmi24/mod files/cup_airvehicles_cessna.pbo/Texheaders.bin",
+		"/C/Users/Ross/Documents/cupmi24/mod files/cup_airvehicles_cessna.pbo/config.bin",
+		"/D/SkidRow.ini",
+		"/D/skidrow.dat",
+		"/C/Users/Ross/Documents/rsm/PLEX task.xml",
+		"/C/Users/Ross/.ssh/pckey",
+		"/C/Users/Ross/Documents/rsm/syncwrongpath.ps1",
+		"/C/Users/Ross/Documents/rsm/schedulerbridge.bat",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/ISPMv1.sara/initPlayerLocal.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/ISPMv1.sara/init.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/ISPMv1.sara/description.ext",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/description.ext",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/ini_storm.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/AL_snowstorm/medium_fog.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/AL_snowstorm/al_breath.sqf",
+		"/G/Downloads/snow/Snow Storm Script DEMO.Stratis.pbo/description.ext",
+		"/G/Downloads/snow/Snow Storm Script DEMO.Stratis.pbo/ini_storm.sqf",
+		"/G/Downloads/snow/Snow Storm Script DEMO.Stratis.pbo/AL_snowstorm/al_snow.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/menustartup.sqf",
+		"/C/Users/Ross/Documents/Arma 3 - Other Profiles/BapKing/mpmissions/Operation20Bounding20Lynx.hellanmaaw/Operation%20Bounding%20Lynx.hellanmaaw/AL_snowstorm/al_snow.sqf",
+		"/G/Downloads/snow/Snow Storm Script DEMO.Stratis.pbo/init.sqf",
+		"/G/Downloads/snow/Snow Storm Script DEMO.Stratis.pbo/Briefing.sqf",
+		"/G/Invasion Machine/Invasion.Machine.v0.9/Invasion.Machine.v0.9/Invasion.Machine.v0.9/Invasion Machine_Data/boot.config"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "rotatebenchiso.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 155.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

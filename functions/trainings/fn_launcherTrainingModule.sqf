@@ -49,7 +49,7 @@ _getLauncherName = {
 _targetClusterLogic = _targetClusterList # 0;
 
 _getTargetList = {
-	_targetList = [];
+	private _targetList = [];
 
 	{
 		private _syncedObj = _x;
@@ -64,12 +64,11 @@ _getTargetList = {
 	_targetList;
 };
 
-_targetList = _targetClusterLogic call _getTargetList;
-
 RCTLauncherClusterLogic = _targetClusterLogic;
+RCT7LauncherTargetList = _targetClusterLogic call _getTargetList;
 
 _index = 0;
-_count = count(_targetList);
+_count = count(RCT7LauncherTargetList);
 
 _firedCheck = {
 	if (firedCount > 0) then {
@@ -102,7 +101,6 @@ _handleVehicleRespawn = {
 		if (isServer) exitWith {};
 
 		_unit removeMPEventHandler [_thisEvent, _thisEventHandler];
-		RCTLauncherClusterLogic synchronizeObjectsRemove [_unit];
 
 		[_unit] spawn {
 			_unit = param[0, objNull, [objNull]];
@@ -118,15 +116,14 @@ _handleVehicleRespawn = {
 				_special = "FLY";
 			};
 
-			private _veh = createVehicle [_type, [0, 0, 0], [], 0, _special];
-			_veh enableSimulation false;
-
-			RCTLauncherClusterLogic synchronizeObjectsAdd [_veh];
-
-			sleep 5;
+			sleep 4;
+			RCT7LauncherTargetList deleteAt (RCT7LauncherTargetList find _unit);
 			deleteVehicleCrew _unit;
 			deleteVehicle _unit;
-			sleep 3;
+			sleep 1;
+			private _veh = createVehicle [_type, [0, 0, 0], [], 0, _special];
+			_veh enableSimulation false;
+			RCT7LauncherTargetList pushBack _veh;
 
 			_veh setPosATL _pos;
 			_veh setDir _dir;
@@ -154,20 +151,13 @@ _mainTaskId = "Launcher";
 [_mainTaskId, "Anti-Tank and Anti-Air Usage", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 while { _count isNotEqualTo _index } do {
-	_targetList = _targetClusterLogic call _getTargetList;
-	_target = _targetList select 0;
-
-	if (_target isEqualTo objNull) then {
-		sleep 1;
-	};
-
-	RCTLauncherTargetList = _targetList;
+	private _target = RCT7LauncherTargetList # 0;
 
 	[_launcher] call RCT7Bootcamp_fnc_handleLauncher;
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	player setDamage 0;
 
-	_invalidTargetList=  + _targetList; // copy array
+	_invalidTargetList=  + RCT7LauncherTargetList; // copy array
 	_invalidTargetList deleteAt (_invalidTargetList find _target);
 
 	shotsValid = 0;
@@ -179,7 +169,7 @@ while { _count isNotEqualTo _index } do {
 	{
 		_x removeAllMPEventHandlers "MPHit";
 		_x call _handleVehicleRespawn;
-	} forEach _targetList;
+	} forEach RCT7LauncherTargetList;
 
 	_time = time;
 
