@@ -71,6 +71,7 @@ class CfgFunctions
 			class earplugTask{};
 			class teleportPlayer{};
 			class playerLookAtPos{};
+			class respawnVehicle{};
 		};
 	};
 };

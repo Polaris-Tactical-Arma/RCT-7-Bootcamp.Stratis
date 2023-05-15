@@ -93,6 +93,7 @@ while { _count isNotEqualTo _index } do {
 	[[player, dbSectionName, "shotsMissed", _shotsMissed, [["time", time - _time - 2]]]] remoteExec ["RCT7_addToDBQueue", 2];
 	[ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 	_index = _index + 1;
+	_target animate["terc", 1];
 };
 
 ["ace_firedPlayer", _firedIndex] call CBA_fnc_removeEventHandler;
