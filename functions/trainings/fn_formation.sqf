@@ -42,18 +42,18 @@ private _unitList = [_unit1, _unit2, _unit3, _unit4];
 
 private _formationList = [
 	["COLUMN", "Column", "The most time efficient formation at our disposal - formed by a single file with the first buddy group at the front and the second at the rear."],
-	["LINE", "Line", "This is a simple formation that is formed by a single row of all fireteam members.<br/><br/>Strong side left or right will dictate which side of the formation the AR buddy team should fall in."],
-	["STAG COLUMN", "Staggered Column", "This formation is typically used for walking along roads with a buddy team file on either side (dictated by strong side).<br/><br/>This formation allows a fireteam to respond to contact on either side without crossing lines of fire and reduces casualties from IEDs & mines with its increased spacing."],
-	["WEDGE", "Diamond", "The diamond has all around security - its shape allows each fireteam member to cover a quarter interval of the clock face.<br/><br/>The assistant autorifleman takes the rear position with the AR filling in on the left or right depending on the strong side."],
-	["ECH LEFT", "Echelon Left", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the left to increase the formation's strength."],
-	["ECH RIGHT", "Echelon Right", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the right to increase the formation's strength."]
+	["LINE", "Line", "This is a simple formation that is formed by a single row of all fireteam members.\n\nStrong side left or right will dictate which side of the formation the AR buddy team should fall in."],
+	["STAG COLUMN", "Staggered Column", "This formation is typically used for walking along roads with a buddy team file on either side (dictated by strong side).\n\nThis formation allows a fireteam to respond to contact on either side without crossing lines of fire and reduces casualties from IEDs & mines with its increased spacing."],
+	["WEDGE", "Diamond", "The diamond has all around security - its shape allows each fireteam member to cover a quarter interval of the clock face.\n\nThe assistant autorifleman takes the rear position with the AR filling in on the left or right depending on the strong side."],
+	["ECH LEFT", "Echelon Left", "The intent of the echelon formation is to provide maximum protection for the respective flank.\n\nIt is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.\n\nThe AR will fall in last, taking the furthest poition to the left to increase the formation's strength."],
+	["ECH RIGHT", "Echelon Right", "The intent of the echelon formation is to provide maximum protection for the respective flank.\n\nIt is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.\n\nThe AR will fall in last, taking the furthest poition to the right to increase the formation's strength."]
 ];
 
 sleep 5;
 
 _introText = "A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members.\n\n
 
-In each formation each member is vital in carrying out its function effectively.\n\n
+in each formation each member is vital in carrying out its function effectively.\n\n
 
 The formations that follow are those typically used in RCT-7.";
 
@@ -65,7 +65,7 @@ sleep 15;
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
 	private _formationDisplayname = _x # 1;
 	private _formationDescription = _x # 2;
-	private _hintText = ["This formation is called: ", _formationDisplayname, "\n\n", parseText _formationDescription] joinString "";
+	private _hintText = ["This formation is called: ", _formationDisplayname, "\n\n", _formationDescription] joinString "";
 	hint _hintText;
 	sleep 10;
 } forEach _formationList;
