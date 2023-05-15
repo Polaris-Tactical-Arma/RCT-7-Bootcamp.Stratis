@@ -35,6 +35,7 @@ class CfgServerInfoMenu
             "<br />Your progress is saved on completion of each of these sections - you will resume at correct point if you need to reconnect.",
             "<br />",
             "<br />If you experience any issues please ping a @Recruiter in Discord for assistance.",
+            "<br />",
             "<br />"
          };
       };
