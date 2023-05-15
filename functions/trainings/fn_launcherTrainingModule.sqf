@@ -263,7 +263,7 @@ while { _count isNotEqualTo _index } do {
 
 	_dir = round(([player, (_target)] call BIS_fnc_dirTo));
 
-	_shootDescription = ["Shoot at the ", _name, "<br/><br/>", "direction: ", _dir, "<br/>", _distance, " meters"] joinString "";
+	_shootDescription = ["Shoot at the ", _name, "<br/><br/>", "Direction: ", _dir, "<br/>Range: ", _distance, " meters"] joinString "";
 	_taskShootId = "LauncherShoot";
 	[[_taskShootId, _mainTaskId], "Shoot at the target", _shootDescription, "destroy"] call RCT7Bootcamp_fnc_taskCreate;
 
