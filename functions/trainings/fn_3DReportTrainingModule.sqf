@@ -47,11 +47,12 @@ _index = 0;
 _magSize = getNumber (configfile >> "CfgMagazines" >> (getArray (configFile >> "CfgWeapons" >> currentWeapon player >> "magazines") # 0) >> "count");
 _count = count(_targetClusterList);
 
-_changeZoomButton = actionKeysNames "personView" regexReplace ["""", ""];
-_taskDesc = ["Follow the instructions", "\n\n", "You can change the sight with:\n", _changeZoomButton] joinString "";
+_changeZoomButton = "personView" call RCT7Bootcamp_fnc_getArmaKeybind;
+_taskDesc = ["Contact reports are fundamental for success in battle as knowledge of your opponent’s presence, their strengths and their weaknesses.<br/><br/>Contact reports are kept concise using the '3D' Rule.<br/>Description - Type of enemy and quantity<br/>Direction - The enemy's location using a compass bearing.<br/>Distance - An estimated distance of the enemy in meters, or 'danger close' when an enemy is less than 50m away", "<br/><br/>", "You can toggle between your regular sight and battle sight with:\n", _changeZoomButton, "."] joinString "";
 
 _3DTaskId = "3DReport";
-[_3DTaskId, "Finish the 3D report training", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_3DTaskId, "Understanding 3D Reports", _taskDesc, "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+sleep 15;
 player call RCT7Bootcamp_fnc_sectionStart;
 
 while { _count isNotEqualTo _index } do {
@@ -80,7 +81,7 @@ while { _count isNotEqualTo _index } do {
 	_dist = player distance (_target);
 	_distance = round(_dist / 50) * 50;
 
-	_taskDescription = ["Shoot at the Target:<br/><br/>", "description: ", _targetDescription, "<br/>direction: ", _dir, "<br/>distance (ca.): ", _distance, " meters"] joinString "";
+	_taskDescription = ["Shoot at the target:<br/><br/>", "Description: ", _targetDescription, "<br/>Direction: ", _dir, "<br/>Distance: ", _distance, " meters"] joinString "";
 	_subTaskId = ["TargetCluster", _index] joinString "_";
 	_subTaskTitle = [_index + 1, "Hit the correct target"] joinString " - ";
 	[[_subTaskId, _3DTaskId], _subTaskTitle, _taskDescription, "kill"] call RCT7Bootcamp_fnc_taskCreate;

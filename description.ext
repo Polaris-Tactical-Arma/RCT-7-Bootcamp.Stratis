@@ -58,6 +58,7 @@ class CfgFunctions
 			class taskSetState{};
 			class taskUpdateDescription{};
 			class setFormation{};
+			class getArmaKeybind{};
 		};
 		class Misc
 		{
