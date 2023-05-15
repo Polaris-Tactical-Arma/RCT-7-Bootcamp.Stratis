@@ -29,9 +29,7 @@ _getBodyPartN = {
 
 RCT_MedicalInProcess = true;
 
-if (_patient isEqualTo objNull) exitWith {
-	systemChat "No patient provided"
-};
+if (_patient isEqualTo objNull) exitWith {};
 
 removeAllItems player;
 _medicalItems = ["ACE_tourniquet", "ACE_fieldDressing", "ACE_morphine"];

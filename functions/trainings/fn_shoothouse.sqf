@@ -70,7 +70,6 @@ _stopwatch = {
 		params ["_unit", "_source", "_damage", "_instigator"];
 		player call RCT7Bootcamp_fnc_targetHitValid;
 		shotsValid = shotsValid + 1;
-		systemChat str shotsValid;
 		[[player, dbSectionName, "shotsValid", shotsValid]] remoteExec ["RCT7_addToDBQueue", 2];
 		_unit removeAllMPEventHandlers "MPHit";
 	}];

@@ -53,7 +53,7 @@ sleep 5;
 
 _introText = "A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members.\n\n
 
-In each formation each member is vital in carrying out its function effectively.\n\n
+in each formation each member is vital in carrying out its function effectively.\n\n
 
 The formations that follow are those typically used in RCT-7.";
 
@@ -104,7 +104,6 @@ private _quizz = {
 				hintSilent "";
 			};
 
-			systemChat _dbSection;
 			[[player, _dbSection, "correct", _result, [["answer", _formationDisplayname]]]] remoteExec ["RCT7_addToDBQueue", 2];
 			RCT7Bootcamp_FormationHasAnswered = true;
 		}, [_x # 0, _displayname]];
@@ -131,7 +130,6 @@ while { count _formationList > 0 } do {
 
 	RCT7Bootcamp_FormationHasAnswered = false;
 	_formationList deleteAt (_formationList find _formationData);
-	systemChat str _formationList;
 	removeAllActions player;
 };
 

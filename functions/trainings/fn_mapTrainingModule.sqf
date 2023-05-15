@@ -68,7 +68,6 @@ while { _count isNotEqualTo _index } do {
 	_subTaskId = ["TargetCluster", _index] joinString "_";
 	_subTaskTitle = [_index + 1, "Hit the correct targets"] joinString " - ";
 
-	systemChat ([_subTaskId, _mainTask] joinString ".....");
 	[[_subTaskId, _mainTask], _subTaskTitle, _taskDescription, "search"] call RCT7Bootcamp_fnc_taskCreate;
 
 	{

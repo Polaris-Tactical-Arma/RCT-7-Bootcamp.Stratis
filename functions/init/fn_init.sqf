@@ -78,7 +78,6 @@ _isSectionCompleted = {
 	_section = _x;
 
 	if ([_section, _completedSectionName] call _isSectionCompleted) then {
-		systemChat (["Section: [", _section, "] is completed"] joinString "");
 		continue;
 	};
 
@@ -128,7 +127,6 @@ _isSectionCompleted = {
 		};
 	};
 
-	systemChat (["Section [", _section, "] complete. Saving process..."] joinString "");
 	[[player, _completedSectionName, _section, true]] remoteExec ["RCT7_addToDBQueue", 2];
 
 	if (_lastItem isEqualTo _section) exitWith {};
