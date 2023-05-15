@@ -12,6 +12,8 @@ RCT7playerData = nil;
 [] execVM "scarCODE\ServerInfoMenu\sqf\initLocal.sqf";
 [player] remoteExec ["RCT7_getFromDb", 2];
 
+[] spawn { while {true} do {sleep 180; systemChat "Unsure what to do? Press 'J' to open the task list.";}};
+
 [] spawn {
 	waitUntil {
 		sleep 3;

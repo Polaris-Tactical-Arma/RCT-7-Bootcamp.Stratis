@@ -35,7 +35,7 @@ _count = count(_targetClusterList);
 call RCT7Bootcamp_fnc_earplugTask;
 
 private _mainTask = "MapTraining";
-[_mainTask, "Finish the Map Training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_mainTask, "Map Reading", "Adequate map reading skills are important for determining and marking enemy positions - it is easiest to use nearby landmarks such as roads, buildings and rocks as well as changes in terrain based on its topology.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 player call RCT7Bootcamp_fnc_sectionStart;
 
@@ -64,9 +64,9 @@ while { _count isNotEqualTo _index } do {
 	_shotsMissed = 0;
 	firedCount = 0;
 
-	_taskDescription = ["Shoot all", _targetCount, "targets at grid:<br/><br/>", _grid select [0, 3], _grid select [3, 5]] joinString " ";
+	_taskDescription = ["You are at Camp Rogain.<br/>Shoot all", _targetCount, "targets at grid:<br/><br/>", _grid select [0, 3], _grid select [3, 5]] joinString " ";
 	_subTaskId = ["TargetCluster", _index] joinString "_";
-	_subTaskTitle = [_index + 1, "Hit the correct Targets"] joinString " - ";
+	_subTaskTitle = [_index + 1, "Hit the correct targets"] joinString " - ";
 
 	systemChat ([_subTaskId, _mainTask] joinString ".....");
 	[[_subTaskId, _mainTask], _subTaskTitle, _taskDescription, "search"] call RCT7Bootcamp_fnc_taskCreate;

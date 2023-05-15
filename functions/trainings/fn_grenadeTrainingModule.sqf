@@ -32,7 +32,7 @@ _firedIndex = ["ace_firedPlayer", {
 _index = 0;
 
 private _mainTask = "GrenadeTraining";
-[_mainTask, "Finish the grenade training", "Follow the instructions", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+[_mainTask, "Throwing Grenades", "Follow the instructions provided.", "intel", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 call RCT7Bootcamp_fnc_sectionStart;
 
@@ -71,7 +71,7 @@ while { _count isNotEqualTo _index } do {
 	[_prepareGrenadeTaskId] call RCT7Bootcamp_fnc_taskSetState;
 
 	_throwGrenadeTaskId = "ThrowGrenade";
-	[[_mainTask, _throwGrenadeTaskId], "Throw grenade", "Throw the grenade at the target", "destroy"] call RCT7Bootcamp_fnc_taskCreate;
+	[[_mainTask, _throwGrenadeTaskId], "Throw your grenade", "Identify the yellow target and left click to throw the grenade at them.<br/><br/>Use the white indicator to identify the trajectory - a red circle indicates the grenade will bounce at this point.", "destroy"] call RCT7Bootcamp_fnc_taskCreate;
 
 	_target addMPEventHandler ["MPHit", {
 		params ["_unit", "_source", "_damage", "_instigator"];

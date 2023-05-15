@@ -34,8 +34,8 @@ _sectionList = [
 	"LauncherAT",
 	"LauncherAA",
 	"Formation",
-	"BoundingAlternate",
 	"BoundingSuccessive",
+	"BoundingAlternate",
 	"Medical",
 	"MedicalSelf"
 ];
@@ -113,10 +113,10 @@ _isSectionCompleted = {
 			[_group] call RCT7Bootcamp_fnc_formation;
 		};
 		case "BoundingAlternate": {
-			[UnitBoundingAlternate, "Alternate"] call RCT7Bootcamp_fnc_bounding;
+			[UnitBoundingAlternate, "Alternate", "Alternate Bounding differs from Successive in that buddy groups do not move to be on line with each other, instead whichever group is moving pushes to a position beyond the other.<br/><br/>Move to your Partner and start the training with the scroll-wheel action.<br/>Follow your Partner and stay in line while moving."] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "BoundingSuccessive": {
-			[UnitBoundingSuccessive, "Successive"] call RCT7Bootcamp_fnc_bounding;
+			[UnitBoundingSuccessive, "Successive", "Bounding is a fireteam movement which splits the fireteam in half - one buddy group moves and one buddy group covers - this ensures two guns are always available when the fireteam must advance towards an enemy or cross clearings safely.<br/><br/>The first type of bounding is called 'Successive Bounding' - In this, the moving group advances quickly and takes cover, while the other group suppresses the enemy. Then, the suppressing group moves to be on line with the first group to provide cover for the next movement.<br/><br/>This process repeats until the final position has been reached.<br/><br/>Move to your Partner and start the training with the scroll-wheel action.<br/>Follow your Partner and stay in line while moving."] call RCT7Bootcamp_fnc_bounding;
 		};
 		case "Medical": {
 			private _unit = UnitMedical;

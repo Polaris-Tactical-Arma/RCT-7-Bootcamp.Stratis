@@ -7,7 +7,7 @@ private _unit4 = nil;
 
 _createArrow = {
 	private _unit = param[0, objNull, [objNull]];
-	private _arrowType = param[1, "Sign_Arrow_Large_F", [""]];
+	private _arrowType = param[1, "Sign_Arrow_Large_F", ["Add your description here"]];
 
 	_arrow = _arrowType createVehicle (getPos _unit);
 	_arrow attachTo [_unit, [0, 0, 2.5]];
@@ -41,19 +41,32 @@ _createArrow = {
 private _unitList = [_unit1, _unit2, _unit3, _unit4];
 
 private _formationList = [
-	["COLUMN", "Column"],
-	["LINE", "Line"],
-	["STAG COLUMN", "Staggered Column"],
-	["WEDGE", "Wedge"],
-	["ECH LEFT", "Echolon Left"],
-	["ECH RIGHT", "Echolon Right"]
+	["COLUMN", "Column", "The most time efficient formation at our disposal - formed by a single file with the first buddy group at the front and the second at the rear."],
+	["LINE", "Line", "This is a simple formation that is formed by a single row of all fireteam members.<br/><br/>Strong side left or right will dictate which side of the formation the AR buddy team should fall in."],
+	["STAG COLUMN", "This formation is typically used for walking along roads with a buddy team file on either side (dictated by strong side).<br/><br/>This formation allows a fireteam to respond to contact on either side without crossing lines of fire and reduces casualties from IEDs & mines with its increased spacing."],
+	["DIAMOND", "Diamond", "The diamond has all around security - its shape allows each fireteam member to cover a quarter interval of the clock face.<br/><br/>The assistant autorifleman takes the rear position with the AR filling in on the left or right depending on the strong side."],
+	["ECH LEFT", "Echelon Left", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the left to increase the formation's strength."],
+	["ECH RIGHT", "Echelon Right", "The intent of the echelon formation is to provide maximum protection for the respective flank.<br/><br/>It is a diagonal line which faces potential enemy threats so that the fireteam’s power can be focused in their direction.<br/><br/>The AR will fall in last, taking the furthest poition to the right to increase the formation's strength."]
 ];
 
 sleep 2;
 
+_introText = "A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members.\n\n
+
+In each formation each member is vital in carrying out its function effectively.\n\n
+
+The formations that follow are those typically used in RCT-7.";
+
+hint _introText;
+
+sleep 15;
+
 {
 	[_unitList, _x # 0] call RCT7Bootcamp_fnc_setFormation;
-	hint (["This formation is called", _x # 1] joinString ":\n");
+	private _formationDisplayname = _x # 1;
+	private _formationDescription = _x # 2;
+	private _hintText = ["This formation is called: ", _formationDisplayname, "\n\n", parseText _formationDescription] joinString "";
+	hint _hintText;
 	sleep 10;
 } forEach _formationList;
 
@@ -98,8 +111,8 @@ private _quizz = {
 	} forEach _formationAddActionList;
 };
 
-_FormationTaskId = "Formation";
-[_FormationTaskId, "Formation", "Make the quizz", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
+_FormationTaskId = "Formations";
+[_FormationTaskId, "Formations", "Complete the quiz", "interact", "CREATED", true, true, -1] call RCT7Bootcamp_fnc_taskCreate;
 
 RCT7Bootcamp_FormationHasAnswered = false;
 _formationAddActionList = + _formationList;
