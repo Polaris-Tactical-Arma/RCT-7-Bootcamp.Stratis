@@ -1,6 +1,7 @@
 _launcher = param[0, "", [""]];
 _sectionName = param[1, "", [""]];
 _module = param[2, objNull, [objNull]];
+RCT7LauncherTargetList = [];
 
 firedCount = 0;
 
