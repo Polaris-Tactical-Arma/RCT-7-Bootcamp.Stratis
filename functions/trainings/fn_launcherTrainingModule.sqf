@@ -234,7 +234,7 @@ while { _count isNotEqualTo _index } do {
 	if (toLower "Surface-to-air" in toLower _descShort) then {
 		_minDistance = getNumber(configfile >> "CfgAmmo" >> _launcherAmmo >> "missileLockMinDistance");
 		hint (["Shoulder the launcher and aim it at the helicopter. A beeping sound will play whilst locking on - when the beeping suddenly intensifies click to fire.\n\n
-		Helicopters need to be at least", _minDistance, "away for a successful lock."] joinString " ");
+		Helicopters need to be at least", _minDistance, "meters away for a successful lock."] joinString " ");
 		sleep 7;
 	};
 
