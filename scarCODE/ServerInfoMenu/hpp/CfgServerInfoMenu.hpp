@@ -15,7 +15,7 @@ class CfgServerInfoMenu
          menuName = "General";
          title = "<t color='#ffffff'>Welcome to the RCT-7 bootcamp!</t>";
          content[] = {
-            "Regimental Combat Team VII is a MilSim Unit and community established in 2017."
+            "Regimental Combat Team VII is a MilSim Unit and community established in 2017.",
             "<br />We priortize having a good time and working together with an emphasis on <br />understanding that real life comes first.",
             "<br />This bootcamp will demonstrate and test techniques utilised within our unit. Do not worry if you are not familiar, the bootcamp will explain everything you need.",
             "<br />",
