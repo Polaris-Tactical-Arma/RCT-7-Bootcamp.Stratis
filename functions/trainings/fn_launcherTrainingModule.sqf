@@ -81,30 +81,44 @@ _firedCheck = {
 	};
 };
 
-_vehicleIsHit = {
-	_vehicle = param[0, objNull, [objNull]];
-	private _isDamaged = false;
+_firedLauncherEvent = player addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-	{
-		if (_x isNotEqualTo 0) exitWith {
-			_isDamaged = true;
+	[_projectile] spawn {
+		private _projectile = _this # 0;
+
+		private _i = 0;
+
+		waitUntil {
+			_i = _i + 1;
+			!(alive _projectile) || _i > 10;
 		};
-	} forEach (getAllHitPointsDamage _vehicle) # 2;
 
-	_isDamaged;
-};
+		sleep 7;
 
-_handleVehicleRespawn = {
-	_vehicle = param[0, objNull, [objNull]];
-	_vehicle addMPEventHandler ["MPHit", {
-		params ["_unit", "_source", "_damage", "_instigator"];
-		if (isServer) exitWith {};
+		private _vehicleIsDamaged = {
+			_vehicle = param[0, objNull, [objNull]];
+			private _isDamaged = false;
 
-		_unit removeMPEventHandler [_thisEvent, _thisEventHandler];
+			{
+				if (_x isNotEqualTo 0) then {
+					_isDamaged = true;
+					break;
+				};
+			} forEach (getAllHitPointsDamage _vehicle) # 2;
 
-		[_unit] spawn RCT7Bootcamp_fnc_respawnVehicle;
-	}];
-};
+			_isDamaged;
+		};
+
+		{
+			if !(_x call _vehicleIsDamaged) then {
+				continue;
+			};
+
+			[_x] spawn RCT7Bootcamp_fnc_respawnVehicle;
+		} forEach RCT7LauncherTargetList;
+	};
+}];
 
 _mag = (getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines") # 0);
 _magSize = getNumber (configfile >> "CfgMagazines" >> _mag >> "count");
@@ -134,7 +148,6 @@ while { _count isNotEqualTo _index } do {
 
 	{
 		_x removeAllMPEventHandlers "MPHit";
-		_x call _handleVehicleRespawn;
 	} forEach RCT7LauncherTargetList;
 
 	_time = time;
@@ -301,6 +314,7 @@ while { _count isNotEqualTo _index } do {
 [ player ] call ACE_medical_treatment_fnc_fullHealLocal;
 player setDamage 0;
 player removeEventHandler ["Fired", _firedIndex];
+player removeEventHandler ["Fired", _firedLauncherEvent];
 player removeWeapon (secondaryWeapon player);
 
 [_mainTaskId, "SUCCEEDED", true, true] call RCT7Bootcamp_fnc_taskSetState;

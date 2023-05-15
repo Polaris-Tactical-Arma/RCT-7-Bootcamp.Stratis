@@ -11,11 +11,11 @@ if (_isAir) then {
 	_special = "FLY";
 };
 
-sleep 4;
 RCT7LauncherTargetList deleteAt (RCT7LauncherTargetList find _unit);
 deleteVehicleCrew _unit;
 deleteVehicle _unit;
 sleep 1;
+
 private _veh = createVehicle [_type, [0, 0, 0], [], 0, _special];
 _veh enableSimulation false;
 RCT7LauncherTargetList pushBack _veh;
