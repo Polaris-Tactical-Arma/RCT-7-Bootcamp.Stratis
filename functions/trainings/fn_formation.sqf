@@ -9,8 +9,8 @@ _setHat = {
 	private _unit = param[0, objNull, [objNull]];
 	private _hat = param[1, "SP_Beret2_Blue", [""]];
 
-	_unit addItem _hat;
-	_unit assignItem _hat;
+	removeHeadgear _unit;
+	_unit addHeadgear _hat;
 };
 
 {
