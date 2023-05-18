@@ -5,12 +5,12 @@ private _unit2 = nil;
 private _unit3 = nil;
 private _unit4 = nil;
 
-_createArrow = {
+_setHat = {
 	private _unit = param[0, objNull, [objNull]];
-	private _arrowType = param[1, "Sign_Arrow_Large_F", ["Add your description here"]];
+	private _hat = param[1, "SP_Beret2_Blue", [""]];
 
-	_arrow = _arrowType createVehicle (getPos _unit);
-	_arrow attachTo [_unit, [0, 0, 2.5]];
+	_unit addItem _hat;
+	_unit assignItem _hat;
 };
 
 {
@@ -21,19 +21,19 @@ _createArrow = {
 	switch (_pos) do {
 		case 1: {
 			_unit1 = _unit;
-			[_unit] call _createArrow;
+			[_unit] call _setHat;
 		};
 		case 2: {
 			_unit2 = _unit;
-			[_unit] call _createArrow;
+			[_unit] call _setHat;
 		};
 		case 3: {
 			_unit3 = _unit;
-			[_unit, "Sign_Arrow_Large_Blue_F"] call _createArrow;
+			[_unit, "SP_Beret_Red"] call _setHat;
 		};
 		case 4: {
 			_unit4 = _unit;
-			[_unit, "Sign_Arrow_Large_Blue_F"] call _createArrow;
+			[_unit, "SP_Beret_Red"] call _setHat;
 		};
 	};
 } forEach units _group;

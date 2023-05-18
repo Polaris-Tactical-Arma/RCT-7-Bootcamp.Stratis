@@ -44,11 +44,4 @@ switch (_formation) do {
 	};
 };
 
-sleep 0.1;
-
-{
-	_arrow = attachedObjects _x # 0;
-	_arrow attachTo [_x, [0, 0, 2.5]];
-} forEach _unitList;
-
 true;
