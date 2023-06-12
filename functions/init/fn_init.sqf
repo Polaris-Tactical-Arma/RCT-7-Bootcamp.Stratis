@@ -41,6 +41,7 @@ _sectionList = [
 ];
 
 private _lastItem = _sectionList # (count _sectionList - 1);
+private _alreadyCompleted = true;
 
 _isSectionCompleted = {
 	private _sectionToCheck = _this # 0;
@@ -80,6 +81,8 @@ _isSectionCompleted = {
 	if ([_section, _completedSectionName] call _isSectionCompleted) then {
 		continue;
 	};
+
+	_alreadyCompleted = false;
 
 	[player, _section] call RCT7Bootcamp_fnc_teleportPlayer;
 
@@ -134,5 +137,10 @@ _isSectionCompleted = {
 } forEach _sectionList;
 
 hint "Bootcamp complete!";
+
+if (_alreadyCompleted isEqualTo false) then {
+	[player] remoteExec ["RCT7_triggerFinish", 2];
+};
+
 sleep 3;
 ["Bootcamp finished", true, 3] remoteExec ["BIS_fnc_endMission", 0, true];

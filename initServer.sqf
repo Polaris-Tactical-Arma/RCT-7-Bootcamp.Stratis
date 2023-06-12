@@ -32,7 +32,19 @@ RCT7_getFromDb = {
 		RCT7playerData = [];
 	};
 
+	// Iterate over each item in _data
+	{
+		if (_x # 0 isEqualTo "playerName" && _x # 1 isEqualTo "") exitWith {
+			RCT7playerData = [];
+		};
+	} forEach _data;
+
 	publicVariable "RCT7playerData";
+};
+
+RCT7_triggerFinish = {
+	_player = param[0, objNull, [objNull]];
+	["bootcamp.finish", [getPlayerUID _player]] call py3_fnc_callExtension;
 };
 
 RCT7_addToDBQueue = {

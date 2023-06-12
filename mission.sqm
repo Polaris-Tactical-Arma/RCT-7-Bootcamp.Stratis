@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=435;
+		nextID=483;
 	};
 	class Camera
 	{
-		pos[]={2205.8879,186.9753,5721.9653};
-		dir[]={0.67151469,-0.19174813,-0.7158379};
-		up[]={0.13123626,0.98142284,-0.13990256};
-		aside[]={-0.72936976,-2.54513e-007,-0.68420655};
+		pos[]={2166.9297,41.706406,5737.1001};
+		dir[]={0.076773591,-0.71459764,0.69531006};
+		up[]={0.078426629,0.69953567,0.71028101};
+		aside[]={0.99395931,0,-0.10974935};
 	};
 };
 binarizationWanted=0;
@@ -24720,7 +24720,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1584.826,4.3210001,5080.0142};
-			angle=-2.8978913;
+			angle=-2.8978908;
 			class Attributes
 			{
 				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingAlternate""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -24831,7 +24831,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={1624.8634,6.6789994,5063.2241};
-			angle=3.4201984;
+			angle=3.4201977;
 			class Attributes
 			{
 				onActivation="_unit = thiList  # 0;" \n "[player, ""BoundingSuccessive""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -24983,7 +24983,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={1909.6644,5.5100002,5807.9297};
-							angle=1.7802351;
+							angle=1.7802348;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -25019,7 +25019,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={1916.0245,5.5,5832.2979};
-							angle=1.7802349;
+							angle=1.7802348;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Radio""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -25304,7 +25304,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={4347.5215,226.52335,3816.1292};
-							angle=3.0543249;
+							angle=3.0543244;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -25341,7 +25341,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={4395.707,226.42897,3817.751};
-							angle=3.0543251;
+							angle=3.0543244;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[player, ""LauncherAA""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -25428,7 +25428,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={2195.9194,8.195384,5329.9058};
-							angle=1.6929687;
+							angle=1.6929686;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[_unit, ""LauncherAT""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
@@ -25477,7 +25477,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={5028.6309,207.61542,5850.5649};
-							angle=3.0543251;
+							angle=3.0543244;
 							class Attributes
 							{
 								onActivation="_unit = thiList  # 0;" \n "[_unit, ""Map""] spawn RCT7Bootcamp_fnc_teleportPlayer;";
