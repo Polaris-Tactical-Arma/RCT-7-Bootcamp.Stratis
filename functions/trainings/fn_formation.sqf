@@ -53,7 +53,7 @@ sleep 5;
 
 _introText = "A fireteam's success is often determined by its application of the right formation at the right time - failure to do so can at best lower the fireteam’s effectiveness and at the very worst cause the death of one or more of its members.\n\n
 
-in each formation each member is vital in carrying out its function effectively.\n\n
+In each formation each member is vital in carrying out its function effectively.\n\n
 
 The formations that follow are those typically used in RCT-7.";
 

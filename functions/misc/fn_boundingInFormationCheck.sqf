@@ -24,7 +24,7 @@ while { leader player isNotEqualTo player } do {
 	private _unit = leader player;
 
 	if (player distance _unit > 5) then {
-		"Move up, you are too far away!" spawn _triggerWarning;
+		"Move closer to your buddy, you are too far away!" spawn _triggerWarning;
 		continue;
 	};
 
