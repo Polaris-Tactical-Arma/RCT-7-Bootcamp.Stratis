@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=515;
+		nextID=531;
 	};
 	class Camera
 	{
 		pos[]={6485.71,65.512421,5399.2993};
-		dir[]={-0.7346791,-0.61407286,0.28859004};
-		up[]={-0.57158417,0.78922331,0.22452419};
-		aside[]={0.36563668,1.5206169e-006,0.93081981};
+		dir[]={-0.77593678,-0.5696072,0.27128199};
+		up[]={-0.53772503,0.82188982,0.18799812};
+		aside[]={0.33004987,1.4611287e-006,0.94402677};
 	};
 };
 binarizationWanted=0;
@@ -76,14 +76,13 @@ addons[]=
 	"A3_Structures_F_Exp_Walls_Concrete",
 	"A3_Structures_F_Enoch_Walls_Concrete",
 	"ace_fcs",
-	"ace_hearing",
-	"ace_explosives"
+	"ace_hearing"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=36;
+		items=35;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -320,13 +319,6 @@ class AddonsMetaData
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item35
-		{
-			className="ace_explosives";
-			name="ACE3 - Explosives";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
@@ -15655,7 +15647,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=98;
+		items=97;
 		class Item0
 		{
 			dataType="Logic";
@@ -25572,68 +25564,6 @@ class Mission
 		};
 		class Item92
 		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6408.8057,9.0924387,5460.0649};
-						angles[]={0,5.358161,-0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						isPlayable=1;
-					};
-					id=6749;
-					type="B_soldier_exp_F";
-					atlOffset=0.090999603;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male04ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=6748;
-			atlOffset=0.090999603;
-		};
-		class Item93
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -25650,7 +25580,7 @@ class Mission
 			id=6750;
 			type="TargetP_Zom_F";
 		};
-		class Item94
+		class Item93
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25667,7 +25597,7 @@ class Mission
 			id=6751;
 			type="TargetP_HVT1_F";
 		};
-		class Item95
+		class Item94
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25686,7 +25616,7 @@ class Mission
 			type="TargetP_Alien1_F";
 			atlOffset=7.6293945e-006;
 		};
-		class Item96
+		class Item95
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25704,7 +25634,7 @@ class Mission
 			type="TargetP_Inf_Acc1_F";
 			atlOffset=1.1444092e-005;
 		};
-		class Item97
+		class Item96
 		{
 			dataType="Logic";
 			class PositionInfo
