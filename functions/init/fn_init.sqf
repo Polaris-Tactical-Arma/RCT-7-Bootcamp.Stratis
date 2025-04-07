@@ -28,16 +28,16 @@ _completedSectionName = "CompletedSections";
 _sectionList = [
 	"Radio",
 	"3DReport",
+	"Formation",
+	"Medical",
+	"MedicalSelf",
 	// "Shoothouse", 
 	"Grenade",
 	"Map",
 	"LauncherAT",
 	"LauncherAA",
-	"Formation",
 	"BoundingSuccessive",
-	"BoundingAlternate",
-	"Medical",
-	"MedicalSelf"
+	"BoundingAlternate"
 ];
 
 private _lastItem = _sectionList # (count _sectionList - 1);

@@ -5,14 +5,10 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1065;
-	mods[]=
-	{
-		"3denEnhanced"
-	};
+	toggles=41;
 	class ItemIDProvider
 	{
-		nextID=6755;
+		nextID=6756;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=531;
+		nextID=883;
 	};
 	class Camera
 	{
-		pos[]={6485.71,65.512421,5399.2993};
-		dir[]={-0.77593678,-0.5696072,0.27128199};
-		up[]={-0.53772503,0.82188982,0.18799812};
-		aside[]={0.33004987,1.4611287e-006,0.94402677};
+		pos[]={2154.1074,39.982998,5780.5967};
+		dir[]={0.50015497,-0.76455671,-0.40659061};
+		up[]={0.59326482,0.64454794,-0.48228234};
+		aside[]={-0.63079929,-7.7532604e-08,-0.77595752};
 	};
 };
 binarizationWanted=0;
@@ -38,8 +34,6 @@ addons[]=
 	"A3_Structures_F_Mark_Training",
 	"A3_Modules_F_Curator_Curator",
 	"CUP_WheeledVehicles_BRDM2",
-	"rhs_c_a2port_car",
-	"rhs_c_t72",
 	"A3_Characters_F",
 	"A3_Air_F_Heli_Light_02",
 	"ace_realisticnames",
@@ -57,7 +51,6 @@ addons[]=
 	"ace_goggles",
 	"ace_nightvision",
 	"A3_Weapons_F_Items",
-	"ace_medical_engine",
 	"ace_medical_treatment",
 	"ace_attach",
 	"ace_chemlights",
@@ -68,21 +61,21 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"CUP_Buildings_Config",
 	"rhsusf_c_troops",
-	"rhsusf_c_weapons",
-	"ace_optics",
 	"ace_compat_rhs_usf3",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Exp_Walls_Concrete",
 	"A3_Structures_F_Enoch_Walls_Concrete",
+	"rhsusf_c_weapons",
 	"ace_fcs",
+	"ace_optics",
 	"ace_hearing"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=35;
+		items=32;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -111,211 +104,190 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="rhs_c_a2port_car";
-			name="A2 ported cars";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item5
-		{
-			className="rhs_c_t72";
-			name="T-72 Series Tanks";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item6
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item5
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item6
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item7
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item8
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item11
+		class Item9
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item10
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item11
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item12
 		{
 			className="ace_smallarms";
 			name="ACE3 - Small Arms";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item13
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item14
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item15
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
-		{
-			className="ace_medical_engine";
-			name="ACE3 - Medical Engine";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item19
+		class Item16
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item20
+		class Item17
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item21
+		class Item18
 		{
 			className="ace_chemlights";
-			name="ace_chemlights";
+			name="ACE3 - Chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item19
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item20
 		{
 			className="A3_Structures_F_Enoch_Infrastructure";
 			name="Arma 3 Contact Platform - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item21
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item22
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item23
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item27
+		class Item24
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item28
-		{
-			className="rhsusf_c_weapons";
-			name="RHSUSF Weapons & Accessories";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item29
-		{
-			className="ace_optics";
-			name="ACE3 - Optics";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item30
+		class Item25
 		{
 			className="ace_compat_rhs_usf3";
-			name="ACE3 - RHS USF Compatibility";
+			name="ACE3 - RHS USAF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item31
+		class Item26
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item32
+		class Item27
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item28
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item29
+		{
+			className="rhsusf_c_weapons";
+			name="RHSUSF Weapons & Accessories";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item30
+		{
+			className="ace_optics";
+			name="ACE3 - Optics";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item31
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
@@ -327,7 +299,6 @@ class AddonsMetaData
 dlcs[]=
 {
 	"CUP_Vehicles",
-	"RHS_AFRF",
 	"Enoch",
 	"RHS_USAF",
 	"Expansion"
@@ -15647,13 +15618,13 @@ class Mission
 	};
 	class Entities
 	{
-		items=97;
+		items=94;
 		class Item0
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6218.749,1.5258789e-005,5586.8169};
+				position[]={6218.749,1.5258789e-05,5586.8169};
 			};
 			name="TargetControllerRange";
 			init="[this, 1, true] call RCT7Bootcamp_fnc_handleTargets;";
@@ -15818,258 +15789,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2278.6389,16.073225,5429.9009};
-				angles[]={0.062418513,5.7622108,0.14399634};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="truck";
-			};
-			id=5364;
-			type="RHS_Ural_Open_Civ_02";
-			atlOffset=-0.024353981;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalArmy_type";
-					expression="_this setVariable ['rhs_decalArmy_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Army";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Default";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="rhs_decalArmy";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="-1";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="rhs_decalPlatoon_type";
-					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Army";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="rhs_decalPlatoon";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="-1";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2210.8196,42.672127,5169.9546};
-				angles[]={0.24733086,1.9602779,0.36314702};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="tank";
-			};
-			id=5378;
-			type="rhs_t72ba_tv";
-			atlOffset=-0.17967224;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalNumber_type";
-					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHST72NumberPlaces, _value]]] call rhs_fnc_decalsInit";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Default";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalHonor";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST72HnrSymPlaces,  _this getVariable ['rhs_decalHonor_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="-1";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="rhs_decalPlatoon_type";
-					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Platoon";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="rhs_ammoslot_1_type";
-					expression="_this setVariable ['rhs_ammoslot_1_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="rhs_mag_3bm42";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="rhs_ammoslot_2_type";
-					expression="_this setVariable ['rhs_ammoslot_2_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="rhs_mag_3bk21";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[""FirstAidKit"",""Medikit""],[10,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red""],[10,10,10]],[[""ToolKit""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="rhs_ammoslot_3_type";
-					expression="_this setVariable ['rhs_ammoslot_3_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="rhs_mag_3of26";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="rhs_ammoslot4_type";
-					expression="_this setVariable ['rhs_ammoslot_4_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="rhs_mag_9m119m";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="rhs_decalPlatoon";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST72PlnSymPlaces,  _this getVariable ['rhs_decalPlatoon_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="-1";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="rhs_decalHonor_type";
-					expression="_this setVariable ['rhs_decalHonor_type', _value];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Honor";
-						};
-					};
-				};
-				nAttributes=10;
-			};
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={4965.7261,154.86177,5436.4902};
 				angles[]={0.022495884,3.0256352,0.037483942};
 			};
@@ -16081,7 +15800,7 @@ class Mission
 			id=5388;
 			type="TargetP_Inf8_F";
 		};
-		class Item9
+		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16097,7 +15816,7 @@ class Mission
 			id=5389;
 			type="TargetP_Inf8_F";
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16113,7 +15832,7 @@ class Mission
 			id=5390;
 			type="TargetP_Inf8_F";
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16129,7 +15848,7 @@ class Mission
 			id=5391;
 			type="TargetP_Inf8_F";
 		};
-		class Item12
+		class Item10
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16145,7 +15864,7 @@ class Mission
 			id=5392;
 			type="TargetP_Inf8_F";
 		};
-		class Item13
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16161,7 +15880,7 @@ class Mission
 			id=5393;
 			type="TargetP_Inf8_F";
 		};
-		class Item14
+		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16177,7 +15896,7 @@ class Mission
 			id=5394;
 			type="TargetP_Inf8_F";
 		};
-		class Item15
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16193,7 +15912,7 @@ class Mission
 			id=5395;
 			type="TargetP_Inf8_F";
 		};
-		class Item16
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16209,7 +15928,7 @@ class Mission
 			id=5396;
 			type="TargetP_Inf8_F";
 		};
-		class Item17
+		class Item15
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16222,7 +15941,7 @@ class Mission
 			id=5397;
 			type="Logic";
 		};
-		class Item18
+		class Item16
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16234,7 +15953,7 @@ class Mission
 			id=5398;
 			type="Logic";
 		};
-		class Item19
+		class Item17
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16245,9 +15964,9 @@ class Mission
 			name="TargetClusterGrid_2";
 			id=5399;
 			type="Logic";
-			atlOffset=-1.5258789e-005;
+			atlOffset=-1.5258789e-05;
 		};
-		class Item20
+		class Item18
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16259,7 +15978,7 @@ class Mission
 			id=5400;
 			type="Logic";
 		};
-		class Item21
+		class Item19
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16271,7 +15990,7 @@ class Mission
 			id=5401;
 			type="Logic";
 		};
-		class Item22
+		class Item20
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16282,9 +16001,9 @@ class Mission
 			name="Gun3DReport";
 			id=5407;
 			type="Logic";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item23
+		class Item21
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16296,7 +16015,7 @@ class Mission
 			id=5409;
 			type="Logic";
 		};
-		class Item24
+		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16308,7 +16027,7 @@ class Mission
 			id=5414;
 			type="Logic";
 		};
-		class Item25
+		class Item23
 		{
 			dataType="Group";
 			side="East";
@@ -16329,7 +16048,7 @@ class Mission
 					};
 					id=5443;
 					type="O_helipilot_F";
-					atlOffset=-2.2888184e-005;
+					atlOffset=-2.2888184e-05;
 				};
 				class Item1
 				{
@@ -16386,7 +16105,7 @@ class Mission
 			id=5441;
 			atlOffset=361.16501;
 		};
-		class Item26
+		class Item24
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16420,7 +16139,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item27
+		class Item25
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16432,7 +16151,7 @@ class Mission
 			type="Logic";
 			atlOffset=11.130001;
 		};
-		class Item28
+		class Item26
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16450,7 +16169,7 @@ class Mission
 			id=5473;
 			type="TargetP_Zom_F";
 		};
-		class Item29
+		class Item27
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16466,9 +16185,9 @@ class Mission
 			};
 			id=5474;
 			type="TargetP_HVT1_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item30
+		class Item28
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16485,9 +16204,9 @@ class Mission
 			};
 			id=5475;
 			type="TargetP_Alien1_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item31
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16504,7 +16223,7 @@ class Mission
 			id=5476;
 			type="TargetP_Inf_Acc1_F";
 		};
-		class Item32
+		class Item30
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16515,9 +16234,9 @@ class Mission
 			name="TargetCluster_3D";
 			id=5477;
 			type="Logic";
-			atlOffset=-4.7683716e-007;
+			atlOffset=-4.7683716e-07;
 		};
-		class Item33
+		class Item31
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16534,9 +16253,9 @@ class Mission
 			};
 			id=5478;
 			type="TargetP_Zom_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item34
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16553,7 +16272,7 @@ class Mission
 			id=5479;
 			type="TargetP_HVT1_F";
 		};
-		class Item35
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16570,9 +16289,9 @@ class Mission
 			};
 			id=5480;
 			type="TargetP_Alien1_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item36
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16588,9 +16307,9 @@ class Mission
 			};
 			id=5481;
 			type="TargetP_Inf_Acc1_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item37
+		class Item35
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16601,9 +16320,9 @@ class Mission
 			name="TargetCluster_3D_1";
 			id=5482;
 			type="Logic";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item38
+		class Item36
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16614,9 +16333,9 @@ class Mission
 			name="TargetClusterAA";
 			id=5493;
 			type="Logic";
-			atlOffset=-7.6293945e-006;
+			atlOffset=-7.6293945e-06;
 		};
-		class Item39
+		class Item37
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16628,7 +16347,7 @@ class Mission
 			type="Logic";
 			atlOffset=11.130005;
 		};
-		class Item40
+		class Item38
 		{
 			dataType="Layer";
 			name="GrenadeStuff";
@@ -16779,7 +16498,7 @@ class Mission
 			id=5580;
 			atlOffset=-0.72863722;
 		};
-		class Item41
+		class Item39
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16790,7 +16509,7 @@ class Mission
 			id=5590;
 			type="Logic";
 		};
-		class Item42
+		class Item40
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16801,7 +16520,7 @@ class Mission
 			id=5595;
 			type="Logic";
 		};
-		class Item43
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16817,9 +16536,9 @@ class Mission
 			};
 			id=5600;
 			type="TargetP_Inf3_F";
-			atlOffset=6.6757202e-006;
+			atlOffset=6.6757202e-06;
 		};
-		class Item44
+		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16836,7 +16555,7 @@ class Mission
 			id=5601;
 			type="TargetP_Inf3_F";
 		};
-		class Item45
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16853,7 +16572,7 @@ class Mission
 			type="TargetP_Inf3_F";
 			atlOffset=1.8940039;
 		};
-		class Item46
+		class Item44
 		{
 			dataType="Group";
 			side="West";
@@ -17002,20 +16721,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item1
@@ -17132,29 +16838,12 @@ class Mission
 					};
 					id=5618;
 					type="B_Soldier_A_F";
-					atlOffset=1.9073486e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					atlOffset=1.9073486e-06;
 				};
 				class Item2
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1528.97,5.5,5048.6582};
 					expCond="";
 					class Effects
@@ -17167,7 +16856,7 @@ class Mission
 				class Item3
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1530.4989,5.5,5063.146};
 					formation="LINE";
 					expCond="";
@@ -17181,7 +16870,7 @@ class Mission
 				class Item4
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1540.375,5.5,5103.2827};
 					formation="LINE";
 					expCond="";
@@ -17195,7 +16884,7 @@ class Mission
 				class Item5
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1550.0869,5.5,5132.7241};
 					formation="LINE";
 					expCond="";
@@ -17213,7 +16902,7 @@ class Mission
 			};
 			id=5616;
 		};
-		class Item47
+		class Item45
 		{
 			dataType="Group";
 			side="West";
@@ -17363,26 +17052,13 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item1
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1545.2166,5.5,5043.2749};
 					formation="LINE";
 					expCond="";
@@ -17396,7 +17072,7 @@ class Mission
 				class Item2
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1554.7015,5.5,5079.1611};
 					formation="LINE";
 					expCond="";
@@ -17410,7 +17086,7 @@ class Mission
 				class Item3
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1570.0326,5.5,5127.9399};
 					formation="LINE";
 					expCond="";
@@ -17429,7 +17105,7 @@ class Mission
 			};
 			id=5624;
 		};
-		class Item48
+		class Item46
 		{
 			dataType="Layer";
 			name="Layer 35";
@@ -18295,7 +17971,7 @@ class Mission
 			id=5730;
 			atlOffset=-10.332825;
 		};
-		class Item49
+		class Item47
 		{
 			dataType="Layer";
 			name="Shoothouse";
@@ -18325,23 +18001,6 @@ class Mission
 							id=6256;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item1
 						{
@@ -18359,23 +18018,6 @@ class Mission
 							id=6257;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item2
 						{
@@ -18393,23 +18035,6 @@ class Mission
 							id=6258;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item3
 						{
@@ -18427,23 +18052,6 @@ class Mission
 							id=6259;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item4
 						{
@@ -18461,23 +18069,6 @@ class Mission
 							id=6260;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item5
 						{
@@ -18495,23 +18086,6 @@ class Mission
 							id=6263;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item6
 						{
@@ -18529,23 +18103,6 @@ class Mission
 							id=6268;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7623243;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item7
 						{
@@ -18563,23 +18120,6 @@ class Mission
 							id=6270;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item8
 						{
@@ -18598,23 +18138,6 @@ class Mission
 							id=6186;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.579;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item9
 						{
@@ -18633,23 +18156,6 @@ class Mission
 							id=6189;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item10
 						{
@@ -18668,23 +18174,6 @@ class Mission
 							id=6192;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.58567572;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item11
 						{
@@ -18703,23 +18192,6 @@ class Mission
 							id=6194;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item12
 						{
@@ -18738,23 +18210,6 @@ class Mission
 							id=6195;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.58567572;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item13
 						{
@@ -18787,23 +18242,6 @@ class Mission
 							id=6239;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=3.6420002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item15
 						{
@@ -18822,23 +18260,6 @@ class Mission
 							id=6217;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item16
 						{
@@ -18857,23 +18278,6 @@ class Mission
 							id=6220;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item17
 						{
@@ -18892,23 +18296,6 @@ class Mission
 							id=6224;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item18
 						{
@@ -18927,23 +18314,6 @@ class Mission
 							id=6225;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item19
 						{
@@ -18962,23 +18332,6 @@ class Mission
 							id=6231;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item20
 						{
@@ -18997,23 +18350,6 @@ class Mission
 							id=6232;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.59606695;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item21
 						{
@@ -19032,23 +18368,6 @@ class Mission
 							id=6237;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.579;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item22
 						{
@@ -19067,23 +18386,6 @@ class Mission
 							id=6238;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=-0.59606695;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item23
 						{
@@ -19101,23 +18403,6 @@ class Mission
 							id=6249;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item24
 						{
@@ -19135,23 +18420,6 @@ class Mission
 							id=6250;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item25
 						{
@@ -19169,23 +18437,6 @@ class Mission
 							id=6251;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item26
 						{
@@ -19203,23 +18454,6 @@ class Mission
 							id=6252;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.780324;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item27
 						{
@@ -19237,23 +18471,6 @@ class Mission
 							id=6254;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item28
 						{
@@ -19271,23 +18488,6 @@ class Mission
 							id=6255;
 							type="Land_Shoot_House_Panels_F";
 							atlOffset=6.7800007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item29
 						{
@@ -19306,23 +18506,6 @@ class Mission
 							id=6191;
 							type="Land_Shoot_House_Panels_Window_F";
 							atlOffset=-0.57999992;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item30
 						{
@@ -19340,23 +18523,6 @@ class Mission
 							id=6253;
 							type="Land_Shoot_House_Tunnel_F";
 							atlOffset=6.8979998;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item31
 						{
@@ -19373,23 +18539,6 @@ class Mission
 							id=6216;
 							type="Land_Shoot_House_Wall_F";
 							atlOffset=2.2309999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item32
 						{
@@ -19406,23 +18555,6 @@ class Mission
 							id=6248;
 							type="Land_Shoot_House_Wall_F";
 							atlOffset=3.7609997;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item33
 						{
@@ -19440,23 +18572,6 @@ class Mission
 							id=6267;
 							type="Land_Shoot_House_Wall_Crouch_F";
 							atlOffset=6.7620001;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item34
 						{
@@ -19474,23 +18589,6 @@ class Mission
 							id=6269;
 							type="Land_Shoot_House_Wall_Crouch_F";
 							atlOffset=6.7620001;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item35
 						{
@@ -19508,23 +18606,6 @@ class Mission
 							id=6285;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7789993;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item36
 						{
@@ -19542,23 +18623,6 @@ class Mission
 							id=6261;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7831678;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item37
 						{
@@ -19576,23 +18640,6 @@ class Mission
 							id=6262;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7831678;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item38
 						{
@@ -19610,23 +18657,6 @@ class Mission
 							id=6264;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7831678;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item39
 						{
@@ -19644,23 +18674,6 @@ class Mission
 							id=6265;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7831678;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item40
 						{
@@ -19678,23 +18691,6 @@ class Mission
 							id=6266;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7831678;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item41
 						{
@@ -19712,23 +18708,6 @@ class Mission
 							id=6287;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7683115;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item42
 						{
@@ -19746,23 +18725,6 @@ class Mission
 							id=6286;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7683115;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item43
 						{
@@ -19780,23 +18742,6 @@ class Mission
 							id=6290;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7683115;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item44
 						{
@@ -19814,23 +18759,6 @@ class Mission
 							id=6288;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7683115;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item45
 						{
@@ -19848,23 +18776,6 @@ class Mission
 							id=6277;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item46
 						{
@@ -19882,23 +18793,6 @@ class Mission
 							id=6281;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item47
 						{
@@ -19916,23 +18810,6 @@ class Mission
 							id=6276;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item48
 						{
@@ -19950,23 +18827,6 @@ class Mission
 							id=6279;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item49
 						{
@@ -19984,23 +18844,6 @@ class Mission
 							id=6274;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item50
 						{
@@ -20018,23 +18861,6 @@ class Mission
 							id=6275;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item51
 						{
@@ -20052,23 +18878,6 @@ class Mission
 							id=6278;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item52
 						{
@@ -20086,23 +18895,6 @@ class Mission
 							id=6280;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item53
 						{
@@ -20120,23 +18912,6 @@ class Mission
 							id=6293;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=5.4139996;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item54
 						{
@@ -20154,23 +18929,6 @@ class Mission
 							id=6291;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=5.4139996;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item55
 						{
@@ -20188,23 +18946,6 @@ class Mission
 							id=6292;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=5.4139996;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item56
 						{
@@ -20222,23 +18963,6 @@ class Mission
 							id=6294;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=5.4139996;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item57
 						{
@@ -20256,23 +18980,6 @@ class Mission
 							id=6295;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.77699995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item58
 						{
@@ -20290,23 +18997,6 @@ class Mission
 							id=6296;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.77699995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item59
 						{
@@ -20324,23 +19014,6 @@ class Mission
 							id=6297;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.77699995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item60
 						{
@@ -20358,23 +19031,6 @@ class Mission
 							id=6298;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.77699995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item61
 						{
@@ -20392,23 +19048,6 @@ class Mission
 							id=6299;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.77699995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item62
 						{
@@ -20426,23 +19065,6 @@ class Mission
 							id=6301;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=8.1420002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item63
 						{
@@ -20460,23 +19082,6 @@ class Mission
 							id=6302;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=8.1420002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item64
 						{
@@ -20494,23 +19099,6 @@ class Mission
 							id=6303;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=8.1420002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item65
 						{
@@ -20528,23 +19116,6 @@ class Mission
 							id=6304;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=8.1420002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item66
 						{
@@ -20562,23 +19133,6 @@ class Mission
 							id=6305;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=5.2706394;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item67
 						{
@@ -20597,23 +19151,6 @@ class Mission
 							id=6187;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57949209;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item68
 						{
@@ -20632,23 +19169,6 @@ class Mission
 							id=6188;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item69
 						{
@@ -20667,23 +19187,6 @@ class Mission
 							id=6190;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967663;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item70
 						{
@@ -20702,23 +19205,6 @@ class Mission
 							id=6193;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item71
 						{
@@ -20736,23 +19222,6 @@ class Mission
 							id=6198;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.063000202;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item72
 						{
@@ -20770,23 +19239,6 @@ class Mission
 							id=6199;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.072000027;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item73
 						{
@@ -20803,23 +19255,6 @@ class Mission
 							id=6200;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=3.6900005;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item74
 						{
@@ -20837,23 +19272,6 @@ class Mission
 							id=6201;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.058000088;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item75
 						{
@@ -20871,23 +19289,6 @@ class Mission
 							id=6202;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.053999901;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item76
 						{
@@ -20904,23 +19305,6 @@ class Mission
 							id=6271;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=3.6739998;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item77
 						{
@@ -20939,23 +19323,6 @@ class Mission
 							id=6203;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.058172226;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item78
 						{
@@ -20972,23 +19339,6 @@ class Mission
 							id=6204;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.80200005;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item79
 						{
@@ -21005,23 +19355,6 @@ class Mission
 							id=6206;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=2.6619997;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item80
 						{
@@ -21038,23 +19371,6 @@ class Mission
 							id=6208;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=3.6900005;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item81
 						{
@@ -21071,23 +19387,6 @@ class Mission
 							id=6209;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.82401085;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item82
 						{
@@ -21104,23 +19403,6 @@ class Mission
 							id=6210;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=3.6739998;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item83
 						{
@@ -21137,23 +19419,6 @@ class Mission
 							id=6211;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=7.3109999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item84
 						{
@@ -21169,24 +19434,7 @@ class Mission
 							};
 							id=6212;
 							type="Land_Shoot_House_Wall_Long_F";
-							atlOffset=7.3109999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
+							atlOffset=3.281826;
 						};
 						class Item85
 						{
@@ -21202,24 +19450,7 @@ class Mission
 							};
 							id=6213;
 							type="Land_Shoot_House_Wall_Long_F";
-							atlOffset=3.2797661;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
+							atlOffset=3.2582703;
 						};
 						class Item86
 						{
@@ -21235,24 +19466,7 @@ class Mission
 							};
 							id=6214;
 							type="Land_Shoot_House_Wall_Long_F";
-							atlOffset=4.4441509;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
+							atlOffset=3.2853336;
 						};
 						class Item87
 						{
@@ -21269,23 +19483,6 @@ class Mission
 							id=6215;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=7.2950001;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item88
 						{
@@ -21304,23 +19501,6 @@ class Mission
 							id=6218;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item89
 						{
@@ -21339,23 +19519,6 @@ class Mission
 							id=6219;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item90
 						{
@@ -21374,23 +19537,6 @@ class Mission
 							id=6221;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item91
 						{
@@ -21409,23 +19555,6 @@ class Mission
 							id=6222;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item92
 						{
@@ -21444,23 +19573,6 @@ class Mission
 							id=6223;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item93
 						{
@@ -21479,23 +19591,6 @@ class Mission
 							id=6226;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item94
 						{
@@ -21514,23 +19609,6 @@ class Mission
 							id=6227;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item95
 						{
@@ -21549,23 +19627,6 @@ class Mission
 							id=6228;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item96
 						{
@@ -21584,23 +19645,6 @@ class Mission
 							id=6229;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item97
 						{
@@ -21619,23 +19663,6 @@ class Mission
 							id=6230;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item98
 						{
@@ -21654,23 +19681,6 @@ class Mission
 							id=6233;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item99
 						{
@@ -21689,23 +19699,6 @@ class Mission
 							id=6234;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item100
 						{
@@ -21724,23 +19717,6 @@ class Mission
 							id=6306;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item101
 						{
@@ -21759,23 +19735,6 @@ class Mission
 							id=6235;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item102
 						{
@@ -21794,23 +19753,6 @@ class Mission
 							id=6236;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item103
 						{
@@ -21829,23 +19771,6 @@ class Mission
 							id=6241;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item104
 						{
@@ -21864,23 +19789,6 @@ class Mission
 							id=6242;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57967615;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item105
 						{
@@ -21898,23 +19806,6 @@ class Mission
 							id=6243;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=0.65463066;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item106
 						{
@@ -21932,23 +19823,6 @@ class Mission
 							id=6289;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7683115;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item107
 						{
@@ -21966,23 +19840,6 @@ class Mission
 							id=6273;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item108
 						{
@@ -22000,23 +19857,6 @@ class Mission
 							id=6284;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item109
 						{
@@ -22034,23 +19874,6 @@ class Mission
 							id=6283;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item110
 						{
@@ -22068,23 +19891,6 @@ class Mission
 							id=6282;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=6.7791014;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item111
 						{
@@ -22101,7 +19907,7 @@ class Mission
 							};
 							id=6247;
 							type="Land_Shoot_House_Wall_Prone_F";
-							atlOffset=0.14045525;
+							atlOffset=0.11895943;
 						};
 						class Item112
 						{
@@ -22119,23 +19925,6 @@ class Mission
 							id=6246;
 							type="Land_ConcretePanels_02_single_v1_F";
 							atlOffset=6.7100134;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.76700002;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item113
 						{
@@ -22153,23 +19942,6 @@ class Mission
 							id=6197;
 							type="Land_ConcretePanels_02_single_v1_F";
 							atlOffset=0.36995316;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.76700002;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item114
 						{
@@ -22220,23 +19992,6 @@ class Mission
 							id=6323;
 							type="Land_InvisibleBarrier_F";
 							atlOffset=6.2959995;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=2;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item117
 						{
@@ -22255,23 +20010,6 @@ class Mission
 							id=6593;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57949209;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item118
 						{
@@ -22290,23 +20028,6 @@ class Mission
 							id=6594;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57949209;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 						class Item119
 						{
@@ -22325,23 +20046,6 @@ class Mission
 							id=6596;
 							type="Land_Shoot_House_Wall_Long_F";
 							atlOffset=-0.57949209;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ENH_objectScaling";
-									expression="  if (is3DEN) then  {    _this addEventHandler ['AttributesChanged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];    _this addEventHandler ['Dragged3DEN',    {      params ['_object'];      _object setObjectScale ((_object get3DENAttribute 'ENH_objectScaling') # 0);    }];  };  if (!isMultiplayer) then {[_this, _value] spawn {sleep 0.5; (_this select 0) setObjectScale (_this select 1)}};";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=0.64999998;
-										};
-									};
-								};
-								nAttributes=1;
-							};
 						};
 					};
 					id=6533;
@@ -22442,7 +20146,7 @@ class Mission
 									};
 									id=6313;
 									type="TargetP_Inf_F";
-									atlOffset=0.023411751;
+									atlOffset=0.0019159317;
 								};
 								class Item5
 								{
@@ -22628,7 +20332,7 @@ class Mission
 			id=5996;
 			atlOffset=2.7259884;
 		};
-		class Item50
+		class Item48
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22642,7 +20346,7 @@ class Mission
 			};
 			id=6467;
 			type="Box_NATO_Support_F";
-			atlOffset=-8.5830688e-006;
+			atlOffset=-8.5830688e-06;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -22661,7 +20365,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item51
+		class Item49
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22677,7 +20381,7 @@ class Mission
 			id=6514;
 			type="Land_Hlaska";
 		};
-		class Item52
+		class Item50
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22689,7 +20393,7 @@ class Mission
 			id=6537;
 			type="Logic";
 		};
-		class Item53
+		class Item51
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22700,7 +20404,7 @@ class Mission
 			id=6539;
 			type="Logic";
 		};
-		class Item54
+		class Item52
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22711,835 +20415,7 @@ class Mission
 			id=6543;
 			type="Logic";
 		};
-		class Item55
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1661.7439,5.5014391,5491.4067};
-						angles[]={0,4.8586993,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						init="this setVariable [""RCT7Bootcamp_Formation"", 2]";
-						name="Unit1";
-						disableSimulation=1;
-						ignoreByDynSimulGrid=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_m4_m203_acog_usmc";
-								optics="rhsusf_acc_ACOG2_USMC";
-								flashlight="rhsusf_acc_anpeq16a";
-								firemode="rhs_m4_m203_acog_usmc:Single";
-								class primaryMuzzleMag
-								{
-									name="rhs_mag_30Rnd_556x45_M855_Stanag";
-									ammoLeft=30;
-								};
-								class secondaryMuzzleMag
-								{
-									name="rhs_mag_M433_HEDP";
-									ammoLeft=1;
-								};
-							};
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="rhs_uniform_FROG01_d";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=2;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="rhsusf_spc_teamleader";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=5;
-									class Item0
-									{
-										name="rhs_mag_30Rnd_556x45_M855_Stanag";
-										count=8;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="rhs_mag_M433_HEDP";
-										count=5;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="rhs_mag_m67";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="rhs_mag_m18_yellow";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="rhs_mag_m18_purple";
-										count=1;
-										ammoLeft=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							goggles="rhs_googles_clear";
-							headgear="rhsusf_lwh_helmet_marpatd_ess";
-						};
-					};
-					id=6550;
-					type="rhsusf_usmc_marpat_d_teamleader";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.04;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male06ENG";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1654.9601,5.5014391,5485.1963};
-						angles[]={0,4.8586998,0};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						init="this setVariable [""RCT7Bootcamp_Formation"", 4]";
-						disableSimulation=1;
-						ignoreByDynSimulGrid=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_m4_m203_acog_usmc";
-								optics="rhsusf_acc_ACOG2_USMC";
-								flashlight="rhsusf_acc_anpeq16a";
-								firemode="rhs_m4_m203_acog_usmc:Single";
-								class primaryMuzzleMag
-								{
-									name="rhs_mag_30Rnd_556x45_M855_Stanag";
-									ammoLeft=30;
-								};
-								class secondaryMuzzleMag
-								{
-									name="rhs_mag_M433_HEDP";
-									ammoLeft=1;
-								};
-							};
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="rhs_uniform_FROG01_d";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=2;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="rhsusf_spc_teamleader";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=5;
-									class Item0
-									{
-										name="rhs_mag_30Rnd_556x45_M855_Stanag";
-										count=8;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="rhs_mag_M433_HEDP";
-										count=5;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="rhs_mag_m67";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="rhs_mag_m18_yellow";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="rhs_mag_m18_purple";
-										count=1;
-										ammoLeft=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							goggles="rhs_googles_clear";
-							headgear="rhsusf_lwh_helmet_marpatd_ess";
-						};
-					};
-					id=6552;
-					type="rhsusf_usmc_marpat_d_rifleman_m4";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.95999998;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male08ENG";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1655.2197,5.5014391,5488.8281};
-						angles[]={0,4.9459667,0};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						init="this setVariable [""RCT7Bootcamp_Formation"", 1];";
-						disableSimulation=1;
-						ignoreByDynSimulGrid=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_m4_m203_acog_usmc";
-								optics="rhsusf_acc_ACOG2_USMC";
-								flashlight="rhsusf_acc_anpeq16a";
-								firemode="rhs_m4_m203_acog_usmc:Single";
-								class primaryMuzzleMag
-								{
-									name="rhs_mag_30Rnd_556x45_M855_Stanag";
-									ammoLeft=30;
-								};
-								class secondaryMuzzleMag
-								{
-									name="rhs_mag_M433_HEDP";
-									ammoLeft=1;
-								};
-							};
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="rhs_uniform_FROG01_d";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=2;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="rhsusf_spc_teamleader";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=5;
-									class Item0
-									{
-										name="rhs_mag_30Rnd_556x45_M855_Stanag";
-										count=8;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="rhs_mag_M433_HEDP";
-										count=5;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="rhs_mag_m67";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="rhs_mag_m18_yellow";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="rhs_mag_m18_purple";
-										count=1;
-										ammoLeft=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							goggles="rhs_googles_clear";
-							headgear="rhsusf_lwh_helmet_marpatd_ess";
-						};
-					};
-					id=6553;
-					type="rhsusf_usmc_marpat_d_riflemanat";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.03;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1659.3448,5.5014391,5482.8872};
-						angles[]={0,4.8586998,0};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						init="this setVariable [""RCT7Bootcamp_Formation"", 3]";
-						disableSimulation=1;
-						ignoreByDynSimulGrid=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_m4_m203_acog_usmc";
-								optics="rhsusf_acc_ACOG2_USMC";
-								flashlight="rhsusf_acc_anpeq16a";
-								firemode="rhs_m4_m203_acog_usmc:Single";
-								class primaryMuzzleMag
-								{
-									name="rhs_mag_30Rnd_556x45_M855_Stanag";
-									ammoLeft=30;
-								};
-								class secondaryMuzzleMag
-								{
-									name="rhs_mag_M433_HEDP";
-									ammoLeft=1;
-								};
-							};
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="rhs_uniform_FROG01_d";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=2;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="rhsusf_spc_teamleader";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=5;
-									class Item0
-									{
-										name="rhs_mag_30Rnd_556x45_M855_Stanag";
-										count=8;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="rhs_mag_M433_HEDP";
-										count=5;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="rhs_mag_m67";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="rhs_mag_m18_yellow";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="rhs_mag_m18_purple";
-										count=1;
-										ammoLeft=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							goggles="rhs_googles_clear";
-							headgear="rhsusf_lwh_helmet_marpatd_ess";
-						};
-					};
-					id=6551;
-					type="rhsusf_usmc_marpat_d_autorifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-			};
-			class Attributes
-			{
-				name="FormationGroup";
-			};
-			id=6549;
-		};
-		class Item56
+		class Item53
 		{
 			dataType="Group";
 			side="West";
@@ -23687,20 +20563,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item1
@@ -23777,29 +20640,12 @@ class Mission
 					};
 					id=6563;
 					type="B_Soldier_A_F";
-					atlOffset=1.9073486e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					atlOffset=1.9073486e-06;
 				};
 				class Item2
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1638.6776,5.5,5037.2383};
 					expCond="";
 					class Effects
@@ -23812,7 +20658,7 @@ class Mission
 				class Item3
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1640.2064,5.5,5051.7261};
 					formation="LINE";
 					expCond="";
@@ -23826,7 +20672,7 @@ class Mission
 				class Item4
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1645.7919,5.5,5073.084};
 					formation="LINE";
 					expCond="";
@@ -23840,7 +20686,7 @@ class Mission
 				class Item5
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1650.6208,5.5,5093.458};
 					formation="LINE";
 					expCond="";
@@ -23854,7 +20700,7 @@ class Mission
 				class Item6
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1650.6324,5.5,5093.5396};
 					class Effects
 					{
@@ -23870,7 +20716,7 @@ class Mission
 			};
 			id=6561;
 		};
-		class Item57
+		class Item54
 		{
 			dataType="Group";
 			side="West";
@@ -24020,26 +20866,13 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item1
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1654.9241,5.5,5031.855};
 					formation="LINE";
 					expCond="";
@@ -24053,7 +20886,7 @@ class Mission
 				class Item2
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1658.7958,5.5,5047.5029};
 					formation="LINE";
 					expCond="";
@@ -24067,7 +20900,7 @@ class Mission
 				class Item3
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1664.2755,5.5,5068.7666};
 					formation="LINE";
 					expCond="";
@@ -24081,7 +20914,7 @@ class Mission
 				class Item4
 				{
 					dataType="Waypoint";
-					loiterAltitude=-3.4028235e+038;
+					loiterAltitude=-3.4028235e+38;
 					position[]={1670.6904,5.5,5088.6777};
 					class Effects
 					{
@@ -24098,7 +20931,7 @@ class Mission
 			};
 			id=6568;
 		};
-		class Item58
+		class Item55
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24162,7 +20995,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item59
+		class Item56
 		{
 			dataType="Group";
 			side="Civilian";
@@ -24189,32 +21022,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="ENH_disableAI_move";
-							expression="if (_value) then {[_this, 'MOVE'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ENH_forceWalk";
-							expression="[_this, _value] remoteExec ['forceWalk', _this]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
 							property="ace_isHandcuffed";
 							expression="if (_value) then {[objNull, [_this], true] call ace_captives_fnc_moduleHandcuffed}";
 							class Value
@@ -24226,33 +21033,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute3
-						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value && !isMultiplayer) then {doStop _this}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.95999998;
-								};
-							};
-						};
-						class Attribute5
+						class Attribute1
 						{
 							property="speaker";
 							expression="_this setspeaker _value;";
@@ -24265,33 +21046,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute6
+						class Attribute2
 						{
-							property="ENH_makeHostage";
-							expression="  if (isServer && _value) then  {    ENH_fnc_makeHostage =    {      if (_this getVariable ['ENH_isHostage', true]) then      {        _this switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';        [        _this,        localize 'STR_A3_OM_SYSTEM_QUEST_HOSTAGEHOLDACTION',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        'A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa',        '_target getVariable [''ENH_IsHostage'', true] && {_this distance _target < 2 && {alive _target && {_target != _this}}}',        'true',        {},        {},        {          [_this # 0, 'AmovPercMstpSnonWnonDnon'] remoteExec ['playMoveNow', 0];          [_this # 0, _this # 2] remoteExec ['BIS_fnc_holdActionRemove', 0];          _this # 0 setVariable ['ENH_IsHostage', false, true];        }        ] call BIS_fnc_holdActionAdd;      };    };    [_this, ENH_fnc_makeHostage] remoteExec ['call', 0, true];  };  ";
+							property="pitch";
+							expression="_this setpitch _value;";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
-									value=0;
+									singleType="SCALAR";
+									value=0.95999998;
 								};
 							};
 						};
-						class Attribute7
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
+						nAttributes=3;
 					};
 				};
 			};
@@ -24300,7 +21068,7 @@ class Mission
 			};
 			id=6635;
 		};
-		class Item60
+		class Item57
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24318,7 +21086,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=-0.022994995;
 		};
-		class Item61
+		class Item58
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24333,9 +21101,9 @@ class Mission
 			};
 			id=6542;
 			type="Land_Cargo_Patrol_V3_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=1.5258789e-05;
 		};
-		class Item62
+		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24351,7 +21119,7 @@ class Mission
 			id=6647;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item63
+		class Item60
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24368,7 +21136,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00033569336;
 		};
-		class Item64
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24383,9 +21151,9 @@ class Mission
 			};
 			id=6650;
 			type="Land_HelipadEmpty_F";
-			atlOffset=9.5367432e-007;
+			atlOffset=9.5367432e-07;
 		};
-		class Item65
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24401,7 +21169,7 @@ class Mission
 			id=6651;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item66
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24417,7 +21185,7 @@ class Mission
 			id=6652;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item67
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24433,7 +21201,7 @@ class Mission
 			id=6653;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item68
+		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24450,7 +21218,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.00016021729;
 		};
-		class Item69
+		class Item66
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24466,7 +21234,7 @@ class Mission
 			id=6656;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item70
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24482,7 +21250,7 @@ class Mission
 			id=6657;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item71
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24498,7 +21266,7 @@ class Mission
 			id=6664;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item72
+		class Item69
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24512,9 +21280,9 @@ class Mission
 			};
 			id=6680;
 			type="Land_ConcreteWall_01_m_4m_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item73
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24529,7 +21297,7 @@ class Mission
 			id=6681;
 			type="Land_ConcreteWall_03_m_2m_F";
 		};
-		class Item74
+		class Item71
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24544,7 +21312,7 @@ class Mission
 			id=6683;
 			type="Land_ConcreteWall_01_l_4m_F";
 		};
-		class Item75
+		class Item72
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24560,7 +21328,7 @@ class Mission
 			type="Land_ConcreteWall_01_l_4m_F";
 			atlOffset=0.0019664764;
 		};
-		class Item76
+		class Item73
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24576,7 +21344,7 @@ class Mission
 			id=6685;
 			type="Land_ConcreteWall_01_l_4m_F";
 		};
-		class Item77
+		class Item74
 		{
 			dataType="Group";
 			side="West";
@@ -24588,14 +21356,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2175.7998,5.9592247,5758.3926};
-						angles[]={0,5.4194326,0};
+						position[]={2175.8,5.9592247,5758.3926};
+						angles[]={0,5.4194388,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						init="[this, ""Infantry""] spawn rct7_fnc_initPatches;";
 						name="dude";
 						description="Recruit";
 						isPlayer=1;
@@ -24638,7 +21405,6 @@ class Mission
 					};
 					id=6674;
 					type="B_Soldier_F";
-					atlOffset=9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -24667,20 +21433,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_allowSprint";
-							expression="_this allowSprint _value";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 			};
@@ -24690,9 +21443,8 @@ class Mission
 				formation="LINE";
 			};
 			id=6673;
-			atlOffset=9.5367432e-007;
 		};
-		class Item78
+		class Item75
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -24704,7 +21456,7 @@ class Mission
 			id=6689;
 			type="Logic";
 		};
-		class Item79
+		class Item76
 		{
 			dataType="Trigger";
 			position[]={1690.8198,5.5000005,5487.3813};
@@ -24721,9 +21473,9 @@ class Mission
 			};
 			id=6697;
 			type="EmptyDetectorArea10x10";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item80
+		class Item77
 		{
 			dataType="Trigger";
 			position[]={1584.826,4.3210001,5080.0142};
@@ -24742,7 +21494,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=-1.1789999;
 		};
-		class Item81
+		class Item78
 		{
 			dataType="Trigger";
 			position[]={1518.166,5.4862447,5094.4448};
@@ -24759,9 +21511,9 @@ class Mission
 			};
 			id=6699;
 			type="EmptyDetectorArea10x10";
-			atlOffset=-4.7683716e-007;
+			atlOffset=-4.7683716e-07;
 		};
-		class Item82
+		class Item79
 		{
 			dataType="Trigger";
 			position[]={1568.6935,5.5,5150.2417};
@@ -24779,7 +21531,7 @@ class Mission
 			id=6700;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item83
+		class Item80
 		{
 			dataType="Trigger";
 			position[]={1534.0264,5.5,5021.2788};
@@ -24797,7 +21549,7 @@ class Mission
 			id=6701;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item84
+		class Item81
 		{
 			dataType="Trigger";
 			position[]={1665.3695,6.6789999,5107.5576};
@@ -24816,7 +21568,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=1.1789999;
 		};
-		class Item85
+		class Item82
 		{
 			dataType="Trigger";
 			position[]={1677.6171,5.5,5046.8481};
@@ -24834,7 +21586,7 @@ class Mission
 			id=6703;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item86
+		class Item83
 		{
 			dataType="Trigger";
 			position[]={1624.8634,6.6789994,5063.2241};
@@ -24853,7 +21605,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=1.1789994;
 		};
-		class Item87
+		class Item84
 		{
 			dataType="Trigger";
 			position[]={1638.5117,6.6789999,5002.1147};
@@ -24872,7 +21624,7 @@ class Mission
 			type="EmptyDetectorArea10x10";
 			atlOffset=1.1789999;
 		};
-		class Item88
+		class Item85
 		{
 			dataType="Layer";
 			name="BoundaryBoxes";
@@ -25068,7 +21820,7 @@ class Mission
 							};
 							id=6692;
 							type="EmptyDetectorArea10x10";
-							atlOffset=2.3841858e-006;
+							atlOffset=2.3841858e-06;
 						};
 						class Item1
 						{
@@ -25238,7 +21990,7 @@ class Mission
 							};
 							id=6731;
 							type="EmptyDetectorArea10x10";
-							atlOffset=5.7220459e-006;
+							atlOffset=5.7220459e-06;
 						};
 						class Item1
 						{
@@ -25257,7 +22009,7 @@ class Mission
 							};
 							id=6733;
 							type="EmptyDetectorArea10x10";
-							atlOffset=5.7220459e-006;
+							atlOffset=5.7220459e-06;
 						};
 						class Item2
 						{
@@ -25294,7 +22046,7 @@ class Mission
 							};
 							id=6732;
 							type="EmptyDetectorArea10x10";
-							atlOffset=-9.5367432e-007;
+							atlOffset=-9.5367432e-07;
 						};
 					};
 					id=6734;
@@ -25429,7 +22181,7 @@ class Mission
 							};
 							id=6721;
 							type="EmptyDetectorArea10x10";
-							atlOffset=1.7642975e-005;
+							atlOffset=1.7642975e-05;
 						};
 						class Item2
 						{
@@ -25507,7 +22259,7 @@ class Mission
 			id=6738;
 			atlOffset=98.182076;
 		};
-		class Item89
+		class Item86
 		{
 			dataType="Trigger";
 			position[]={1686.9194,5.5,5474.0728};
@@ -25525,7 +22277,7 @@ class Mission
 			id=6741;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item90
+		class Item87
 		{
 			dataType="Trigger";
 			position[]={1696.1235,5.5,5478.4502};
@@ -25543,7 +22295,7 @@ class Mission
 			id=6742;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item91
+		class Item88
 		{
 			dataType="Trigger";
 			position[]={1681.5967,5.5000005,5482.3145};
@@ -25560,9 +22312,9 @@ class Mission
 			};
 			id=6743;
 			type="EmptyDetectorArea10x10";
-			atlOffset=4.7683716e-007;
+			atlOffset=4.7683716e-07;
 		};
-		class Item92
+		class Item89
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25580,7 +22332,7 @@ class Mission
 			id=6750;
 			type="TargetP_Zom_F";
 		};
-		class Item93
+		class Item90
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25597,7 +22349,7 @@ class Mission
 			id=6751;
 			type="TargetP_HVT1_F";
 		};
-		class Item94
+		class Item91
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25614,9 +22366,9 @@ class Mission
 			};
 			id=6752;
 			type="TargetP_Alien1_F";
-			atlOffset=7.6293945e-006;
+			atlOffset=7.6293945e-06;
 		};
-		class Item95
+		class Item92
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25632,9 +22384,9 @@ class Mission
 			};
 			id=6753;
 			type="TargetP_Inf_Acc1_F";
-			atlOffset=1.1444092e-005;
+			atlOffset=1.1444092e-05;
 		};
-		class Item96
+		class Item93
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -25651,11 +22403,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=99;
+			nextID=97;
 		};
 		class Links
 		{
-			items=99;
+			items=97;
 			class Item0
 			{
 				linkID=0;
@@ -25949,7 +22701,7 @@ class Mission
 			class Item29
 			{
 				linkID=29;
-				item0=5364;
+				item0=5363;
 				item1=5414;
 				class CustomData
 				{
@@ -25959,8 +22711,8 @@ class Mission
 			class Item30
 			{
 				linkID=30;
-				item0=5363;
-				item1=5414;
+				item0=5414;
+				item1=5463;
 				class CustomData
 				{
 					type="Sync";
@@ -25969,8 +22721,8 @@ class Mission
 			class Item31
 			{
 				linkID=31;
-				item0=5378;
-				item1=5414;
+				item0=5473;
+				item1=5477;
 				class CustomData
 				{
 					type="Sync";
@@ -25979,8 +22731,8 @@ class Mission
 			class Item32
 			{
 				linkID=32;
-				item0=5414;
-				item1=5463;
+				item0=5474;
+				item1=5477;
 				class CustomData
 				{
 					type="Sync";
@@ -25989,7 +22741,7 @@ class Mission
 			class Item33
 			{
 				linkID=33;
-				item0=5473;
+				item0=5475;
 				item1=5477;
 				class CustomData
 				{
@@ -25999,7 +22751,7 @@ class Mission
 			class Item34
 			{
 				linkID=34;
-				item0=5474;
+				item0=5476;
 				item1=5477;
 				class CustomData
 				{
@@ -26009,8 +22761,8 @@ class Mission
 			class Item35
 			{
 				linkID=35;
-				item0=5475;
-				item1=5477;
+				item0=5478;
+				item1=5482;
 				class CustomData
 				{
 					type="Sync";
@@ -26019,8 +22771,8 @@ class Mission
 			class Item36
 			{
 				linkID=36;
-				item0=5476;
-				item1=5477;
+				item0=5479;
+				item1=5482;
 				class CustomData
 				{
 					type="Sync";
@@ -26029,7 +22781,7 @@ class Mission
 			class Item37
 			{
 				linkID=37;
-				item0=5478;
+				item0=5480;
 				item1=5482;
 				class CustomData
 				{
@@ -26039,7 +22791,7 @@ class Mission
 			class Item38
 			{
 				linkID=38;
-				item0=5479;
+				item0=5481;
 				item1=5482;
 				class CustomData
 				{
@@ -26049,8 +22801,8 @@ class Mission
 			class Item39
 			{
 				linkID=39;
-				item0=5480;
-				item1=5482;
+				item0=5473;
+				item1=5226;
 				class CustomData
 				{
 					type="Sync";
@@ -26059,8 +22811,8 @@ class Mission
 			class Item40
 			{
 				linkID=40;
-				item0=5481;
-				item1=5482;
+				item0=5474;
+				item1=5226;
 				class CustomData
 				{
 					type="Sync";
@@ -26069,7 +22821,7 @@ class Mission
 			class Item41
 			{
 				linkID=41;
-				item0=5473;
+				item0=5475;
 				item1=5226;
 				class CustomData
 				{
@@ -26079,7 +22831,7 @@ class Mission
 			class Item42
 			{
 				linkID=42;
-				item0=5474;
+				item0=5476;
 				item1=5226;
 				class CustomData
 				{
@@ -26089,7 +22841,7 @@ class Mission
 			class Item43
 			{
 				linkID=43;
-				item0=5475;
+				item0=5478;
 				item1=5226;
 				class CustomData
 				{
@@ -26099,7 +22851,7 @@ class Mission
 			class Item44
 			{
 				linkID=44;
-				item0=5476;
+				item0=5479;
 				item1=5226;
 				class CustomData
 				{
@@ -26109,7 +22861,7 @@ class Mission
 			class Item45
 			{
 				linkID=45;
-				item0=5478;
+				item0=5480;
 				item1=5226;
 				class CustomData
 				{
@@ -26119,7 +22871,7 @@ class Mission
 			class Item46
 			{
 				linkID=46;
-				item0=5479;
+				item0=5481;
 				item1=5226;
 				class CustomData
 				{
@@ -26129,8 +22881,8 @@ class Mission
 			class Item47
 			{
 				linkID=47;
-				item0=5480;
-				item1=5226;
+				item0=5477;
+				item1=5407;
 				class CustomData
 				{
 					type="Sync";
@@ -26139,8 +22891,8 @@ class Mission
 			class Item48
 			{
 				linkID=48;
-				item0=5481;
-				item1=5226;
+				item0=5482;
+				item1=5407;
 				class CustomData
 				{
 					type="Sync";
@@ -26149,8 +22901,8 @@ class Mission
 			class Item49
 			{
 				linkID=49;
-				item0=5477;
-				item1=5407;
+				item0=5493;
+				item1=5494;
 				class CustomData
 				{
 					type="Sync";
@@ -26159,8 +22911,8 @@ class Mission
 			class Item50
 			{
 				linkID=50;
-				item0=5482;
-				item1=5407;
+				item0=5493;
+				item1=5442;
 				class CustomData
 				{
 					type="Sync";
@@ -26169,8 +22921,8 @@ class Mission
 			class Item51
 			{
 				linkID=51;
-				item0=5493;
-				item1=5494;
+				item0=5590;
+				item1=5595;
 				class CustomData
 				{
 					type="Sync";
@@ -26179,8 +22931,8 @@ class Mission
 			class Item52
 			{
 				linkID=52;
-				item0=5493;
-				item1=5442;
+				item0=5600;
+				item1=5590;
 				class CustomData
 				{
 					type="Sync";
@@ -26189,8 +22941,8 @@ class Mission
 			class Item53
 			{
 				linkID=53;
-				item0=5590;
-				item1=5595;
+				item0=5601;
+				item1=5590;
 				class CustomData
 				{
 					type="Sync";
@@ -26199,8 +22951,8 @@ class Mission
 			class Item54
 			{
 				linkID=54;
-				item0=5600;
-				item1=5590;
+				item0=5621;
+				item1=5617;
 				class CustomData
 				{
 					type="Sync";
@@ -26209,8 +22961,8 @@ class Mission
 			class Item55
 			{
 				linkID=55;
-				item0=5601;
-				item1=5590;
+				item0=6307;
+				item1=6537;
 				class CustomData
 				{
 					type="Sync";
@@ -26219,8 +22971,8 @@ class Mission
 			class Item56
 			{
 				linkID=56;
-				item0=5621;
-				item1=5617;
+				item0=6308;
+				item1=6537;
 				class CustomData
 				{
 					type="Sync";
@@ -26229,7 +22981,7 @@ class Mission
 			class Item57
 			{
 				linkID=57;
-				item0=6307;
+				item0=6310;
 				item1=6537;
 				class CustomData
 				{
@@ -26239,7 +22991,7 @@ class Mission
 			class Item58
 			{
 				linkID=58;
-				item0=6308;
+				item0=6312;
 				item1=6537;
 				class CustomData
 				{
@@ -26249,7 +23001,7 @@ class Mission
 			class Item59
 			{
 				linkID=59;
-				item0=6310;
+				item0=6313;
 				item1=6537;
 				class CustomData
 				{
@@ -26259,7 +23011,7 @@ class Mission
 			class Item60
 			{
 				linkID=60;
-				item0=6312;
+				item0=6314;
 				item1=6537;
 				class CustomData
 				{
@@ -26269,7 +23021,7 @@ class Mission
 			class Item61
 			{
 				linkID=61;
-				item0=6313;
+				item0=6315;
 				item1=6537;
 				class CustomData
 				{
@@ -26279,7 +23031,7 @@ class Mission
 			class Item62
 			{
 				linkID=62;
-				item0=6314;
+				item0=6316;
 				item1=6537;
 				class CustomData
 				{
@@ -26289,7 +23041,7 @@ class Mission
 			class Item63
 			{
 				linkID=63;
-				item0=6315;
+				item0=6317;
 				item1=6537;
 				class CustomData
 				{
@@ -26299,7 +23051,7 @@ class Mission
 			class Item64
 			{
 				linkID=64;
-				item0=6316;
+				item0=6318;
 				item1=6537;
 				class CustomData
 				{
@@ -26309,7 +23061,7 @@ class Mission
 			class Item65
 			{
 				linkID=65;
-				item0=6317;
+				item0=6319;
 				item1=6537;
 				class CustomData
 				{
@@ -26319,7 +23071,7 @@ class Mission
 			class Item66
 			{
 				linkID=66;
-				item0=6318;
+				item0=6320;
 				item1=6537;
 				class CustomData
 				{
@@ -26329,7 +23081,7 @@ class Mission
 			class Item67
 			{
 				linkID=67;
-				item0=6319;
+				item0=6322;
 				item1=6537;
 				class CustomData
 				{
@@ -26339,7 +23091,7 @@ class Mission
 			class Item68
 			{
 				linkID=68;
-				item0=6320;
+				item0=6321;
 				item1=6537;
 				class CustomData
 				{
@@ -26349,7 +23101,7 @@ class Mission
 			class Item69
 			{
 				linkID=69;
-				item0=6322;
+				item0=6309;
 				item1=6537;
 				class CustomData
 				{
@@ -26360,7 +23112,7 @@ class Mission
 			{
 				linkID=70;
 				item0=6321;
-				item1=6537;
+				item1=6539;
 				class CustomData
 				{
 					type="Sync";
@@ -26370,7 +23122,7 @@ class Mission
 			{
 				linkID=71;
 				item0=6309;
-				item1=6537;
+				item1=6539;
 				class CustomData
 				{
 					type="Sync";
@@ -26379,8 +23131,8 @@ class Mission
 			class Item72
 			{
 				linkID=72;
-				item0=6321;
-				item1=6539;
+				item0=6307;
+				item1=6543;
 				class CustomData
 				{
 					type="Sync";
@@ -26389,8 +23141,8 @@ class Mission
 			class Item73
 			{
 				linkID=73;
-				item0=6309;
-				item1=6539;
+				item0=6310;
+				item1=6543;
 				class CustomData
 				{
 					type="Sync";
@@ -26399,7 +23151,7 @@ class Mission
 			class Item74
 			{
 				linkID=74;
-				item0=6307;
+				item0=6312;
 				item1=6543;
 				class CustomData
 				{
@@ -26409,7 +23161,7 @@ class Mission
 			class Item75
 			{
 				linkID=75;
-				item0=6310;
+				item0=6313;
 				item1=6543;
 				class CustomData
 				{
@@ -26419,7 +23171,7 @@ class Mission
 			class Item76
 			{
 				linkID=76;
-				item0=6312;
+				item0=6314;
 				item1=6543;
 				class CustomData
 				{
@@ -26429,7 +23181,7 @@ class Mission
 			class Item77
 			{
 				linkID=77;
-				item0=6313;
+				item0=6315;
 				item1=6543;
 				class CustomData
 				{
@@ -26439,7 +23191,7 @@ class Mission
 			class Item78
 			{
 				linkID=78;
-				item0=6314;
+				item0=6316;
 				item1=6543;
 				class CustomData
 				{
@@ -26449,7 +23201,7 @@ class Mission
 			class Item79
 			{
 				linkID=79;
-				item0=6315;
+				item0=6317;
 				item1=6543;
 				class CustomData
 				{
@@ -26459,7 +23211,7 @@ class Mission
 			class Item80
 			{
 				linkID=80;
-				item0=6316;
+				item0=6318;
 				item1=6543;
 				class CustomData
 				{
@@ -26469,7 +23221,7 @@ class Mission
 			class Item81
 			{
 				linkID=81;
-				item0=6317;
+				item0=6319;
 				item1=6543;
 				class CustomData
 				{
@@ -26479,7 +23231,7 @@ class Mission
 			class Item82
 			{
 				linkID=82;
-				item0=6318;
+				item0=6320;
 				item1=6543;
 				class CustomData
 				{
@@ -26489,7 +23241,7 @@ class Mission
 			class Item83
 			{
 				linkID=83;
-				item0=6319;
+				item0=6322;
 				item1=6543;
 				class CustomData
 				{
@@ -26499,7 +23251,7 @@ class Mission
 			class Item84
 			{
 				linkID=84;
-				item0=6320;
+				item0=6308;
 				item1=6543;
 				class CustomData
 				{
@@ -26509,8 +23261,8 @@ class Mission
 			class Item85
 			{
 				linkID=85;
-				item0=6322;
-				item1=6543;
+				item0=6569;
+				item1=6562;
 				class CustomData
 				{
 					type="Sync";
@@ -26519,8 +23271,8 @@ class Mission
 			class Item86
 			{
 				linkID=86;
-				item0=6308;
-				item1=6543;
+				item0=5327;
+				item1=5397;
 				class CustomData
 				{
 					type="Sync";
@@ -26529,8 +23281,8 @@ class Mission
 			class Item87
 			{
 				linkID=87;
-				item0=6569;
-				item1=6562;
+				item0=5615;
+				item1=5590;
 				class CustomData
 				{
 					type="Sync";
@@ -26539,8 +23291,8 @@ class Mission
 			class Item88
 			{
 				linkID=88;
-				item0=5327;
-				item1=5397;
+				item0=6750;
+				item1=6754;
 				class CustomData
 				{
 					type="Sync";
@@ -26549,8 +23301,8 @@ class Mission
 			class Item89
 			{
 				linkID=89;
-				item0=5615;
-				item1=5590;
+				item0=6751;
+				item1=6754;
 				class CustomData
 				{
 					type="Sync";
@@ -26559,7 +23311,7 @@ class Mission
 			class Item90
 			{
 				linkID=90;
-				item0=6750;
+				item0=6752;
 				item1=6754;
 				class CustomData
 				{
@@ -26569,7 +23321,7 @@ class Mission
 			class Item91
 			{
 				linkID=91;
-				item0=6751;
+				item0=6753;
 				item1=6754;
 				class CustomData
 				{
@@ -26579,8 +23331,8 @@ class Mission
 			class Item92
 			{
 				linkID=92;
-				item0=6752;
-				item1=6754;
+				item0=6754;
+				item1=5407;
 				class CustomData
 				{
 					type="Sync";
@@ -26589,8 +23341,8 @@ class Mission
 			class Item93
 			{
 				linkID=93;
-				item0=6753;
-				item1=6754;
+				item0=6750;
+				item1=5226;
 				class CustomData
 				{
 					type="Sync";
@@ -26599,8 +23351,8 @@ class Mission
 			class Item94
 			{
 				linkID=94;
-				item0=6754;
-				item1=5407;
+				item0=6751;
+				item1=5226;
 				class CustomData
 				{
 					type="Sync";
@@ -26609,7 +23361,7 @@ class Mission
 			class Item95
 			{
 				linkID=95;
-				item0=6750;
+				item0=6752;
 				item1=5226;
 				class CustomData
 				{
@@ -26619,26 +23371,6 @@ class Mission
 			class Item96
 			{
 				linkID=96;
-				item0=6751;
-				item1=5226;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item97
-			{
-				linkID=97;
-				item0=6752;
-				item1=5226;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item98
-			{
-				linkID=98;
 				item0=6753;
 				item1=5226;
 				class CustomData

@@ -7,7 +7,7 @@ private _unit4 = nil;
 
 _setHat = {
 	private _unit = param[0, objNull, [objNull]];
-	private _hat = param[1, "SP_Beret2_Blue", [""]];
+	private _hat = param[1, "H_RacingHelmet_1_blue_F", [""]];
 
 	removeHeadgear _unit;
 	_unit addHeadgear _hat;
@@ -29,11 +29,11 @@ _setHat = {
 		};
 		case 3: {
 			_unit3 = _unit;
-			[_unit, "SP_Beret_Red"] call _setHat;
+			[_unit, "H_RacingHelmet_1_red_F"] call _setHat;
 		};
 		case 4: {
 			_unit4 = _unit;
-			[_unit, "SP_Beret_Red"] call _setHat;
+			[_unit, "H_RacingHelmet_1_red_F"] call _setHat;
 		};
 	};
 } forEach units _group;
