@@ -55,7 +55,7 @@ In the bootcamp repository folder create a .env file, paste the following and fi
 PB_USERNAME = "USERNAME GOES HERE"
 PB_PASSWORD = "PASSWORD GOES HERE"
 ```
-In the browser window create a new collection called "bootcamp"
+Copy the pb_migrations folder to the root folder of your pocketbase installation.
 
 Keep pocketbase running.
 
