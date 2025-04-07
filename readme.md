@@ -28,10 +28,11 @@ The server also must run the PythonAPI contained within this repository installe
 On your server, with git installed, open terminal and change directory to a suitable folder. Then run the following command:
 > git clone https://github.com/Polaris-Tactical-Arma/Shiny-Automated-ArmA-3-Bootcamp
 
+> cd Shiny-Automated-ArmA-3-Bootcamp
 
 ### Establish the environment
 Within the repository folder create a python virtual environment & activate it.
->virtualenv bootcamp_venv
+> virtualenv bootcamp_venv
 
 On Windows, run:
 > bootcamp_venv\Scripts\activate
@@ -57,7 +58,7 @@ PB_PASSWORD = "PASSWORD GOES HERE"
 ```
 Copy the pb_migrations folder to the root folder of your pocketbase installation.
 
-Keep pocketbase running.
+Restart pocketbase.
 
 ### Launch Flask & your ArmA 3 Server
 In your terminal, at the root folder of the repository, run:
