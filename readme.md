@@ -26,7 +26,7 @@ The server also must run the PythonAPI contained within this repository installe
 ## Setup
 ### Clone the repository
 On your server, with git installed, open terminal and change directory to a suitable folder. Then run the following command:
-> git clone https://github.com/Polaris-Tactical-Arma/RCT-7-Bootcamp.Stratis
+> git clone https://github.com/Polaris-Tactical-Arma/Shiny-Automated-ArmA-3-Bootcamp
 
 
 ### Establish the environment
